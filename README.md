@@ -92,11 +92,6 @@ Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistema
 
 <div align="center">
 
-<img src="./profile-summary-card-output/tokyonight/3-stats.svg" height="170" alt="Stats" />
-<img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" height="170" alt="Linguagens" />
-
-<br/>
-
 <img src="https://streak-stats.demolab.com?user=dreyranos&theme=tokyonight&hide_border=true&background=0d1117&ring=38bdf8&fire=38bdf8&currStreakLabel=38bdf8" alt="Streak" />
 
 </div>
