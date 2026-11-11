@@ -14,7 +14,7 @@
 
 <br/>
 
-## `~/whoami`
+
 
 ```ts
 const andrey = {
