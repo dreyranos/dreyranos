@@ -16,25 +16,13 @@
 
 
 
-```ts
-const andrey = {
-  nome: "Andrey Ramos",
-  handle: "dreyranos",
-  papel: "Full-Stack Architect",
-  experiencia: "9+ anos em TI",
-  base: "Brasil 🇧🇷",
-  foco: ["APIs back-end", "Refatoração de legado", "Mobile cross-platform"],
-  ferramentasDeIA: ["Cursor"],
-  mantra: "Código limpo, escalável e eficiente",
-  status: "Aberto a boas conversas e bons desafios",
-} as const;
-```
+
 
 Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistemas complexos: do banco relacional ao app na mão do usuário, passando por APIs, regras de negócio multi-tenant e automações que tiram trabalho repetitivo do caminho.
 
 <br/>
 
-## ⚙️ Arsenal
+## ⚙️ Linguagens 
 
 <div align="center">
 
