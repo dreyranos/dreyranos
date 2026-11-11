@@ -92,10 +92,8 @@ Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistema
 
 <div align="center">
 
-<a href="https://github.com/dreyranos">
-  <img src="https://github-readme-stats.vercel.app/api?username=dreyranos&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&bg_color=0d1117&title_color=38bdf8&icon_color=38bdf8" height="170" alt="Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dreyranos&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8" height="170" alt="Linguagens" />
-</a>
+<img src="./profile-summary-card-output/tokyonight/3-stats.svg" height="170" alt="Stats" />
+<img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" height="170" alt="Linguagens" />
 
 <br/>
 
