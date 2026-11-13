@@ -1,45 +1,73 @@
-## Olá, eu sou o Andrey! 👋
-
-Seja muito bem-vinda(o) ao meu Perfil! 😉
-
-## Títulos 👨‍💻
-
-<p align="center"> Full-Stack Systems Developer / Desenvolvedor Full-Stack • Especialista em APIs Backend & Sistemas Legados • Mobile Developer (React Native & Delphi FMX) • Automação & Fluxos com IA </p>
-
-## Sobre 📝
-
-<div>
-  <img align="right" alt="Git-Computador" width="200px" height="200px" src="https://media.giphy.com/media/juua9i2c2fA0AIp2iq/giphy.gif"/>
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&pause=1000&color=38BDF8&center=true&vCenter=true&width=750&height=60&lines=Olá,+eu+sou+o+Andrey!+👋;Desenvolvedor+Full-Stack+%26+Systems;APIs+Backend+%26+Sistemas+Legados;React+Native+%26+Delphi+FMX;Automação+%26+Fluxos+com+IA" alt="Typing SVG" />
 </div>
 
-- Sou Desenvolvedor apaixonado por Engenharia de Sistemas, Back-end, Mobile, Automação e Refatoração de Legado.
-- Atuo de ponta a ponta na otimização e manutenção de sistemas complexos: do banco relacional ao app em produção.
-- Desenvolvedor Full-Stack & Systems com **4+ anos de experiência** em TI / Dev.
-- Foco em arquitetura multi-tenant, APIs de alta disponibilidade, Delphi, Firebird SQL e React Native (Expo).
-- Entusiasta de Android customizado (AOSP / LineageOS) e automação de workflows com IA (Cursor).
-- Pergunte-me sobre: Backend, Delphi, React Native, Firebird SQL ou Automação.
+<p align="center">
+  <img src="https://img.shields.io/badge/STATUS-DISPONÍVEL-0f172a?style=for-the-badge&labelColor=059669&logo=leaflet&logoColor=white" alt="Status" />
+  <img src="https://img.shields.io/badge/BASE-BRASIL-0f172a?style=for-the-badge&labelColor=0284c7&logo=brazil&logoColor=white" alt="Base" />
+  <img src="https://img.shields.io/badge/EXPERIÊNCIA-4%2B_ANOS-0f172a?style=for-the-badge&labelColor=4f46e5&logo=codesandbox&logoColor=white" alt="Exp" />
+</p>
+
+---
+
+## 📝 Sobre mim
+
+<div align="center">
+  <table>
+    <tr>
+      <td width="60%">
+        <p>🎯 <b>Foco Atual:</b> Arquitetura de sistemas complexos, APIs multi-tenant, refatoração de legados e apps mobile de alta performance.</p>
+        <p>🤖 <b>Superpoder:</b> Desenvolvimento impulsionado por IA com <b>Cursor</b> e automação de scripts em Python/Bash.</p>
+        <p>✨ <b>Lema:</b> Código limpo, escalável e focado em resolver problemas reais de ponta a ponta.</p>
+      </td>
+      <td width="40%" align="center">
+        <img alt="Git-Computador" width="220px" src="https://media.giphy.com/media/juua9i2c2fA0AIp2iq/giphy.gif"/>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
 
 ## 👩‍💼 Experiência de trabalho
 
-- **Desenvolvedor Full-Stack & Systems** *(2021 - Presente)*
-  - Arquitetura e desenvolvimento de APIs backend, módulos de autorização multi-tenant, regras de reserva e sistemas de notificações (**FreedomNEO**).
-  - Refatoração segura e modernização de sistemas legados em produção sem interrupção operacional utilizando **Delphi** e **Firebird SQL** (IBExpert / FireDAC).
-  - Desenvolvimento de aplicativos multiplataforma com **React Native (Expo, NativeWind, Paper)** e **Delphi FMX**.
-  - Criação de scripts de automação em **Python / Bash**, gerenciamento remoto via SSH e implementação de fluxos de desenvolvimento assistidos por IA.
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <h3>💼 Desenvolvedor Full-Stack & Systems</h3>
+      <p><b>Ecosystem / Projetos e Automação</b> | <i>2021 - Presente</i></p>
+      <ul>
+        <li><b>Backend & APIs:</b> Desenvolvimento de arquiteturas multi-tenant, regras de reserva e sistemas de notificação (<b>FreedomNEO</b>).</li>
+        <li><b>Legado & Banco de Dados:</b> Modernização e refatoração segura de sistemas legados em produção usando <b>Delphi</b> e <b>Firebird SQL</b> (IBExpert / FireDAC).</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📱 Mobile & Automação</h3>
+      <p><b>Cross-Platform & Engineering</b> | <i>4+ Anos</i></p>
+      <ul>
+        <li><b>Mobile:</b> Criação de aplicativos multiplataforma com <b>React Native (Expo, NativeWind)</b> e <b>Delphi FMX</b>.</li>
+        <li><b>DevOps & IA:</b> Scripts de automação em Python/Bash, gerenciamento via SSH e integração de fluxos com IA.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-## ⚙️ Tecnologias e Ferramentas 🛠️
+---
+
+## ⚙️ Tecnologias e Ecossistema 🛠️
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=ts,js,react,tailwind,python,bash,linux,windows,android&perline=9" alt="Tecnologias" />
+  <img src="https://skillicons.dev/icons?i=ts,js,react,tailwind,python,bash,linux,windows,android,git,docker&perline=11" alt="Tecnologias" />
   <br/><br/>
   <img src="https://img.shields.io/badge/Delphi-0f172a?style=for-the-badge&logo=delphi&logoColor=f43f5e" alt="Delphi" />
   <img src="https://img.shields.io/badge/Firebird-0f172a?style=for-the-badge&logo=firebird&logoColor=fb923c" alt="Firebird" />
   <img src="https://img.shields.io/badge/React_Native-0f172a?style=for-the-badge&logo=react&logoColor=38bdf8" alt="React Native" />
   <img src="https://img.shields.io/badge/Expo-0f172a?style=for-the-badge&logo=expo&logoColor=e2e8f0" alt="Expo" />
-  <img src="https://img.shields.io/badge/NativeWind-0f172a?style=for-the-badge&logo=tailwindcss&logoColor=7dd3fc" alt="NativeWind" />
-  <img src="https://img.shields.io/badge/LineageOS-0f172a?style=for-the-badge&logo=lineageos&logoColor=2dd4bf" alt="LineageOS" />
   <img src="https://img.shields.io/badge/Cursor-0f172a?style=for-the-badge&logo=cursor&logoColor=a5b4fc" alt="Cursor" />
+  <img src="https://img.shields.io/badge/LineageOS-0f172a?style=for-the-badge&logo=lineageos&logoColor=2dd4bf" alt="LineageOS" />
 </div>
+
+---
 
 ## 📊 Estatísticas
 
@@ -63,17 +91,25 @@ Seja muito bem-vinda(o) ao meu Perfil! 😉
 </picture>
 </div>
 
-<br/>
+---
 
 ## 📫 Contatos
 
-Se precisar de ajuda, quiser trocar ideias sobre sistemas ou tiver algum projeto em mente, entre em contato comigo 😉
+<div align="center">
+  <p>Se precisar de ajuda, quiser trocar ideias sobre arquitetura de sistemas ou tiver algum projeto em mente, entre em contato! 😉</p>
+  
+  <br/>
+  
+  <a href="https://www.linkedin.com/in/andrey-ramos-6302722a3">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://github.com/dreyranos">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+</div>
 
-[<img align="left" alt="LinkedIn" width="100px" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/andrey-ramos-6302722a3)
-[<img align="left" alt="GitHub" width="90px" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>](https://github.com/dreyranos)
+<br/><br/>
 
-<br><br>
-
-<div>
+<div align="center">
   <img align="center" alt="Pixel-Art" width="1000px" src="https://github.com/AnaProgramando/AnaProgramando/blob/ea3ccd628d71db5931630ff24b139b0d4ec88cc9/pixel_art.gif?raw=true"/>
 </div>
