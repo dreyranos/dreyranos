@@ -26,7 +26,7 @@
 ## 👨‍💻 Sobre mim
 
 <div align="center">
-  <img src="./assets/card-about-pt.svg" width="100%" alt="Sobre mim" />
+  <img src="./.github/assets/card-about-pt.svg" width="100%" alt="Sobre mim" />
 </div>
 
 <br/>
@@ -65,9 +65,9 @@
 ## 🚀 Em destaque
 
 <div align="center">
-  <img src="./assets/card-freedomneo-pt.svg" width="49%" alt="FreedomNEO" />
+  <img src="./.github/assets/card-freedomneo-pt.svg" width="49%" alt="FreedomNEO" />
   <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile">
-    <img src="./assets/card-recompiled-pt.svg" width="49%" alt="Recompiled's Android" />
+    <img src="./.github/assets/card-recompiled-pt.svg" width="49%" alt="Recompiled's Android" />
   </a>
 </div>
 
@@ -107,7 +107,7 @@
 ## 👨‍💻 About me
 
 <div align="center">
-  <img src="./assets/card-about-en.svg" width="100%" alt="About me" />
+  <img src="./.github/assets/card-about-en.svg" width="100%" alt="About me" />
 </div>
 
 <br/>
@@ -146,9 +146,9 @@
 ## 🚀 Featured
 
 <div align="center">
-  <img src="./assets/card-freedomneo-en.svg" width="49%" alt="FreedomNEO" />
+  <img src="./.github/assets/card-freedomneo-en.svg" width="49%" alt="FreedomNEO" />
   <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile">
-    <img src="./assets/card-recompiled-en.svg" width="49%" alt="Recompiled's Android" />
+    <img src="./.github/assets/card-recompiled-en.svg" width="49%" alt="Recompiled's Android" />
   </a>
 </div>
 
