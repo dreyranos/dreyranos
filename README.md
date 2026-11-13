@@ -50,49 +50,73 @@
 
 <table width="100%">
   <tr>
-    <td width="60" align="center" valign="middle">
-      <img src="./assets/proansi.jpg" width="44" height="44" alt="PROANSI" />
-    </td>
-    <td valign="middle">
-      <b>Desenvolvedor full stack</b> · <code>PROANSI</code><br/>
-      <sub>jul. de 2023 - o momento · São José do Rio Preto, SP</sub>
-    </td>
+    <th width="62%" align="left">🏢 Trajetória Profissional</th>
+    <th width="38%" align="left">🎓 Formação & Base</th>
   </tr>
   <tr>
-    <td width="60" align="center" valign="middle">
-      <img src="./assets/hepta.jpg" width="44" height="44" alt="Hepta" />
+    <td valign="top">
+      <table>
+        <tr>
+          <td width="54" align="center" valign="middle">
+            <img src="./assets/proansi.jpg" width="42" height="42" alt="PROANSI" />
+          </td>
+          <td valign="middle">
+            <b>Desenvolvedor Full Stack</b> <img src="https://img.shields.io/badge/Atual-059669?style=flat-square" alt="Atual" /><br/>
+            <code>PROANSI</code> · <sub>jul/2023 – presente (3a 5m)</sub><br/>
+            <sub>📍 São José do Rio Preto, SP</sub>
+          </td>
+        </tr>
+        <tr>
+          <td width="54" align="center" valign="middle">
+            <img src="./assets/hepta.jpg" width="42" height="42" alt="Hepta" />
+          </td>
+          <td valign="middle">
+            <b>Analista de Suporte N2</b><br/>
+            <code>Hepta Tecnologia e Informática</code> · <sub>out/2022 – jun/2023 (9m)</sub><br/>
+            <sub>📍 São José do Rio Preto, SP</sub>
+          </td>
+        </tr>
+        <tr>
+          <td width="54" align="center" valign="middle">
+            <img src="./assets/tesla.jpg" width="42" height="42" alt="Tesla" />
+          </td>
+          <td valign="middle">
+            <b>Gestor de TI</b><br/>
+            <code>Tesla Marcações Industriais</code> · <sub>jun/2022 – set/2022 (4m)</sub><br/>
+            <sub>📍 São José do Rio Preto, SP</sub>
+          </td>
+        </tr>
+        <tr>
+          <td width="54" align="center" valign="top">
+            <img src="./assets/casavacinas.jpg" width="42" height="42" alt="Casa das Vacinas" />
+          </td>
+          <td valign="middle">
+            <b>Casa das Vacinas</b> · <img src="https://img.shields.io/badge/5_anos_6_meses-0284c7?style=flat-square" alt="5a 6m" /><br/>
+            ↳ <b>Desenvolvedor</b> <sub>(jan/2020 – jun/2022)</sub><br/>
+            ↳ <b>Assistente de TI</b> <sub>(jan/2017 – jan/2020)</sub>
+          </td>
+        </tr>
+      </table>
     </td>
-    <td valign="middle">
-      <b>Analista de Suporte N2</b> · <code>Hepta Tecnologia e Informática</code><br/>
-      <sub>out. de 2022 - jun. de 2023 · São José do Rio Preto, SP</sub>
-    </td>
-  </tr>
-  <tr>
-    <td width="60" align="center" valign="middle">
-      <img src="./assets/tesla.jpg" width="44" height="44" alt="Tesla" />
-    </td>
-    <td valign="middle">
-      <b>Gestor de TI</b> · <code>Tesla Marcações Industriais</code><br/>
-      <sub>jun. de 2022 - set. de 2022 · São José do Rio Preto, SP</sub>
-    </td>
-  </tr>
-  <tr>
-    <td width="60" align="center" valign="top">
-      <img src="./assets/casavacinas.jpg" width="44" height="44" alt="Casa das Vacinas" />
-    </td>
-    <td valign="middle">
-      <b>Casa das Vacinas</b> · <sub>5 anos 6 meses</sub><br/>
-      • <b>Desenvolvedor</b> <sub>(jan. de 2020 - jun. de 2022)</sub><br/>
-      • <b>Assistente de TI</b> <sub>(jan. de 2017 - jan. de 2020)</sub>
-    </td>
-  </tr>
-  <tr>
-    <td width="60" align="center" valign="middle">
-      <img src="https://img.icons8.com/fluency/48/graduation-cap.png" width="44" height="44" alt="Etec" />
-    </td>
-    <td valign="middle">
-      <b>Etec Philadelpho Gouvêa Netto</b> · <code>Técnico em TI</code><br/>
-      <sub>2014 - 2016</sub>
+    <td valign="top">
+      <table>
+        <tr>
+          <td width="54" align="center" valign="middle">
+            <img src="./assets/etec.jpg" width="42" height="42" alt="Etec" />
+          </td>
+          <td valign="middle">
+            <b>Etec Philadelpho Gouvêa Netto</b><br/>
+            <code>Técnico em TI Integrado</code><br/>
+            <sub>2014 – 2016</sub>
+          </td>
+        </tr>
+      </table>
+      <br/>
+      <div align="center">
+        <img src="https://img.shields.io/badge/TI_%26_Dev-9%2B_Anos_de_Hist%C3%B3ria-0f172a?style=for-the-badge&labelColor=0284c7" alt="Tempo de Carreira" />
+        <br/><br/>
+        <img src="https://img.shields.io/badge/Dev_Full--Stack-6%2B_Anos_em_C%C3%B3digo-0f172a?style=for-the-badge&labelColor=4f46e5" alt="Tempo de Dev" />
+      </div>
     </td>
   </tr>
 </table>
