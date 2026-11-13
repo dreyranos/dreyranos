@@ -58,12 +58,12 @@
   <tr>
     <td width="100%" valign="top">
       <h3>💼 Desenvolvedor Full-Stack & Systems</h3>
-      <p><b>Ecosystem / Projetos de Sistemas e Automação</b> | <i>2021 - Presente (4+ anos)</i></p>
+      <p><b>Ecosystem / Sistemas & Automação</b> | <i>2021 - Presente (4+ anos)</i></p>
       <blockquote>
         • Desenvolvimento e sustentação de APIs backend e arquiteturas multi-tenant para ecossistemas complexos.<br/>
-        • Modernização e refatoração segura de sistemas legados utilizando Delphi e integração de banco de dados Firebird SQL.<br/>
+        • Modernización e refatoração segura de sistemas legados utilizando Delphi e integração com banco de dados Firebird SQL.<br/>
         • Criação de aplicativos multiplataforma mobile com React Native (Expo, NativeWind) e Delphi FMX.<br/>
-        • Implementação de fluxos assistidos por IA (Cursor), scripts de automação em Python/Bash e gerenciamento de infraestrutura.
+        • Implementação de fluxos assistidos por IA (Cursor), scripts de automação e gerenciamento de infraestrutura.
       </blockquote>
       <img src="https://img.shields.io/badge/Delphi-0f172a?style=flat-square&logo=delphi&logoColor=f43f5e" alt="Delphi" />
       <img src="https://img.shields.io/badge/React_Native-0f172a?style=flat-square&logo=react&logoColor=38bdf8" alt="React Native" />
@@ -202,7 +202,7 @@
         • Development and maintenance of backend APIs and multi-tenant architectures for complex ecosystems.<br/>
         • Modernization and safe refactoring of legacy systems using Delphi and Firebird SQL database integration.<br/>
         • Creation of cross-platform mobile applications using React Native (Expo, NativeWind) and Delphi FMX.<br/>
-        • Implementation of AI-assisted workflows (Cursor), Python/Bash automation scripts, and infrastructure management.
+        • Implementation of AI-assisted workflows (Cursor), automation scripts, and infrastructure management.
       </blockquote>
       <img src="https://img.shields.io/badge/Delphi-0f172a?style=flat-square&logo=delphi&logoColor=f43f5e" alt="Delphi" />
       <img src="https://img.shields.io/badge/React_Native-0f172a?style=flat-square&logo=react&logoColor=38bdf8" alt="React Native" />
