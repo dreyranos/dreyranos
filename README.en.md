@@ -8,7 +8,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=230&section=header&text=Andrey%20Ramos&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full-Stack%20Architect%20%E2%80%A2%20Legacy%20to%20Modern&descSize=20&descAlignY=60" width="100%" alt="Banner" />
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=38BDF8&center=true&vCenter=true&width=640&height=50&lines=Full-Stack+Architecture+%7C+9%2B+years+in+the+field;Legacy+Systems+%26+Backend+APIs;React+Native+%26+Delphi+FMX;Automation+%26+AI-Driven+Workflows" alt="Typing" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=38BDF8&center=true&vCenter=true&width=640&height=50&lines=Full-Stack+Architecture+%7C+4%2B+years+in+the+field;Legacy+Systems+%26+Backend+APIs;React+Native+%26+Delphi+FMX;Automation+%26+AI-Driven+Workflows" alt="Typing" /></a>
 
 <br/>
 
@@ -27,7 +27,7 @@ const andrey = {
   name: "Andrey Ramos",
   handle: "dreyranos",
   role: "Full-Stack Architect",
-  experience: "9+ years in IT",
+  experience: "4+ years in IT",
   base: "Brazil",
   focus: ["Backend APIs", "Legacy refactoring", "Cross-platform mobile"],
   aiTools: ["Cursor"],
