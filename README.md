@@ -25,9 +25,30 @@
 
 ## 👨‍💻 Sobre mim
 
-<div align="center">
-  <img src="./.github/assets/card-about-pt.svg" width="100%" alt="Sobre mim" />
-</div>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <br/>
+      🏗️ <b>Stack:</b> Desenvolvimento Full-Stack & Systems<br/><br/>
+      ⏳ <b>Experiência:</b> 4+ anos em TI / Dev<br/><br/>
+      📍 <b>Base:</b> Brasil<br/><br/>
+      🤖 <b>IA Assistant:</b> Cursor (Dev Workflows)
+    </td>
+    <td width="50%" valign="top">
+      <br/>
+      🎯 <b>Foco:</b> APIs back-end, refatoração de legado e mobile<br/><br/>
+      💬 <b>Status:</b> aberto a projetos e desafios técnicos<br/><br/>
+      ✨ <b>Lema:</b> código limpo, escalável e eficiente
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <blockquote>
+        Atuo de ponta a ponta na engenharia, otimização e manutenção de sistemas complexos: do banco relacional ao app em produção, desenvolvendo APIs, regras de negócio multi-tenant e automações de código que otimizam o ciclo de desenvolvimento.
+      </blockquote>
+    </td>
+  </tr>
+</table>
 
 <br/>
 
@@ -64,12 +85,26 @@
 
 ## 🚀 Em destaque
 
-<div align="center">
-  <img src="./.github/assets/card-freedomneo-pt.svg" width="49%" alt="FreedomNEO" />
-  <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile">
-    <img src="./.github/assets/card-recompiled-pt.svg" width="49%" alt="Recompiled's Android" />
-  </a>
-</div>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🛡️ FreedomNEO</h3>
+      <blockquote>
+        Arquitetura de sistema e refatoração de ecossistema de acesso: módulos de reserva, autorização multi-tenant e lógica de notificações.
+      </blockquote>
+      <img src="https://img.shields.io/badge/Sistema-0f172a?style=flat-square&color=0284c7" alt="Sistema" />
+      <img src="https://img.shields.io/badge/Multi--tenant-0f172a?style=flat-square&color=4f46e5" alt="Multi-tenant" />
+      <img src="https://img.shields.io/badge/Notifica%C3%A7%C3%B5es-0f172a?style=flat-square&color=0d9488" alt="Notificações" />
+    </td>
+    <td width="50%" valign="top">
+      <h3>🤖 Recompiled's Android</h3>
+      <blockquote>
+        Engenharia reversa, diretórios e automação de comunidade focada em ports e otimizações de sistemas mobile.
+      </blockquote>
+      <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile"><img src="https://img.shields.io/badge/Ver_reposit%C3%B3rio-MCLA--Recompiled--Mobile-0f172a?style=flat-square&logo=github&logoColor=7dd3fc" alt="Repositório" /></a>
+    </td>
+  </tr>
+</table>
 
 <br/>
 
@@ -106,80 +141,11 @@
 
 ## 👨‍💻 About me
 
-<div align="center">
-  <img src="./.github/assets/card-about-en.svg" width="100%" alt="About me" />
-</div>
-
-<br/>
-
-## ⚙️ Languages
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=ts,js,react,tailwind,bash,linux,apple,windows,android&perline=9" alt="Technologies" />
-
-<br/><br/>
-
-<img src="https://img.shields.io/badge/Delphi-0f172a?style=for-the-badge&logo=delphi&logoColor=f43f5e" alt="Delphi" />
-<img src="https://img.shields.io/badge/Firebird-0f172a?style=for-the-badge&logo=firebird&logoColor=fb923c" alt="Firebird" />
-<img src="https://img.shields.io/badge/Expo-0f172a?style=for-the-badge&logo=expo&logoColor=e2e8f0" alt="Expo" />
-<img src="https://img.shields.io/badge/React_Native-0f172a?style=for-the-badge&logo=react&logoColor=38bdf8" alt="React Native" />
-<img src="https://img.shields.io/badge/NativeWind-0f172a?style=for-the-badge&logo=tailwindcss&logoColor=7dd3fc" alt="NativeWind" />
-<img src="https://img.shields.io/badge/LineageOS-0f172a?style=for-the-badge&logo=lineageos&logoColor=2dd4bf" alt="LineageOS" />
-<img src="https://img.shields.io/badge/Cursor-0f172a?style=for-the-badge&logo=cursor&logoColor=a5b4fc" alt="Cursor" />
-
-</div>
-
-<br/>
-
-| Layer | What I deliver |
-| :-- | :-- |
-| 🧠 **Backend & Systems** | APIs, multi-tenant authorization modules, booking rules and notifications |
-| 📱 **Mobile** | Apps with React Native (Expo, NativeWind, Paper) and Delphi FMX |
-| 🗄️ **Data** | Firebird SQL, modeling, optimization and administration with IBExpert and FireDAC |
-| 🏚️ **Legacy** | Safe refactoring of old systems without stopping operations |
-| 🤖 **AI & Automation** | AI-assisted workflows, Bash scripts and remote access via SSH |
-| 🐧 **Custom Android** | AOSP and LineageOS, ports and mobile optimizations |
-
-<br/>
-
-## 🚀 Featured
-
-<div align="center">
-  <img src="./.github/assets/card-freedomneo-en.svg" width="49%" alt="FreedomNEO" />
-  <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile">
-    <img src="./.github/assets/card-recompiled-en.svg" width="49%" alt="Recompiled's Android" />
-  </a>
-</div>
-
-<br/>
-
-## 📊 Numbers
-
-<div align="center">
-
-<img src="https://streak-stats.demolab.com?user=dreyranos&theme=transparent&border=38bdf833&border_radius=16&ring=38bdf8&fire=7dd3fc&currStreakLabel=bae6fd&sideLabels=94a3b8&currStreakNum=f8fafc&sideNums=e2e8f0&dates=64748b&locale=en" alt="Contribution streak" />
-
-</div>
-
-<br/>
-
-</details>
-
-## 🐍 Contribuições · Contributions
-
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake.svg" />
-  <img alt="Snake" src="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
-</picture>
-</div>
-
-<br/>
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,35:0f172a,70:0284c7,100:38bdf8&height=100&section=footer" width="100%" alt="Footer" />
-
-</div>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <br/>
+      🏗️ <b>Stack:</b> Full-Stack & Systems Engineering<br/><br/>
+      ⏳ <b>Experience:</b> 4+ years in IT / Dev<br/><br/>
+      📍 <b>Based in:</b> Brazil<br/><br/>
+      🤖 <b>AI Assistant:</b> Cursor (Dev
