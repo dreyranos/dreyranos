@@ -32,18 +32,18 @@
     .bio { font: 400 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; fill: #cbd5e1; }
   </style>
 
-  <text x="28" y="38" class="label">🏗️ Role: <tspan class="val">Full-Stack Architect</tspan></text>
-  <text x="28" y="64" class="label">⏳ Experience: <tspan class="val">4+ years in IT</tspan></text>
+  <text x="28" y="38" class="label">🏗️ Stack: <tspan class="val">Full-Stack & Systems Engineering</tspan></text>
+  <text x="28" y="64" class="label">⏳ Experience: <tspan class="val">4+ years in IT / Dev</tspan></text>
   <text x="28" y="90" class="label">📍 Based in: <tspan class="val">Brazil</tspan></text>
-  <text x="28" y="116" class="label">🤖 AI in daily work: <tspan class="val">Cursor</tspan></text>
+  <text x="28" y="116" class="label">🤖 AI Assistant: <tspan class="val">Cursor (Dev Workflows)</tspan></text>
 
-  <text x="350" y="38" class="label">🎯 Focus: <tspan class="val">Backend APIs, legacy refactoring and cross-platform mobile</tspan></text>
-  <text x="350" y="64" class="label">💬 Status: <tspan class="val">open to good conversations and good challenges</tspan></text>
+  <text x="350" y="38" class="label">🎯 Focus: <tspan class="val">Backend APIs, legacy refactoring & mobile</tspan></text>
+  <text x="350" y="64" class="label">💬 Status: <tspan class="val">open to technical projects and challenges</tspan></text>
   <text x="350" y="90" class="label">✨ Motto: <tspan class="val">clean, scalable and efficient code</tspan></text>
 
   <line x1="28" y1="138" x2="812" y2="138" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" />
 
-  <text x="28" y="166" class="bio">I work end to end on designing, optimizing and maintaining complex ecosystems: from the relational database</text>
-  <text x="28" y="188" class="bio">to the app in the user's hand, through APIs, multi-tenant business rules and automations that take repetitive</text>
-  <text x="28" y="210" class="bio">work out of the way.</text>
+  <text x="28" y="166" class="bio">I work end-to-end on engineering, optimizing and maintaining complex systems: from relational databases</text>
+  <text x="28" y="188" class="bio">to production apps, building backend APIs, multi-tenant business rules and workflow automations that</text>
+  <text x="28" y="210" class="bio">streamline software delivery.</text>
 </svg>
