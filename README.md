@@ -16,7 +16,7 @@
 
 ## ⚡ Stack & Foco
 
-<img align="right" src="https://media.giphy.com/media/juua9i2c2fA0AIp2iq/giphy.gif" width="190" alt="Coding" />
+<img align="right" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="210" alt="Coding" />
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&duration=2500&pause=800&color=BAE6FD&vCenter=true&multiline=true&width=520&height=175&lines=%F0%9F%8F%97%EF%B8%8F+Arquitetura+Backend+%26+Multi-Tenant;%F0%9F%93%B1+Apps+Mobile+com+React+Native+%26+Delphi+FMX;%F0%9F%97%84%EF%B8%8F+Firebird+SQL+%26+Refatora%C3%A7%C3%A3o+de+Legado;%F0%9F%A4%96+Automa%C3%A7%C3%A3o+Python%2FBash+%26+Workflows+IA;%F0%9F%90%A7+Android+Custom+(AOSP+%2F+LineageOS)" alt="Skills" />
 
