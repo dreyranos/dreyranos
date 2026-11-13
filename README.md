@@ -1,8 +1,14 @@
+<div align="right">
+  <a href="./README.md"><img src="https://flagcdn.com/w40/br.png" width="22" alt="Português" /> <b>Português</b></a>
+  &nbsp;|&nbsp;
+  <a href="./README.en.md"><img src="https://flagcdn.com/w40/us.png" width="22" alt="English" /> English</a>
+</div>
+
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=230&section=header&text=Andrey%20Ramos&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full-Stack%20Architect%20%E2%80%A2%20Legacy%20to%20Modern&descSize=20&descAlignY=60" width="100%" alt="Header" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=230&section=header&text=Andrey%20Ramos&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Arquiteto%20Full-Stack%20%E2%80%A2%20Do%20legado%20ao%20moderno&descSize=20&descAlignY=60" width="100%" alt="Banner" />
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=38BDF8&center=true&vCenter=true&width=620&height=50&lines=Arquitetura+Full-Stack+%7C+9%2B+anos+de+estrada;Legacy+Systems+%26+Backend+APIs;React+Native+%26+Delphi+FMX;Automa%C3%A7%C3%A3o+%26+Fluxos+com+IA" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=38BDF8&center=true&vCenter=true&width=640&height=50&lines=Arquitetura+Full-Stack+%7C+9%2B+anos+de+estrada;Sistemas+Legados+%26+APIs+Backend;React+Native+%26+Delphi+FMX;Automa%C3%A7%C3%A3o+%26+Fluxos+com+IA" alt="Digitando" /></a>
 
 <br/>
 
@@ -14,19 +20,31 @@
 
 <br/>
 
+## `~/quem-sou-eu`
 
+```ts
+const andrey = {
+  nome: "Andrey Ramos",
+  usuario: "dreyranos",
+  papel: "Arquiteto Full-Stack",
+  experiencia: "9+ anos em TI",
+  base: "Brasil",
+  foco: ["APIs back-end", "Refatoração de legado", "Mobile multiplataforma"],
+  ferramentasDeIA: ["Cursor"],
+  lema: "Código limpo, escalável e eficiente",
+  status: "Aberto a boas conversas e bons desafios",
+} as const;
+```
 
-
-
-Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistemas complexos: do banco relacional ao app na mão do usuário, passando por APIs, regras de negócio multi-tenant e automações que tiram trabalho repetitivo do caminho.
+Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistemas complexos: do banco relacional ao app na mão do usuário, passando por APIs, regras de negócio multi-tenant e automações que tiram o trabalho repetitivo do caminho.
 
 <br/>
 
-## ⚙️ Linguagens 
+## ⚙️ Arsenal
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=ts,js,react,tailwind,bash,linux,apple,windows,android&perline=9" alt="Skills" />
+<img src="https://skillicons.dev/icons?i=ts,js,react,tailwind,bash,linux,apple,windows,android&perline=9" alt="Tecnologias" />
 
 <br/><br/>
 
@@ -44,12 +62,12 @@ Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistema
 
 | Camada | O que eu entrego |
 | :-- | :-- |
-| 🧠 **Backend & Arquitetura** | APIs, módulos de autorização multi-tenant, regras de reserva e notificações |
+| 🧠 **Backend e Arquitetura** | APIs, módulos de autorização multi-tenant, regras de reserva e notificações |
 | 📱 **Mobile** | Apps com React Native (Expo, NativeWind, Paper) e Delphi FMX |
 | 🗄️ **Dados** | Firebird SQL, modelagem, otimização e administração com IBExpert e FireDAC |
 | 🏚️ **Legado** | Refatoração segura de sistemas antigos, sem parar a operação |
-| 🤖 **IA & Automação** | Fluxos assistidos por IA, scripts Bash e acesso remoto via SSH |
-| 🐧 **Android Custom** | AOSP e LineageOS, ports e otimizações mobile |
+| 🤖 **IA e Automação** | Fluxos assistidos por IA, scripts Bash e acesso remoto via SSH |
+| 🐧 **Android Customizado** | AOSP e LineageOS, ports e otimizações mobile |
 
 <br/>
 
@@ -61,15 +79,15 @@ Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistema
       <h3>🛡️ FreedomNEO</h3>
       Arquitetura e refatoração de um ecossistema de acesso e segurança: módulos de reserva, autorização multi-tenant e lógica de notificações.
       <br/><br/>
-      <img src="https://img.shields.io/badge/Arquitetura-0ea5e9?style=flat-square" />
-      <img src="https://img.shields.io/badge/Multi--tenant-6366f1?style=flat-square" />
-      <img src="https://img.shields.io/badge/Notifica%C3%A7%C3%B5es-22c55e?style=flat-square" />
+      <img src="https://img.shields.io/badge/Arquitetura-0ea5e9?style=flat-square" alt="Arquitetura" />
+      <img src="https://img.shields.io/badge/Multi--tenant-6366f1?style=flat-square" alt="Multi-tenant" />
+      <img src="https://img.shields.io/badge/Notifica%C3%A7%C3%B5es-22c55e?style=flat-square" alt="Notificações" />
     </td>
     <td width="50%" valign="top">
       <h3>🤖 Recompiled's Android</h3>
       Curadoria de conteúdo, diretórios e automação de comunidade focada em ports e otimizações mobile.
       <br/><br/>
-      <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile"><img src="https://img.shields.io/badge/Ver_reposit%C3%B3rio-MCLA--Recompiled--Mobile-181717?style=flat-square&logo=github" /></a>
+      <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile"><img src="https://img.shields.io/badge/Ver_reposit%C3%B3rio-MCLA--Recompiled--Mobile-181717?style=flat-square&logo=github" alt="Repositório" /></a>
     </td>
   </tr>
 </table>
@@ -80,7 +98,7 @@ Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistema
 
 <div align="center">
 
-<img src="https://streak-stats.demolab.com?user=dreyranos&theme=tokyonight&hide_border=true&background=0d1117&ring=38bdf8&fire=38bdf8&currStreakLabel=38bdf8" alt="Streak" />
+<img src="https://streak-stats.demolab.com?user=dreyranos&theme=tokyonight&hide_border=true&background=0d1117&ring=38bdf8&fire=38bdf8&currStreakLabel=38bdf8&locale=pt_BR" alt="Sequência de contribuições" />
 
 </div>
 
@@ -92,7 +110,7 @@ Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistema
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake.svg" />
-  <img alt="Snake" src="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
+  <img alt="Cobrinha das contribuições" src="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
 </picture>
 </div>
 
@@ -100,6 +118,6 @@ Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistema
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=120&section=footer&text=Transformando%20desafios%20complexos%20em%20c%C3%B3digo%20limpo&fontSize=18&fontColor=ffffff&fontAlignY=68" width="100%" alt="Footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=120&section=footer&text=Transformando%20desafios%20complexos%20em%20c%C3%B3digo%20limpo&fontSize=18&fontColor=ffffff&fontAlignY=68" width="100%" alt="Rodapé" />
 
 </div>
