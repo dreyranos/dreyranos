@@ -8,7 +8,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=230&section=header&text=Andrey%20Ramos&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Arquiteto%20Full-Stack%20%E2%80%A2%20Do%20legado%20ao%20moderno&descSize=20&descAlignY=60" width="100%" alt="Banner" />
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=38BDF8&center=true&vCenter=true&width=640&height=50&lines=Arquitetura+Full-Stack+%7C+9%2B+anos+de+estrada;Sistemas+Legados+%26+APIs+Backend;React+Native+%26+Delphi+FMX;Automa%C3%A7%C3%A3o+%26+Fluxos+com+IA" alt="Digitando" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=38BDF8&center=true&vCenter=true&width=640&height=50&lines=Arquitetura+Full-Stack+%7C+4%2B+anos+de+estrada;Sistemas+Legados+%26+APIs+Backend;React+Native+%26+Delphi+FMX;Automa%C3%A7%C3%A3o+%26+Fluxos+com+IA" alt="Digitando" /></a>
 
 <br/>
 
@@ -27,7 +27,7 @@ const andrey = {
   nome: "Andrey Ramos",
   usuario: "dreyranos",
   papel: "Arquiteto Full-Stack",
-  experiencia: "9+ anos em TI",
+  experiencia: "4+ anos em TI",
   base: "Brasil",
   foco: ["APIs back-end", "Refatoração de legado", "Mobile multiplataforma"],
   ferramentasDeIA: ["Cursor"],
