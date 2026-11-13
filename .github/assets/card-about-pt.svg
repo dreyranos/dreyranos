@@ -32,18 +32,18 @@
     .bio { font: 400 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; fill: #cbd5e1; }
   </style>
 
-  <text x="28" y="38" class="label">🏗️ Papel: <tspan class="val">Arquiteto Full-Stack</tspan></text>
-  <text x="28" y="64" class="label">⏳ Experiência: <tspan class="val">4+ anos em TI</tspan></text>
+  <text x="28" y="38" class="label">🏗️ Stack: <tspan class="val">Desenvolvimento Full-Stack & Systems</tspan></text>
+  <text x="28" y="64" class="label">⏳ Experiência: <tspan class="val">4+ anos em TI / Dev</tspan></text>
   <text x="28" y="90" class="label">📍 Base: <tspan class="val">Brasil</tspan></text>
-  <text x="28" y="116" class="label">🤖 IA no dia a dia: <tspan class="val">Cursor</tspan></text>
+  <text x="28" y="116" class="label">🤖 IA Assistant: <tspan class="val">Cursor (Dev Workflows)</tspan></text>
 
-  <text x="360" y="38" class="label">🎯 Foco: <tspan class="val">APIs back-end, refatoração de legado e mobile multiplataforma</tspan></text>
-  <text x="360" y="64" class="label">💬 Status: <tspan class="val">aberto a boas conversas e bons desafios</tspan></text>
+  <text x="360" y="38" class="label">🎯 Foco: <tspan class="val">APIs back-end, refatoração de legado e mobile</tspan></text>
+  <text x="360" y="64" class="label">💬 Status: <tspan class="val">aberto a projetos e desafios técnicos</tspan></text>
   <text x="360" y="90" class="label">✨ Lema: <tspan class="val">código limpo, escalável e eficiente</tspan></text>
 
   <line x1="28" y1="138" x2="812" y2="138" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1" />
 
-  <text x="28" y="166" class="bio">Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistemas complexos: do banco relacional</text>
-  <text x="28" y="188" class="bio">ao app na mão do usuário, passando por APIs, regras de negócio multi-tenant e automações que tiram o trabalho</text>
-  <text x="28" y="210" class="bio">repetitivo do caminho.</text>
+  <text x="28" y="166" class="bio">Atuo de ponta a ponta na engenharia, otimização e manutenção de sistemas complexos: do banco relacional</text>
+  <text x="28" y="188" class="bio">ao app em produção, desenvolvendo APIs, regras de negócio multi-tenant e automações de código que</text>
+  <text x="28" y="210" class="bio">otimizam o ciclo de desenvolvimento.</text>
 </svg>
