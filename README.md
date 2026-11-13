@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,35:0f172a,70:0284c7,100:38bdf8&height=230&section=header&text=Andrey%20Ramos&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full-Stack%20Architect&descSize=22&descAlignY=60&descColor=bae6fd" width="100%" alt="Andrey Ramos" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,35:0f172a,70:0284c7,100:38bdf8&height=230&section=header&text=Andrey%20Ramos&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full-Stack%20Systems%20Developer&descSize=22&descAlignY=60&descColor=bae6fd" width="100%" alt="Andrey Ramos" />
 
 </div>
 
@@ -11,7 +11,7 @@
 
 <div align="center">
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=7DD3FC&center=true&vCenter=true&width=640&height=50&lines=Arquitetura+Full-Stack+%7C+4%2B+anos+de+estrada;Sistemas+Legados+%26+APIs+Backend;React+Native+%26+Delphi+FMX;Automa%C3%A7%C3%A3o+%26+Fluxos+com+IA" alt="Digitando" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=7DD3FC&center=true&vCenter=true&width=640&height=50&lines=Desenvolvimento+Full-Stack+%7C+4%2B+anos;Sistemas+Legados+%26+APIs+Backend;React+Native+%26+Delphi+FMX;Automa%C3%A7%C3%A3o+%26+Fluxos+com+IA" alt="Digitando" /></a>
 
 <br/>
 
@@ -31,7 +31,7 @@
 
 <br/>
 
-## ⚙️ Arsenal
+## ⚙️ Linguagens
 
 <div align="center">
 
@@ -53,7 +53,7 @@
 
 | Camada | O que eu entrego |
 | :-- | :-- |
-| 🧠 **Backend e Arquitetura** | APIs, módulos de autorização multi-tenant, regras de reserva e notificações |
+| 🧠 **Backend e Sistemas** | APIs, módulos de autorização multi-tenant, regras de reserva e notificações |
 | 📱 **Mobile** | Apps com React Native (Expo, NativeWind, Paper) e Delphi FMX |
 | 🗄️ **Dados** | Firebird SQL, modelagem, otimização e administração com IBExpert e FireDAC |
 | 🏚️ **Legado** | Refatoração segura de sistemas antigos, sem parar a operação |
@@ -92,7 +92,7 @@
 
 <div align="center">
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=7DD3FC&center=true&vCenter=true&width=640&height=50&lines=Full-Stack+Architecture+%7C+4%2B+years+in+the+field;Legacy+Systems+%26+Backend+APIs;React+Native+%26+Delphi+FMX;Automation+%26+AI-Driven+Workflows" alt="Typing" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=7DD3FC&center=true&vCenter=true&width=640&height=50&lines=Full-Stack+Development+%7C+4%2B+years;Legacy+Systems+%26+Backend+APIs;React+Native+%26+Delphi+FMX;Automation+%26+AI-Driven+Workflows" alt="Typing" /></a>
 
 <br/>
 
@@ -112,7 +112,7 @@
 
 <br/>
 
-## ⚙️ Arsenal
+## ⚙️ Languages
 
 <div align="center">
 
@@ -134,7 +134,7 @@
 
 | Layer | What I deliver |
 | :-- | :-- |
-| 🧠 **Backend & Architecture** | APIs, multi-tenant authorization modules, booking rules and notifications |
+| 🧠 **Backend & Systems** | APIs, multi-tenant authorization modules, booking rules and notifications |
 | 📱 **Mobile** | Apps with React Native (Expo, NativeWind, Paper) and Delphi FMX |
 | 🗄️ **Data** | Firebird SQL, modeling, optimization and administration with IBExpert and FireDAC |
 | 🏚️ **Legacy** | Safe refactoring of old systems without stopping operations |
