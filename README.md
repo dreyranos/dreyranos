@@ -1,6 +1,5 @@
 <div align="center">
 
-<!-- Header fluido com gradiente de refração de vidro -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,35:0f172a,70:0284c7,100:38bdf8&height=230&section=header&text=Andrey%20Ramos&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full-Stack%20Architect&descSize=22&descAlignY=60&descColor=bae6fd" width="100%" alt="Andrey Ramos" />
 
 </div>
@@ -16,7 +15,6 @@
 
 <br/>
 
-<!-- Badges estilo pílula de vidro escuro -->
 <img src="https://komarev.com/ghpvc/?username=dreyranos&style=for-the-badge&color=0f172a&labelColor=0284c7&label=VISITANTES" alt="Visitantes" />
 <img src="https://img.shields.io/github/followers/dreyranos?label=SEGUIDORES&style=for-the-badge&color=0f172a&labelColor=0369a1&logo=github&logoColor=bae6fd" alt="Seguidores" />
 <img src="https://img.shields.io/badge/STATUS-DISPON%C3%8DVEL-0f172a?style=for-the-badge&labelColor=059669" alt="Status" />
@@ -27,52 +25,29 @@
 
 ## 👨‍💻 Sobre mim
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <br/>
-      🏗️ <b>Papel:</b> Arquiteto Full-Stack<br/><br/>
-      ⏳ <b>Experiência:</b> 4+ anos em TI<br/><br/>
-      📍 <b>Base:</b> Brasil<br/><br/>
-      🤖 <b>IA no dia a dia:</b> Cursor
-    </td>
-    <td width="50%" valign="top">
-      <br/>
-      🎯 <b>Foco:</b> APIs back-end, refatoração de legado e mobile multiplataforma<br/><br/>
-      💬 <b>Status:</b> aberto a boas conversas e bons desafios<br/><br/>
-      ✨ <b>Lema:</b> código limpo, escalável e eficiente
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <blockquote>
-        Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistemas complexos: do banco relacional ao app na mão do usuário, passando por APIs, regras de negócio multi-tenant e automações que tiram o trabalho repetitivo do caminho.
-      </blockquote>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <img src="./assets/card-about-pt.svg" width="100%" alt="Sobre mim" />
+</div>
 
 <br/>
 
-## ⚙️ Linguagens
+## ⚙️ Arsenal
 
-<table>
-  <tr>
-    <td align="center">
-      <br/>
-      <img src="https://skillicons.dev/icons?i=ts,js,react,tailwind,bash,linux,apple,windows,android&perline=9" alt="Tecnologias" />
-      <br/><br/>
-      <img src="https://img.shields.io/badge/Delphi-0f172a?style=for-the-badge&logo=delphi&logoColor=f43f5e" alt="Delphi" />
-      <img src="https://img.shields.io/badge/Firebird-0f172a?style=for-the-badge&logo=firebird&logoColor=fb923c" alt="Firebird" />
-      <img src="https://img.shields.io/badge/Expo-0f172a?style=for-the-badge&logo=expo&logoColor=e2e8f0" alt="Expo" />
-      <img src="https://img.shields.io/badge/React_Native-0f172a?style=for-the-badge&logo=react&logoColor=38bdf8" alt="React Native" />
-      <img src="https://img.shields.io/badge/NativeWind-0f172a?style=for-the-badge&logo=tailwindcss&logoColor=7dd3fc" alt="NativeWind" />
-      <img src="https://img.shields.io/badge/LineageOS-0f172a?style=for-the-badge&logo=lineageos&logoColor=2dd4bf" alt="LineageOS" />
-      <img src="https://img.shields.io/badge/Cursor-0f172a?style=for-the-badge&logo=cursor&logoColor=a5b4fc" alt="Cursor" />
-      <br/><br/>
-    </td>
-  </tr>
-</table>
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=ts,js,react,tailwind,bash,linux,apple,windows,android&perline=9" alt="Tecnologias" />
+
+<br/><br/>
+
+<img src="https://img.shields.io/badge/Delphi-0f172a?style=for-the-badge&logo=delphi&logoColor=f43f5e" alt="Delphi" />
+<img src="https://img.shields.io/badge/Firebird-0f172a?style=for-the-badge&logo=firebird&logoColor=fb923c" alt="Firebird" />
+<img src="https://img.shields.io/badge/Expo-0f172a?style=for-the-badge&logo=expo&logoColor=e2e8f0" alt="Expo" />
+<img src="https://img.shields.io/badge/React_Native-0f172a?style=for-the-badge&logo=react&logoColor=38bdf8" alt="React Native" />
+<img src="https://img.shields.io/badge/NativeWind-0f172a?style=for-the-badge&logo=tailwindcss&logoColor=7dd3fc" alt="NativeWind" />
+<img src="https://img.shields.io/badge/LineageOS-0f172a?style=for-the-badge&logo=lineageos&logoColor=2dd4bf" alt="LineageOS" />
+<img src="https://img.shields.io/badge/Cursor-0f172a?style=for-the-badge&logo=cursor&logoColor=a5b4fc" alt="Cursor" />
+
+</div>
 
 <br/>
 
@@ -89,26 +64,12 @@
 
 ## 🚀 Em destaque
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🛡️ FreedomNEO</h3>
-      <blockquote>
-        Arquitetura e refatoração de um ecossistema de acesso e segurança: módulos de reserva, autorização multi-tenant e lógica de notificações.
-      </blockquote>
-      <img src="https://img.shields.io/badge/Arquitetura-0f172a?style=flat-square&color=0284c7" alt="Arquitetura" />
-      <img src="https://img.shields.io/badge/Multi--tenant-0f172a?style=flat-square&color=4f46e5" alt="Multi-tenant" />
-      <img src="https://img.shields.io/badge/Notifica%C3%A7%C3%B5es-0f172a?style=flat-square&color=0d9488" alt="Notificações" />
-    </td>
-    <td width="50%" valign="top">
-      <h3>🤖 Recompiled's Android</h3>
-      <blockquote>
-        Curadoria de conteúdo, diretórios e automação de comunidade focada em ports e otimizações mobile.
-      </blockquote>
-      <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile"><img src="https://img.shields.io/badge/Ver_reposit%C3%B3rio-MCLA--Recompiled--Mobile-0f172a?style=flat-square&logo=github&logoColor=7dd3fc" alt="Repositório" /></a>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <img src="./assets/card-freedomneo-pt.svg" width="49%" alt="FreedomNEO" />
+  <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile">
+    <img src="./assets/card-recompiled-pt.svg" width="49%" alt="Recompiled's Android" />
+  </a>
+</div>
 
 <br/>
 
@@ -116,7 +77,6 @@
 
 <div align="center">
 
-<!-- Card translúcido com borda de cristal ciano -->
 <img src="https://streak-stats.demolab.com?user=dreyranos&theme=transparent&border=38bdf833&border_radius=16&ring=38bdf8&fire=7dd3fc&currStreakLabel=bae6fd&sideLabels=94a3b8&currStreakNum=f8fafc&sideNums=e2e8f0&dates=64748b&locale=pt_BR" alt="Sequência de contribuições" />
 
 </div>
@@ -146,52 +106,29 @@
 
 ## 👨‍💻 About me
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <br/>
-      🏗️ <b>Role:</b> Full-Stack Architect<br/><br/>
-      ⏳ <b>Experience:</b> 4+ years in IT<br/><br/>
-      📍 <b>Based in:</b> Brazil<br/><br/>
-      🤖 <b>AI in daily work:</b> Cursor
-    </td>
-    <td width="50%" valign="top">
-      <br/>
-      🎯 <b>Focus:</b> Backend APIs, legacy refactoring and cross-platform mobile<br/><br/>
-      💬 <b>Status:</b> open to good conversations and good challenges<br/><br/>
-      ✨ <b>Motto:</b> clean, scalable and efficient code
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <blockquote>
-        I work end to end on designing, optimizing and maintaining complex ecosystems: from the relational database to the app in the user's hand, through APIs, multi-tenant business rules and automations that take repetitive work out of the way.
-      </blockquote>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <img src="./assets/card-about-en.svg" width="100%" alt="About me" />
+</div>
 
 <br/>
 
-## ⚙️ Languages
+## ⚙️ Arsenal
 
-<table>
-  <tr>
-    <td align="center">
-      <br/>
-      <img src="https://skillicons.dev/icons?i=ts,js,react,tailwind,bash,linux,apple,windows,android&perline=9" alt="Technologies" />
-      <br/><br/>
-      <img src="https://img.shields.io/badge/Delphi-0f172a?style=for-the-badge&logo=delphi&logoColor=f43f5e" alt="Delphi" />
-      <img src="https://img.shields.io/badge/Firebird-0f172a?style=for-the-badge&logo=firebird&logoColor=fb923c" alt="Firebird" />
-      <img src="https://img.shields.io/badge/Expo-0f172a?style=for-the-badge&logo=expo&logoColor=e2e8f0" alt="Expo" />
-      <img src="https://img.shields.io/badge/React_Native-0f172a?style=for-the-badge&logo=react&logoColor=38bdf8" alt="React Native" />
-      <img src="https://img.shields.io/badge/NativeWind-0f172a?style=for-the-badge&logo=tailwindcss&logoColor=7dd3fc" alt="NativeWind" />
-      <img src="https://img.shields.io/badge/LineageOS-0f172a?style=for-the-badge&logo=lineageos&logoColor=2dd4bf" alt="LineageOS" />
-      <img src="https://img.shields.io/badge/Cursor-0f172a?style=for-the-badge&logo=cursor&logoColor=a5b4fc" alt="Cursor" />
-      <br/><br/>
-    </td>
-  </tr>
-</table>
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=ts,js,react,tailwind,bash,linux,apple,windows,android&perline=9" alt="Technologies" />
+
+<br/><br/>
+
+<img src="https://img.shields.io/badge/Delphi-0f172a?style=for-the-badge&logo=delphi&logoColor=f43f5e" alt="Delphi" />
+<img src="https://img.shields.io/badge/Firebird-0f172a?style=for-the-badge&logo=firebird&logoColor=fb923c" alt="Firebird" />
+<img src="https://img.shields.io/badge/Expo-0f172a?style=for-the-badge&logo=expo&logoColor=e2e8f0" alt="Expo" />
+<img src="https://img.shields.io/badge/React_Native-0f172a?style=for-the-badge&logo=react&logoColor=38bdf8" alt="React Native" />
+<img src="https://img.shields.io/badge/NativeWind-0f172a?style=for-the-badge&logo=tailwindcss&logoColor=7dd3fc" alt="NativeWind" />
+<img src="https://img.shields.io/badge/LineageOS-0f172a?style=for-the-badge&logo=lineageos&logoColor=2dd4bf" alt="LineageOS" />
+<img src="https://img.shields.io/badge/Cursor-0f172a?style=for-the-badge&logo=cursor&logoColor=a5b4fc" alt="Cursor" />
+
+</div>
 
 <br/>
 
@@ -208,26 +145,12 @@
 
 ## 🚀 Featured
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🛡️ FreedomNEO</h3>
-      <blockquote>
-        Architecture and refactoring of an access and security ecosystem: booking modules, multi-tenant authorization and notification logic.
-      </blockquote>
-      <img src="https://img.shields.io/badge/Architecture-0f172a?style=flat-square&color=0284c7" alt="Architecture" />
-      <img src="https://img.shields.io/badge/Multi--tenant-0f172a?style=flat-square&color=4f46e5" alt="Multi-tenant" />
-      <img src="https://img.shields.io/badge/Notifications-0f172a?style=flat-square&color=0d9488" alt="Notifications" />
-    </td>
-    <td width="50%" valign="top">
-      <h3>🤖 Recompiled's Android</h3>
-      <blockquote>
-        Content curation, directories and community automation focused on ports and mobile optimizations.
-      </blockquote>
-      <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile"><img src="https://img.shields.io/badge/View_repository-MCLA--Recompiled--Mobile-0f172a?style=flat-square&logo=github&logoColor=7dd3fc" alt="Repository" /></a>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <img src="./assets/card-freedomneo-en.svg" width="49%" alt="FreedomNEO" />
+  <a href="https://github.com/dreyranos/MCLA-Recompiled-Mobile">
+    <img src="./assets/card-recompiled-en.svg" width="49%" alt="Recompiled's Android" />
+  </a>
+</div>
 
 <br/>
 
@@ -245,19 +168,13 @@
 
 ## 🐍 Contribuições · Contributions
 
-<table>
-  <tr>
-    <td align="center">
-      <br/>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
-        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake.svg" />
-        <img alt="Snake" src="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
-      </picture>
-      <br/>
-    </td>
-  </tr>
-</table>
+<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake.svg" />
+  <img alt="Snake" src="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
+</picture>
+</div>
 
 <br/>
 
