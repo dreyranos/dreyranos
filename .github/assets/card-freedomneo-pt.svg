@@ -1,0 +1,35 @@
+<svg width="410" height="190" viewBox="0 0 410 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glassCard" x1="0" y1="0" x2="410" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0c4a6e" stop-opacity="0.7" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="410" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="408" height="188" rx="16" fill="url(#glassCard)" stroke="url(#borderGrad)" stroke-width="1.5" />
+  <line x1="20" y1="1.5" x2="390" y2="1.5" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1" />
+
+  <style>
+    .title { font: 700 17px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; fill: #f8fafc; }
+    .desc { font: 400 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; fill: #cbd5e1; }
+    .pill { font: 600 11px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; fill: #bae6fd; }
+  </style>
+
+  <text x="24" y="38" class="title">🛡️ FreedomNEO</text>
+  <text x="24" y="68" class="desc">Arquitetura e refatoração de um ecossistema de</text>
+  <text x="24" y="88" class="desc">acesso e segurança: módulos de reserva, autorização</text>
+  <text x="24" y="108" class="desc">multi-tenant e lógica de notificações.</text>
+
+  <rect x="24" y="136" width="90" height="26" rx="8" fill="#0284c7" fill-opacity="0.25" stroke="#38bdf8" stroke-opacity="0.4" />
+  <text x="69" y="153" text-anchor="middle" class="pill">Arquitetura</text>
+
+  <rect x="122" y="136" width="96" height="26" rx="8" fill="#4f46e5" fill-opacity="0.25" stroke="#818cf8" stroke-opacity="0.4" />
+  <text x="170" y="153" text-anchor="middle" class="pill">Multi-tenant</text>
+
+  <rect x="226" y="136" width="96" height="26" rx="8" fill="#0d9488" fill-opacity="0.25" stroke="#2dd4bf" stroke-opacity="0.4" />
+  <text x="274" y="153" text-anchor="middle" class="pill">Notificações</text>
+</svg>
