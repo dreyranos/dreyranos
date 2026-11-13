@@ -23,21 +23,15 @@
 
 <br/>
 
-## `~/quem-sou-eu`
+## 👨‍💻 Sobre mim
 
-```ts
-const andrey = {
-  nome: "Andrey Ramos",
-  usuario: "dreyranos",
-  papel: "Arquiteto Full-Stack",
-  experiencia: "4+ anos em TI",
-  base: "Brasil",
-  foco: ["APIs back-end", "Refatoração de legado", "Mobile multiplataforma"],
-  ferramentasDeIA: ["Cursor"],
-  lema: "Código limpo, escalável e eficiente",
-  status: "Aberto a boas conversas e bons desafios",
-} as const;
-```
+- 🏗️ **Papel:** Arquiteto Full-Stack
+- ⏳ **Experiência:** 4+ anos em TI
+- 📍 **Base:** Brasil
+- 🎯 **Foco:** APIs back-end, refatoração de legado e mobile multiplataforma
+- 🤖 **IA no dia a dia:** Cursor
+- 💬 **Status:** aberto a boas conversas e bons desafios
+- ✨ **Lema:** código limpo, escalável e eficiente
 
 Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistemas complexos: do banco relacional ao app na mão do usuário, passando por APIs, regras de negócio multi-tenant e automações que tiram o trabalho repetitivo do caminho.
 
@@ -128,21 +122,15 @@ Atuo de ponta a ponta na concepção, otimização e manutenção de ecossistema
 
 <br/>
 
-## `~/whoami`
+## 👨‍💻 About me
 
-```ts
-const andrey = {
-  name: "Andrey Ramos",
-  handle: "dreyranos",
-  role: "Full-Stack Architect",
-  experience: "4+ years in IT",
-  base: "Brazil",
-  focus: ["Backend APIs", "Legacy refactoring", "Cross-platform mobile"],
-  aiTools: ["Cursor"],
-  motto: "Clean, scalable and efficient code",
-  status: "Open to good conversations and good challenges",
-} as const;
-```
+- 🏗️ **Role:** Full-Stack Architect
+- ⏳ **Experience:** 4+ years in IT
+- 📍 **Based in:** Brazil
+- 🎯 **Focus:** Backend APIs, legacy refactoring and cross-platform mobile
+- 🤖 **AI in daily work:** Cursor
+- 💬 **Status:** open to good conversations and good challenges
+- ✨ **Motto:** clean, scalable and efficient code
 
 I work end to end on designing, optimizing and maintaining complex ecosystems: from the relational database to the app in the user's hand, through APIs, multi-tenant business rules and automations that take repetitive work out of the way.
 
