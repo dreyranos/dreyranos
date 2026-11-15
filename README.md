@@ -28,34 +28,15 @@ Desenvolvedor full stack com mais de oito anos de atuação em tecnologia, com e
 
 ## 🎯 Áreas de Atuação
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h4>🏗️ Backend & Arquitetura</h4>
-      Projeto e desenvolvimento de APIs, modelagem multi-tenant, integrações e padronização de serviços.
-    </td>
-    <td width="50%" valign="top">
-      <h4>📱 Desenvolvimento Mobile</h4>
-      Aplicações com React Native (Expo) e NativeWind, além de soluções em Delphi FMX.
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h4>🗄️ Banco de Dados & Legado</h4>
-      Firebird SQL, otimização de consultas e refatoração incremental de sistemas legados.
-    </td>
-    <td width="50%" valign="top">
-      <h4>⚙️ Automação & IA</h4>
-      Scripts em Python e Bash, pipelines de automação e fluxos de trabalho com inteligência artificial.
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" valign="top">
-      <h4>🐧 Android Customizado</h4>
-      Customização e build de ROMs com AOSP e LineageOS.
-    </td>
-  </tr>
-</table>
+🏗️ **Backend & Arquitetura** — projeto e desenvolvimento de APIs, modelagem multi-tenant, integrações e padronização de serviços.
+
+📱 **Desenvolvimento Mobile** — aplicações com React Native (Expo) e NativeWind, além de soluções em Delphi FMX.
+
+🗄️ **Banco de Dados & Legado** — Firebird SQL, otimização de consultas e refatoração incremental de sistemas legados.
+
+⚙️ **Automação & IA** — scripts em Python e Bash, pipelines de automação e fluxos de trabalho com inteligência artificial.
+
+🐧 **Android Customizado** — customização e build de ROMs com AOSP e LineageOS.
 
 <br/>
 
@@ -87,66 +68,56 @@ Desenvolvedor full stack com mais de oito anos de atuação em tecnologia, com e
 
 ## 💼 Experiência Profissional
 
-<table>
-  <tr>
-    <td width="64" align="center" valign="top"><img src="./assets/proansi.jpg" width="48" height="48" alt="PROANSI" /></td>
-    <td valign="top">
-      <b>Desenvolvedor Full Stack</b> &nbsp;<img src="https://img.shields.io/badge/ATUAL-0ea5e9?style=flat-square" alt="Atual" /><br/>
-      <code>PROANSI</code><br/>
-      <sub>jul. 2023 – presente · 3 anos 5 meses · São José do Rio Preto, SP</sub>
-    </td>
-  </tr>
-  <tr>
-    <td width="64" align="center" valign="top"><img src="./assets/hepta.jpg" width="48" height="48" alt="Hepta" /></td>
-    <td valign="top">
-      <b>Analista de Suporte N2</b><br/>
-      <code>Hepta Tecnologia e Informática</code><br/>
-      <sub>out. 2022 – jun. 2023 · 9 meses · São José do Rio Preto, SP</sub>
-    </td>
-  </tr>
-  <tr>
-    <td width="64" align="center" valign="top"><img src="./assets/tesla.jpg" width="48" height="48" alt="Tesla" /></td>
-    <td valign="top">
-      <b>Gestor de TI</b><br/>
-      <code>Tesla Marcações Industriais</code><br/>
-      <sub>jun. 2022 – set. 2022 · 4 meses · São José do Rio Preto, SP</sub>
-    </td>
-  </tr>
-  <tr>
-    <td width="64" align="center" valign="top"><img src="./assets/casavacinas.jpg" width="48" height="48" alt="Casa das Vacinas" /></td>
-    <td valign="top">
-      <b>Casa das Vacinas</b> &nbsp;<img src="https://img.shields.io/badge/5_anos_e_6_meses-1d4ed8?style=flat-square" alt="Tempo total" /><br/>
-      ↳ <b>Desenvolvedor</b> · <sub>jan. 2020 – jun. 2022 · 2 anos 6 meses</sub><br/>
-      ↳ <b>Assistente de TI</b> · <sub>jan. 2017 – jan. 2020 · 3 anos 1 mês</sub>
-    </td>
-  </tr>
-</table>
+<p>
+  <img align="left" src="./assets/proansi.jpg" width="48" height="48" alt="PROANSI" />
+  <b>Desenvolvedor Full Stack</b> &nbsp;<img src="https://img.shields.io/badge/ATUAL-0ea5e9?style=flat-square" alt="Atual" /><br/>
+  <code>PROANSI</code> · <sub>jul. 2023 – presente · 3 anos 5 meses · São José do Rio Preto, SP</sub>
+</p>
 
-<br/>
+<br clear="left" />
+
+<p>
+  <img align="left" src="./assets/hepta.jpg" width="48" height="48" alt="Hepta" />
+  <b>Analista de Suporte N2</b><br/>
+  <code>Hepta Tecnologia e Informática</code> · <sub>out. 2022 – jun. 2023 · 9 meses · São José do Rio Preto, SP</sub>
+</p>
+
+<br clear="left" />
+
+<p>
+  <img align="left" src="./assets/tesla.jpg" width="48" height="48" alt="Tesla" />
+  <b>Gestor de TI</b><br/>
+  <code>Tesla Marcações Industriais</code> · <sub>jun. 2022 – set. 2022 · 4 meses · São José do Rio Preto, SP</sub>
+</p>
+
+<br clear="left" />
+
+<p>
+  <img align="left" src="./assets/casavacinas.jpg" width="48" height="48" alt="Casa das Vacinas" />
+  <b>Casa das Vacinas</b> &nbsp;<img src="https://img.shields.io/badge/5_anos_e_6_meses-1d4ed8?style=flat-square" alt="Tempo total" /><br/>
+  ↳ <b>Desenvolvedor</b> · <sub>jan. 2020 – jun. 2022 · 2 anos 6 meses</sub><br/>
+  ↳ <b>Assistente de TI</b> · <sub>jan. 2017 – jan. 2020 · 3 anos 1 mês</sub>
+</p>
+
+<br clear="left" />
+
+---
 
 ## 🎓 Formação Acadêmica
 
-<table>
-  <tr>
-    <td width="64" align="center" valign="top"><img src="./assets/etec.jpg" width="48" height="48" alt="Etec" /></td>
-    <td valign="top">
-      <b>Etec Philadelpho Gouvêa Netto</b><br/>
-      <code>Curso Técnico Integrado em Tecnologia da Informação</code><br/>
-      <sub>2014 – 2016</sub>
-    </td>
-  </tr>
-</table>
+<p>
+  <img align="left" src="./assets/etec.jpg" width="48" height="48" alt="Etec" />
+  <b>Etec Philadelpho Gouvêa Netto</b><br/>
+  <code>Curso Técnico Integrado em Tecnologia da Informação</code> · <sub>2014 – 2016</sub>
+</p>
 
-<br/>
+<br clear="left" />
+
+---
 
 ## 📊 Estatísticas do GitHub
 
 <div align="center">
-
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=dreyranos&show_icons=true&hide_border=true&bg_color=0b1220&title_color=38bdf8&icon_color=0ea5e9&text_color=cbd5e1&ring_color=38bdf8&locale=pt-br" alt="Estatísticas" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=dreyranos&layout=compact&hide_border=true&bg_color=0b1220&title_color=38bdf8&text_color=cbd5e1&langs_count=8&locale=pt-br" alt="Linguagens mais utilizadas" />
-
-<br/><br/>
 
 <img height="170" src="https://streak-stats.demolab.com?user=dreyranos&theme=transparent&border=38bdf844&border_radius=12&ring=38bdf8&fire=0ea5e9&currStreakLabel=bae6fd&sideLabels=94a3b8&currStreakNum=f8fafc&sideNums=e2e8f0&dates=94a3b8&locale=pt_BR" alt="Sequência de contribuições" />
 
