@@ -261,9 +261,9 @@ timeline
 <br/><br/>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake.svg" />
-  <img alt="Contribuições" src="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/puzzle-bobble-contribution-graph-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/dreyranos/dreyranos/output/puzzle-bobble-contribution-graph.svg" />
+  <img alt="Puzzle Bobble - Contribuições" src="https://raw.githubusercontent.com/dreyranos/dreyranos/output/puzzle-bobble-contribution-graph-dark.svg" />
 </picture>
 
 </div>
