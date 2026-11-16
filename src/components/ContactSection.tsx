@@ -56,15 +56,15 @@ export function ContactSection({ lang }: ContactSectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl mb-10 sm:mb-12"
+          className="max-w-4xl mb-10 sm:mb-12"
         >
           <p className="font-mono text-xs tracking-wide text-blue-600 dark:text-blue-400 font-medium">
             {t.kicker}
           </p>
-          <h2 className="font-display text-2xl sm:text-4xl lg:text-[2.65rem] font-bold tracking-tight text-zinc-950 dark:text-zinc-50 mt-2 leading-tight">
+          <h2 className="font-display text-[clamp(2rem,4.2vw,3.35rem)] font-bold tracking-tight text-zinc-950 dark:text-zinc-50 mt-2 leading-[1.08]">
             {t.title}
           </h2>
-          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
+          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-4 leading-relaxed max-w-2xl">
             {t.desc}
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
             {/* WhatsApp Card */}
             <SpotlightCard
               delay={0.04}
-              className="rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              className="rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800/90 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
             >
               <div className="flex items-start gap-3.5 min-w-0">
                 <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
@@ -143,7 +143,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
             {/* Email Card */}
             <SpotlightCard
               delay={0.08}
-              className="rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              className="rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
             >
               <div className="flex items-start gap-3.5 min-w-0">
                 <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
@@ -215,7 +215,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
                 href={CONTACT_INFO.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="spotlight-surface rounded-2xl p-5 bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 flex items-center justify-between gap-3 group"
+                className="spotlight-surface rounded-2xl p-5 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 flex items-center justify-between gap-3 group"
               >
                 <div>
                   <div className="font-display font-bold text-sm sm:text-base text-zinc-950 dark:text-zinc-50">
@@ -232,7 +232,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
                 href={CONTACT_INFO.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="spotlight-surface rounded-2xl p-5 bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 flex items-center justify-between gap-3 group"
+                className="spotlight-surface rounded-2xl p-5 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 flex items-center justify-between gap-3 group"
               >
                 <div>
                   <div className="font-display font-bold text-sm sm:text-base text-zinc-950 dark:text-zinc-50">
@@ -250,7 +250,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
           {/* Quick Message Composer */}
           <SpotlightCard
             delay={0.1}
-            className="print:hidden lg:col-span-6 rounded-2xl p-6 sm:p-7 bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800 flex flex-col justify-between"
+            className="print:hidden lg:col-span-6 rounded-2xl p-6 sm:p-7 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 flex flex-col justify-between"
           >
             <div>
               <h3 className="font-display font-bold text-lg sm:text-xl text-zinc-950 dark:text-zinc-50">

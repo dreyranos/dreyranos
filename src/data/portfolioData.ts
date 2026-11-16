@@ -72,6 +72,7 @@ export const COPY = {
         'Andrey Ramos, dreyranos, Desenvolvedor Full Stack, Delphi, Horse, C# .NET, React Native, Expo, TypeScript, Firebird SQL, APIs Multi-Tenant, São José do Rio Preto',
     },
     nav: {
+      projects: 'Projetos',
       about: 'Sobre',
       arch: 'Arquitetura',
       stack: 'Stack',
@@ -86,12 +87,15 @@ export const COPY = {
       menuClose: 'Fechar menu',
       ambientOn: 'Desativar som ambiente',
       ambientOff: 'Ativar som ambiente',
+      soundShortOn: 'Som ligado',
+      soundShortOff: 'Som desligado',
     },
     hero: {
       metaExp: '9+ anos de experiência',
       metaLoc: 'São José do Rio Preto, SP',
       metaStatus: 'Disponível para novos projetos',
-      subtitle: 'Desenvolvedor Full Stack & Engenharia de Software',
+      subtitle: 'Desenvolvedor Full Stack multidisciplinar',
+      philosophy: 'Bom software é honesto — projetado para escalar e durar em produção.',
       focusLabel: 'Foco Atual',
       phrases: [
         'APIs Multi-Tenant & Arquitetura Backend',
@@ -107,8 +111,17 @@ export const COPY = {
       bioStrong3: 'aplicações mobile, web e desktop',
       bioAfter: ' com foco em precisão técnica, escalabilidade e valor ao negócio.',
       ctaWhatsapp: 'Conversar no WhatsApp',
+      ctaProjects: 'Ver Projetos',
       ctaContact: 'Ver Contatos Diretos',
       photoCaptionRole: 'Full Stack @ PROANSI · SJRP, BR',
+      marqueeItems: [
+        'Trabalhos Selecionados',
+        'APIs Multi-Tenant',
+        'React Native & Expo',
+        'Delphi FMX & Horse',
+        'Firebird SQL',
+        'Automação & Fluxos de IA',
+      ],
       metrics: [
         { value: '9+ anos', label: 'Engenharia em Produção' },
         { value: 'Multi-Tenant', label: 'APIs Delphi Horse & C# .NET' },
@@ -117,7 +130,7 @@ export const COPY = {
       ],
     },
     about: {
-      kicker: '01. Visão & Especialidades',
+      kicker: '02. Visão & Disciplinas',
       title: 'Sobre & Áreas de Atuação',
       desc: 'Princípios de engenharia aplicados em sistemas críticos: código legível, decisões documentadas, evolução incremental e automação contínua.',
       manifestoLabel: 'Manifesto Técnico',
@@ -162,7 +175,7 @@ export const COPY = {
       ],
     },
     arch: {
-      kicker: '02. Blueprint em Produção',
+      kicker: '03. Blueprint em Produção',
       title: 'Arquitetura de Referência',
       desc: 'Modelo que resume as soluções em que mais atuo: clientes múltiplos consumindo uma API multi-tenant com isolamento por tenant sobre uma camada de dados legada e modernizada.',
       hint: 'Selecione qualquer nó do diagrama para inspecionar responsabilidades e stack.',
@@ -215,7 +228,7 @@ export const COPY = {
       } as Record<ArchNodeKey, { shortTitle: string; shortSub: string; title: string; desc: string; tag: string }>,
     },
     stack: {
-      kicker: '03. Ecossistema Técnico',
+      kicker: '04. Ecossistema Técnico',
       title: 'Stack Tecnológica',
       filters: [
         { id: 'all' as StackCategory, label: 'Todas' },
@@ -226,7 +239,7 @@ export const COPY = {
       ],
     },
     exp: {
-      kicker: '04. Trajetória Profissional',
+      kicker: '05. Trajetória Profissional',
       title: 'Experiência & Formação',
       currentLabel: 'Atual',
       roles: [
@@ -279,7 +292,7 @@ export const COPY = {
       },
     },
     github: {
-      kicker: '05. GitHub & Código',
+      kicker: '06. Código Aberto & Métricas',
       title: 'Atividade no GitHub',
       streakTitle: 'Sequência & Contribuições',
       activityTitle: 'Gráfico de Atividade',
@@ -318,7 +331,7 @@ export const COPY = {
       },
     },
     projects: {
-      kicker: '06. Projetos & Repositórios',
+      kicker: '01. Trabalhos Selecionados',
       title: 'Projetos em Destaque',
       desc: 'Repositórios públicos sincronizados diretamente com o GitHub (@dreyranos), com descrição técnica, tecnologias e acesso ao código-fonte.',
       allFilter: 'Todos',
@@ -344,7 +357,7 @@ export const COPY = {
     },
     contact: {
       kicker: '07. Contato Direto & Oportunidades',
-      title: 'Vamos construir o próximo sistema em produção?',
+      title: 'Diga olá. Vamos construir o próximo sistema em produção.',
       desc: 'Aberto a projetos, parcerias técnicas, consultoria em modernização de legado e novas oportunidades profissionais em Full Stack, Arquitetura Backend ou Mobile.',
       copy: 'Copiar',
       copied: 'Copiado',
@@ -406,6 +419,105 @@ export const COPY = {
         { hash: '#contato', label: 'Contato Direto', desc: 'WhatsApp, e-mail e oportunidades' },
       ],
     },
+    resume: {
+      toolbarTitle: 'Visualização de Impressão · Currículo A4',
+      langSwitchLabel: 'Idioma',
+      printCta: 'Imprimir / Salvar PDF',
+      closeLabel: 'Fechar',
+      printHint: 'Dica: no diálogo de impressão, escolha "Salvar como PDF", papel A4 e desmarque cabeçalhos do navegador.',
+      headline: 'Desenvolvedor Full Stack · Arquitetura Backend, Mobile & Sistemas em Produção',
+      location: 'São José do Rio Preto, SP · Brasil',
+      experienceBadge: '9+ anos de experiência',
+      availability: 'Disponível para novos projetos e oportunidades',
+      summaryTitle: 'Resumo Profissional',
+      summaryBody:
+        'Desenvolvedor Full Stack com mais de 9 anos de atuação em tecnologia, construindo e sustentando sistemas críticos em produção. Experiência sólida em arquitetura de APIs multi-tenant (Delphi Horse e C# .NET), modernização incremental de sistemas legados e bancos Firebird SQL, além de aplicações web (React, Angular), mobile (React Native + Expo) e desktop (Delphi FMX/VCL). Forte vivência end-to-end — do suporte N2 e gestão de infraestrutura à arquitetura de software e automações com Python, Bash e fluxos de IA.',
+      manifestoLabel: 'Princípios de Engenharia',
+      manifestoQuote: 'Código legível, decisões documentadas, mudanças incrementais e automação de tudo que for repetitivo.',
+      experienceTitle: 'Experiência Profissional',
+      currentLabel: 'Atual',
+      experienceItems: [
+        {
+          role: 'Desenvolvedor Full Stack',
+          company: 'PROANSI',
+          location: 'São José do Rio Preto, SP',
+          period: 'jul. 2023 – presente · 3 anos 5 meses',
+          current: true,
+          highlights: [
+            'Arquitetura e evolução de APIs REST multi-tenant em Delphi (Horse) e C# .NET com autenticação e isolamento estrito por cliente (tenant).',
+            'Desenvolvimento e manutenção de aplicativos mobile multiplataforma com React Native (Expo + NativeWind) e interfaces web corporativas.',
+            'Sustentação e evolução de aplicações desktop em Delphi VCL/FMX integradas a serviços modernos e integrações corporativas.',
+            'Otimização de queries críticas em Firebird SQL e refatoração incremental de sistemas legados sem interrupção das operações em produção.',
+          ],
+        },
+        {
+          role: 'Analista de Suporte N2',
+          company: 'Hepta Tecnologia e Informática',
+          location: 'São José do Rio Preto, SP',
+          period: 'out. 2022 – jun. 2023 · 9 meses',
+          current: false,
+          highlights: [
+            'Diagnóstico avançado de incidentes em ambientes de produção, análise de banco de dados e resolução de falhas de infraestrutura e aplicação.',
+            'Interface técnica direta entre operação e times de desenvolvimento para redução de recorrência de chamados críticos.',
+          ],
+        },
+        {
+          role: 'Gestor de TI',
+          company: 'Tesla Marcações Industriais',
+          location: 'São José do Rio Preto, SP',
+          period: 'jun. 2022 – set. 2022 · 4 meses',
+          current: false,
+          highlights: [
+            'Gestão da infraestrutura de TI industrial, padronização de processos operacionais, segurança de ambientes e suporte a sistemas corporativos.',
+          ],
+        },
+        {
+          role: 'Desenvolvedor & Assistente de TI',
+          company: 'Casa das Vacinas',
+          location: 'São José do Rio Preto, SP',
+          period: 'jan. 2017 – jun. 2022 · 5 anos 6 meses',
+          current: false,
+          highlights: [
+            'Desenvolvedor (jan. 2020 – jun. 2022 · 2a 6m): Desenvolvimento de software interno, automações operacionais, integrações e sustentação de sistemas de saúde.',
+            'Assistente de TI (jan. 2017 – jan. 2020 · 3a 1m): Administração de redes, servidores, bancos de dados e suporte técnico completo aos usuários.',
+          ],
+        },
+      ],
+      expertiseTitle: 'Especialidades & Arquitetura',
+      expertiseItems: [
+        {
+          title: 'Backend & APIs Multi-Tenant',
+          detail: 'Delphi Horse, C# .NET, isolamento por tenant, autenticação centralizada e integrações corporativas.',
+        },
+        {
+          title: 'Web, Mobile & Desktop',
+          detail: 'React, TypeScript, Angular, React Native (Expo + NativeWind) e Delphi FMX/VCL.',
+        },
+        {
+          title: 'Dados & Refatoração de Legado',
+          detail: 'Firebird SQL, tuning de consultas críticas e modernização gradual sem parar a produção.',
+        },
+        {
+          title: 'Automação, IA & Sistemas',
+          detail: 'Scripts Python e Bash, pipelines operacionais, fluxos de IA e builds Android customizados (AOSP / LineageOS).',
+        },
+      ],
+      skillsTitle: 'Stack Tecnológica',
+      skillGroups: [
+        { label: 'Backend & APIs', cat: 'backend' as const },
+        { label: 'Web, Mobile & Desktop', cat: 'frontend' as const },
+        { label: 'Dados & Infraestrutura', cat: 'infra' as const },
+        { label: 'Práticas & Arquitetura', cat: 'praticas' as const },
+      ],
+      educationTitle: 'Formação Acadêmica',
+      differentiatorsTitle: 'Diferenciais Executivos',
+      languagesTitle: 'Idiomas',
+      languagesList: [
+        { name: 'Português', level: 'Nativo' },
+        { name: 'Inglês', level: 'Técnico / Leitura e Escrita Profissional' },
+      ],
+      footerNote: 'Currículo atualizado · Portfólio disponível em github.com/dreyranos',
+    },
   },
   en: {
     docTitle: 'Andrey Ramos | Full Stack Developer & Software Engineering',
@@ -422,12 +534,13 @@ export const COPY = {
         'Andrey Ramos, dreyranos, Full Stack Developer, Delphi, Horse, C# .NET, React Native, Expo, TypeScript, Firebird SQL, Multi-Tenant APIs, Brazil',
     },
     nav: {
+      projects: 'Work',
       about: 'About',
       arch: 'Architecture',
       stack: 'Stack',
       exp: 'Experience',
       github: 'GitHub',
-      contact: 'Contact',
+      contact: 'Say Hi',
     },
     controls: {
       themeLight: 'Light',
@@ -436,12 +549,15 @@ export const COPY = {
       menuClose: 'Close menu',
       ambientOn: 'Mute ambient sound',
       ambientOff: 'Enable ambient sound',
+      soundShortOn: 'Sound On',
+      soundShortOff: 'Sound Off',
     },
     hero: {
       metaExp: '9+ years experience',
       metaLoc: 'São José do Rio Preto, SP · Brazil',
       metaStatus: 'Open to opportunities',
-      subtitle: 'Full Stack Developer & Software Engineering',
+      subtitle: 'Multi-Disciplined Full Stack Engineer',
+      philosophy: 'Good software is honest — engineered to scale and endure in production.',
       focusLabel: 'Core Focus',
       phrases: [
         'Multi-Tenant APIs & Backend Architecture',
@@ -457,8 +573,17 @@ export const COPY = {
       bioStrong3: 'mobile, web, and desktop applications',
       bioAfter: ' focused on technical precision, scalability, and measurable business value.',
       ctaWhatsapp: 'Chat on WhatsApp',
+      ctaProjects: 'Selected Works',
       ctaContact: 'Direct Contact Info',
       photoCaptionRole: 'Full Stack @ PROANSI · SJRP, BR',
+      marqueeItems: [
+        'Selected Works',
+        'Multi-Tenant APIs',
+        'React Native & Expo',
+        'Delphi FMX & Horse',
+        'Firebird SQL',
+        'Automation & AI Workflows',
+      ],
       metrics: [
         { value: '9+ yrs', label: 'Production Engineering' },
         { value: 'Multi-Tenant', label: 'Delphi Horse & C# .NET APIs' },
@@ -467,7 +592,7 @@ export const COPY = {
       ],
     },
     about: {
-      kicker: '01. Vision & Specialties',
+      kicker: '02. Vision & Disciplines',
       title: 'About & Areas of Expertise',
       desc: 'Engineering principles applied to mission-critical systems: readable code, documented decisions, incremental evolution, and continuous automation.',
       manifestoLabel: 'Engineering Manifesto',
@@ -512,7 +637,7 @@ export const COPY = {
       ],
     },
     arch: {
-      kicker: '02. Production Blueprint',
+      kicker: '03. Production Blueprint',
       title: 'Reference Architecture',
       desc: 'Architecture model summarizing my core production work: multiple clients consuming a multi-tenant API with strict tenant isolation over a modernized legacy data layer.',
       hint: 'Select any node in the diagram to inspect its responsibilities and stack.',
@@ -565,7 +690,7 @@ export const COPY = {
       } as Record<ArchNodeKey, { shortTitle: string; shortSub: string; title: string; desc: string; tag: string }>,
     },
     stack: {
-      kicker: '03. Tech Ecosystem',
+      kicker: '04. Tech Ecosystem',
       title: 'Tech Stack',
       filters: [
         { id: 'all' as StackCategory, label: 'All' },
@@ -576,7 +701,7 @@ export const COPY = {
       ],
     },
     exp: {
-      kicker: '04. 9+ Year Journey',
+      kicker: '05. 9+ Year Journey',
       title: 'Experience & Education',
       currentLabel: 'Current',
       roles: [
@@ -629,7 +754,7 @@ export const COPY = {
       },
     },
     github: {
-      kicker: '05. GitHub & Code',
+      kicker: '06. GitHub & Code',
       title: 'GitHub Activity',
       streakTitle: 'Streak & Contributions',
       activityTitle: 'Activity Graph',
@@ -668,7 +793,7 @@ export const COPY = {
       },
     },
     projects: {
-      kicker: '06. Projects & Repositories',
+      kicker: '01. Selected Works',
       title: 'Featured Projects',
       desc: 'Public repositories synced directly from GitHub (@dreyranos), with technical descriptions, tags, and source links.',
       allFilter: 'All',
@@ -694,7 +819,7 @@ export const COPY = {
     },
     contact: {
       kicker: '07. Direct Contact & Opportunities',
-      title: "Let's build your next production system?",
+      title: "Say hi. Let's build your next production system.",
       desc: 'Open to full-time roles, contract projects, technical partnerships, and legacy modernization consulting across Full Stack, Backend Architecture, and Mobile.',
       copy: 'Copy',
       copied: 'Copied',
@@ -755,6 +880,105 @@ export const COPY = {
         { hash: '#projetos', label: 'GitHub Projects', desc: 'Synced public repositories' },
         { hash: '#contato', label: 'Direct Contact', desc: 'WhatsApp, email, and opportunities' },
       ],
+    },
+    resume: {
+      toolbarTitle: 'Print Preview · A4 Resume',
+      langSwitchLabel: 'Language',
+      printCta: 'Print / Save PDF',
+      closeLabel: 'Close',
+      printHint: 'Tip: in the print dialog, choose "Save as PDF", A4 paper, and disable browser headers/footers.',
+      headline: 'Full Stack Developer · Backend Architecture, Mobile & Production Systems',
+      location: 'São José do Rio Preto, SP · Brazil',
+      experienceBadge: '9+ years experience',
+      availability: 'Open to new opportunities & projects',
+      summaryTitle: 'Professional Summary',
+      summaryBody:
+        'Full Stack Developer with 9+ years of hands-on technology experience building and maintaining mission-critical production systems. Strong background in multi-tenant API architecture (Delphi Horse and C# .NET), incremental modernization of legacy systems and Firebird SQL databases, as well as web (React, Angular), mobile (React Native + Expo), and desktop (Delphi FMX/VCL) engineering. End-to-end perspective spanning N2 production support and IT management through software architecture and Python/Bash/AI workflow automation.',
+      manifestoLabel: 'Engineering Principles',
+      manifestoQuote: 'Readable code, documented decisions, incremental changes, and automation of everything repetitive.',
+      experienceTitle: 'Professional Experience',
+      currentLabel: 'Current',
+      experienceItems: [
+        {
+          role: 'Full Stack Developer',
+          company: 'PROANSI',
+          location: 'São José do Rio Preto, SP',
+          period: 'Jul 2023 – Present · 3 yrs 5 mos',
+          current: true,
+          highlights: [
+            'Architected and evolved multi-tenant REST APIs in Delphi (Horse) and C# .NET with centralized authentication and strict tenant isolation.',
+            'Built and maintained cross-platform mobile apps with React Native (Expo + NativeWind) alongside modern corporate web interfaces.',
+            'Maintained and modernized enterprise desktop software in Delphi VCL/FMX integrated seamlessly with distributed backend services.',
+            'Tuned critical Firebird SQL queries and delivered safe incremental refactoring of legacy codebases with zero production downtime.',
+          ],
+        },
+        {
+          role: 'N2 Support Analyst',
+          company: 'Hepta Tecnologia e Informática',
+          location: 'São José do Rio Preto, SP',
+          period: 'Oct 2022 – Jun 2023 · 9 mos',
+          current: false,
+          highlights: [
+            'Advanced production incident diagnostics, database troubleshooting, and resolution of complex infrastructure and application issues.',
+            'Technical bridge between operations and engineering teams to eliminate recurring bottlenecks and stabilize live environments.',
+          ],
+        },
+        {
+          role: 'IT Manager',
+          company: 'Tesla Marcações Industriais',
+          location: 'São José do Rio Preto, SP',
+          period: 'Jun 2022 – Sep 2022 · 4 mos',
+          current: false,
+          highlights: [
+            'Managed industrial IT infrastructure, standardized operational workflows, strengthened environment security, and supported business systems.',
+          ],
+        },
+        {
+          role: 'Software Developer & IT Assistant',
+          company: 'Casa das Vacinas',
+          location: 'São José do Rio Preto, SP',
+          period: 'Jan 2017 – Jun 2022 · 5 yrs 6 mos',
+          current: false,
+          highlights: [
+            'Software Developer (Jan 2020 – Jun 2022 · 2 yrs 6 mos): Built internal software tools, operational automations, integrations, and healthcare business systems.',
+            'IT Assistant (Jan 2017 – Jan 2020 · 3 yrs 1 mo): Administered networks, servers, databases, and full end-user technical operations.',
+          ],
+        },
+      ],
+      expertiseTitle: 'Core Expertise & Architecture',
+      expertiseItems: [
+        {
+          title: 'Backend & Multi-Tenant APIs',
+          detail: 'Delphi Horse, C# .NET, strict tenant isolation, centralized auth, and enterprise integrations.',
+        },
+        {
+          title: 'Web, Mobile & Desktop',
+          detail: 'React, TypeScript, Angular, React Native (Expo + NativeWind), and Delphi FMX/VCL.',
+        },
+        {
+          title: 'Databases & Legacy Refactoring',
+          detail: 'Firebird SQL tuning, critical query optimization, and zero-downtime incremental modernization.',
+        },
+        {
+          title: 'Automation, AI & Custom OS',
+          detail: 'Python & Bash scripting, smart AI workflows, Linux tooling, and custom Android ROM builds (AOSP / LineageOS).',
+        },
+      ],
+      skillsTitle: 'Technical Stack',
+      skillGroups: [
+        { label: 'Backend & APIs', cat: 'backend' as const },
+        { label: 'Web, Mobile & Desktop', cat: 'frontend' as const },
+        { label: 'Data & Infrastructure', cat: 'infra' as const },
+        { label: 'Practices & Architecture', cat: 'praticas' as const },
+      ],
+      educationTitle: 'Education',
+      differentiatorsTitle: 'Executive Differentiators',
+      languagesTitle: 'Languages',
+      languagesList: [
+        { name: 'Portuguese', level: 'Native' },
+        { name: 'English', level: 'Technical / Professional Reading & Writing' },
+      ],
+      footerNote: 'Updated Resume · Interactive portfolio at github.com/dreyranos',
     },
   },
 };

@@ -52,7 +52,7 @@ export function ArchitectureSection({ lang }: ArchitectureSectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-2xl p-5 sm:p-8 lg:p-10 bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800"
+          className="rounded-2xl p-5 sm:p-8 lg:p-10 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800"
         >
           {/* Interactive 3-Layer Diagram */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-4 items-center">

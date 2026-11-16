@@ -130,6 +130,7 @@ export function AmbientSoundToggle({ lang }: AmbientSoundToggleProps) {
   };
 
   const label = enabled ? t.ambientOn : t.ambientOff;
+  const shortLabel = enabled ? t.soundShortOn : t.soundShortOff;
 
   return (
     <button
@@ -138,17 +139,18 @@ export function AmbientSoundToggle({ lang }: AmbientSoundToggleProps) {
       aria-pressed={enabled}
       aria-label={label}
       title={label}
-      className={`inline-flex items-center justify-center w-10 h-10 rounded-lg border transition-colors duration-150 active:scale-[0.97] shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-blue-400 ${
+      className={`inline-flex items-center justify-center gap-2 w-10 sm:w-auto sm:px-3 h-10 rounded-lg border font-mono text-xs transition-colors duration-150 active:scale-[0.97] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-blue-400 ${
         enabled
-          ? 'border-blue-600/40 dark:border-blue-400/40 bg-blue-600/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400'
-          : 'border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900'
+          ? 'border-blue-600/45 dark:border-blue-400/45 bg-blue-600/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400'
+          : 'border-zinc-200 dark:border-zinc-800 bg-transparent text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 hover:border-zinc-300 dark:hover:border-zinc-700'
       }`}
     >
       {enabled ? (
-        <Volume2 className="w-4 h-4" aria-hidden="true" />
+        <Volume2 className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
       ) : (
-        <VolumeX className="w-4 h-4" aria-hidden="true" />
+        <VolumeX className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
       )}
+      <span className="hidden sm:inline">{shortLabel}</span>
     </button>
   );
 }

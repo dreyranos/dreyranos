@@ -285,7 +285,7 @@ export function GitHubCommitChart({ lang, theme }: GitHubCommitChartProps) {
       .attr('cx', (d) => (x(d.id) || 0) + x.bandwidth() / 2)
       .attr('cy', (d) => y(d.count))
       .attr('r', 3)
-      .attr('fill', isDark ? '#0e0e12' : '#ffffff')
+      .attr('fill', isDark ? '#0b0b0f' : '#ffffff')
       .attr('stroke', barPeak)
       .attr('stroke-width', 1.75)
       .style('pointer-events', 'none');
@@ -305,7 +305,7 @@ export function GitHubCommitChart({ lang, theme }: GitHubCommitChartProps) {
   return (
     <SpotlightCard
       delay={0.02}
-      className="lg:col-span-12 rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800"
+      className="lg:col-span-12 rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800"
     >
       {/* Header Row */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-zinc-100 dark:border-zinc-800/80">

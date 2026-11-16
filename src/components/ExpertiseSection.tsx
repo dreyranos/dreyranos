@@ -45,7 +45,7 @@ export function ExpertiseSection({ lang }: ExpertiseSectionProps) {
         <TechBadges lang={lang} />
 
         {/* Manifesto Banner */}
-        <SpotlightCard className="mb-6 rounded-2xl p-6 sm:p-8 bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <SpotlightCard className="mb-6 rounded-2xl p-6 sm:p-8 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800/90 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-2 max-w-3xl">
             <span className="font-mono text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
               {t.manifestoLabel}
@@ -69,16 +69,22 @@ export function ExpertiseSection({ lang }: ExpertiseSectionProps) {
           {t.areas.map((area, idx) => {
             const Icon = ICONS[area.id as keyof typeof ICONS] || Server;
             const spanClass = area.span === 'wide' ? 'md:col-span-3' : 'md:col-span-2';
+            const indexLabel = String(idx + 1).padStart(2, '0');
             return (
               <SpotlightCard
                 key={area.id}
                 as="article"
                 delay={idx * 0.05}
-                className={`${spanClass} rounded-2xl p-6 sm:p-7 bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 group`}
+                className={`${spanClass} rounded-2xl p-6 sm:p-7 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800/90 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 group`}
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-5 transition-transform duration-200 group-hover:scale-105">
-                    <Icon className="w-5 h-5" aria-hidden="true" />
+                  <div className="flex items-center justify-between gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-blue-600 dark:text-blue-400 transition-transform duration-200 group-hover:scale-105">
+                      <Icon className="w-5 h-5" aria-hidden="true" />
+                    </div>
+                    <span className="font-mono text-xs tracking-widest text-zinc-400 dark:text-zinc-500 tabular-nums">
+                      {indexLabel}
+                    </span>
                   </div>
                   <h3 className="font-display text-lg sm:text-xl font-bold text-zinc-950 dark:text-zinc-50 mb-2">
                     {area.title}

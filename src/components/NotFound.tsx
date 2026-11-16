@@ -74,7 +74,7 @@ export function NotFound({ lang, attemptedPath, onNavigateHome }: NotFoundProps)
               <button
                 type="button"
                 onClick={() => onNavigateHome('#projetos')}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[46px] rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#0e0e12] hover:border-zinc-300 dark:hover:border-zinc-700 text-zinc-800 dark:text-zinc-100 font-semibold text-sm transition-all active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-blue-400"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[46px] rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#0b0b0f] hover:border-zinc-300 dark:hover:border-zinc-700 text-zinc-800 dark:text-zinc-100 font-semibold text-sm transition-all active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-blue-400"
               >
                 <span>{t.viewProjects}</span>
                 <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -86,7 +86,7 @@ export function NotFound({ lang, attemptedPath, onNavigateHome }: NotFoundProps)
           <div className="lg:col-span-5">
             <SpotlightCard
               delay={0.08}
-              className="rounded-2xl p-6 sm:p-7 bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800"
+              className="rounded-2xl p-6 sm:p-7 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800"
             >
               <div className="flex items-center gap-2.5 pb-4 border-b border-zinc-200/80 dark:border-zinc-800/80">
                 <Compass className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" aria-hidden="true" />

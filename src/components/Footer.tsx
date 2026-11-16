@@ -5,13 +5,14 @@ import { useCoreWebVitals } from '../hooks/useCoreWebVitals';
 
 interface FooterProps {
   lang: Lang;
+  onOpenResume: () => void;
 }
 
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export function Footer({ lang }: FooterProps) {
+export function Footer({ lang, onOpenResume }: FooterProps) {
   const t = COPY[lang].footer;
   const newsletter = t.newsletter;
   const vitals = useCoreWebVitals();
@@ -48,8 +49,8 @@ export function Footer({ lang }: FooterProps) {
     return `mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   })();
 
-  const handlePrint = () => {
-    window.print();
+  const handleOpenResumePreview = () => {
+    onOpenResume();
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -188,7 +189,7 @@ export function Footer({ lang }: FooterProps) {
                       placeholder={newsletter.placeholder}
                       aria-invalid={status === 'error'}
                       aria-describedby={status === 'error' ? 'newsletter-error' : undefined}
-                      className="w-full min-h-[44px] pl-10 pr-3.5 py-2.5 rounded-xl bg-white dark:bg-[#0e0e12] border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-950 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 transition-colors"
+                      className="w-full min-h-[44px] pl-10 pr-3.5 py-2.5 rounded-xl bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-950 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 transition-colors"
                     />
                   </div>
 
@@ -267,8 +268,8 @@ export function Footer({ lang }: FooterProps) {
 
             <button
               type="button"
-              onClick={handlePrint}
-              className="inline-flex items-center gap-2 px-3.5 py-2 min-h-[38px] rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#0e0e12] text-zinc-800 dark:text-zinc-200 hover:border-blue-600/40 dark:hover:border-blue-400/40 hover:text-blue-600 dark:hover:text-blue-400 transition-colors active:scale-[0.98] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              onClick={handleOpenResumePreview}
+              className="inline-flex items-center gap-2 px-3.5 py-2 min-h-[38px] rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#0b0b0f] text-zinc-800 dark:text-zinc-200 hover:border-blue-600/40 dark:hover:border-blue-400/40 hover:text-blue-600 dark:hover:text-blue-400 transition-colors active:scale-[0.98] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
             >
               <Printer className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{t.savePdf}</span>
