@@ -1,0 +1,190 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #f7f7f8;
+    color: #09090b;
+    overflow-x: hidden;
+    transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1), color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html.dark body {
+    background-color: #070709;
+    color: #f4f4f5;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+.architectural-grid {
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, rgba(9, 9, 11, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(9, 9, 11, 0.04) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 10%, #000 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 10%, #000 35%, transparent 100%);
+}
+
+html.dark .architectural-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+}
+
+.flow-dash {
+  stroke-dasharray: 6 6;
+  animation: flow-dash 2s linear infinite;
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.spotlight-surface {
+  position: relative;
+  overflow: hidden;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), border-color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spotlight-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    360px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(37, 99, 235, 0.09),
+    transparent 65%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.dark .spotlight-surface::before {
+  background: radial-gradient(
+    380px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(96, 165, 250, 0.12),
+    transparent 65%
+  );
+}
+
+.spotlight-surface:hover::before {
+  opacity: 1;
+}
+
+.spotlight-surface:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-dash {
+    animation: none;
+  }
+  .spotlight-surface:hover {
+    transform: none;
+  }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 14mm;
+  }
+
+  html,
+  html.dark,
+  body,
+  html.dark body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #09090b !important;
+    color-scheme: light !important;
+    font-size: 11pt !important;
+    line-height: 1.45 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  header,
+  canvas,
+  .architectural-grid,
+  .spotlight-surface::before {
+    display: none !important;
+  }
+
+  /* Ensure Framer Motion scroll-reveal elements are fully visible on every page */
+  main * {
+    opacity: 1 !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Reset dark-mode surface & text overrides to crisp white-paper resume styling */
+  section {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+    border-color: #e4e4e7 !important;
+  }
+
+  #topo {
+    padding-top: 0 !important;
+  }
+
+  article,
+  aside,
+  [class*="rounded-2xl"],
+  [class*="rounded-xl"] {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border-color: #e4e4e7 !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4, strong,
+  [class*="text-zinc-50"],
+  [class*="text-zinc-100"],
+  [class*="text-zinc-200"] {
+    color: #09090b !important;
+  }
+
+  p,
+  [class*="text-zinc-300"],
+  [class*="text-zinc-400"] {
+    color: #3f3f46 !important;
+  }
+
+  [class*="text-blue-400"],
+  [class*="text-blue-600"] {
+    color: #1d4ed8 !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+}
