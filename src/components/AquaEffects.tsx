@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   motion,
   AnimatePresence,
@@ -10,13 +10,10 @@ import {
   useMotionValue,
   useAnimationFrame,
   useReducedMotion,
-} from 'motion/react';
-import { ChevronUp, ChevronDown } from 'lucide-react';
-import { useContent } from '../prefs';
-import {
-  smoothScrollTo,
-  useActiveSection,
-} from '../utils/navigation';
+} from "motion/react";
+import { ChevronUp, ChevronDown } from "lucide-react";
+import { useContent } from "../prefs";
+import { smoothScrollTo, useActiveSection } from "../utils/navigation";
 
 /**
  * 1. Intro Curtain (kinetic counter + 4-column staggered shutter wipe in deep obsidian purple)
@@ -28,7 +25,9 @@ export function IntroCurtain() {
   const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (reduced) {
       setDone(true);
       return;
@@ -71,8 +70,8 @@ export function IntroCurtain() {
       className="fixed inset-0 z-[1000] pointer-events-auto cursor-pointer select-none overflow-hidden"
     >
       <motion.div
-        initial={{ y: '0%' }}
-        animate={{ y: exiting ? '-102%' : '0%' }}
+        initial={{ y: "0%" }}
+        animate={{ y: exiting ? "-102%" : "0%" }}
         transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
         className="absolute inset-0 bg-[var(--bg)] text-[var(--fg)] flex flex-col justify-between p-6 sm:p-12 will-change-transform"
       >
@@ -84,8 +83,8 @@ export function IntroCurtain() {
         <div className="my-auto flex flex-col items-center justify-center text-center">
           <div className="overflow-hidden mb-3">
             <motion.p
-              initial={{ y: '100%' }}
-              animate={{ y: '0%' }}
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
               className="font-mono-tabular text-xs uppercase tracking-[0.24em] text-[var(--soft)]"
             >
@@ -95,8 +94,8 @@ export function IntroCurtain() {
 
           <div className="overflow-hidden">
             <motion.p
-              initial={{ y: '100%' }}
-              animate={{ y: '0%' }}
+              initial={{ y: "100%" }}
+              animate={{ y: "0%" }}
               transition={{ duration: 0.72, ease: [0.76, 0, 0.24, 1] }}
               className="font-display font-extrabold uppercase tracking-[-0.04em] text-[clamp(2.5rem,9vw,8rem)] leading-[0.86] text-[var(--fg)]"
             >
@@ -126,8 +125,10 @@ export function IntroCurtain() {
               {ui.introSkip}
             </span>
             <span className="font-display font-extrabold text-5xl sm:text-7xl font-mono-tabular leading-none tracking-tight text-[var(--fg)]">
-              {String(progress).padStart(2, '0')}
-              <span className="text-[var(--muted)] text-xl sm:text-3xl ml-1">%</span>
+              {String(progress).padStart(2, "0")}
+              <span className="text-[var(--muted)] text-xl sm:text-3xl ml-1">
+                %
+              </span>
             </span>
           </div>
         </div>
@@ -154,19 +155,23 @@ export function ScreenBridge({
   const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start start', 'end end'],
+    offset: ["start start", "end end"],
   });
 
   const turn = useTransform(scrollYProgress, [0.04, 0.82], [0, -68]);
-  const slide = useTransform(scrollYProgress, [0.18, 0.78], ['0%', '-62%']);
-  const shade = useTransform(scrollYProgress, [0.08, 0.4, 0.78], [0.05, 0.55, 0]);
+  const slide = useTransform(scrollYProgress, [0.18, 0.78], ["0%", "-62%"]);
+  const shade = useTransform(
+    scrollYProgress,
+    [0.08, 0.4, 0.78],
+    [0.05, 0.55, 0],
+  );
   const copyY = useTransform(scrollYProgress, [0.12, 0.5], [36, 0]);
-  const marqueeX = useTransform(scrollYProgress, [0, 1], ['0%', '-22%']);
-  const rule = useTransform(scrollYProgress, [0.08, 0.92], ['0%', '100%']);
+  const marqueeX = useTransform(scrollYProgress, [0, 1], ["0%", "-22%"]);
+  const rule = useTransform(scrollYProgress, [0.08, 0.92], ["0%", "100%"]);
 
   const metaIdx = screens.findIndex((s) => s.id === targetId);
   const meta = metaIdx >= 0 ? screens[metaIdx] : undefined;
-  const prevNum = metaIdx > 0 ? screens[metaIdx - 1].num : '00';
+  const prevNum = metaIdx > 0 ? screens[metaIdx - 1].num : "00";
   const pageTitle = meta?.label ?? label;
 
   if (shouldReduceMotion) {
@@ -194,91 +199,112 @@ export function ScreenBridge({
   return (
     <div ref={ref} className="relative h-[210vh] bg-[var(--bg)] select-none">
       <div className="sticky top-0 h-[100dvh] w-full overflow-hidden">
-        <div className="relative h-full w-full" style={{ perspective: '2400px' }}>
-        <div className="absolute inset-0 bg-[var(--fg)] text-[var(--bg)] overflow-hidden">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -left-[4vw] top-1/2 -translate-y-1/2 font-display font-extrabold leading-none tracking-[-0.07em] text-[34vw] text-[var(--bg)] opacity-[0.12]"
-          >
-            {num}
-          </div>
-
-          <motion.div
-            aria-hidden="true"
-            style={{ x: marqueeX }}
-            className="pointer-events-none absolute left-0 right-0 bottom-[18%] flex w-[160%] gap-[0.4em] whitespace-nowrap font-display font-extrabold uppercase tracking-[-0.05em] text-[11vw] leading-none text-[var(--bg)] opacity-[0.14]"
-          >
-            {Array.from({ length: 5 }, (_, i) => (
-              <span key={i}>{pageTitle}</span>
-            ))}
-          </motion.div>
-
-          <motion.div
-            style={{ y: copyY }}
-            className="relative h-full flex flex-col justify-between pl-6 pr-16 sm:pl-14 sm:pr-24 py-8 sm:py-12"
-          >
-            <div className="flex items-center justify-between font-mono-tabular text-[11px] uppercase tracking-[0.24em]">
-              <span>{prevNum} → {num}</span>
-              <span>{num} / 06</span>
-            </div>
-
-            <div className="ml-auto flex max-w-xl flex-col items-end text-right">
-              <h2 className="font-display font-extrabold tracking-[-0.045em] text-[clamp(2.8rem,6vw,5.5rem)] leading-[0.88]">
-                {pageTitle}
-              </h2>
-              {meta && (
-                <p className="mt-4 max-w-md text-sm sm:text-base opacity-70">
-                  {meta.subtitle}
-                </p>
-              )}
-              <button
-                type="button"
-                onClick={() => smoothScrollTo(`#${targetId}`)}
-                className="mt-8 inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--bg)] text-[var(--fg)] text-sm font-semibold hover:opacity-85 transition-opacity"
-              >
-                <span>{ui.follow} {pageTitle}</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
-            </div>
-
-            <div className="h-px w-full bg-[var(--bg)]/25 overflow-hidden">
-              <motion.div style={{ width: rule }} className="h-full bg-[var(--bg)]" />
-            </div>
-          </motion.div>
-        </div>
-
-        <motion.div
-          aria-hidden="true"
-          style={{ opacity: shade }}
-          className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[34%] bg-gradient-to-r from-black/70 to-transparent"
-        />
-
-        <motion.div
-          aria-hidden="true"
-          style={{ rotateY: turn, x: slide, transformOrigin: 'left center', transformStyle: 'preserve-3d' }}
-          className="pointer-events-none absolute inset-0 z-[3] origin-left bg-[var(--bg)] text-[var(--fg)] will-change-transform [backface-visibility:hidden]"
+        <div
+          className="relative h-full w-full"
+          style={{ perspective: "2400px" }}
         >
-          <div className="absolute inset-0 flex flex-col justify-between py-8 opacity-40" aria-hidden="true">
-            {Array.from({ length: 7 }, (_, i) => (
-              <div key={i} className="h-px w-full bg-[var(--line)]" />
-            ))}
+          <div className="absolute inset-0 bg-[var(--fg)] text-[var(--bg)] overflow-hidden">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-[4vw] top-1/2 -translate-y-1/2 font-display font-extrabold leading-none tracking-[-0.07em] text-[34vw] text-[var(--bg)] opacity-[0.12]"
+            >
+              {num}
+            </div>
+
+            <motion.div
+              aria-hidden="true"
+              style={{ x: marqueeX }}
+              className="pointer-events-none absolute left-0 right-0 bottom-[18%] flex w-[160%] gap-[0.4em] whitespace-nowrap font-display font-extrabold uppercase tracking-[-0.05em] text-[11vw] leading-none text-[var(--bg)] opacity-[0.14]"
+            >
+              {Array.from({ length: 5 }, (_, i) => (
+                <span key={i}>{pageTitle}</span>
+              ))}
+            </motion.div>
+
+            <motion.div
+              style={{ y: copyY }}
+              className="relative h-full flex flex-col justify-between pl-6 pr-16 sm:pl-14 sm:pr-24 py-8 sm:py-12"
+            >
+              <div className="flex items-center justify-between font-mono-tabular text-[11px] uppercase tracking-[0.24em]">
+                <span>
+                  {prevNum} → {num}
+                </span>
+                <span>{num} / 06</span>
+              </div>
+
+              <div className="ml-auto flex max-w-xl flex-col items-end text-right">
+                <h2 className="font-display font-extrabold tracking-[-0.045em] text-[clamp(2.8rem,6vw,5.5rem)] leading-[0.88]">
+                  {pageTitle}
+                </h2>
+                {meta && (
+                  <p className="mt-4 max-w-md text-sm sm:text-base opacity-70">
+                    {meta.subtitle}
+                  </p>
+                )}
+                <button
+                  type="button"
+                  onClick={() => smoothScrollTo(`#${targetId}`)}
+                  className="mt-8 inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--bg)] text-[var(--fg)] text-sm font-semibold hover:opacity-85 transition-opacity"
+                >
+                  <span>
+                    {ui.follow} {pageTitle}
+                  </span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+              </div>
+
+              <div className="h-px w-full bg-[var(--bg)]/25 overflow-hidden">
+                <motion.div
+                  style={{ width: rule }}
+                  className="h-full bg-[var(--bg)]"
+                />
+              </div>
+            </motion.div>
           </div>
-          <div className="absolute inset-y-0 left-0 w-10 sm:w-14 border-r border-[var(--line)] flex flex-col justify-between py-6 items-center">
-            {Array.from({ length: 8 }, (_, i) => (
-              <span key={i} className="h-2 w-2 rounded-full bg-[var(--fg)]/30" />
-            ))}
-          </div>
-          <div className="absolute inset-0 flex items-center pl-16 sm:pl-24 pr-8 overflow-hidden">
-            <p className="font-display font-extrabold uppercase tracking-[-0.06em] text-[clamp(4.5rem,14vw,11rem)] leading-[0.82]">
-              {pageTitle}
-            </p>
-          </div>
-          <div className="absolute top-8 left-16 sm:left-24 font-mono-tabular text-[11px] uppercase tracking-[0.24em] text-[var(--muted)]">
-            {prevNum} → {num}
-          </div>
-          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[var(--fg)]/20 to-transparent" />
-          <div className="absolute inset-y-0 right-0 w-[3px] bg-[var(--fg)]" />
-        </motion.div>
+
+          <motion.div
+            aria-hidden="true"
+            style={{ opacity: shade }}
+            className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[34%] bg-gradient-to-r from-black/70 to-transparent"
+          />
+
+          <motion.div
+            aria-hidden="true"
+            style={{
+              rotateY: turn,
+              x: slide,
+              transformOrigin: "left center",
+              transformStyle: "preserve-3d",
+            }}
+            className="pointer-events-none absolute inset-0 z-[3] origin-left bg-[var(--bg)] text-[var(--fg)] will-change-transform [backface-visibility:hidden]"
+          >
+            <div
+              className="absolute inset-0 flex flex-col justify-between py-8 opacity-40"
+              aria-hidden="true"
+            >
+              {Array.from({ length: 7 }, (_, i) => (
+                <div key={i} className="h-px w-full bg-[var(--line)]" />
+              ))}
+            </div>
+            <div className="absolute inset-y-0 left-0 w-10 sm:w-14 border-r border-[var(--line)] flex flex-col justify-between py-6 items-center">
+              {Array.from({ length: 8 }, (_, i) => (
+                <span
+                  key={i}
+                  className="h-2 w-2 rounded-full bg-[var(--fg)]/30"
+                />
+              ))}
+            </div>
+            <div className="absolute inset-0 flex items-center pl-16 sm:pl-24 pr-8 overflow-hidden">
+              <p className="font-display font-extrabold uppercase tracking-[-0.06em] text-[clamp(4.5rem,14vw,11rem)] leading-[0.82]">
+                {pageTitle}
+              </p>
+            </div>
+            <div className="absolute top-8 left-16 sm:left-24 font-mono-tabular text-[11px] uppercase tracking-[0.24em] text-[var(--muted)]">
+              {prevNum} → {num}
+            </div>
+            <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[var(--fg)]/20 to-transparent" />
+            <div className="absolute inset-y-0 right-0 w-[3px] bg-[var(--fg)]" />
+          </motion.div>
         </div>
       </div>
     </div>
@@ -293,16 +319,16 @@ export function ScreenPagerRail() {
   const activeSection = useActiveSection();
   const activeIdx = Math.max(
     0,
-    SCREEN_DIRECTORY.findIndex((s) => s.id === activeSection)
+    SCREEN_DIRECTORY.findIndex((s) => s.id === activeSection),
   );
 
   const goStep = (delta: number) => {
     const nextIdx = Math.min(
       SCREEN_DIRECTORY.length - 1,
-      Math.max(0, activeIdx + delta)
+      Math.max(0, activeIdx + delta),
     );
     const target = SCREEN_DIRECTORY[nextIdx];
-    smoothScrollTo(`#${target.id}`, target.id === 'topo' ? 0 : 64);
+    smoothScrollTo(`#${target.id}`, target.id === "topo" ? 0 : 64);
   };
 
   return (
@@ -329,7 +355,7 @@ export function ScreenPagerRail() {
               key={screen.id}
               type="button"
               onClick={() =>
-                smoothScrollTo(`#${screen.id}`, screen.id === 'topo' ? 0 : 64)
+                smoothScrollTo(`#${screen.id}`, screen.id === "topo" ? 0 : 64)
               }
               aria-label={`Ir para tela ${screen.num}: ${screen.label}`}
               title={`${screen.num} · ${screen.label}`}
@@ -338,8 +364,8 @@ export function ScreenPagerRail() {
               <span
                 className={`block transition-all duration-200 ${
                   isCurrent
-                    ? 'w-5 h-[3px] bg-[var(--soft)]'
-                    : 'w-2.5 h-[2px] bg-white/25 group-hover:w-4 group-hover:bg-[var(--card)]'
+                    ? "w-5 h-[3px] bg-[var(--soft)]"
+                    : "w-2.5 h-[2px] bg-white/25 group-hover:w-4 group-hover:bg-[var(--card)]"
                 }`}
               />
             </button>
@@ -370,15 +396,17 @@ export function ScreenPagerRail() {
  */
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [label, setLabel] = useState<string>('');
-  const [variant, setVariant] = useState<'default' | 'view' | 'pointer'>(
-    'default'
+  const [label, setLabel] = useState<string>("");
+  const [variant, setVariant] = useState<"default" | "view" | "pointer">(
+    "default",
   );
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const isFine = window.matchMedia('(pointer: fine)').matches;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isFine = window.matchMedia("(pointer: fine)").matches;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (!isFine || reduced) return;
 
     let mouseX = -100;
@@ -397,14 +425,14 @@ export function CustomCursor() {
       const pointerTarget = target?.closest('a, button, [role="button"]');
 
       if (viewTarget) {
-        setVariant('view');
-        setLabel('VER');
+        setVariant("view");
+        setLabel("VER");
       } else if (pointerTarget) {
-        setVariant('pointer');
-        setLabel('');
+        setVariant("pointer");
+        setLabel("");
       } else {
-        setVariant('default');
-        setLabel('');
+        setVariant("default");
+        setLabel("");
       }
     };
 
@@ -419,30 +447,30 @@ export function CustomCursor() {
       rafId = requestAnimationFrame(tick);
     };
 
-    window.addEventListener('mousemove', onMove, { passive: true });
-    document.addEventListener('mouseleave', onLeave);
+    window.addEventListener("mousemove", onMove, { passive: true });
+    document.addEventListener("mouseleave", onLeave);
     rafId = requestAnimationFrame(tick);
 
     return () => {
-      window.removeEventListener('mousemove', onMove);
-      document.removeEventListener('mouseleave', onLeave);
+      window.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseleave", onLeave);
       cancelAnimationFrame(rafId);
     };
   }, []);
 
   const sizeClass =
-    variant === 'view'
-      ? 'w-[84px] h-[84px]'
-      : variant === 'pointer'
-      ? 'w-[44px] h-[44px]'
-      : 'w-[24px] h-[24px]';
+    variant === "view"
+      ? "w-[84px] h-[84px]"
+      : variant === "pointer"
+        ? "w-[44px] h-[44px]"
+        : "w-[24px] h-[24px]";
 
   return (
     <div
       ref={cursorRef}
       aria-hidden="true"
       className={`hidden lg:flex fixed top-0 left-0 z-[9999] rounded-full bg-white text-black mix-blend-difference pointer-events-none items-center justify-center transition-[width,height,opacity] duration-200 ease-out ${sizeClass} ${
-        visible ? 'opacity-100' : 'opacity-0'
+        visible ? "opacity-100" : "opacity-0"
       }`}
     >
       {label && (
@@ -460,7 +488,7 @@ export function CustomCursor() {
 export function Magnetic({
   children,
   strength = 0.35,
-  className = '',
+  className = "",
 }: {
   children: ReactNode;
   strength?: number;
@@ -485,7 +513,7 @@ export function Magnetic({
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
       animate={{ x: offset.x, y: offset.y }}
-      transition={{ type: 'spring', stiffness: 220, damping: 16, mass: 0.4 }}
+      transition={{ type: "spring", stiffness: 220, damping: 16, mass: 0.4 }}
       className={`inline-block ${className}`}
     >
       {children}
@@ -498,7 +526,7 @@ export function Magnetic({
  */
 export function RollingText({
   text,
-  className = '',
+  className = "",
 }: {
   text: string;
   className?: string;
@@ -525,13 +553,13 @@ export function RollingText({
  */
 export function AnimatedRule({
   dark = true,
-  className = '',
+  className = "",
 }: {
   dark?: boolean;
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-40px' });
+  const inView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
     <div ref={ref} className={`w-full overflow-hidden ${className}`}>
@@ -541,8 +569,8 @@ export function AnimatedRule({
         transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
         className={`h-[1.5px] w-full origin-left ${
           dark
-            ? 'bg-gradient-to-r from-[var(--card)]/80 via-white/20 to-white/8'
-            : 'bg-[var(--card)]/55'
+            ? "bg-gradient-to-r from-[var(--card)]/80 via-white/20 to-white/8"
+            : "bg-[var(--card)]/55"
         }`}
       />
     </div>
@@ -554,7 +582,7 @@ export function AnimatedRule({
  */
 export function ScrollRevealWords({
   text,
-  className = '',
+  className = "",
   delay = 0,
 }: {
   text: string;
@@ -562,16 +590,24 @@ export function ScrollRevealWords({
   delay?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-8% 0px' });
-  const words = text.split(' ');
+  const inView = useInView(ref, { once: true, margin: "-8% 0px" });
+  const words = text.split(" ");
 
   return (
-    <span ref={ref} className={`inline-flex flex-wrap gap-x-[0.26em] ${className}`}>
+    <span
+      ref={ref}
+      className={`inline-flex flex-wrap gap-x-[0.26em] ${className}`}
+    >
       {words.map((word, idx) => (
-        <span key={`${word}-${idx}`} className="inline-block overflow-hidden py-[0.04em]">
+        <span
+          key={`${word}-${idx}`}
+          className="inline-block overflow-hidden py-[0.04em]"
+        >
           <motion.span
-            initial={{ y: '108%', opacity: 0 }}
-            animate={inView ? { y: '0%', opacity: 1 } : { y: '108%', opacity: 0 }}
+            initial={{ y: "108%", opacity: 0 }}
+            animate={
+              inView ? { y: "0%", opacity: 1 } : { y: "108%", opacity: 0 }
+            }
             transition={{
               duration: 0.72,
               delay: delay + idx * 0.04,
@@ -593,13 +629,13 @@ export function ScrollRevealWords({
 export function VelocityMarquee({
   items,
   baseVelocity = 3.6,
-  variant = 'dark',
+  variant = "dark",
   large = false,
-  className = '',
+  className = "",
 }: {
   items: string[];
   baseVelocity?: number;
-  variant?: 'dark' | 'light' | 'cobalt';
+  variant?: "dark" | "light" | "cobalt";
   large?: boolean;
   className?: string;
 }) {
@@ -636,18 +672,20 @@ export function VelocityMarquee({
   const repeated = [...items, ...items, ...items, ...items];
 
   const paletteClass =
-    variant === 'cobalt'
-      ? 'bg-[var(--card)] text-white border-[var(--line)]/60'
-      : variant === 'light'
-      ? 'bg-[var(--bg)] text-[var(--fg)] border-[var(--line)]'
-      : 'bg-[var(--bg)] text-[var(--fg)] border-[var(--line)]';
+    variant === "cobalt"
+      ? "bg-[var(--card)] text-white border-[var(--line)]/60"
+      : variant === "light"
+        ? "bg-[var(--bg)] text-[var(--fg)] border-[var(--line)]"
+        : "bg-[var(--bg)] text-[var(--fg)] border-[var(--line)]";
 
   return (
-    <div className={`w-full overflow-hidden border-y select-none ${paletteClass} ${className}`}>
+    <div
+      className={`w-full overflow-hidden border-y select-none ${paletteClass} ${className}`}
+    >
       <motion.div
-        style={{ x: shouldReduceMotion ? '0%' : x }}
+        style={{ x: shouldReduceMotion ? "0%" : x }}
         className={`flex w-max items-center will-change-transform ${
-          large ? 'py-3.5 sm:py-4' : 'py-2.5 sm:py-3'
+          large ? "py-3.5 sm:py-4" : "py-2.5 sm:py-3"
         }`}
       >
         {repeated.map((item, idx) => (
@@ -657,7 +695,9 @@ export function VelocityMarquee({
           >
             <span
               className={`font-display font-extrabold uppercase tracking-[-0.02em] ${
-                large ? 'text-base sm:text-2xl' : 'text-xs sm:text-sm tracking-[0.12em]'
+                large
+                  ? "text-base sm:text-2xl"
+                  : "text-xs sm:text-sm tracking-[0.12em]"
               }`}
             >
               {item}
@@ -665,9 +705,9 @@ export function VelocityMarquee({
             <span
               aria-hidden="true"
               className={`inline-block rotate-45 ${
-                large ? 'w-2.5 h-2.5' : 'w-1.5 h-1.5'
+                large ? "w-2.5 h-2.5" : "w-1.5 h-1.5"
               } ${
-                variant === 'cobalt' ? 'bg-[var(--bg)]' : 'bg-[var(--card)]'
+                variant === "cobalt" ? "bg-[var(--bg)]" : "bg-[var(--card)]"
               }`}
             />
           </div>
@@ -683,19 +723,31 @@ export function VelocityMarquee({
 export function CrossVelocityMarquee({
   topItems,
   bottomItems,
-  className = '',
+  className = "",
 }: {
   topItems: string[];
   bottomItems: string[];
   className?: string;
 }) {
   return (
-    <div className={`relative w-full overflow-hidden py-5 sm:py-7 ${className}`}>
+    <div
+      className={`relative w-full overflow-hidden py-5 sm:py-7 ${className}`}
+    >
       <div className="-mx-4 -rotate-1 sm:-rotate-[1.2deg]">
-        <VelocityMarquee items={topItems} baseVelocity={3.8} variant="dark" large />
+        <VelocityMarquee
+          items={topItems}
+          baseVelocity={3.8}
+          variant="dark"
+          large
+        />
       </div>
       <div className="-mx-4 rotate-1 sm:rotate-[1.2deg] -mt-2">
-        <VelocityMarquee items={bottomItems} baseVelocity={-3.4} variant="cobalt" large />
+        <VelocityMarquee
+          items={bottomItems}
+          baseVelocity={-3.4}
+          variant="cobalt"
+          large
+        />
       </div>
     </div>
   );
@@ -706,7 +758,7 @@ export function CrossVelocityMarquee({
  */
 export function Tilt3DFrame({
   children,
-  className = '',
+  className = "",
   maxTilt = 10,
 }: {
   children: ReactNode;
@@ -749,7 +801,7 @@ export function Tilt3DFrame({
             : {
                 rotateX,
                 rotateY,
-                transformStyle: 'preserve-3d',
+                transformStyle: "preserve-3d",
               }
         }
         className="relative w-full h-full will-change-transform"
@@ -774,13 +826,13 @@ export function Tilt3DFrame({
  * 6. Floating Magnetic Burger & Curved SVG Drawer
  */
 const DRAWER_LINKS = [
-  { label: 'Início', href: '#topo' },
-  { label: 'Perfil', href: '#sobre' },
-  { label: 'Trabalhos', href: '#projetos' },
-  { label: 'Atuação', href: '#atuacao' },
-  { label: 'Trajetória', href: '#trajetoria' },
-  { label: 'Depoimentos', href: '#depoimentos' },
-  { label: 'Contato', href: '#contato' },
+  { label: "Início", href: "#topo" },
+  { label: "Perfil", href: "#sobre" },
+  { label: "Trabalhos", href: "#projetos" },
+  { label: "Atuação", href: "#atuacao" },
+  { label: "Trajetória", href: "#trajetoria" },
+  { label: "Depoimentos", href: "#depoimentos" },
+  { label: "Contato", href: "#contato" },
 ];
 
 export function CurvedDrawerNav() {
@@ -795,7 +847,7 @@ export function CurvedDrawerNav() {
       setShowFloatingBtn(window.scrollY > 240);
     };
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key === "Escape") setOpen(false);
     };
     const onOpenDrawer = () => {
       setOpen(true);
@@ -804,26 +856,26 @@ export function CurvedDrawerNav() {
       setOpen((prev) => !prev);
     };
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('keydown', onKey);
-    window.addEventListener('portfolio:open-drawer', onOpenDrawer);
-    window.addEventListener('portfolio:toggle-drawer', onToggleDrawer);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("portfolio:open-drawer", onOpenDrawer);
+    window.addEventListener("portfolio:toggle-drawer", onToggleDrawer);
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('keydown', onKey);
-      window.removeEventListener('portfolio:open-drawer', onOpenDrawer);
-      window.removeEventListener('portfolio:toggle-drawer', onToggleDrawer);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("portfolio:open-drawer", onOpenDrawer);
+      window.removeEventListener("portfolio:toggle-drawer", onToggleDrawer);
     };
   }, []);
 
   const navigateTo = (href: string) => {
     setOpen(false);
-    smoothScrollTo(href, href === '#topo' ? 0 : 64);
+    smoothScrollTo(href, href === "#topo" ? 0 : 64);
   };
 
   const currentIndicator = hoveredHref ?? `#${activeSection}`;
 
-  const vh = typeof window !== 'undefined' ? window.innerHeight : 900;
+  const vh = typeof window !== "undefined" ? window.innerHeight : 900;
   const initialCurve = `M100 0 L200 0 L200 ${vh} L100 ${vh} Q-100 ${vh / 2} 100 0`;
   const targetCurve = `M100 0 L200 0 L200 ${vh} L100 ${vh} Q100 ${vh / 2} 100 0`;
 
@@ -842,18 +894,20 @@ export function CurvedDrawerNav() {
               <button
                 type="button"
                 onClick={() => setOpen((v) => !v)}
-                aria-label={open ? 'Fechar navegação rápida' : 'Abrir navegação rápida'}
+                aria-label={
+                  open ? "Fechar navegação rápida" : "Abrir navegação rápida"
+                }
                 aria-expanded={open}
                 className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--bg)] text-[var(--fg)] border border-[var(--line)]/55 shadow-[0_8px_28px_rgba(41,33,37,0.45)] flex flex-col items-center justify-center gap-1.5 hover:bg-[var(--card)] hover:border-[var(--line)] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--line)]"
               >
                 <span
                   className={`block w-5 h-[1.5px] bg-current transition-transform duration-300 ${
-                    open ? 'rotate-45 translate-y-[3.5px]' : ''
+                    open ? "rotate-45 translate-y-[3.5px]" : ""
                   }`}
                 />
                 <span
                   className={`block w-5 h-[1.5px] bg-current transition-transform duration-300 ${
-                    open ? '-rotate-45 -translate-y-[3.5px]' : ''
+                    open ? "-rotate-45 -translate-y-[3.5px]" : ""
                   }`}
                 />
               </button>
@@ -877,9 +931,9 @@ export function CurvedDrawerNav() {
               role="dialog"
               aria-modal="true"
               aria-label="Navegação rápida"
-              initial={{ x: 'calc(100% + 100px)' }}
-              animate={{ x: '0%' }}
-              exit={{ x: 'calc(100% + 100px)' }}
+              initial={{ x: "calc(100% + 100px)" }}
+              animate={{ x: "0%" }}
+              exit={{ x: "calc(100% + 100px)" }}
               transition={{ duration: 0.72, ease: [0.76, 0, 0.24, 1] }}
               className="fixed top-0 right-0 h-screen w-full sm:w-[440px] lg:w-[500px] bg-[var(--bg)] text-[var(--fg)] border-l border-[var(--line)]/30 z-[700] flex flex-col justify-between p-8 sm:p-14"
             >
