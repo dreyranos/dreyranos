@@ -24,6 +24,11 @@ jobs:
           games: 'puzzle-bobble'
           hide_month_labels: 'false'
 
+      - name: Pedir para a Vercel ignorar esta branch
+        run: |
+          mkdir -p dist
+          printf '%s\n' '{ "ignoreCommand": "exit 0" }' > dist/vercel.json
+
       - name: Enviar SVG para a branch output
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:

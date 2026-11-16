@@ -24,6 +24,11 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
+      - name: Pedir para a Vercel ignorar esta branch
+        run: |
+          mkdir -p dist
+          printf '%s\n' '{ "ignoreCommand": "exit 0" }' > dist/vercel.json
+
       - uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
