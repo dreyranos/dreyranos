@@ -49,24 +49,14 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
-<img align="right" src="./assets/profile.jpg" width="185" alt="Andrey Ramos" />
-
-Desenvolvedor full stack com **mais de nove anos de atuação em tecnologia**, construindo e sustentando sistemas que operam em produção. Minha experiência combina **arquitetura de APIs multi-tenant**, **modernização de sistemas legados** e **desenvolvimento de aplicações web, mobile e desktop**, sempre com foco em qualidade de código, desempenho, escalabilidade e valor entregue ao negócio.
-
-> **Princípios de engenharia:** código legível, decisões documentadas, mudanças incrementais e automação de tudo que for repetitivo.
+<p>
+  <img align="right" src="./assets/profile.jpg" width="190" alt="Andrey Ramos" />
+  Desenvolvedor full stack com <b>mais de nove anos de atuação em tecnologia</b>, construindo e sustentando sistemas que operam em produção. Minha experiência combina <b>arquitetura de APIs multi-tenant</b>, <b>modernização de sistemas legados</b> e <b>desenvolvimento de aplicações web, mobile e desktop</b>, sempre com foco em qualidade de código, desempenho, escalabilidade e valor entregue ao negócio.
+  <br/><br/>
+  <b>Princípios de engenharia:</b> código legível, decisões documentadas, mudanças incrementais e automação de tudo que for repetitivo.
+</p>
 
 <br clear="right" />
-
-```ts
-// engineering_profile.ts
-export const andreyRamos = {
-  role: "Desenvolvedor Full Stack | Engenharia de Software",
-  location: "São José do Rio Preto, SP - Brasil",
-  experience: "9+ anos em produção",
-  status: "DISPONÍVEL_PARA_OPORTUNIDADES",
-  focus: ["APIs Multi-Tenant", "Legado", "Mobile/Desktop", "Automação & IA"],
-} as const;
-```
 
 <br/>
 
