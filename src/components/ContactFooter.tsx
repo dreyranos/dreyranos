@@ -209,7 +209,7 @@ export default function ContactFooter() {
                   x: emailHovered ? '110%' : '0%',
                 }}
                 transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
-                className="absolute bottom-0 left-0 w-full h-[3px] sm:h-[6px] bg-white/25"
+                className="absolute bottom-0 left-0 w-full h-[3px] sm:h-[6px] bg-[var(--fg)]/25"
               />
               <motion.span
                 aria-hidden="true"

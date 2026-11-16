@@ -305,7 +305,7 @@ export default function FlowVideoSimulator({
                     className={`relative px-3 py-1.5 text-[11px] font-mono-tabular border transition-colors whitespace-nowrap shrink-0 ${
                       isSelected
                         ? 'bg-[var(--btn)] text-[var(--btn-fg)] border-[var(--line)] font-semibold'
-                        : 'bg-[var(--bg)] text-[var(--soft)] border-[var(--line)] hover:border-[var(--line)]/60 hover:text-white'
+                        : 'bg-[var(--bg)] text-[var(--soft)] border-[var(--line)] hover:border-[var(--line)]/60 hover:text-[var(--fg)]'
                     }`}
                   >
                     {prog.index}. {prog.title}
@@ -419,7 +419,7 @@ export default function FlowVideoSimulator({
                         className={`text-left px-3 py-2 text-xs border transition-colors flex items-center justify-between gap-2 ${
                           active
                             ? 'bg-[var(--btn)] text-[var(--btn-fg)] border-[var(--line)] font-semibold'
-                            : 'bg-[var(--bg)] text-[var(--soft)] border-[var(--line)] hover:border-[var(--line)]/60 hover:text-white'
+                            : 'bg-[var(--bg)] text-[var(--soft)] border-[var(--line)] hover:border-[var(--line)]/60 hover:text-[var(--fg)]'
                         }`}
                       >
                         <span className="truncate">

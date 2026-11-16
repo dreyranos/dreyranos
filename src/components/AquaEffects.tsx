@@ -365,7 +365,7 @@ export function ScreenPagerRail() {
                 className={`block transition-all duration-200 ${
                   isCurrent
                     ? "w-5 h-[3px] bg-[var(--soft)]"
-                    : "w-2.5 h-[2px] bg-white/25 group-hover:w-4 group-hover:bg-[var(--card)]"
+                    : "w-2.5 h-[2px] bg-[var(--fg)]/25 group-hover:w-4 group-hover:bg-[var(--fg)]"
                 }`}
               />
             </button>
@@ -673,10 +673,8 @@ export function VelocityMarquee({
 
   const paletteClass =
     variant === "cobalt"
-      ? "bg-[var(--card)] text-white border-[var(--line)]/60"
-      : variant === "light"
-        ? "bg-[var(--bg)] text-[var(--fg)] border-[var(--line)]"
-        : "bg-[var(--bg)] text-[var(--fg)] border-[var(--line)]";
+      ? "bg-[var(--fg)] text-[var(--bg)] border-[var(--fg)]"
+      : "bg-[var(--bg)] text-[var(--fg)] border-[var(--line)]";
 
   return (
     <div
@@ -707,7 +705,7 @@ export function VelocityMarquee({
               className={`inline-block rotate-45 ${
                 large ? "w-2.5 h-2.5" : "w-1.5 h-1.5"
               } ${
-                variant === "cobalt" ? "bg-[var(--bg)]" : "bg-[var(--card)]"
+                variant === "cobalt" ? "bg-[var(--bg)]" : "bg-[var(--fg)]"
               }`}
             />
           </div>
@@ -731,7 +729,7 @@ export function CrossVelocityMarquee({
 }) {
   return (
     <div
-      className={`relative w-full overflow-hidden py-5 sm:py-7 ${className}`}
+      className={`relative w-full overflow-hidden bg-[var(--bg)] py-8 sm:py-12 ${className}`}
     >
       <div className="-mx-4 -rotate-1 sm:-rotate-[1.2deg]">
         <VelocityMarquee

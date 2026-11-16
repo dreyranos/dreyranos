@@ -515,7 +515,7 @@ export default function ProjectsSection() {
               <span aria-hidden="true">·</span>
               <span
                 className={
-                  activeNode.layer === 'client' ? 'text-white font-semibold' : 'text-[var(--muted)]'
+                  activeNode.layer === 'client' ? 'text-[var(--fg)] font-semibold' : 'text-[var(--muted)]'
                 }
               >
                 01 Cliente
@@ -523,7 +523,7 @@ export default function ProjectsSection() {
               <span className="text-[var(--muted)]">→</span>
               <span
                 className={
-                  activeNode.layer === 'core' ? 'text-white font-semibold' : 'text-[var(--muted)]'
+                  activeNode.layer === 'core' ? 'text-[var(--fg)] font-semibold' : 'text-[var(--muted)]'
                 }
               >
                 02 Gateway Multi-Tenant
@@ -531,7 +531,7 @@ export default function ProjectsSection() {
               <span className="text-[var(--muted)]">→</span>
               <span
                 className={
-                  activeNode.layer === 'data' ? 'text-white font-semibold' : 'text-[var(--muted)]'
+                  activeNode.layer === 'data' ? 'text-[var(--fg)] font-semibold' : 'text-[var(--muted)]'
                 }
               >
                 03 Serviços &amp; Firebird SQL

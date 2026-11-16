@@ -716,7 +716,7 @@ function PipelineTerminalStage({ sceneIdx, onJumpToScene }: StageProps) {
                 key={line}
                 className={
                   i === 0
-                    ? 'text-white font-semibold'
+                    ? 'text-[var(--fg)] font-semibold'
                     : i === activeLines.length - 1
                     ? 'text-[var(--fg)]'
                     : 'text-[var(--soft)]'
