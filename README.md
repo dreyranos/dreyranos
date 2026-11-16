@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,35:1e3a8a,70:2563eb,100:06b6d4&height=260&section=header&text=Andrey%20Ramos&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Desenvolvedor%20Full%20Stack%20%7C%20Engenharia%20de%20Software&descSize=20&descAlignY=58&descColor=bae6fd" width="100%" alt="Andrey Ramos" />
 
-<a href="https://github.com/dreyranos">
+<a href="https://dreyranos.github.io">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1200&color=38BDF8&center=true&vCenter=true&width=800&height=45&lines=APIs+Multi-Tenant+%7C+Arquitetura+Backend;React+Native+(Expo)+%7C+Delphi+FMX;Firebird+SQL+%7C+Moderniza%C3%A7%C3%A3o+de+Sistemas+Legados;Automa%C3%A7%C3%A3o+com+Python%2C+Bash+e+Fluxos+de+IA" alt="Especialidades" />
 </a>
 
@@ -12,6 +12,15 @@
 <img src="https://img.shields.io/badge/S%C3%83O_JOS%C3%89_DO_RIO_PRETO-SP_%7C_BRASIL-020617?style=for-the-badge&labelColor=1e3a8a&logo=googlemaps&logoColor=white" alt="Localização" />
 <img src="https://img.shields.io/badge/DISPON%C3%8DVEL-PARA_OPORTUNIDADES-020617?style=for-the-badge&labelColor=06b6d4&logo=checkmarx&logoColor=white" alt="Status" />
 
+<br/><br/>
+
+<a href="https://dreyranos.github.io">
+  <img src="https://img.shields.io/badge/🌐_ACESSAR_PORTF%C3%93LIO_INTERATIVO-06b6d4?style=for-the-badge&labelColor=020617" alt="Portfólio Interativo" />
+</a>
+<a href="https://www.linkedin.com/in/andrey-ramos-6302722a3">
+  <img src="https://img.shields.io/badge/LinkedIn-2563eb?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+
 <br/>
 
 <img src="https://komarev.com/ghpvc/?username=dreyranos&style=flat-square&color=2563eb&labelColor=020617&label=VISUALIZA%C3%87%C3%95ES" alt="Visualizações" />
@@ -20,13 +29,19 @@
 <br/><br/>
 
 <a href="#-sobre"><img src="https://img.shields.io/badge/Sobre-1e3a8a?style=flat-square" alt="Sobre" /></a>
+<a href="#-áreas-de-atuação"><img src="https://img.shields.io/badge/Atuação-1e3a8a?style=flat-square" alt="Áreas de Atuação" /></a>
 <a href="#-arquitetura-de-referência"><img src="https://img.shields.io/badge/Arquitetura-1e3a8a?style=flat-square" alt="Arquitetura" /></a>
 <a href="#-stack-tecnológica"><img src="https://img.shields.io/badge/Stack-1e3a8a?style=flat-square" alt="Stack" /></a>
 <a href="#-experiência-profissional"><img src="https://img.shields.io/badge/Experiência-1e3a8a?style=flat-square" alt="Experiência" /></a>
 <a href="#-formação-acadêmica"><img src="https://img.shields.io/badge/Formação-1e3a8a?style=flat-square" alt="Formação" /></a>
-<a href="#-contato"><img src="https://img.shields.io/badge/Contato-1e3a8a?style=flat-square" alt="Contato" /></a>
+<a href="#-contato--oportunidades"><img src="https://img.shields.io/badge/Contato-1e3a8a?style=flat-square" alt="Contato" /></a>
 
 </div>
+
+<br/>
+
+> [!TIP]
+> **Porta de Entrada para Novas Oportunidades:** Confira minha apresentação interativa, arquitetura clicável e visão completa de carreira no meu **[Portfólio Web (dreyranos.github.io)](https://dreyranos.github.io)** ou conecte-se diretamente pelo **[LinkedIn](https://www.linkedin.com/in/andrey-ramos-6302722a3)**.
 
 <br/>
 
@@ -34,7 +49,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
 
-Desenvolvedor full stack com mais de nove anos de atuação em tecnologia, construindo e sustentando sistemas que operam em produção. Minha experiência combina **arquitetura de APIs multi-tenant**, **modernização de sistemas legados** e **desenvolvimento de aplicações mobile e desktop**, sempre com foco em qualidade de código, desempenho, escalabilidade e valor entregue ao negócio.
+Desenvolvedor full stack com **mais de nove anos de atuação em tecnologia**, construindo e sustentando sistemas que operam em produção. Minha experiência combina **arquitetura de APIs multi-tenant**, **modernização de sistemas legados** e **desenvolvimento de aplicações web, mobile e desktop**, sempre com foco em qualidade de código, desempenho, escalabilidade e valor entregue ao negócio.
 
 > **Princípios de engenharia:** código legível, decisões documentadas, mudanças incrementais e automação de tudo que for repetitivo.
 
@@ -44,15 +59,13 @@ Desenvolvedor full stack com mais de nove anos de atuação em tecnologia, const
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
 
-🏗️ **Backend & Arquitetura** — projeto e desenvolvimento de APIs, modelagem multi-tenant, integrações e padronização de serviços.
-
-📱 **Desenvolvimento Mobile** — aplicações com React Native (Expo) e NativeWind, além de soluções em Delphi FMX.
-
-🗄️ **Banco de Dados & Legado** — Firebird SQL, otimização de consultas e refatoração incremental de sistemas legados.
-
-⚙️ **Automação & IA** — scripts em Python e Bash, pipelines de automação e fluxos de trabalho com inteligência artificial.
-
-🐧 **Android Customizado** — customização e build de ROMs com AOSP e LineageOS.
+| Frente | Especialidades & Entregas |
+| :--- | :--- |
+| 🏗️ **Backend & Arquitetura** | APIs em **Delphi com Horse** e em **C# .NET**, modelagem **multi-tenant**, integrações e padronização de serviços. |
+| 📱 **Web, Mobile e Desktop** | Interfaces web com **Angular e React**, aplicativos com **React Native (Expo) + NativeWind**, e soluções desktop em **Delphi VCL e FMX**. |
+| 🗄️ **Banco de Dados & Legado** | **Firebird SQL**, otimização de consultas críticas e refatoração incremental de sistemas legados em produção. |
+| ⚙️ **Automação & IA** | Scripts em **Python e Bash**, pipelines de automação operacional e fluxos de trabalho com **inteligência artificial**. |
+| 🐧 **Android Customizado** | Customização em baixo nível e build de ROMs sob medida com **AOSP** e **LineageOS**. |
 
 <br/>
 
@@ -65,7 +78,7 @@ Modelo que resume o tipo de solução em que mais atuo: clientes múltiplos cons
 ```mermaid
 flowchart LR
     A[App Mobile<br/>React Native + Expo]:::client --> G
-    B[App Desktop<br/>Delphi FMX]:::client --> G
+    B[App Desktop<br/>Delphi FMX / VCL]:::client --> G
     C[Automações<br/>Python / Bash / IA]:::client --> G
     G{{API Gateway<br/>Autenticação + Tenant}}:::core --> S1[Serviços de Negócio]:::svc
     G --> S2[Integrações]:::svc
@@ -101,6 +114,10 @@ flowchart LR
   <img src="https://img.shields.io/badge/Python-020617?style=for-the-badge&logo=python&logoColor=3776ab" alt="Python" />
   <img src="https://img.shields.io/badge/Bash-020617?style=for-the-badge&logo=gnubash&logoColor=4eaa25" alt="Bash" />
   <img src="https://img.shields.io/badge/Delphi_FMX-020617?style=for-the-badge&logo=delphi&logoColor=ef4444" alt="Delphi FMX" />
+  <img src="https://img.shields.io/badge/Delphi_VCL-020617?style=for-the-badge&logo=delphi&logoColor=ef4444" alt="Delphi VCL" />
+  <img src="https://img.shields.io/badge/Horse-APIs_em_Delphi-020617?style=for-the-badge&labelColor=d98b3a" alt="Horse, APIs em Delphi" />
+  <img src="https://img.shields.io/badge/C%23_.NET-020617?style=for-the-badge&logo=dotnet&logoColor=8a6cf0" alt="C# e .NET" />
+  <img src="https://img.shields.io/badge/Angular-020617?style=for-the-badge&logo=angular&logoColor=dd0031" alt="Angular" />
 </p>
 
 <img src="https://img.shields.io/badge/DADOS_E_INFRAESTRUTURA-2563eb?style=flat-square" alt="Dados e Infraestrutura" />
@@ -223,16 +240,19 @@ timeline
 
 <br/>
 
-## 📬 Contato
+## 📬 Contato & Oportunidades
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
 
 <div align="center">
 
-Aberto a projetos, parcerias e novas oportunidades profissionais.
+Aberto a **novas oportunidades profissionais**, **projetos sob demanda**, **parcerias técnicas** e **modernização de sistemas em produção**.
 
 <br/>
 
+<a href="https://dreyranos.github.io">
+  <img src="https://img.shields.io/badge/Portf%C3%B3lio_Web-06b6d4?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfólio Web" />
+</a>
 <a href="https://www.linkedin.com/in/andrey-ramos-6302722a3">
   <img src="https://img.shields.io/badge/LinkedIn-2563eb?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
