@@ -14,7 +14,7 @@
 
 <br/><br/>
 
-<a href="https://dreyranos.github.io">
+<a href="https://dreyranos.vercel.app/">
   <img src="https://img.shields.io/badge/🌐_PORTF%C3%93LIO_INTERATIVO-27272a?style=for-the-badge&labelColor=000000" alt="Portfólio Interativo" />
 </a>
 <a href="https://wa.me/5517992083142">
@@ -330,7 +330,7 @@ npm run build
 
 <br/>
 
-<a href="https://dreyranos.github.io">
+<a href="https://dreyranos.vercel.app/">
   <img src="https://img.shields.io/badge/🌐_Portf%C3%B3lio_Web-27272a?style=for-the-badge&labelColor=000000" alt="Portfólio Web" />
 </a>
 <a href="https://wa.me/5517992083142">
