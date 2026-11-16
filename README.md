@@ -86,23 +86,43 @@ flowchart LR
 
 <div align="center">
 
-**Linguagens & Frameworks**
+<br/>
 
-<img src="https://skillicons.dev/icons?i=ts,js,react,tailwind,python,bash&perline=6" alt="Linguagens e Frameworks" />
+<img src="https://img.shields.io/badge/LINGUAGENS_E_FRAMEWORKS-2563eb?style=flat-square" alt="Linguagens e Frameworks" />
 
-<img src="https://img.shields.io/badge/Delphi-020617?style=for-the-badge&logo=delphi&logoColor=ef4444" alt="Delphi" />
-<img src="https://img.shields.io/badge/React_Native-020617?style=for-the-badge&logo=react&logoColor=38bdf8" alt="React Native" />
-<img src="https://img.shields.io/badge/Expo-020617?style=for-the-badge&logo=expo&logoColor=e2e8f0" alt="Expo" />
-<img src="https://img.shields.io/badge/NativeWind-020617?style=for-the-badge&logo=tailwindcss&logoColor=38bdf8" alt="NativeWind" />
+<p align="center">
+  <img src="https://img.shields.io/badge/TypeScript-020617?style=for-the-badge&logo=typescript&logoColor=3178c6" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/JavaScript-020617?style=for-the-badge&logo=javascript&logoColor=f7df1e" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/React-020617?style=for-the-badge&logo=react&logoColor=61dafb" alt="React" />
+  <img src="https://img.shields.io/badge/React_Native-020617?style=for-the-badge&logo=react&logoColor=38bdf8" alt="React Native" />
+  <img src="https://img.shields.io/badge/Expo-020617?style=for-the-badge&logo=expo&logoColor=e2e8f0" alt="Expo" />
+  <img src="https://img.shields.io/badge/NativeWind-020617?style=for-the-badge&logo=tailwindcss&logoColor=38bdf8" alt="NativeWind" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-020617?style=for-the-badge&logo=tailwindcss&logoColor=06b6d4" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Python-020617?style=for-the-badge&logo=python&logoColor=3776ab" alt="Python" />
+  <img src="https://img.shields.io/badge/Bash-020617?style=for-the-badge&logo=gnubash&logoColor=4eaa25" alt="Bash" />
+  <img src="https://img.shields.io/badge/Delphi_FMX-020617?style=for-the-badge&logo=delphi&logoColor=ef4444" alt="Delphi FMX" />
+</p>
 
-<br/><br/>
+<img src="https://img.shields.io/badge/DADOS_E_INFRAESTRUTURA-2563eb?style=flat-square" alt="Dados e Infraestrutura" />
 
-**Dados, Infraestrutura & Ferramentas**
+<p align="center">
+  <img src="https://img.shields.io/badge/Firebird_SQL-020617?style=for-the-badge&logo=firebird&logoColor=f97316" alt="Firebird SQL" />
+  <img src="https://img.shields.io/badge/Linux-020617?style=for-the-badge&logo=linux&logoColor=fcc624" alt="Linux" />
+  <img src="https://img.shields.io/badge/Windows-020617?style=for-the-badge&logo=windows11&logoColor=0ea5e9" alt="Windows" />
+  <img src="https://img.shields.io/badge/Android-020617?style=for-the-badge&logo=android&logoColor=3ddc84" alt="Android" />
+  <img src="https://img.shields.io/badge/LineageOS-020617?style=for-the-badge&logo=lineageos&logoColor=22c55e" alt="LineageOS" />
+  <img src="https://img.shields.io/badge/Git-020617?style=for-the-badge&logo=git&logoColor=f05032" alt="Git" />
+  <img src="https://img.shields.io/badge/Docker-020617?style=for-the-badge&logo=docker&logoColor=2496ed" alt="Docker" />
+</p>
 
-<img src="https://skillicons.dev/icons?i=linux,windows,android,git,docker&perline=5" alt="Infraestrutura e Ferramentas" />
+<img src="https://img.shields.io/badge/PR%C3%81TICAS_E_ABORDAGENS-2563eb?style=flat-square" alt="Práticas e Abordagens" />
 
-<img src="https://img.shields.io/badge/Firebird-020617?style=for-the-badge&logo=firebird&logoColor=f97316" alt="Firebird" />
-<img src="https://img.shields.io/badge/LineageOS-020617?style=for-the-badge&logo=lineageos&logoColor=22c55e" alt="LineageOS" />
+<p align="center">
+  <img src="https://img.shields.io/badge/APIs-Multi--Tenant-020617?style=for-the-badge&labelColor=1e3a8a" alt="APIs Multi-Tenant" />
+  <img src="https://img.shields.io/badge/Refatora%C3%A7%C3%A3o-de_Legado-020617?style=for-the-badge&labelColor=1e3a8a" alt="Refatoração de Legado" />
+  <img src="https://img.shields.io/badge/Automa%C3%A7%C3%A3o-de_Processos-020617?style=for-the-badge&labelColor=1e3a8a" alt="Automação de Processos" />
+  <img src="https://img.shields.io/badge/Fluxos-com_IA-020617?style=for-the-badge&labelColor=1e3a8a" alt="Fluxos com IA" />
+</p>
 
 </div>
 
