@@ -1,77 +1,117 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,35:1e3a8a,70:2563eb,100:06b6d4&height=260&section=header&text=Andrey%20Ramos&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Desenvolvedor%20Full%20Stack%20%7C%20Engenharia%20de%20Software&descSize=20&descAlignY=58&descColor=bae6fd" width="100%" alt="Andrey Ramos" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,45:09090b,80:18181b,100:27272a&height=260&section=header&text=Andrey%20Ramos&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Desenvolvedor%20Full%20Stack%20%7C%20Engenharia%20de%20Software&descSize=20&descAlignY=58&descColor=d4d4d8" width="100%" alt="Andrey Ramos" />
 
 <a href="https://dreyranos.github.io">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1200&color=38BDF8&center=true&vCenter=true&width=800&height=45&lines=APIs+Multi-Tenant+%7C+Arquitetura+Backend;React+Native+(Expo)+%7C+Delphi+FMX;Firebird+SQL+%7C+Moderniza%C3%A7%C3%A3o+de+Sistemas+Legados;Automa%C3%A7%C3%A3o+com+Python%2C+Bash+e+Fluxos+de+IA" alt="Especialidades" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1200&color=E4E4E7&center=true&vCenter=true&width=800&height=45&lines=APIs+Multi-Tenant+%7C+Arquitetura+Backend;React+Native+(Expo)+%7C+Delphi+FMX;Firebird+SQL+%7C+Moderniza%C3%A7%C3%A3o+de+Sistemas+Legados;Automa%C3%A7%C3%A3o+com+Python%2C+Bash+e+Fluxos+de+IA" alt="Especialidades" />
 </a>
 
 <br/><br/>
 
-<img src="https://img.shields.io/badge/9%2B-ANOS_DE_EXPERI%C3%8ANCIA-020617?style=for-the-badge&labelColor=2563eb" alt="Anos de experiência" />
-<img src="https://img.shields.io/badge/S%C3%83O_JOS%C3%89_DO_RIO_PRETO-SP_%7C_BRASIL-020617?style=for-the-badge&labelColor=1e3a8a&logo=googlemaps&logoColor=white" alt="Localização" />
-<img src="https://img.shields.io/badge/DISPON%C3%8DVEL-PARA_OPORTUNIDADES-020617?style=for-the-badge&labelColor=06b6d4&logo=checkmarx&logoColor=white" alt="Status" />
+<img src="https://img.shields.io/badge/9%2B-ANOS_DE_EXPERI%C3%8ANCIA-09090b?style=for-the-badge&labelColor=27272a" alt="Anos de experiência" />
+<img src="https://img.shields.io/badge/S%C3%83O_JOS%C3%89_DO_RIO_PRETO-SP_%7C_BRASIL-09090b?style=for-the-badge&labelColor=18181b&logo=googlemaps&logoColor=white" alt="Localização" />
+<img src="https://img.shields.io/badge/DISPON%C3%8DVEL-PARA_OPORTUNIDADES-09090b?style=for-the-badge&labelColor=27272a&logo=checkmarx&logoColor=4ade80" alt="Status" />
 
 <br/><br/>
 
 <a href="https://dreyranos.github.io">
-  <img src="https://img.shields.io/badge/🌐_ACESSAR_PORTF%C3%93LIO_INTERATIVO-06b6d4?style=for-the-badge&labelColor=020617" alt="Portfólio Interativo" />
+  <img src="https://img.shields.io/badge/🌐_PORTF%C3%93LIO_INTERATIVO-27272a?style=for-the-badge&labelColor=000000" alt="Portfólio Interativo" />
 </a>
 <a href="https://www.linkedin.com/in/andrey-ramos-6302722a3">
-  <img src="https://img.shields.io/badge/LinkedIn-2563eb?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  <img src="https://img.shields.io/badge/LinkedIn-18181b?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
 
 <br/>
 
-<img src="https://komarev.com/ghpvc/?username=dreyranos&style=flat-square&color=2563eb&labelColor=020617&label=VISUALIZA%C3%87%C3%95ES" alt="Visualizações" />
-<img src="https://img.shields.io/github/followers/dreyranos?label=SEGUIDORES&style=flat-square&color=06b6d4&labelColor=020617&logo=github&logoColor=white" alt="Seguidores" />
+<img src="https://komarev.com/ghpvc/?username=dreyranos&style=flat-square&color=27272a&labelColor=09090b&label=VISUALIZA%C3%87%C3%95ES" alt="Visualizações" />
+<img src="https://img.shields.io/github/followers/dreyranos?label=SEGUIDORES&style=flat-square&color=27272a&labelColor=09090b&logo=github&logoColor=white" alt="Seguidores" />
 
 <br/><br/>
 
-<a href="#-sobre"><img src="https://img.shields.io/badge/Sobre-1e3a8a?style=flat-square" alt="Sobre" /></a>
-<a href="#-áreas-de-atuação"><img src="https://img.shields.io/badge/Atuação-1e3a8a?style=flat-square" alt="Áreas de Atuação" /></a>
-<a href="#-arquitetura-de-referência"><img src="https://img.shields.io/badge/Arquitetura-1e3a8a?style=flat-square" alt="Arquitetura" /></a>
-<a href="#-stack-tecnológica"><img src="https://img.shields.io/badge/Stack-1e3a8a?style=flat-square" alt="Stack" /></a>
-<a href="#-experiência-profissional"><img src="https://img.shields.io/badge/Experiência-1e3a8a?style=flat-square" alt="Experiência" /></a>
-<a href="#-formação-acadêmica"><img src="https://img.shields.io/badge/Formação-1e3a8a?style=flat-square" alt="Formação" /></a>
-<a href="#-contato--oportunidades"><img src="https://img.shields.io/badge/Contato-1e3a8a?style=flat-square" alt="Contato" /></a>
+<a href="#-sobre"><kbd>Sobre</kbd></a> ·
+<a href="#-áreas-de-atuação"><kbd>Atuação</kbd></a> ·
+<a href="#-arquitetura-de-referência"><kbd>Arquitetura</kbd></a> ·
+<a href="#-stack-tecnológica"><kbd>Stack</kbd></a> ·
+<a href="#-experiência-profissional"><kbd>Experiência</kbd></a> ·
+<a href="#-formação-acadêmica"><kbd>Formação</kbd></a> ·
+<a href="#-contato--oportunidades"><kbd>Oportunidades</kbd></a>
 
 </div>
 
 <br/>
 
 > [!TIP]
-> **Porta de Entrada para Novas Oportunidades:** Confira minha apresentação interativa, arquitetura clicável e visão completa de carreira no meu **[Portfólio Web (dreyranos.github.io)](https://dreyranos.github.io)** ou conecte-se diretamente pelo **[LinkedIn](https://www.linkedin.com/in/andrey-ramos-6302722a3)**.
+> **Porta de Entrada para Novas Oportunidades:** Confira meu portfólio em estética Noir Glass com diagrama interativo e filtros de stack em **[dreyranos.github.io](https://dreyranos.github.io)** ou conecte-se pelo **[LinkedIn](https://www.linkedin.com/in/andrey-ramos-6302722a3)**.
 
 <br/>
 
 ## 👤 Sobre
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
+
+<img align="right" src="./assets/profile.jpg" width="185" alt="Andrey Ramos" />
 
 Desenvolvedor full stack com **mais de nove anos de atuação em tecnologia**, construindo e sustentando sistemas que operam em produção. Minha experiência combina **arquitetura de APIs multi-tenant**, **modernização de sistemas legados** e **desenvolvimento de aplicações web, mobile e desktop**, sempre com foco em qualidade de código, desempenho, escalabilidade e valor entregue ao negócio.
 
 > **Princípios de engenharia:** código legível, decisões documentadas, mudanças incrementais e automação de tudo que for repetitivo.
 
+<br clear="right" />
+
+```ts
+// engineering_profile.ts
+export const andreyRamos = {
+  role: "Desenvolvedor Full Stack | Engenharia de Software",
+  location: "São José do Rio Preto, SP - Brasil",
+  experience: "9+ anos em produção",
+  status: "DISPONÍVEL_PARA_OPORTUNIDADES",
+  focus: ["APIs Multi-Tenant", "Legado", "Mobile/Desktop", "Automação & IA"],
+} as const;
+```
+
 <br/>
 
 ## 🎯 Áreas de Atuação
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
-| Frente | Especialidades & Entregas |
-| :--- | :--- |
-| 🏗️ **Backend & Arquitetura** | APIs em **Delphi com Horse** e em **C# .NET**, modelagem **multi-tenant**, integrações e padronização de serviços. |
-| 📱 **Web, Mobile e Desktop** | Interfaces web com **Angular e React**, aplicativos com **React Native (Expo) + NativeWind**, e soluções desktop em **Delphi VCL e FMX**. |
-| 🗄️ **Banco de Dados & Legado** | **Firebird SQL**, otimização de consultas críticas e refatoração incremental de sistemas legados em produção. |
-| ⚙️ **Automação & IA** | Scripts em **Python e Bash**, pipelines de automação operacional e fluxos de trabalho com **inteligência artificial**. |
-| 🐧 **Android Customizado** | Customização em baixo nível e build de ROMs sob medida com **AOSP** e **LineageOS**. |
+### `◈ 01` · Backend & Arquitetura
+> Construção de **APIs em Delphi com Horse** e em **C# .NET**, modelagem multi-tenant com isolamento por cliente, integrações corporativas e padronização de serviços distribuídos.
+>
+> `↳` <kbd>Delphi Horse</kbd> <kbd>C# .NET</kbd> <kbd>APIs Multi-Tenant</kbd> <kbd>Integrações</kbd>
+
+<br/>
+
+### `◈ 02` · Web, Mobile & Desktop
+> Interfaces web modernas com **Angular e React**, aplicativos multiplataforma com **React Native (Expo) + NativeWind** e aplicações desktop robustas em **Delphi VCL e FMX**.
+>
+> `↳` <kbd>React Native (Expo)</kbd> <kbd>NativeWind</kbd> <kbd>React</kbd> <kbd>Angular</kbd> <kbd>Delphi FMX / VCL</kbd>
+
+<br/>
+
+### `◈ 03` · Banco de Dados & Legado
+> Especialização em **Firebird SQL**, análise e otimização de consultas críticas e refatoração incremental de sistemas legados mantendo a operação 100% estável.
+>
+> `↳` <kbd>Firebird SQL</kbd> <kbd>Query Tuning</kbd> <kbd>Refatoração de Legado</kbd>
+
+<br/>
+
+### `◈ 04` · Automação & Fluxos com IA
+> Scripts avançados em **Python e Bash**, criação de pipelines de automação operacional e orquestração de fluxos de trabalho inteligentes com **IA**.
+>
+> `↳` <kbd>Python</kbd> <kbd>Bash</kbd> <kbd>Automação de Processos</kbd> <kbd>Fluxos com IA</kbd>
+
+<br/>
+
+### `◈ 05` · Android Customizado
+> Customização em baixo nível, ajustes de sistema e build de ROMs Android sob medida com **AOSP** e **LineageOS**.
+>
+> `↳` <kbd>AOSP</kbd> <kbd>LineageOS</kbd> <kbd>Custom ROM Builds</kbd>
 
 <br/>
 
 ## 🧩 Arquitetura de Referência
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
 Modelo que resume o tipo de solução em que mais atuo: clientes múltiplos consumindo uma API multi-tenant com isolamento por tenant sobre uma camada de dados legada e modernizada.
 
@@ -85,60 +125,60 @@ flowchart LR
     S1 --> D[(Firebird SQL)]:::data
     S2 --> D
 
-    classDef client fill:#1e3a8a,stroke:#38bdf8,color:#ffffff
-    classDef core fill:#2563eb,stroke:#bae6fd,color:#ffffff
-    classDef svc fill:#0e7490,stroke:#67e8f9,color:#ffffff
-    classDef data fill:#020617,stroke:#06b6d4,color:#ffffff
+    classDef client fill:#09090b,stroke:#52525b,color:#ffffff
+    classDef core fill:#18181b,stroke:#e4e4e7,color:#ffffff
+    classDef svc fill:#111115,stroke:#71717a,color:#e4e4e7
+    classDef data fill:#000000,stroke:#a1a1aa,color:#ffffff
 ```
 
 <br/>
 
 ## 🛠️ Stack Tecnológica
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
 <div align="center">
 
 <br/>
 
-<img src="https://img.shields.io/badge/LINGUAGENS_E_FRAMEWORKS-2563eb?style=flat-square" alt="Linguagens e Frameworks" />
+<img src="https://img.shields.io/badge/LINGUAGENS_E_FRAMEWORKS-27272a?style=flat-square" alt="Linguagens e Frameworks" />
 
 <p align="center">
-  <img src="https://img.shields.io/badge/TypeScript-020617?style=for-the-badge&logo=typescript&logoColor=3178c6" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/JavaScript-020617?style=for-the-badge&logo=javascript&logoColor=f7df1e" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/React-020617?style=for-the-badge&logo=react&logoColor=61dafb" alt="React" />
-  <img src="https://img.shields.io/badge/React_Native-020617?style=for-the-badge&logo=react&logoColor=38bdf8" alt="React Native" />
-  <img src="https://img.shields.io/badge/Expo-020617?style=for-the-badge&logo=expo&logoColor=e2e8f0" alt="Expo" />
-  <img src="https://img.shields.io/badge/NativeWind-020617?style=for-the-badge&logo=tailwindcss&logoColor=38bdf8" alt="NativeWind" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-020617?style=for-the-badge&logo=tailwindcss&logoColor=06b6d4" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Python-020617?style=for-the-badge&logo=python&logoColor=3776ab" alt="Python" />
-  <img src="https://img.shields.io/badge/Bash-020617?style=for-the-badge&logo=gnubash&logoColor=4eaa25" alt="Bash" />
-  <img src="https://img.shields.io/badge/Delphi_FMX-020617?style=for-the-badge&logo=delphi&logoColor=ef4444" alt="Delphi FMX" />
-  <img src="https://img.shields.io/badge/Delphi_VCL-020617?style=for-the-badge&logo=delphi&logoColor=ef4444" alt="Delphi VCL" />
-  <img src="https://img.shields.io/badge/Horse-APIs_em_Delphi-020617?style=for-the-badge&labelColor=d98b3a" alt="Horse, APIs em Delphi" />
-  <img src="https://img.shields.io/badge/C%23_.NET-020617?style=for-the-badge&logo=dotnet&logoColor=8a6cf0" alt="C# e .NET" />
-  <img src="https://img.shields.io/badge/Angular-020617?style=for-the-badge&logo=angular&logoColor=dd0031" alt="Angular" />
+  <img src="https://img.shields.io/badge/TypeScript-09090b?style=for-the-badge&logo=typescript&logoColor=3178c6" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/JavaScript-09090b?style=for-the-badge&logo=javascript&logoColor=f7df1e" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/React-09090b?style=for-the-badge&logo=react&logoColor=61dafb" alt="React" />
+  <img src="https://img.shields.io/badge/React_Native-09090b?style=for-the-badge&logo=react&logoColor=38bdf8" alt="React Native" />
+  <img src="https://img.shields.io/badge/Expo-09090b?style=for-the-badge&logo=expo&logoColor=e2e8f0" alt="Expo" />
+  <img src="https://img.shields.io/badge/NativeWind-09090b?style=for-the-badge&logo=tailwindcss&logoColor=38bdf8" alt="NativeWind" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-09090b?style=for-the-badge&logo=tailwindcss&logoColor=06b6d4" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Python-09090b?style=for-the-badge&logo=python&logoColor=3776ab" alt="Python" />
+  <img src="https://img.shields.io/badge/Bash-09090b?style=for-the-badge&logo=gnubash&logoColor=4eaa25" alt="Bash" />
+  <img src="https://img.shields.io/badge/Delphi_FMX-09090b?style=for-the-badge&logo=delphi&logoColor=ef4444" alt="Delphi FMX" />
+  <img src="https://img.shields.io/badge/Delphi_VCL-09090b?style=for-the-badge&logo=delphi&logoColor=ef4444" alt="Delphi VCL" />
+  <img src="https://img.shields.io/badge/Horse-APIs_em_Delphi-09090b?style=for-the-badge&labelColor=27272a" alt="Horse, APIs em Delphi" />
+  <img src="https://img.shields.io/badge/C%23_.NET-09090b?style=for-the-badge&logo=dotnet&logoColor=8a6cf0" alt="C# e .NET" />
+  <img src="https://img.shields.io/badge/Angular-09090b?style=for-the-badge&logo=angular&logoColor=dd0031" alt="Angular" />
 </p>
 
-<img src="https://img.shields.io/badge/DADOS_E_INFRAESTRUTURA-2563eb?style=flat-square" alt="Dados e Infraestrutura" />
+<img src="https://img.shields.io/badge/DADOS_E_INFRAESTRUTURA-27272a?style=flat-square" alt="Dados e Infraestrutura" />
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Firebird_SQL-020617?style=for-the-badge&logo=firebird&logoColor=f97316" alt="Firebird SQL" />
-  <img src="https://img.shields.io/badge/Linux-020617?style=for-the-badge&logo=linux&logoColor=fcc624" alt="Linux" />
-  <img src="https://img.shields.io/badge/Windows-020617?style=for-the-badge&logo=windows11&logoColor=0ea5e9" alt="Windows" />
-  <img src="https://img.shields.io/badge/Android-020617?style=for-the-badge&logo=android&logoColor=3ddc84" alt="Android" />
-  <img src="https://img.shields.io/badge/LineageOS-020617?style=for-the-badge&logo=lineageos&logoColor=22c55e" alt="LineageOS" />
-  <img src="https://img.shields.io/badge/Git-020617?style=for-the-badge&logo=git&logoColor=f05032" alt="Git" />
-  <img src="https://img.shields.io/badge/Docker-020617?style=for-the-badge&logo=docker&logoColor=2496ed" alt="Docker" />
+  <img src="https://img.shields.io/badge/Firebird_SQL-09090b?style=for-the-badge&logo=firebird&logoColor=f97316" alt="Firebird SQL" />
+  <img src="https://img.shields.io/badge/Linux-09090b?style=for-the-badge&logo=linux&logoColor=fcc624" alt="Linux" />
+  <img src="https://img.shields.io/badge/Windows-09090b?style=for-the-badge&logo=windows11&logoColor=0ea5e9" alt="Windows" />
+  <img src="https://img.shields.io/badge/Android-09090b?style=for-the-badge&logo=android&logoColor=3ddc84" alt="Android" />
+  <img src="https://img.shields.io/badge/LineageOS-09090b?style=for-the-badge&logo=lineageos&logoColor=22c55e" alt="LineageOS" />
+  <img src="https://img.shields.io/badge/Git-09090b?style=for-the-badge&logo=git&logoColor=f05032" alt="Git" />
+  <img src="https://img.shields.io/badge/Docker-09090b?style=for-the-badge&logo=docker&logoColor=2496ed" alt="Docker" />
 </p>
 
-<img src="https://img.shields.io/badge/PR%C3%81TICAS_E_ABORDAGENS-2563eb?style=flat-square" alt="Práticas e Abordagens" />
+<img src="https://img.shields.io/badge/PR%C3%81TICAS_E_ABORDAGENS-27272a?style=flat-square" alt="Práticas e Abordagens" />
 
 <p align="center">
-  <img src="https://img.shields.io/badge/APIs-Multi--Tenant-020617?style=for-the-badge&labelColor=1e3a8a" alt="APIs Multi-Tenant" />
-  <img src="https://img.shields.io/badge/Refatora%C3%A7%C3%A3o-de_Legado-020617?style=for-the-badge&labelColor=1e3a8a" alt="Refatoração de Legado" />
-  <img src="https://img.shields.io/badge/Automa%C3%A7%C3%A3o-de_Processos-020617?style=for-the-badge&labelColor=1e3a8a" alt="Automação de Processos" />
-  <img src="https://img.shields.io/badge/Fluxos-com_IA-020617?style=for-the-badge&labelColor=1e3a8a" alt="Fluxos com IA" />
+  <img src="https://img.shields.io/badge/APIs-Multi--Tenant-09090b?style=for-the-badge&labelColor=18181b" alt="APIs Multi-Tenant" />
+  <img src="https://img.shields.io/badge/Refatora%C3%A7%C3%A3o-de_Legado-09090b?style=for-the-badge&labelColor=18181b" alt="Refatoração de Legado" />
+  <img src="https://img.shields.io/badge/Automa%C3%A7%C3%A3o-de_Processos-09090b?style=for-the-badge&labelColor=18181b" alt="Automação de Processos" />
+  <img src="https://img.shields.io/badge/Fluxos-com_IA-09090b?style=for-the-badge&labelColor=18181b" alt="Fluxos com IA" />
 </p>
 
 </div>
@@ -147,11 +187,11 @@ flowchart LR
 
 ## 💼 Experiência Profissional
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
 <p>
   <img align="left" src="./assets/proansi.jpg" width="52" height="52" alt="PROANSI" />
-  <b>Desenvolvedor Full Stack</b> &nbsp;<img src="https://img.shields.io/badge/ATUAL-06b6d4?style=flat-square" alt="Atual" /><br/>
+  <b>Desenvolvedor Full Stack</b> &nbsp;<img src="https://img.shields.io/badge/ATUAL-e4e4e7?style=flat-square" alt="Atual" /><br/>
   <code>PROANSI</code> · <sub>jul. 2023 – presente · 3 anos 5 meses · São José do Rio Preto, SP</sub>
 </p>
 
@@ -175,7 +215,7 @@ flowchart LR
 
 <p>
   <img align="left" src="./assets/casavacinas.jpg" width="52" height="52" alt="Casa das Vacinas" />
-  <b>Casa das Vacinas</b> &nbsp;<img src="https://img.shields.io/badge/5_anos_e_6_meses-2563eb?style=flat-square" alt="Tempo total" /><br/>
+  <b>Casa das Vacinas</b> &nbsp;<img src="https://img.shields.io/badge/5_anos_e_6_meses-27272a?style=flat-square" alt="Tempo total" /><br/>
   ↳ <b>Desenvolvedor</b> · <sub>jan. 2020 – jun. 2022 · 2 anos 6 meses</sub><br/>
   ↳ <b>Assistente de TI</b> · <sub>jan. 2017 – jan. 2020 · 3 anos 1 mês</sub>
 </p>
@@ -204,7 +244,7 @@ timeline
 
 ## 🎓 Formação Acadêmica
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
 <p>
   <img align="left" src="./assets/etec.jpg" width="52" height="52" alt="Etec" />
@@ -218,15 +258,15 @@ timeline
 
 ## 📊 Atividade no GitHub
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
 <div align="center">
 
-<img height="170" src="https://streak-stats.demolab.com?user=dreyranos&theme=transparent&border=38bdf844&border_radius=12&ring=38bdf8&fire=06b6d4&currStreakLabel=bae6fd&sideLabels=94a3b8&currStreakNum=f8fafc&sideNums=e2e8f0&dates=94a3b8&locale=pt_BR" alt="Sequência de contribuições" />
+<img height="170" src="https://streak-stats.demolab.com?user=dreyranos&theme=transparent&border=ffffff22&border_radius=12&ring=e4e4e7&fire=ffffff&currStreakLabel=e4e4e7&sideLabels=a1a1aa&currStreakNum=ffffff&sideNums=d4d4d8&dates=71717a&locale=pt_BR" alt="Sequência de contribuições" />
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=dreyranos&bg_color=020617&color=38bdf8&line=2563eb&point=e0f2fe&area=true&hide_border=true" width="95%" alt="Gráfico de atividade" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=dreyranos&bg_color=050507&color=e4e4e7&line=52525b&point=ffffff&area=true&hide_border=true" width="95%" alt="Gráfico de atividade" />
 
 <br/><br/>
 
@@ -242,26 +282,27 @@ timeline
 
 ## 📬 Contato & Oportunidades
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563eb,100:06b6d4&height=2" width="100%" alt="" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
+
+> [!IMPORTANT]
+> **Vamos construir algo em produção?** Aberto a **novas oportunidades profissionais**, **projetos sob demanda**, **parcerias técnicas** e **consultoria em modernização de sistemas legados**.
 
 <div align="center">
-
-Aberto a **novas oportunidades profissionais**, **projetos sob demanda**, **parcerias técnicas** e **modernização de sistemas em produção**.
 
 <br/>
 
 <a href="https://dreyranos.github.io">
-  <img src="https://img.shields.io/badge/Portf%C3%B3lio_Web-06b6d4?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfólio Web" />
+  <img src="https://img.shields.io/badge/🌐_Portf%C3%B3lio_Web-27272a?style=for-the-badge&labelColor=000000" alt="Portfólio Web" />
 </a>
 <a href="https://www.linkedin.com/in/andrey-ramos-6302722a3">
-  <img src="https://img.shields.io/badge/LinkedIn-2563eb?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  <img src="https://img.shields.io/badge/LinkedIn-18181b?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
 <a href="https://github.com/dreyranos">
-  <img src="https://img.shields.io/badge/GitHub-020617?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/GitHub-09090b?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
 </a>
 
 <br/><br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,35:1e3a8a,70:2563eb,100:06b6d4&height=120&section=footer" width="100%" alt="Rodapé" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,45:09090b,80:18181b,100:27272a&height=120&section=footer" width="100%" alt="Rodapé" />
 
 </div>
