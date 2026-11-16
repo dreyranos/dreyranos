@@ -189,14 +189,14 @@ export function Footer({ lang, onOpenResume }: FooterProps) {
                       placeholder={newsletter.placeholder}
                       aria-invalid={status === 'error'}
                       aria-describedby={status === 'error' ? 'newsletter-error' : undefined}
-                      className="w-full min-h-[44px] pl-10 pr-3.5 py-2.5 rounded-xl bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-950 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 transition-colors"
+                      className="w-full min-h-[44px] pl-10 pr-3.5 py-2.5 rounded-xl bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-950 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 transition-colors"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-[44px] rounded-xl bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 text-white dark:text-zinc-950 text-sm font-semibold transition-all active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-blue-400"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-[44px] rounded-xl bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 text-[var(--fg)] dark:text-zinc-950 text-sm font-semibold transition-all active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-blue-400"
                   >
                     {status === 'submitting' ? (
                       <>
@@ -269,7 +269,7 @@ export function Footer({ lang, onOpenResume }: FooterProps) {
             <button
               type="button"
               onClick={handleOpenResumePreview}
-              className="inline-flex items-center gap-2 px-3.5 py-2 min-h-[38px] rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#0b0b0f] text-zinc-800 dark:text-zinc-200 hover:border-blue-600/40 dark:hover:border-blue-400/40 hover:text-blue-600 dark:hover:text-blue-400 transition-colors active:scale-[0.98] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              className="inline-flex items-center gap-2 px-3.5 py-2 min-h-[38px] rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[var(--bg)] text-zinc-800 dark:text-zinc-200 hover:border-blue-600/40 dark:hover:border-blue-400/40 hover:text-blue-600 dark:hover:text-blue-400 transition-colors active:scale-[0.98] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
             >
               <Printer className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{t.savePdf}</span>

@@ -12,11 +12,11 @@ export default function ScrollProgressBar() {
     <div
       role="progressbar"
       aria-label="Progresso de leitura da página"
-      className="fixed top-0 left-0 right-0 z-50 h-[3px] bg-white/8 pointer-events-none no-print"
+      className="fixed top-0 left-0 right-0 z-50 h-[3px] bg-[var(--wash)] pointer-events-none no-print"
     >
       <motion.div
         style={{ scaleX }}
-        className="h-full w-full origin-left bg-gradient-to-r from-[#3B0764] via-[#4C1D95] to-[#826BC2] will-change-transform"
+        className="h-full w-full origin-left bg-gradient-to-r from-[var(--soft)] via-[var(--soft)] to-[var(--btn)] will-change-transform"
       />
     </div>
   );

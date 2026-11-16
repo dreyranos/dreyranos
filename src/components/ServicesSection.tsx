@@ -17,12 +17,13 @@ import {
   Maximize2,
   Film,
 } from 'lucide-react';
-import { SERVICES_LIST } from '../data/portfolio';
 import { AnimatedRule, RollingText, ScrollRevealWords } from './AquaEffects';
 import FlowVideoSimulator from './FlowVideoSimulator';
 import { prefillAndScrollToContact, smoothScrollTo } from '../utils/navigation';
+import { useContent } from '../prefs';
 
 export default function ServicesSection() {
+  const { services: SERVICES_LIST } = useContent();
   const [expandedIndex, setExpandedIndex] = useState<string | null>('01.');
   const [hoveredIndex, setHoveredIndex] = useState<string | null>(null);
   const [activeFlowId, setActiveFlowId] = useState<string | null>(null);
@@ -64,12 +65,12 @@ export default function ServicesSection() {
     <section
       ref={sectionRef}
       id="atuacao"
-      className="relative py-20 sm:py-28 bg-[#08080E]/82 text-[#F5F4FA] overflow-x-clip"
+      className="relative py-20 sm:py-28 bg-[var(--bg)]/82 text-[var(--fg)] overflow-x-clip"
     >
       {/* Fullscreen Deep Obsidian-Black Veil on Service Hover */}
       <div
         aria-hidden="true"
-        className={`fixed inset-0 bg-[#040308] pointer-events-none z-[15] transition-opacity duration-500 ${
+        className={`fixed inset-0 bg-[var(--bg)] pointer-events-none z-[15] transition-opacity duration-500 ${
           hoveredIndex && !activeFlowId ? 'opacity-85' : 'opacity-0'
         }`}
       />
@@ -83,10 +84,10 @@ export default function ServicesSection() {
           className="flex flex-wrap items-center justify-between gap-4 pb-5"
         >
           <div>
-            <h2 className="text-[15px] sm:text-[16px] uppercase tracking-[0.06em] font-semibold text-white">
+            <h2 className="text-[15px] sm:text-[16px] uppercase tracking-[0.06em] font-semibold text-[var(--fg)]">
               <ScrollRevealWords text="02. Áreas de Atuação" />
             </h2>
-            <p className="text-xs font-mono-tabular text-[#8E89A3] mt-1">
+            <p className="text-xs font-mono-tabular text-[var(--muted)] mt-1">
               Cada especialidade possui um fluxo demonstrativo animado em tela cheia
             </p>
           </div>
@@ -96,7 +97,7 @@ export default function ServicesSection() {
               e.preventDefault();
               smoothScrollTo('#trajetoria');
             }}
-            className="inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-wider text-[#9B86D6] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-wider text-[var(--soft)] hover:text-[var(--fg)] transition-colors"
           >
             <RollingText text="Trajetória Profissional" />
             <ArrowDown className="w-4 h-4" />
@@ -136,7 +137,7 @@ export default function ServicesSection() {
                   <button
                     type="button"
                     onClick={() => handleLaunchFlow(service.index)}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 border border-[#4C1D95]/65 bg-[#110C1D] text-[#9B86D6] hover:bg-[#4C1D95] hover:text-white hover:border-[#826BC2] transition-colors"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 border border-[var(--line)]/65 bg-[var(--bg)] text-[var(--soft)] hover:bg-[var(--card)] hover:text-[var(--fg)] hover:border-[var(--line)] transition-colors"
                     title={`Assistir fluxo demonstrativo em vídeo: ${service.line1} ${service.line2}`}
                   >
                     <Film className="w-3 h-3" />
@@ -147,10 +148,10 @@ export default function ServicesSection() {
                   <span
                     className={`transition-colors duration-300 ${
                       isHovered
-                        ? 'text-[#9B86D6]'
+                        ? 'text-[var(--soft)]'
                         : isOpen
-                        ? 'text-[#826BC2]'
-                        : 'text-[#8E89A3]'
+                        ? 'text-[var(--btn-fg)]'
+                        : 'text-[var(--muted)]'
                     }`}
                   >
                     {service.index} {service.highlights.join(' · ')}
@@ -169,8 +170,8 @@ export default function ServicesSection() {
                     }
                     className={`inline-flex items-center justify-center w-6 h-6 border transition-colors ${
                       isHovered
-                        ? 'border-[#826BC2] text-white bg-[#4C1D95]/55'
-                        : 'border-white/25 text-[#F5F4FA]'
+                        ? 'border-[var(--line)] text-[var(--fg)] bg-[var(--card)]/55'
+                        : 'border-[var(--line)] text-[var(--fg)]'
                     }`}
                   >
                     {isOpen ? (
@@ -190,11 +191,11 @@ export default function ServicesSection() {
                   aria-expanded={isOpen}
                   className={`w-full group flex flex-col ${
                     isRight ? 'items-end text-right' : 'items-start text-left'
-                  } focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#826BC2]`}
+                  } focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--line)]`}
                 >
                   <h3
                     className={`font-display font-bold uppercase tracking-[-0.03em] text-[clamp(2rem,6.2vw,5.5rem)] leading-[0.88] transition-colors duration-300 ${
-                      isHovered ? 'text-[#9B86D6]' : 'text-white'
+                      isHovered ? 'text-[var(--soft)]' : 'text-[var(--fg)]'
                     }`}
                   >
                     <span className="block overflow-hidden">
@@ -227,7 +228,7 @@ export default function ServicesSection() {
                         isRight ? 'ml-auto text-right' : 'mr-auto text-left'
                       }`}
                     >
-                      <p className="text-[15px] sm:text-[17px] leading-[1.65] text-[#C4C0D4]">
+                      <p className="text-[15px] sm:text-[17px] leading-[1.65] text-[var(--soft)]">
                         {service.summary}
                       </p>
 
@@ -241,8 +242,8 @@ export default function ServicesSection() {
                           onClick={() => handleLaunchFlow(service.index)}
                           className={`inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider border transition-colors whitespace-nowrap shrink-0 ${
                             isHovered
-                              ? 'bg-[#5B21B6] text-white border-[#826BC2] hover:bg-[#4C1D95]'
-                              : 'bg-[#4C1D95] text-white border-[#5B21B6] hover:bg-[#5B21B6]'
+                              ? 'bg-[var(--btn)] text-[var(--btn-fg)] border-[var(--line)] hover:bg-[var(--soft)]'
+                              : 'bg-[var(--btn)] text-[var(--btn-fg)] border-[var(--line)] hover:bg-[var(--soft)]'
                           }`}
                         >
                           <Play className="w-3.5 h-3.5" />
@@ -260,7 +261,7 @@ export default function ServicesSection() {
                               `Olá Andrey! Gostaria de conversar sobre ${service.line1} ${service.line2} (${service.highlights.join(', ')}).`
                             )
                           }
-                          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider border border-white/25 text-[#F5F4FA] hover:border-[#826BC2] hover:text-[#9B86D6] transition-colors whitespace-nowrap shrink-0"
+                          className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider border border-[var(--line)] text-[var(--fg)] hover:border-[var(--line)] hover:text-[var(--soft)] transition-colors whitespace-nowrap shrink-0"
                         >
                           <span>Conversar sobre esta frente</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />

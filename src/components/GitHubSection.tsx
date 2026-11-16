@@ -79,7 +79,7 @@ export function GitHubSection({ lang, theme }: GitHubSectionProps) {
 
           <SpotlightCard
             delay={0.06}
-            className="lg:col-span-5 rounded-2xl p-5 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center min-h-[200px]"
+            className="lg:col-span-5 rounded-2xl p-5 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center min-h-[200px]"
           >
             {!streakFailed ? (
               <img
@@ -103,7 +103,7 @@ export function GitHubSection({ lang, theme }: GitHubSectionProps) {
 
           <SpotlightCard
             delay={0.1}
-            className="lg:col-span-7 rounded-2xl p-5 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center overflow-hidden min-h-[200px]"
+            className="lg:col-span-7 rounded-2xl p-5 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center overflow-hidden min-h-[200px]"
           >
             {!activityFailed ? (
               <img
@@ -127,7 +127,7 @@ export function GitHubSection({ lang, theme }: GitHubSectionProps) {
 
           <SpotlightCard
             delay={0.14}
-            className="lg:col-span-12 rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center overflow-hidden"
+            className="lg:col-span-12 rounded-2xl p-5 sm:p-6 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center overflow-hidden"
           >
             <div className="w-full flex items-center justify-between mb-3">
               <span className="font-mono text-xs text-zinc-500 dark:text-zinc-400">

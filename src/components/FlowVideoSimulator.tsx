@@ -204,12 +204,12 @@ export default function FlowVideoSimulator({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[9990] w-screen h-[100dvh] bg-[#040407] text-[#F5F4FA] overflow-y-auto lg:overflow-hidden"
+          className="fixed inset-0 z-[9990] w-screen h-[100dvh] bg-[var(--bg)] text-[var(--fg)] overflow-y-auto lg:overflow-hidden"
         >
           {/* Ambient radial deep obsidian-purple stage glow */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(76,29,149,0.16),transparent_65%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(64,56,63,0.16),transparent_65%)]"
           />
 
           <motion.div
@@ -232,18 +232,18 @@ export default function FlowVideoSimulator({
             className="relative z-10 w-full min-h-full lg:h-full flex flex-col justify-between"
           >
             {/* TOP VIDEO CHROME BAR + 5-AREA PROGRAM SWITCHER */}
-            <div className="relative z-10 border-b border-white/10 bg-[#07070C]/94 backdrop-blur-md shrink-0">
+            <div className="relative z-10 border-b border-[var(--line)] bg-[var(--bg)]/94 backdrop-blur-md shrink-0">
             <div className="px-4 sm:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3 min-w-0">
-                <span className="inline-flex items-center gap-2 px-2.5 py-1 bg-[#4C1D95] text-white text-[11px] font-mono-tabular font-semibold uppercase tracking-wider shrink-0">
+                <span className="inline-flex items-center gap-2 px-2.5 py-1 bg-[var(--btn)] text-[var(--btn-fg)] text-[11px] font-mono-tabular font-semibold uppercase tracking-wider shrink-0">
                   <Film className="w-3.5 h-3.5" />
                   <span>Fluxo Demonstrativo</span>
                 </span>
                 <div className="hidden sm:flex items-center gap-2 min-w-0 font-mono-tabular text-xs">
-                  <span className="text-white font-semibold truncate">
+                  <span className="text-[var(--fg)] font-semibold truncate">
                     {activeProgram.index}. {activeProgram.title}
                   </span>
-                  <span className="text-[#8E89A3] shrink-0">
+                  <span className="text-[var(--muted)] shrink-0">
                     · Cena {currentScene.num}/{totalScenesStr}
                   </span>
                 </div>
@@ -253,7 +253,7 @@ export default function FlowVideoSimulator({
                 <button
                   type="button"
                   onClick={() => setSpeed((s) => (s === 1 ? 1.5 : 1))}
-                  className="px-3 py-1.5 border border-white/15 bg-[#101019] text-xs font-mono-tabular text-[#9B86D6] hover:border-[#5B21B6] hover:text-white transition-colors"
+                  className="px-3 py-1.5 border border-[var(--line)] bg-[var(--bg)] text-xs font-mono-tabular text-[var(--soft)] hover:border-[var(--line)] hover:text-[var(--fg)] transition-colors"
                   title="Alternar velocidade de reprodução"
                 >
                   {speed}x
@@ -270,7 +270,7 @@ export default function FlowVideoSimulator({
                   title={
                     isNativeFs ? 'Minimizar tela nativa' : 'Expandir monitor inteiro'
                   }
-                  className="hidden sm:inline-flex items-center justify-center w-9 h-9 border border-white/15 bg-[#101019] text-[#C4C0D4] hover:border-[#5B21B6] hover:text-white transition-colors"
+                  className="hidden sm:inline-flex items-center justify-center w-9 h-9 border border-[var(--line)] bg-[var(--bg)] text-[var(--soft)] hover:border-[var(--line)] hover:text-[var(--fg)] transition-colors"
                 >
                   {isNativeFs ? (
                     <Minimize2 className="w-4 h-4" />
@@ -282,7 +282,7 @@ export default function FlowVideoSimulator({
                 <button
                   type="button"
                   onClick={handleClose}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-[#4C1D95]/65 bg-[#130C22] text-xs font-semibold uppercase tracking-wider text-white hover:bg-[#4C1D95] transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-[var(--line)]/65 bg-[var(--bg)] text-xs font-semibold uppercase tracking-wider text-[var(--fg)] hover:bg-[var(--card)] transition-colors"
                 >
                   <X className="w-4 h-4" />
                   <span>Sair (ESC)</span>
@@ -292,7 +292,7 @@ export default function FlowVideoSimulator({
 
             {/* 5-Area Switcher Strip */}
             <div className="px-4 sm:px-8 pb-2.5 flex items-center gap-1.5 overflow-x-auto no-scrollbar border-t border-white/[0.06] pt-2">
-              <span className="font-mono-tabular text-[10px] uppercase tracking-wider text-[#8E89A3] mr-2 shrink-0 hidden md:inline">
+              <span className="font-mono-tabular text-[10px] uppercase tracking-wider text-[var(--muted)] mr-2 shrink-0 hidden md:inline">
                 Áreas de Atuação:
               </span>
               {FLOW_PROGRAMS.map((prog) => {
@@ -304,8 +304,8 @@ export default function FlowVideoSimulator({
                     onClick={() => handleSelectProgram(prog.id)}
                     className={`relative px-3 py-1.5 text-[11px] font-mono-tabular border transition-colors whitespace-nowrap shrink-0 ${
                       isSelected
-                        ? 'bg-[#4C1D95] text-white border-[#826BC2] font-semibold'
-                        : 'bg-[#0E0E17] text-[#9E97B4] border-white/10 hover:border-[#5B21B6]/60 hover:text-white'
+                        ? 'bg-[var(--btn)] text-[var(--btn-fg)] border-[var(--line)] font-semibold'
+                        : 'bg-[var(--bg)] text-[var(--soft)] border-[var(--line)] hover:border-[var(--line)]/60 hover:text-white'
                     }`}
                   >
                     {prog.index}. {prog.title}
@@ -318,12 +318,12 @@ export default function FlowVideoSimulator({
           {/* CENTER STAGE: ANIMATED DIAGRAM CANVAS + EXPLANATORY SUBTITLE SIDEBAR */}
           <div className="relative z-10 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-5 p-4 sm:p-6 lg:p-7 max-w-[1440px] w-full mx-auto min-h-0 items-stretch">
             {/* Left/Main Animated Topology Video Canvas */}
-            <div className="lg:col-span-8 flex flex-col justify-between bg-[#090910] border border-[#4C1D95]/45 p-4 sm:p-6 relative overflow-hidden">
-              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/10">
-                <p className="font-mono-tabular text-[11px] uppercase tracking-[0.14em] text-[#9B86D6] truncate">
+            <div className="lg:col-span-8 flex flex-col justify-between bg-[var(--bg)] border border-[var(--line)]/45 p-4 sm:p-6 relative overflow-hidden">
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[var(--line)]">
+                <p className="font-mono-tabular text-[11px] uppercase tracking-[0.14em] text-[var(--soft)] truncate">
                   {activeProgram.subtitle} · {currentScene.shortTitle}
                 </p>
-                <span className="font-mono-tabular text-[11px] text-[#8E89A3] shrink-0">
+                <span className="font-mono-tabular text-[11px] text-[var(--muted)] shrink-0">
                   {isPlaying ? 'REPRODUZINDO' : 'PAUSADO'} · Cena {currentScene.num}/
                   {totalScenesStr}
                 </span>
@@ -352,21 +352,21 @@ export default function FlowVideoSimulator({
               </div>
 
               {/* Live Packet Wire Telemetry Bar */}
-              <div className="border-t border-white/10 pt-3 flex flex-wrap items-center justify-between gap-2 text-xs font-mono-tabular">
+              <div className="border-t border-[var(--line)] pt-3 flex flex-wrap items-center justify-between gap-2 text-xs font-mono-tabular">
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="inline-block w-2 h-2 bg-[#826BC2] shrink-0 animate-pulse" />
-                  <span className="text-[#9B86D6] truncate">
+                  <span className="inline-block w-2 h-2 bg-[var(--card)] shrink-0 animate-pulse" />
+                  <span className="text-[var(--soft)] truncate">
                     {currentScene.packetLabel}
                   </span>
                 </div>
-                <span className="text-[#8E89A3] shrink-0">
+                <span className="text-[var(--muted)] shrink-0">
                   Etapa: {targetNodeInfo.label}
                 </span>
               </div>
             </div>
 
             {/* Right Explanatory Narration & Chapter Panel */}
-            <div className="lg:col-span-4 flex flex-col justify-between bg-[#0E0E17] border border-white/10 p-5 sm:p-6 overflow-y-auto">
+            <div className="lg:col-span-4 flex flex-col justify-between bg-[var(--bg)] border border-[var(--line)] p-5 sm:p-6 overflow-y-auto">
               <div>
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -376,23 +376,23 @@ export default function FlowVideoSimulator({
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <p className="font-mono-tabular text-[11px] uppercase tracking-[0.14em] text-[#9B86D6] mb-2">
+                    <p className="font-mono-tabular text-[11px] uppercase tracking-[0.14em] text-[var(--soft)] mb-2">
                       Narração · Cena {currentScene.num} / {totalScenesStr}
                     </p>
-                    <h3 className="font-display text-xl sm:text-2xl font-bold text-white leading-tight mb-3">
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--fg)] leading-tight mb-3">
                       {currentScene.title}
                     </h3>
-                    <p className="text-sm sm:text-[15px] leading-relaxed text-[#DFDCEB] bg-[#140F22] border-l-2 border-[#5B21B6] p-3.5 mb-4">
+                    <p className="text-sm sm:text-[15px] leading-relaxed text-[var(--fg)] bg-[var(--bg)] border-l-2 border-[var(--line)] p-3.5 mb-4">
                       “{currentScene.narration}”
                     </p>
 
-                    <p className="font-mono-tabular text-[11px] uppercase tracking-wider text-[#8E89A3] mb-2">
+                    <p className="font-mono-tabular text-[11px] uppercase tracking-wider text-[var(--muted)] mb-2">
                       O que acontece nesta etapa
                     </p>
-                    <ul className="space-y-2 text-xs sm:text-[13px] text-[#C4C0D4] mb-5">
+                    <ul className="space-y-2 text-xs sm:text-[13px] text-[var(--soft)] mb-5">
                       {currentScene.highlights.map((hl) => (
                         <li key={hl} className="flex items-start gap-2">
-                          <span className="font-mono-tabular text-[#826BC2] font-bold">
+                          <span className="font-mono-tabular text-[var(--muted)] font-bold">
                             —
                           </span>
                           <span>{hl}</span>
@@ -404,8 +404,8 @@ export default function FlowVideoSimulator({
               </div>
 
               {/* Clickable Chapter Index */}
-              <div className="pt-4 border-t border-white/10">
-                <p className="font-mono-tabular text-[11px] uppercase tracking-wider text-[#8E89A3] mb-2.5">
+              <div className="pt-4 border-t border-[var(--line)]">
+                <p className="font-mono-tabular text-[11px] uppercase tracking-wider text-[var(--muted)] mb-2.5">
                   Capítulos do Fluxo ({activeProgram.index})
                 </p>
                 <div className="grid grid-cols-2 lg:grid-cols-1 gap-1.5">
@@ -418,15 +418,15 @@ export default function FlowVideoSimulator({
                         onClick={() => jumpToScene(idx)}
                         className={`text-left px-3 py-2 text-xs border transition-colors flex items-center justify-between gap-2 ${
                           active
-                            ? 'bg-[#4C1D95] text-white border-[#826BC2] font-semibold'
-                            : 'bg-[#12121C] text-[#9E97B4] border-white/10 hover:border-[#5B21B6]/60 hover:text-white'
+                            ? 'bg-[var(--btn)] text-[var(--btn-fg)] border-[var(--line)] font-semibold'
+                            : 'bg-[var(--bg)] text-[var(--soft)] border-[var(--line)] hover:border-[var(--line)]/60 hover:text-white'
                         }`}
                       >
                         <span className="truncate">
                           {sc.num}. {sc.shortTitle}
                         </span>
                         {active && (
-                          <span className="font-mono-tabular text-[10px] text-[#D4C8F2] shrink-0">
+                          <span className="font-mono-tabular text-[10px] text-[var(--fg)] shrink-0">
                             AO VIVO
                           </span>
                         )}
@@ -439,7 +439,7 @@ export default function FlowVideoSimulator({
           </div>
 
           {/* BOTTOM VIDEO SCRUBBER & TRANSPORT CONTROLS BAR */}
-          <div className="relative z-10 border-t border-white/10 bg-[#07070C]/96 px-4 sm:px-8 py-3.5 shrink-0">
+          <div className="relative z-10 border-t border-[var(--line)] bg-[var(--bg)]/96 px-4 sm:px-8 py-3.5 shrink-0">
             <div className="max-w-[1440px] mx-auto space-y-3">
               {/* Clickable Segmented Timeline Bar */}
               <div
@@ -465,10 +465,10 @@ export default function FlowVideoSimulator({
                       aria-label={`Ir para cena ${sc.num}: ${sc.shortTitle}`}
                       className="group text-left py-1"
                     >
-                      <div className="h-2 w-full bg-white/12 overflow-hidden group-hover:h-2.5 transition-all">
+                      <div className="h-2 w-full bg-[var(--wash)] overflow-hidden group-hover:h-2.5 transition-all">
                         <div
                           style={{ width: `${fill}%` }}
-                          className="h-full bg-gradient-to-r from-[#3B0764] via-[#4C1D95] to-[#826BC2]"
+                          className="h-full bg-gradient-to-r from-[var(--soft)] via-[var(--soft)] to-[var(--btn)]"
                         />
                       </div>
                     </button>
@@ -483,7 +483,7 @@ export default function FlowVideoSimulator({
                     type="button"
                     onClick={() => jumpToScene(0)}
                     aria-label="Reiniciar vídeo"
-                    className="w-9 h-9 border border-white/15 bg-[#101019] flex items-center justify-center text-[#C4C0D4] hover:border-[#5B21B6] hover:text-white transition-colors"
+                    className="w-9 h-9 border border-[var(--line)] bg-[var(--bg)] flex items-center justify-center text-[var(--soft)] hover:border-[var(--line)] hover:text-[var(--fg)] transition-colors"
                   >
                     <RotateCcw className="w-4 h-4" />
                   </button>
@@ -495,14 +495,14 @@ export default function FlowVideoSimulator({
                       )
                     }
                     aria-label="Cena anterior"
-                    className="w-9 h-9 border border-white/15 bg-[#101019] flex items-center justify-center text-[#C4C0D4] hover:border-[#5B21B6] hover:text-white transition-colors"
+                    className="w-9 h-9 border border-[var(--line)] bg-[var(--bg)] flex items-center justify-center text-[var(--soft)] hover:border-[var(--line)] hover:text-[var(--fg)] transition-colors"
                   >
                     <SkipBack className="w-4 h-4" />
                   </button>
                   <button
                     type="button"
                     onClick={() => setIsPlaying((p) => !p)}
-                    className="inline-flex items-center gap-2 px-4 h-9 bg-[#4C1D95] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#5B21B6] transition-colors"
+                    className="inline-flex items-center gap-2 px-4 h-9 bg-[var(--btn)] text-[var(--btn-fg)] text-xs font-semibold uppercase tracking-wider hover:bg-[var(--soft)] transition-colors"
                   >
                     {isPlaying ? (
                       <>
@@ -522,20 +522,20 @@ export default function FlowVideoSimulator({
                       jumpToScene((safeSceneIdx + 1) % scenes.length)
                     }
                     aria-label="Próxima cena"
-                    className="w-9 h-9 border border-white/15 bg-[#101019] flex items-center justify-center text-[#C4C0D4] hover:border-[#5B21B6] hover:text-white transition-colors"
+                    className="w-9 h-9 border border-[var(--line)] bg-[var(--bg)] flex items-center justify-center text-[var(--soft)] hover:border-[var(--line)] hover:text-[var(--fg)] transition-colors"
                   >
                     <SkipForward className="w-4 h-4" />
                   </button>
                 </div>
 
-                <div className="flex items-center gap-4 text-xs font-mono-tabular text-[#8E89A3]">
+                <div className="flex items-center gap-4 text-xs font-mono-tabular text-[var(--muted)]">
                   <span className="hidden md:inline">
                     Espaço: Play/Pause · Setas: Cenas · ESC: Sair
                   </span>
                   <button
                     type="button"
                     onClick={handleClose}
-                    className="text-[#9B86D6] hover:text-white font-semibold uppercase tracking-wider"
+                    className="text-[var(--soft)] hover:text-[var(--fg)] font-semibold uppercase tracking-wider"
                   >
                     Fechar e voltar ao portfólio ↗
                   </button>

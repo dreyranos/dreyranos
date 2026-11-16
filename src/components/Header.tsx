@@ -31,7 +31,7 @@ export function Header({ lang, isNotFound = false, onNavigateHome }: HeaderProps
   };
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-[#f8f8fa]/85 dark:bg-[#050507]/85 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/80">
+    <header className="fixed top-0 inset-x-0 z-50 bg-[var(--btn)]/85 dark:bg-[var(--bg)]/85 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-4 md:gap-8">
         {/* Zone 1: Single-line Brand Wordmark */}
         <a
@@ -49,7 +49,7 @@ export function Header({ lang, isNotFound = false, onNavigateHome }: HeaderProps
               key={item.href}
               href={item.href}
               onClick={(e) => handleLinkClick(e, item.href)}
-              className="whitespace-nowrap shrink-0 py-1 hover:text-zinc-950 dark:hover:text-white transition-colors duration-150 border-b border-transparent hover:border-zinc-950/40 dark:hover:border-white/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-blue-400 rounded-sm"
+              className="whitespace-nowrap shrink-0 py-1 hover:text-zinc-950 dark:hover:text-[var(--fg)] transition-colors duration-150 border-b border-transparent hover:border-zinc-950/40 dark:hover:border-white/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-blue-400 rounded-sm"
             >
               {item.label}
             </a>
@@ -63,7 +63,7 @@ export function Header({ lang, isNotFound = false, onNavigateHome }: HeaderProps
           <a
             href="#contato"
             onClick={(e) => handleLinkClick(e, '#contato')}
-            className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-lg text-xs sm:text-sm font-semibold bg-zinc-950 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-white text-white dark:text-zinc-950 transition-all duration-150 active:scale-[0.98] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-600 dark:focus-visible:ring-offset-[#050507]"
+            className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-lg text-xs sm:text-sm font-semibold bg-zinc-950 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-white text-[var(--fg)] dark:text-zinc-950 transition-all duration-150 active:scale-[0.98] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-600 dark:focus-visible:ring-offset-[#050507]"
           >
             <span>{t.nav.contact}</span>
             <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -89,7 +89,7 @@ export function Header({ lang, isNotFound = false, onNavigateHome }: HeaderProps
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-[#f8f8fa]/95 dark:bg-[#050507]/95 backdrop-blur-lg px-4 py-3"
+            className="md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-[var(--btn)]/95 dark:bg-[var(--bg)]/95 backdrop-blur-lg px-4 py-3"
           >
             <nav className="flex flex-col space-y-1 max-w-6xl mx-auto">
               {navItems.map((item) => (

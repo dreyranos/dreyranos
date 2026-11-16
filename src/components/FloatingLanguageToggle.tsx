@@ -15,7 +15,7 @@ export function FloatingLanguageToggle({ lang, onChangeLang }: FloatingLanguageT
       transition={{ duration: 0.3, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
       role="group"
       aria-label={lang === 'pt' ? 'Alternar idioma' : 'Switch language'}
-      className="print:hidden fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 inline-flex items-center gap-1 p-1 rounded-xl bg-white/90 dark:bg-[#0b0b0f]/90 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 shadow-lg shadow-zinc-950/10 dark:shadow-black/50"
+      className="print:hidden fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 inline-flex items-center gap-1 p-1 rounded-xl bg-white/90 dark:bg-[var(--bg)]/90 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 shadow-lg shadow-zinc-950/10 dark:shadow-black/50"
     >
       <Globe
         className="w-3.5 h-3.5 text-zinc-500 dark:text-zinc-400 ml-2 mr-0.5 shrink-0"
@@ -32,7 +32,7 @@ export function FloatingLanguageToggle({ lang, onChangeLang }: FloatingLanguageT
             aria-label={code === 'pt' ? 'Português' : 'English'}
             className={`relative px-2.5 py-1.5 min-h-[34px] rounded-lg font-mono text-xs font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:focus-visible:ring-blue-400 ${
               active
-                ? 'text-white dark:text-zinc-950'
+                ? 'text-[var(--fg)] dark:text-zinc-950'
                 : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100'
             }`}
           >

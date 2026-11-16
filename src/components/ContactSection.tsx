@@ -75,7 +75,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
             {/* WhatsApp Card */}
             <SpotlightCard
               delay={0.04}
-              className="rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800/90 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              className="rounded-2xl p-5 sm:p-6 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800/90 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
             >
               <div className="flex items-start gap-3.5 min-w-0">
                 <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
@@ -132,7 +132,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
                   href={`https://wa.me/${CONTACT_INFO.whatsappRaw}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 text-white dark:text-zinc-950 text-xs font-semibold transition-all active:scale-[0.98] whitespace-nowrap"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 text-[var(--fg)] dark:text-zinc-950 text-xs font-semibold transition-all active:scale-[0.98] whitespace-nowrap"
                 >
                   <span>{t.whatsappAction}</span>
                   <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -143,7 +143,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
             {/* Email Card */}
             <SpotlightCard
               delay={0.08}
-              className="rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              className="rounded-2xl p-5 sm:p-6 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
             >
               <div className="flex items-start gap-3.5 min-w-0">
                 <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
@@ -195,7 +195,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
                 </button>
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-lg bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-white text-white dark:text-zinc-950 text-xs font-semibold transition-all active:scale-[0.98] whitespace-nowrap"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-lg bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-white text-[var(--fg)] dark:text-zinc-950 text-xs font-semibold transition-all active:scale-[0.98] whitespace-nowrap"
                 >
                   <span>{t.emailAction}</span>
                   <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -215,7 +215,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
                 href={CONTACT_INFO.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="spotlight-surface rounded-2xl p-5 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 flex items-center justify-between gap-3 group"
+                className="spotlight-surface rounded-2xl p-5 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 flex items-center justify-between gap-3 group"
               >
                 <div>
                   <div className="font-display font-bold text-sm sm:text-base text-zinc-950 dark:text-zinc-50">
@@ -232,7 +232,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
                 href={CONTACT_INFO.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="spotlight-surface rounded-2xl p-5 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 flex items-center justify-between gap-3 group"
+                className="spotlight-surface rounded-2xl p-5 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 flex items-center justify-between gap-3 group"
               >
                 <div>
                   <div className="font-display font-bold text-sm sm:text-base text-zinc-950 dark:text-zinc-50">
@@ -250,7 +250,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
           {/* Quick Message Composer */}
           <SpotlightCard
             delay={0.1}
-            className="print:hidden lg:col-span-6 rounded-2xl p-6 sm:p-7 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 flex flex-col justify-between"
+            className="print:hidden lg:col-span-6 rounded-2xl p-6 sm:p-7 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800 flex flex-col justify-between"
           >
             <div>
               <h3 className="font-display font-bold text-lg sm:text-xl text-zinc-950 dark:text-zinc-50">
@@ -275,7 +275,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
                           onClick={() => setSelectedTopicIdx(idx)}
                           className={`relative px-3 py-1.5 min-h-[36px] rounded-lg font-mono text-xs transition-colors whitespace-nowrap ${
                             active
-                              ? 'text-white dark:text-zinc-950 font-semibold'
+                              ? 'text-[var(--fg)] dark:text-zinc-950 font-semibold'
                               : 'bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700'
                           }`}
                         >
@@ -328,14 +328,14 @@ export function ContactSection({ lang }: ContactSectionProps) {
                 href={whatsappComposeHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[46px] rounded-xl bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 text-white dark:text-zinc-950 font-semibold text-sm transition-all active:scale-[0.98] whitespace-nowrap"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[46px] rounded-xl bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 text-[var(--fg)] dark:text-zinc-950 font-semibold text-sm transition-all active:scale-[0.98] whitespace-nowrap"
               >
                 <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>{t.sendWhatsapp}</span>
               </a>
               <a
                 href={mailtoComposeHref}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[46px] rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-white font-semibold text-sm transition-all active:scale-[0.98] whitespace-nowrap"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[46px] rounded-xl bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-[var(--fg)] font-semibold text-sm transition-all active:scale-[0.98] whitespace-nowrap"
               >
                 <Send className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>{t.sendEmail}</span>

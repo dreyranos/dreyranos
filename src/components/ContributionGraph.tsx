@@ -22,16 +22,16 @@ interface HeatmapCell {
 const DARK_PALETTE = {
   empty: '#18181b',
   emptyStroke: '#27272a',
-  levels: ['#1e3a5f', '#1d4ed8', '#3b82f6', '#60a5fa'],
-  activeStroke: '#93c5fd',
+  levels: ['#383837', '#4F515A', '#797D83', '#999DA1'],
+  activeStroke: '#BDBFC0',
   text: '#a1a1aa',
 };
 
 const LIGHT_PALETTE = {
   empty: '#f4f4f5',
   emptyStroke: '#e4e4e7',
-  levels: ['#dbeafe', '#93c5fd', '#3b82f6', '#1d4ed8'],
-  activeStroke: '#1e40af',
+  levels: ['#ECEAE7', '#BDBFC0', '#797D83', '#4F515A'],
+  activeStroke: '#44444A',
   text: '#52525b',
 };
 
@@ -258,7 +258,7 @@ export function ContributionGraph({ lang, theme }: ContributionGraphProps) {
   return (
     <SpotlightCard
       delay={0.12}
-      className="lg:col-span-12 rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800"
+      className="lg:col-span-12 rounded-2xl p-5 sm:p-6 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800"
     >
       {/* Header Row */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-100 dark:border-zinc-800/80">

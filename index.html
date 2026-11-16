@@ -3,18 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Andrey Ramos | Desenvolvedor Full Stack</title>
+    <title>Andrey Ramos | Perfil e trabalhos</title>
     <meta
       name="description"
-      content="Portfólio de Andrey Ramos (@dreyranos): 9+ anos criando APIs Multi-Tenant, React Native, Delphi, C# .NET, Firebird SQL e automação com IA."
+      content="Andrey Ramos cria sistemas, apps e automações que a empresa usa todo dia. Mais de 9 anos em São José do Rio Preto."
     />
-    <meta property="og:title" content="Andrey Ramos | Desenvolvedor Full Stack" />
+    <meta property="og:title" content="Andrey Ramos | Perfil e trabalhos" />
     <meta
       property="og:description"
-      content="9+ anos criando APIs Multi-Tenant, React Native, Delphi, C# .NET, Firebird SQL e automação com IA em São José do Rio Preto, SP."
+      content="Sistemas, apps e automações para o dia a dia da empresa. São José do Rio Preto, SP."
     />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (e) {}
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +29,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-[#060609] text-[#F5F4FA] antialiased selection:bg-[#4C1D95] selection:text-white">
+  <body class="bg-[var(--bg)] text-[var(--fg)] antialiased selection:bg-[var(--btn)] selection:text-[var(--muted)]">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

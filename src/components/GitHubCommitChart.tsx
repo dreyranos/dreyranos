@@ -132,13 +132,13 @@ export function GitHubCommitChart({ lang, theme }: GitHubCommitChartProps) {
     areaGrad
       .append('stop')
       .attr('offset', '0%')
-      .attr('stop-color', isDark ? '#60a5fa' : '#2563eb')
+      .attr('stop-color', isDark ? '#999DA1' : '#5F626B')
       .attr('stop-opacity', isDark ? 0.28 : 0.2);
 
     areaGrad
       .append('stop')
       .attr('offset', '100%')
-      .attr('stop-color', isDark ? '#60a5fa' : '#2563eb')
+      .attr('stop-color', isDark ? '#999DA1' : '#5F626B')
       .attr('stop-opacity', 0);
 
     const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
@@ -155,8 +155,8 @@ export function GitHubCommitChart({ lang, theme }: GitHubCommitChartProps) {
     // Horizontal grid lines
     const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(9,9,11,0.06)';
     const textColor = isDark ? '#a1a1aa' : '#52525b';
-    const barDefault = isDark ? 'rgba(96, 165, 250, 0.32)' : 'rgba(37, 99, 235, 0.24)';
-    const barPeak = isDark ? '#60a5fa' : '#2563eb';
+    const barDefault = isDark ? 'rgba(153,157,161,0.32)' : 'rgba(95,98,107,0.24)';
+    const barPeak = isDark ? '#999DA1' : '#5F626B';
 
     g.append('g')
       .call(
@@ -305,7 +305,7 @@ export function GitHubCommitChart({ lang, theme }: GitHubCommitChartProps) {
   return (
     <SpotlightCard
       delay={0.02}
-      className="lg:col-span-12 rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800"
+      className="lg:col-span-12 rounded-2xl p-5 sm:p-6 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800"
     >
       {/* Header Row */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-zinc-100 dark:border-zinc-800/80">
@@ -344,7 +344,7 @@ export function GitHubCommitChart({ lang, theme }: GitHubCommitChartProps) {
                 }}
                 className={`relative px-3 py-1.5 min-h-[34px] rounded-lg font-mono text-xs font-medium transition-colors whitespace-nowrap shrink-0 ${
                   active
-                    ? 'text-zinc-950 dark:text-white'
+                    ? 'text-zinc-950 dark:text-[var(--fg)]'
                     : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-200'
                 }`}
               >

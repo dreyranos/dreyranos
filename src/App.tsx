@@ -16,11 +16,15 @@ import ServicesSection from './components/ServicesSection';
 import ExperienceSection from './components/ExperienceSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import ContactFooter from './components/ContactFooter';
+import { PrefsProvider, useContent } from './prefs';
 
-export default function App() {
+function Shell() {
+  const { screens } = useContent();
+  const label = (id: string) => screens.find((screen) => screen.id === id)?.label ?? id;
+
   return (
     <MotionConfig reducedMotion="user">
-      <div className="min-h-screen bg-[#060609] text-[#F5F4FA] flex flex-col relative">
+      <div className="min-h-screen bg-[var(--bg)] text-[var(--fg)] flex flex-col relative">
         <AnimatedBackground />
         <IntroCurtain />
         <CustomCursor />
@@ -30,20 +34,28 @@ export default function App() {
         <CurvedDrawerNav />
         <main className="flex-1 relative z-10">
           <HeroSection />
-          <ScreenBridge num="01" label="Sobre Andrey Ramos" targetId="sobre" />
+          <ScreenBridge num="01" label={label('sobre')} targetId="sobre" />
           <ManifestoSection />
-          <ScreenBridge num="02" label="Projetos & Arquitetura" targetId="projetos" />
+          <ScreenBridge num="02" label={label('projetos')} targetId="projetos" />
           <ProjectsSection />
-          <ScreenBridge num="03" label="Áreas de Atuação" targetId="atuacao" />
+          <ScreenBridge num="03" label={label('atuacao')} targetId="atuacao" />
           <ServicesSection />
-          <ScreenBridge num="04" label="Trajetória Profissional" targetId="trajetoria" />
+          <ScreenBridge num="04" label={label('trajetoria')} targetId="trajetoria" />
           <ExperienceSection />
-          <ScreenBridge num="05" label="Depoimentos & Impacto" targetId="depoimentos" />
+          <ScreenBridge num="05" label={label('depoimentos')} targetId="depoimentos" />
           <TestimonialsSection />
-          <ScreenBridge num="06" label="Contato Direto" targetId="contato" />
+          <ScreenBridge num="06" label={label('contato')} targetId="contato" />
         </main>
         <ContactFooter />
       </div>
     </MotionConfig>
+  );
+}
+
+export default function App() {
+  return (
+    <PrefsProvider>
+      <Shell />
+    </PrefsProvider>
   );
 }

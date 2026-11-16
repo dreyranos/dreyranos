@@ -99,7 +99,7 @@ export function StackSection({ lang, theme }: StackSectionProps) {
                   onClick={() => setFilter(f.id)}
                   className={`relative px-3 py-1.5 min-h-[36px] rounded-lg font-mono text-xs font-medium transition-colors duration-150 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
                     isActive
-                      ? 'text-zinc-950 dark:text-white'
+                      ? 'text-zinc-950 dark:text-[var(--fg)]'
                       : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-200'
                   }`}
                 >
@@ -133,7 +133,7 @@ export function StackSection({ lang, theme }: StackSectionProps) {
                   exit={{ opacity: 0, scale: 0.92 }}
                   transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                   onMouseMove={handleSpotMove}
-                  className="spotlight-surface rounded-xl p-4 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800 flex flex-col justify-between gap-4 hover:border-zinc-300 dark:hover:border-zinc-700 group"
+                  className="spotlight-surface rounded-xl p-4 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800 flex flex-col justify-between gap-4 hover:border-zinc-300 dark:hover:border-zinc-700 group"
                 >
                   <div className="flex items-center justify-between gap-2">
                     <div className="w-9 h-9 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-105">

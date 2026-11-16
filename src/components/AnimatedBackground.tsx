@@ -9,7 +9,7 @@ export default function AnimatedBackground() {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 z-0 pointer-events-none overflow-hidden select-none bg-[#050508]"
+      className="fixed inset-0 z-0 pointer-events-none overflow-hidden select-none bg-[var(--bg)]"
     >
       {/* Layer 1: Scroll-Parallax Architectural Blueprint Grid (Deep Nocturnal Purple) */}
       <motion.div
@@ -27,10 +27,10 @@ export default function AnimatedBackground() {
               <path
                 d="M 64 0 L 0 0 0 64"
                 fill="none"
-                stroke="rgba(91, 33, 182, 0.11)"
+                stroke="rgba(255,255,255,0.06)"
                 strokeWidth="1"
               />
-              <circle cx="0" cy="0" r="1.25" fill="rgba(130, 107, 194, 0.18)" />
+              <circle cx="0" cy="0" r="1.25" fill="rgba(129,124,128,0.18)" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#arch-purple-grid)" />
@@ -53,7 +53,7 @@ export default function AnimatedBackground() {
                 }
           }
           transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -top-[18%] -right-[10%] w-[680px] h-[680px] rounded-full bg-[radial-gradient(circle,rgba(76,29,149,0.16)_0%,rgba(46,16,101,0.06)_45%,transparent_72%)] will-change-transform"
+          className="absolute -top-[18%] -right-[10%] w-[680px] h-[680px] rounded-full bg-[radial-gradient(circle,rgba(64,56,63,0.16)_0%,rgba(41,35,38,0.06)_45%,transparent_72%)] will-change-transform"
         />
 
         <motion.div
@@ -67,7 +67,7 @@ export default function AnimatedBackground() {
                 }
           }
           transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-[34%] -left-[12%] w-[620px] h-[620px] rounded-full bg-[radial-gradient(circle,rgba(59,7,100,0.15)_0%,rgba(46,16,101,0.05)_50%,transparent_72%)] will-change-transform"
+          className="absolute top-[34%] -left-[12%] w-[620px] h-[620px] rounded-full bg-[radial-gradient(circle,rgba(41,33,37,0.15)_0%,rgba(41,35,38,0.05)_50%,transparent_72%)] will-change-transform"
         />
 
         <motion.div
@@ -81,7 +81,7 @@ export default function AnimatedBackground() {
                 }
           }
           transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -bottom-[16%] right-[18%] w-[560px] h-[560px] rounded-full bg-[radial-gradient(circle,rgba(91,33,182,0.12)_0%,rgba(59,7,100,0.04)_48%,transparent_72%)] will-change-transform"
+          className="absolute -bottom-[16%] right-[18%] w-[560px] h-[560px] rounded-full bg-[radial-gradient(circle,rgba(75,66,76,0.12)_0%,rgba(41,33,37,0.04)_48%,transparent_72%)] will-change-transform"
         />
       </motion.div>
 
@@ -92,25 +92,25 @@ export default function AnimatedBackground() {
             initial={{ x: '-20%' }}
             animate={{ x: '120%' }}
             transition={{ duration: 9, repeat: Infinity, ease: 'linear', repeatDelay: 1.5 }}
-            className="absolute top-[22%] left-0 w-[260px] h-[1px] bg-gradient-to-r from-transparent via-[#5B21B6]/45 to-transparent will-change-transform"
+            className="absolute top-[22%] left-0 w-[260px] h-[1px] bg-gradient-to-r from-transparent via-[var(--card)]/45 to-transparent will-change-transform"
           />
           <motion.div
             initial={{ x: '120%' }}
             animate={{ x: '-25%' }}
             transition={{ duration: 11.5, repeat: Infinity, ease: 'linear', delay: 2.2 }}
-            className="absolute top-[64%] left-0 w-[320px] h-[1px] bg-gradient-to-r from-transparent via-[#5B21B6]/45 to-transparent will-change-transform"
+            className="absolute top-[64%] left-0 w-[320px] h-[1px] bg-gradient-to-r from-transparent via-[var(--card)]/45 to-transparent will-change-transform"
           />
           <motion.div
             initial={{ y: '-20%' }}
             animate={{ y: '120%' }}
             transition={{ duration: 10, repeat: Infinity, ease: 'linear', delay: 0.8 }}
-            className="hidden md:block absolute top-0 left-[18%] w-[1px] h-[220px] bg-gradient-to-b from-transparent via-[#7E62C4]/35 to-transparent will-change-transform"
+            className="hidden md:block absolute top-0 left-[18%] w-[1px] h-[220px] bg-gradient-to-b from-transparent via-[var(--card)]/35 to-transparent will-change-transform"
           />
           <motion.div
             initial={{ y: '120%' }}
             animate={{ y: '-25%' }}
             transition={{ duration: 13, repeat: Infinity, ease: 'linear', delay: 3.4 }}
-            className="hidden md:block absolute top-0 right-[22%] w-[1px] h-[260px] bg-gradient-to-b from-transparent via-[#5B21B6]/40 to-transparent will-change-transform"
+            className="hidden md:block absolute top-0 right-[22%] w-[1px] h-[260px] bg-gradient-to-b from-transparent via-[var(--card)]/40 to-transparent will-change-transform"
           />
         </div>
       )}

@@ -11,7 +11,7 @@ export function EditorialMarquee({ lang }: EditorialMarqueeProps) {
   return (
     <div
       aria-hidden="true"
-      className="print:hidden editorial-marquee-wrap border-y border-zinc-200/80 dark:border-zinc-800/80 bg-white/40 dark:bg-[#09090c]/60 overflow-hidden py-3.5 select-none"
+      className="print:hidden editorial-marquee-wrap border-y border-zinc-200/80 dark:border-zinc-800/80 bg-white/40 dark:bg-[var(--bg)]/60 overflow-hidden py-3.5 select-none"
     >
       <div className="editorial-marquee-track items-center">
         {repeated.map((label, idx) => (

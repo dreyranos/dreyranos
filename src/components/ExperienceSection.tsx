@@ -13,7 +13,8 @@ import {
   ArrowUpRight,
   ChevronDown,
 } from 'lucide-react';
-import { EXPERIENCE, EDUCATION, EXECUTIVE_EDGE } from '../data/portfolio';
+import { EXPERIENCE, EDUCATION } from '../data/portfolio';
+import { useContent } from '../prefs';
 import { AnimatedRule, ScrollRevealWords } from './AquaEffects';
 import { prefillAndScrollToContact } from '../utils/navigation';
 
@@ -36,24 +37,28 @@ interface CareerStage {
   subRoles?: { role: string; period: string }[];
 }
 
-const CAREER_STAGES: CareerStage[] = [
+function buildCareerStages(
+  education: typeof EDUCATION,
+  experience: typeof EXPERIENCE,
+): CareerStage[] {
+  return [
   {
-    id: EDUCATION.id,
-    title: EDUCATION.school,
-    subtitle: EDUCATION.course,
-    period: EDUCATION.period,
-    duration: EDUCATION.duration,
-    startYear: EDUCATION.startYear,
-    endYear: EDUCATION.endYear,
+    id: education.id,
+    title: education.school,
+    subtitle: education.course,
+    period: education.period,
+    duration: education.duration,
+    startYear: education.startYear,
+    endYear: education.endYear,
     track: 'edu',
-    trackLabel: EDUCATION.trackLabel,
-    elevation: EDUCATION.elevation,
+    trackLabel: education.trackLabel,
+    elevation: education.elevation,
     location: 'São José do Rio Preto, SP',
-    summary: EDUCATION.summary,
-    highlights: EDUCATION.highlights,
-    transitionNote: EDUCATION.transitionNote,
+    summary: education.summary,
+    highlights: education.highlights,
+    transitionNote: education.transitionNote,
   },
-  ...[...EXPERIENCE].reverse().map((exp) => ({
+  ...[...experience].reverse().map((exp) => ({
     id: exp.id,
     title: exp.company,
     subtitle: exp.role,
@@ -71,15 +76,18 @@ const CAREER_STAGES: CareerStage[] = [
     transitionNote: exp.transitionNote,
     subRoles: exp.subRoles,
   })),
-];
+  ];
+}
 
 const TRACK_FILTERS = [
-  { id: 'all', label: 'Toda a Jornada (2014–Atual)' },
-  { id: 'dev', label: 'Desenvolvimento' },
-  { id: 'infra', label: 'Infra, N2 & Gestão' },
+  { id: 'all' },
+  { id: 'dev' },
+  { id: 'infra' },
 ] as const;
 
 export default function ExperienceSection() {
+  const { experience, education, edge: EXECUTIVE_EDGE, ui } = useContent();
+  const CAREER_STAGES = buildCareerStages(education, experience);
   const [selectedStageId, setSelectedStageId] = useState<string>('proansi');
   const [hoveredStageId, setHoveredStageId] = useState<string | null>(null);
   const [trackFilter, setTrackFilter] = useState<'all' | 'dev' | 'infra'>('all');
@@ -152,7 +160,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="trajetoria"
-      className="py-16 sm:py-24 bg-[#0B0B12]/82 text-[#F5F4FA] overflow-x-clip"
+      className="py-16 sm:py-24 bg-[var(--bg)]/82 text-[var(--fg)] overflow-x-clip"
     >
       <motion.div
         initial={{ opacity: 0, y: 28 }}
@@ -162,10 +170,10 @@ export default function ExperienceSection() {
         className="max-w-[1380px] mx-auto px-5 sm:px-8 lg:px-14"
       >
         <div className="flex flex-wrap items-center justify-between gap-4 pb-5">
-          <h2 className="text-[15px] sm:text-[16px] uppercase tracking-[0.06em] font-semibold text-white">
+          <h2 className="text-[15px] sm:text-[16px] uppercase tracking-[0.06em] font-semibold text-[var(--fg)]">
             <ScrollRevealWords text="03. Trajetória Profissional & Evolução" />
           </h2>
-          <span className="font-mono-tabular text-xs uppercase tracking-wider text-[#9B86D6]">
+          <span className="font-mono-tabular text-xs uppercase tracking-wider text-[var(--soft)]">
             2014 → Presente · Evolução Contínua em TI &amp; Software
           </span>
         </div>
@@ -174,14 +182,14 @@ export default function ExperienceSection() {
         {/* Interactive Career Trajectory Map + Synchronized Inspector */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-14 sm:mb-16 items-stretch">
           {/* Left: Visual Interactive SVG Career Progression Chart */}
-          <div className="lg:col-span-7 bg-[#08080D] text-[#F5F4FA] border border-[#4C1D95]/45 p-5 sm:p-7 flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-[var(--bg)] text-[var(--fg)] border border-[var(--line)]/45 p-5 sm:p-7 flex flex-col justify-between">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <div>
-                <p className="font-mono-tabular text-[11px] uppercase tracking-[0.14em] text-[#9B86D6]">
-                  Mapa de Evolução · 2014 — Atual
+                <p className="font-mono-tabular text-[11px] uppercase tracking-[0.14em] text-[var(--soft)]">
+                  {ui.careerMap}
                 </p>
-                <h3 className="font-display text-lg sm:text-xl font-bold text-white mt-0.5">
-                  Da Base Técnica à Arquitetura Full Stack
+                <h3 className="font-display text-lg sm:text-xl font-bold text-[var(--fg)] mt-0.5">
+                  {ui.careerTitle}
                 </h3>
               </div>
 
@@ -190,7 +198,7 @@ export default function ExperienceSection() {
                   type="button"
                   onClick={() => handleStep(-1)}
                   aria-label="Etapa anterior"
-                  className="w-9 h-9 border border-white/20 flex items-center justify-center text-[#F5F4FA] hover:bg-[#4C1D95] hover:text-white hover:border-[#826BC2] transition-colors"
+                  className="w-9 h-9 border border-[var(--line)] flex items-center justify-center text-[var(--fg)] hover:bg-[var(--card)] hover:text-[var(--fg)] hover:border-[var(--line)] transition-colors"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
@@ -198,7 +206,7 @@ export default function ExperienceSection() {
                   type="button"
                   onClick={() => handleStep(1)}
                   aria-label="Próxima etapa"
-                  className="w-9 h-9 border border-white/20 flex items-center justify-center text-[#F5F4FA] hover:bg-[#4C1D95] hover:text-white hover:border-[#826BC2] transition-colors"
+                  className="w-9 h-9 border border-[var(--line)] flex items-center justify-center text-[var(--fg)] hover:bg-[var(--card)] hover:text-[var(--fg)] hover:border-[var(--line)] transition-colors"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -214,8 +222,8 @@ export default function ExperienceSection() {
               >
                 <defs>
                   <linearGradient id="careerAreaGradPurple" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#5B21B6" stopOpacity="0.48" />
-                    <stop offset="100%" stopColor="#3B0764" stopOpacity="0.02" />
+                    <stop offset="0%" stopColor="#4B424C" stopOpacity="0.48" />
+                    <stop offset="100%" stopColor="#292125" stopOpacity="0.02" />
                   </linearGradient>
                 </defs>
 
@@ -236,13 +244,13 @@ export default function ExperienceSection() {
                         y1={gy}
                         x2={chartW - padX + 18}
                         y2={gy}
-                        stroke="rgba(130,107,194,0.14)"
+                        stroke="rgba(129,124,128,0.14)"
                         strokeDasharray="4 4"
                       />
                       <text
                         x={6}
                         y={gy + 3}
-                        className="fill-[#8E89A3] text-[9px] font-mono-tabular uppercase"
+                        className="fill-[var(--card)] text-[9px] font-mono-tabular uppercase"
                       >
                         {guide.label}
                       </text>
@@ -262,7 +270,7 @@ export default function ExperienceSection() {
                 <motion.path
                   d={curvePath}
                   fill="none"
-                  stroke="#826BC2"
+                  stroke="#817C80"
                   strokeWidth="2.5"
                   initial={{ pathLength: 0 }}
                   whileInView={{ pathLength: 1 }}
@@ -280,13 +288,13 @@ export default function ExperienceSection() {
                         y1={chartH - padBottom}
                         x2={tx}
                         y2={chartH - padBottom + 6}
-                        stroke="rgba(155,134,214,0.32)"
+                        stroke="rgba(155,150,153,0.32)"
                       />
                       <text
                         x={tx}
                         y={chartH - padBottom + 20}
                         textAnchor="middle"
-                        className="fill-[#8E89A3] text-[10px] font-mono-tabular"
+                        className="fill-[var(--card)] text-[10px] font-mono-tabular"
                       >
                         {yr === 2026 ? 'Atual' : yr}
                       </text>
@@ -323,7 +331,7 @@ export default function ExperienceSection() {
                           y1={y}
                           x2={x}
                           y2={chartH - padBottom}
-                          stroke="#9B86D6"
+                          stroke="#9B9699"
                           strokeWidth="1.2"
                           strokeDasharray="3 3"
                         />
@@ -337,7 +345,7 @@ export default function ExperienceSection() {
                           cy={y}
                           r={13}
                           fill="none"
-                          stroke="#9B86D6"
+                          stroke="#9B9699"
                           strokeWidth="1.5"
                           strokeOpacity="0.6"
                         />
@@ -347,8 +355,8 @@ export default function ExperienceSection() {
                         cx={x}
                         cy={y}
                         r={isActive ? 7.5 : 5.5}
-                        fill={isActive ? '#9B86D6' : '#08080D'}
-                        stroke="#826BC2"
+                        fill={isActive ? '#9B9699' : '#08080D'}
+                        stroke="#817C80"
                         strokeWidth="2"
                       />
 
@@ -357,7 +365,7 @@ export default function ExperienceSection() {
                         y={y - 16}
                         textAnchor="middle"
                         className={`text-[10.5px] font-display font-semibold transition-colors ${
-                          isActive ? 'fill-white' : 'fill-[#9E97B4]'
+                          isActive ? 'fill-white' : 'fill-[var(--soft)]'
                         }`}
                       >
                         {shortName}
@@ -368,7 +376,7 @@ export default function ExperienceSection() {
               </svg>
             </div>
 
-            <div className="mt-4 pt-4 border-t border-white/10 flex flex-wrap gap-1.5">
+            <div className="mt-4 pt-4 border-t border-[var(--line)] flex flex-wrap gap-1.5">
               {CAREER_STAGES.map((stage, idx) => {
                 const isActive = activeStage.id === stage.id;
                 const label =
@@ -391,15 +399,15 @@ export default function ExperienceSection() {
                     }}
                     className={`relative z-10 px-2.5 py-1.5 text-[11px] font-mono-tabular transition-colors whitespace-nowrap shrink-0 ${
                       isActive
-                        ? 'text-white font-semibold'
-                        : 'text-[#9E97B4] hover:text-white border border-white/10'
+                        ? 'text-[var(--btn-fg)] font-semibold'
+                        : 'text-[var(--soft)] hover:text-[var(--fg)] border border-[var(--line)]'
                     }`}
                   >
                     {isActive && (
                       <motion.span
                         layoutId="careerStepActive"
                         transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                        className="absolute inset-0 bg-[#4C1D95] -z-10"
+                        className="absolute inset-0 bg-[var(--btn)] -z-10"
                       />
                     )}
                     <span>
@@ -412,7 +420,7 @@ export default function ExperienceSection() {
           </div>
 
           {/* Right: Synchronized Stage Detail Inspector */}
-          <div className="lg:col-span-5 bg-[#10101A] border border-white/12 p-6 sm:p-8 flex flex-col justify-between">
+          <div className="lg:col-span-5 bg-[var(--bg)] border border-[var(--line)] p-6 sm:p-8 flex flex-col justify-between">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeStage.id}
@@ -421,8 +429,8 @@ export default function ExperienceSection() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-white/10">
-                  <span className="inline-flex items-center gap-1.5 font-mono-tabular text-xs uppercase tracking-wider text-[#9B86D6] font-semibold">
+                <div className="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-[var(--line)]">
+                  <span className="inline-flex items-center gap-1.5 font-mono-tabular text-xs uppercase tracking-wider text-[var(--soft)] font-semibold">
                     {activeStage.track === 'edu' ? (
                       <GraduationCap className="w-4 h-4" />
                     ) : (
@@ -430,29 +438,29 @@ export default function ExperienceSection() {
                     )}
                     <span>{activeStage.trackLabel}</span>
                   </span>
-                  <span className="font-mono-tabular text-xs text-[#8E89A3]">
+                  <span className="font-mono-tabular text-xs text-[var(--muted)]">
                     {activeStage.period}
                   </span>
                 </div>
 
-                <h4 className="font-display text-2xl sm:text-[26px] font-bold text-white leading-tight">
+                <h4 className="font-display text-2xl sm:text-[26px] font-bold text-[var(--fg)] leading-tight">
                   {activeStage.title}
                 </h4>
-                <p className="text-sm font-semibold text-[#9B86D6] mt-1">
+                <p className="text-sm font-semibold text-[var(--soft)] mt-1">
                   {activeStage.subtitle} · {activeStage.duration}
                 </p>
 
-                <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-[#C4C0D4]">
+                <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-[var(--soft)]">
                   {activeStage.summary}
                 </p>
 
-                <p className="mt-5 mb-2.5 text-[11px] font-mono-tabular uppercase tracking-wider text-[#8E89A3]">
+                <p className="mt-5 mb-2.5 text-[11px] font-mono-tabular uppercase tracking-wider text-[var(--muted)]">
                   Principais Entregas &amp; Foco
                 </p>
-                <ul className="space-y-2 text-sm text-[#E5E3EF]">
+                <ul className="space-y-2 text-sm text-[var(--fg)]">
                   {activeStage.highlights.map((hl) => (
                     <li key={hl} className="flex items-start gap-2">
-                      <span className="font-mono-tabular text-[#826BC2] font-bold">
+                      <span className="font-mono-tabular text-[var(--muted)] font-bold">
                         —
                       </span>
                       <span>{hl}</span>
@@ -460,11 +468,11 @@ export default function ExperienceSection() {
                   ))}
                 </ul>
 
-                <div className="mt-5 border border-[#4C1D95]/40 bg-[#3B0764]/20 p-4">
-                  <p className="text-[11px] font-mono-tabular uppercase tracking-wider text-[#9B86D6] font-semibold mb-1">
+                <div className="mt-5 border border-[var(--line)]/40 bg-[var(--card)]/20 p-4">
+                  <p className="text-[11px] font-mono-tabular uppercase tracking-wider text-[var(--soft)] font-semibold mb-1">
                     Conexão na Trajetória
                   </p>
-                  <p className="text-xs sm:text-[13px] leading-relaxed text-[#E5E3EF]">
+                  <p className="text-xs sm:text-[13px] leading-relaxed text-[var(--fg)]">
                     {activeStage.transitionNote}
                   </p>
                 </div>
@@ -475,16 +483,16 @@ export default function ExperienceSection() {
 
         {/* Interactive Filter Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#8E89A3]">
+          <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--muted)]">
             Detalhamento Cronológico · Clique em qualquer etapa para expandir
           </p>
 
           <div
             role="tablist"
             aria-label="Filtrar etapas da trajetória"
-            className="flex flex-wrap gap-1 bg-[#10101A] p-1 border border-white/10"
+            className="flex flex-wrap gap-1 bg-[var(--bg)] p-1 border border-[var(--line)]"
           >
-            {TRACK_FILTERS.map((f) => {
+            {TRACK_FILTERS.map((f, filterIdx) => {
               const active = trackFilter === f.id;
               return (
                 <button
@@ -494,17 +502,17 @@ export default function ExperienceSection() {
                   aria-selected={active}
                   onClick={() => setTrackFilter(f.id)}
                   className={`relative z-10 px-3 py-1.5 text-xs font-medium transition-colors whitespace-nowrap shrink-0 ${
-                    active ? 'text-white' : 'text-[#9E97B4] hover:text-white'
+                    active ? 'text-[var(--btn-fg)]' : 'text-[var(--soft)] hover:text-[var(--fg)]'
                   }`}
                 >
                   {active && (
                     <motion.span
                       layoutId="careerFilterBg"
                       transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                      className="absolute inset-0 bg-[#4C1D95] -z-10"
+                      className="absolute inset-0 bg-[var(--btn)] -z-10"
                     />
                   )}
-                  {f.label}
+                  {ui.filters[filterIdx]}
                 </button>
               );
             })}
@@ -515,12 +523,12 @@ export default function ExperienceSection() {
         <div ref={ledgerRef} className="relative pl-5 sm:pl-8">
           <div
             aria-hidden="true"
-            className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-white/10"
+            className="absolute left-0 top-0 bottom-0 w-[1.5px] bg-[var(--wash)]"
           />
           <motion.div
             aria-hidden="true"
             style={{ scaleY: lineScaleY }}
-            className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#5B21B6] origin-top will-change-transform"
+            className="absolute left-0 top-0 bottom-0 w-[2px] bg-[var(--soft)] origin-top will-change-transform"
           />
 
           <div className="space-y-3">
@@ -538,16 +546,16 @@ export default function ExperienceSection() {
                     transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                     className={`relative border transition-colors ${
                       isSelectedInChart
-                        ? 'border-[#5B21B6]/70 bg-[#120D21]'
-                        : 'border-white/10 bg-[#0E0E17] hover:border-[#4C1D95]/65'
+                        ? 'border-[var(--line)]/70 bg-[var(--bg)]'
+                        : 'border-[var(--line)] bg-[var(--bg)] hover:border-[var(--line)]/65'
                     }`}
                   >
                     <span
                       aria-hidden="true"
                       className={`hidden sm:block absolute -left-8 top-7 w-3 h-3 -translate-x-[5px] border transition-colors ${
                         stage.current || isSelectedInChart
-                          ? 'bg-[#5B21B6] border-[#9B86D6]'
-                          : 'bg-[#0B0B12] border-white/35'
+                          ? 'bg-[var(--card)] border-[var(--line)]'
+                          : 'bg-[var(--bg)] border-white/35'
                       }`}
                     />
 
@@ -561,13 +569,13 @@ export default function ExperienceSection() {
                       className="w-full text-left p-5 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-6 items-center"
                     >
                       <div className="lg:col-span-3">
-                        <p className="font-mono-tabular text-xs font-medium text-white">
+                        <p className="font-mono-tabular text-xs font-medium text-[var(--fg)]">
                           {stage.period}
                         </p>
-                        <p className="font-mono-tabular text-xs text-[#8E89A3] mt-0.5">
+                        <p className="font-mono-tabular text-xs text-[var(--muted)] mt-0.5">
                           {stage.duration}
                           {stage.current && (
-                            <span className="text-[#9B86D6] font-semibold">
+                            <span className="text-[var(--soft)] font-semibold">
                               {' '}
                               · Atual
                             </span>
@@ -576,23 +584,23 @@ export default function ExperienceSection() {
                       </div>
 
                       <div className="lg:col-span-4">
-                        <h4 className="font-display text-lg sm:text-xl font-bold text-white">
+                        <h4 className="font-display text-lg sm:text-xl font-bold text-[var(--fg)]">
                           {stage.title}
                         </h4>
-                        <p className="text-xs sm:text-sm text-[#9E97B4]">
+                        <p className="text-xs sm:text-sm text-[var(--soft)]">
                           {stage.subtitle}
                         </p>
                       </div>
 
                       <div className="lg:col-span-4">
-                        <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#9B86D6]">
+                        <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--soft)]">
                           {stage.trackLabel}
                         </p>
                       </div>
 
                       <div className="lg:col-span-1 flex justify-end">
                         <ChevronDown
-                          className={`w-4 h-4 text-[#9B86D6] transition-transform duration-200 ${
+                          className={`w-4 h-4 text-[var(--soft)] transition-transform duration-200 ${
                             isOpen ? 'rotate-180' : ''
                           }`}
                         />
@@ -615,22 +623,22 @@ export default function ExperienceSection() {
                             clipPath: 'inset(0% 0% 100% 0%)',
                           }}
                           transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                          className="px-5 sm:px-6 pb-6 pt-3 border-t border-white/10"
+                          className="px-5 sm:px-6 pb-6 pt-3 border-t border-[var(--line)]"
                         >
                           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                             <div className="lg:col-span-7">
-                              <p className="text-sm sm:text-[15px] leading-relaxed text-[#C4C0D4]">
+                              <p className="text-sm sm:text-[15px] leading-relaxed text-[var(--soft)]">
                                 {stage.summary}
                               </p>
 
                               {stage.subRoles && (
-                                <div className="mt-4 pt-3 border-t border-white/10 space-y-1.5 max-w-md">
+                                <div className="mt-4 pt-3 border-t border-[var(--line)] space-y-1.5 max-w-md">
                                   {stage.subRoles.map((sub) => (
                                     <div
                                       key={sub.role}
-                                      className="flex flex-wrap items-center justify-between gap-2 text-xs text-[#9E97B4]"
+                                      className="flex flex-wrap items-center justify-between gap-2 text-xs text-[var(--soft)]"
                                     >
-                                      <span className="font-semibold text-white">
+                                      <span className="font-semibold text-[var(--fg)]">
                                         {sub.role}
                                       </span>
                                       <span className="font-mono-tabular">
@@ -642,10 +650,10 @@ export default function ExperienceSection() {
                               )}
                             </div>
 
-                            <div className="lg:col-span-5 space-y-2 text-xs sm:text-[13px] text-[#E5E3EF]">
+                            <div className="lg:col-span-5 space-y-2 text-xs sm:text-[13px] text-[var(--fg)]">
                               {stage.highlights.map((hl) => (
                                 <p key={hl} className="flex items-start gap-2">
-                                  <span className="font-mono-tabular text-[#826BC2] font-bold">
+                                  <span className="font-mono-tabular text-[var(--muted)] font-bold">
                                     —
                                   </span>
                                   <span>{hl}</span>
@@ -666,7 +674,7 @@ export default function ExperienceSection() {
         {/* Interactive Visão End-to-End */}
         <div className="mt-14 sm:mt-16">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-            <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#8E89A3]">
+            <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--muted)]">
               Diferencial Executivo · Visão End-to-End
             </p>
             <button
@@ -677,7 +685,7 @@ export default function ExperienceSection() {
                   'Olá Andrey! Vi sua trajetória de infraestrutura até arquitetura Full Stack e gostaria de conversar sobre uma oportunidade.'
                 )
               }
-              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#9B86D6] hover:text-white hover:underline"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--soft)] hover:text-[var(--fg)] hover:underline"
             >
               <span>Conversar sobre oportunidade</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -696,20 +704,20 @@ export default function ExperienceSection() {
                   whileHover={{ y: -4 }}
                   className={`text-left p-6 border transition-colors ${
                     active
-                      ? 'bg-[#3B0764] text-white border-[#5B21B6]'
-                      : 'bg-[#10101A] text-[#C4C0D4] border-white/10 hover:border-[#4C1D95]/75'
+                      ? 'bg-[var(--card)] text-[var(--fg)] border-[var(--line)]'
+                      : 'bg-[var(--bg)] text-[var(--soft)] border-[var(--line)] hover:border-[var(--line)]/75'
                   }`}
                 >
                   <span
                     className={`font-mono-tabular text-xs font-semibold ${
-                      active ? 'text-[#D4C8F2]' : 'text-[#826BC2]'
+                      active ? 'text-[var(--fg)]' : 'text-[var(--muted)]'
                     }`}
                   >
                     0{idx + 1}.
                   </span>
                   <p
                     className={`mt-2.5 text-sm sm:text-[15px] leading-relaxed font-medium ${
-                      active ? 'text-white' : 'text-[#E5E3EF]'
+                      active ? 'text-[var(--fg)]' : 'text-[var(--fg)]'
                     }`}
                   >
                     {point}

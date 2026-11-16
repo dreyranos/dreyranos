@@ -126,7 +126,7 @@ export function ResumePreviewModal({
             <button
               type="button"
               onClick={handlePrint}
-              className="inline-flex items-center gap-2 px-4 py-2 min-h-[40px] rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-semibold transition-colors active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+              className="inline-flex items-center gap-2 px-4 py-2 min-h-[40px] rounded-lg bg-blue-600 hover:bg-blue-500 text-[var(--fg)] text-xs sm:text-sm font-semibold transition-colors active:scale-[0.98] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
             >
               <Printer className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>{r.printCta}</span>
@@ -136,7 +136,7 @@ export function ResumePreviewModal({
               type="button"
               onClick={onClose}
               aria-label={r.closeLabel}
-              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 min-h-[40px] min-w-[40px] rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-300 hover:text-white hover:border-zinc-700 transition-colors text-xs font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 min-h-[40px] min-w-[40px] rounded-lg border border-zinc-800 bg-zinc-900 text-zinc-300 hover:text-[var(--fg)] hover:border-zinc-700 transition-colors text-xs font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
             >
               <X className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span className="hidden sm:inline">{r.closeLabel}</span>

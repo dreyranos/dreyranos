@@ -45,7 +45,7 @@ export function ExpertiseSection({ lang }: ExpertiseSectionProps) {
         <TechBadges lang={lang} />
 
         {/* Manifesto Banner */}
-        <SpotlightCard className="mb-6 rounded-2xl p-6 sm:p-8 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800/90 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <SpotlightCard className="mb-6 rounded-2xl p-6 sm:p-8 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800/90 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-2 max-w-3xl">
             <span className="font-mono text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
               {t.manifestoLabel}
@@ -75,7 +75,7 @@ export function ExpertiseSection({ lang }: ExpertiseSectionProps) {
                 key={area.id}
                 as="article"
                 delay={idx * 0.05}
-                className={`${spanClass} rounded-2xl p-6 sm:p-7 bg-white dark:bg-[#0b0b0f] border border-zinc-200 dark:border-zinc-800/90 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 group`}
+                className={`${spanClass} rounded-2xl p-6 sm:p-7 bg-white dark:bg-[var(--bg)] border border-zinc-200 dark:border-zinc-800/90 flex flex-col justify-between hover:border-zinc-300 dark:hover:border-zinc-700 group`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-5">

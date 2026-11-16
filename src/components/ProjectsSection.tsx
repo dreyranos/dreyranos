@@ -25,8 +25,6 @@ import {
   BarChart3,
 } from 'lucide-react';
 import {
-  SHOWCASE_PROJECTS,
-  ARCH_NODES,
   TECH_STACK,
   FALLBACK_REPOS,
   PROFILE,
@@ -42,6 +40,7 @@ import {
 import FlowVideoSimulator from './FlowVideoSimulator';
 import { TechIcon } from './TechIcons';
 import { smoothScrollTo } from '../utils/navigation';
+import { useContent } from '../prefs';
 
 const STACK_FILTERS = [
   { id: 'all', label: 'Todas' },
@@ -71,6 +70,7 @@ function ShowcaseRow({
   onImageError: (id: string) => void;
   onSelect: (project: ShowcaseProject) => void;
 }) {
+  const { ui } = useContent();
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: rawCardScroll } = useScroll({
     target: cardRef,
@@ -107,8 +107,8 @@ function ShowcaseRow({
         }}
         className={`lg:sticky origin-top border p-6 sm:p-10 lg:p-12 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.75)] will-change-transform ${
           isVioletCard
-            ? 'bg-[#120C21] text-[#F5F4FA] border-[#4C1D95]/45'
-            : 'bg-[#0C0C14] text-[#F5F4FA] border-white/12'
+            ? 'bg-[var(--bg)] text-[var(--fg)] border-[var(--line)]/45'
+            : 'bg-[var(--bg)] text-[var(--fg)] border-[var(--line)]'
         }`}
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -118,11 +118,11 @@ function ShowcaseRow({
               isMediaLeft ? 'lg:order-2' : 'lg:order-1'
             }`}
           >
-            <div className="flex items-center justify-between gap-4 pb-4 mb-5 border-b border-white/12">
-              <p className="font-mono-tabular text-xs uppercase tracking-[0.14em] text-[#9B86D6]">
+            <div className="flex items-center justify-between gap-4 pb-4 mb-5 border-b border-[var(--line)]">
+              <p className="font-mono-tabular text-xs uppercase tracking-[0.14em] text-[var(--soft)]">
                 {project.index} · {project.category}
               </p>
-              <span className="font-mono-tabular text-xs text-[#8E89A3]">
+              <span className="font-mono-tabular text-xs text-[var(--muted)]">
                 {project.year}
               </span>
             </div>
@@ -130,19 +130,19 @@ function ShowcaseRow({
             <button
               type="button"
               onClick={() => onSelect(project)}
-              className="block w-full text-left group focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#826BC2]"
+              className="block w-full text-left group focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--line)]"
             >
-              <h4 className="font-display font-extrabold uppercase tracking-[-0.035em] text-[clamp(2.25rem,4.6vw,4.5rem)] leading-[0.88] text-white group-hover:text-[#9B86D6] transition-colors duration-200">
+              <h4 className="font-display font-extrabold uppercase tracking-[-0.035em] text-[clamp(2.25rem,4.6vw,4.5rem)] leading-[0.88] text-[var(--fg)] group-hover:text-[var(--soft)] transition-colors duration-200">
                 <span className="block">{project.titleTop}</span>
                 <span className="block">{project.titleBottom}</span>
               </h4>
             </button>
 
-            <p className="mt-5 text-[15px] sm:text-[17px] leading-[1.6] max-w-xl text-[#C4C0D4]">
+            <p className="mt-5 text-[15px] sm:text-[17px] leading-[1.6] max-w-xl text-[var(--soft)]">
               {project.shortDesc}
             </p>
 
-            <div className="mt-4 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-mono-tabular text-[#8E89A3]">
+            <div className="mt-4 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-mono-tabular text-[var(--muted)]">
               {project.stack.map((tech, tIdx) => (
                 <span key={tech} className="inline-flex items-center gap-2.5">
                   {tIdx > 0 && <span aria-hidden="true">·</span>}
@@ -157,11 +157,11 @@ function ShowcaseRow({
                 onClick={() => onSelect(project)}
                 className={`inline-flex items-center gap-2 px-5 py-2.5 min-h-[42px] text-xs font-semibold uppercase tracking-wider transition-colors whitespace-nowrap shrink-0 ${
                   isVioletCard
-                    ? 'bg-[#5B21B6] text-white hover:bg-[#4C1D95]'
-                    : 'bg-[#4C1D95] text-white hover:bg-[#5B21B6]'
+                    ? 'bg-[var(--btn)] text-[var(--btn-fg)] hover:bg-[var(--soft)]'
+                    : 'bg-[var(--btn)] text-[var(--btn-fg)] hover:bg-[var(--soft)]'
                 }`}
               >
-                <RollingText text="Inspecionar Arquitetura" />
+                <RollingText text={ui.howItWorks} />
                 <ArrowUpRight className="w-4 h-4" />
               </button>
 
@@ -170,7 +170,7 @@ function ShowcaseRow({
                   href={project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider editorial-underline py-1 whitespace-nowrap shrink-0 text-[#F5F4FA] hover:text-[#9B86D6]"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider editorial-underline py-1 whitespace-nowrap shrink-0 text-[var(--fg)] hover:text-[var(--soft)]"
                 >
                   <span>Repositório GitHub</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -195,7 +195,7 @@ function ShowcaseRow({
                 transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
                 onClick={() => onSelect(project)}
                 aria-label={`Abrir detalhes de ${project.titleTop} ${project.titleBottom}`}
-                className="block w-full text-left overflow-hidden border border-[#5B21B6]/30 bg-[#0A0A10] aspect-[4/3] relative group focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#826BC2]"
+                className="block w-full text-left overflow-hidden border border-[var(--line)]/30 bg-[var(--bg)] aspect-[4/3] relative group focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--line)]"
               >
                 {!failed ? (
                   <motion.img
@@ -207,17 +207,17 @@ function ShowcaseRow({
                     className="w-full h-full object-cover brightness-95 group-hover:brightness-105 transition-[filter] duration-300 will-change-transform"
                   />
                 ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#1C152B] to-[#07070A] text-[#F5F4FA]">
-                    <Layers className="w-10 h-10 mb-3 text-[#826BC2]" />
+                  <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[var(--card)] to-[var(--bg)] text-[var(--fg)]">
+                    <Layers className="w-10 h-10 mb-3 text-[var(--muted)]" />
                     <p className="font-display font-bold text-xl">
                       {project.titleTop} {project.titleBottom}
                     </p>
-                    <p className="text-xs text-[#C4C0D4] mt-1">{project.category}</p>
+                    <p className="text-xs text-[var(--soft)] mt-1">{project.category}</p>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07070A]/85 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono-tabular text-white">
-                  <span className="text-[#9B86D6] font-semibold">{project.metrics[0]?.value}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/85 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono-tabular text-[var(--fg)]">
+                  <span className="text-[var(--soft)] font-semibold">{project.metrics[0]?.value}</span>
                   <span className="underline underline-offset-4">
                     Abrir estudo ↗
                   </span>
@@ -232,6 +232,7 @@ function ShowcaseRow({
 }
 
 export default function ProjectsSection() {
+  const { projects: SHOWCASE_PROJECTS, arch: ARCH_NODES, ui } = useContent();
   const deckRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: rawDeck } = useScroll({
     target: deckRef,
@@ -429,7 +430,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projetos"
-      className="py-16 sm:py-24 bg-[#07070A]/70 text-[#F5F4FA] overflow-x-clip"
+      className="py-16 sm:py-24 bg-[var(--bg)]/70 text-[var(--fg)] overflow-x-clip"
     >
       <div className="max-w-[1380px] mx-auto px-5 sm:px-8 lg:px-14">
         {/* Section Header Bar */}
@@ -440,14 +441,14 @@ export default function ProjectsSection() {
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-wrap items-center justify-between gap-4 pb-5"
         >
-          <h2 className="text-[15px] sm:text-[16px] uppercase tracking-[0.06em] font-semibold text-white">
-            <ScrollRevealWords text="Portfólio & Sistemas em Produção" />
+          <h2 className="text-[15px] sm:text-[16px] uppercase tracking-[0.06em] font-semibold text-[var(--fg)]">
+            <ScrollRevealWords text={ui.worksHeading} />
           </h2>
           <a
             href={PROFILE.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-wider text-[#9B86D6] hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-wider text-[var(--soft)] hover:text-[var(--fg)] transition-colors"
           >
             <RollingText text="Ver Todos no GitHub" />
             <ArrowUpRight className="w-4 h-4" />
@@ -456,8 +457,8 @@ export default function ProjectsSection() {
         <AnimatedRule dark className="mb-12 sm:mb-16" />
 
         {/* Monumental Heading */}
-        <h3 className="font-display font-bold uppercase text-center tracking-[-0.03em] text-[clamp(2.25rem,7vw,6.5rem)] leading-[0.95] text-white mb-10 sm:mb-16 headline-balance">
-          <ScrollRevealWords text="PROJETOS SELECIONADOS" className="justify-center" />
+        <h3 className="font-display font-bold uppercase text-center tracking-[-0.03em] text-[clamp(2.25rem,7vw,6.5rem)] leading-[0.95] text-[var(--fg)] mb-10 sm:mb-16 headline-balance">
+          <ScrollRevealWords text={ui.worksTitle} className="justify-center" />
         </h3>
 
         {/* Sticky Scroll-Stacking 3D Showcase Deck */}
@@ -479,24 +480,24 @@ export default function ProjectsSection() {
         </div>
 
         {/* Interactive Blueprint de Referência Multi-Tenant */}
-        <div className="mt-20 sm:mt-28 pt-16 border-t border-white/15">
+        <div className="mt-20 sm:mt-28 pt-16 border-t border-[var(--line)]">
           <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
             <div>
-              <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#9B86D6] mb-2">
+              <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--soft)] mb-2">
                 Blueprint em Produção
               </p>
-              <h3 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-white">
-                <ScrollRevealWords text="Arquitetura de Referência Multi-Tenant" />
+              <h3 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-[var(--fg)]">
+                <ScrollRevealWords text={ui.systemMap} />
               </h3>
             </div>
             <div className="flex flex-wrap items-center gap-4">
-              <p className="text-sm text-[#A49EB8] max-w-sm">
+              <p className="text-sm text-[var(--soft)] max-w-sm">
                 Clique em qualquer camada ou simule o fluxo de requisição entre cliente e banco.
               </p>
               <button
                 type="button"
                 onClick={handleStartFlowSimulation}
-                className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider border transition-colors whitespace-nowrap shrink-0 bg-[#4C1D95] text-white border-[#5B21B6] hover:bg-[#5B21B6]"
+                className="inline-flex items-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider border transition-colors whitespace-nowrap shrink-0 bg-[var(--btn)] text-[var(--btn-fg)] border-[var(--line)] hover:bg-[var(--soft)]"
               >
                 <Play className="w-3.5 h-3.5" />
                 <span>Simular Fluxo</span>
@@ -506,37 +507,37 @@ export default function ProjectsSection() {
           </div>
 
           {/* Animated Signal Pipeline Strip */}
-          <div className="mb-4 bg-[#12131D] text-[#F5F4FA] border border-[#5B21B6]/30 px-5 py-3 flex flex-wrap items-center justify-between gap-3">
+          <div className="mb-4 bg-[var(--bg)] text-[var(--fg)] border border-[var(--line)]/30 px-5 py-3 flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-3 text-xs font-mono-tabular">
-              <span className="text-[#9B86D6] uppercase tracking-wider font-semibold">
+              <span className="text-[var(--soft)] uppercase tracking-wider font-semibold">
                 Rota Ativa
               </span>
               <span aria-hidden="true">·</span>
               <span
                 className={
-                  activeNode.layer === 'client' ? 'text-white font-semibold' : 'text-[#8E89A3]'
+                  activeNode.layer === 'client' ? 'text-white font-semibold' : 'text-[var(--muted)]'
                 }
               >
                 01 Cliente
               </span>
-              <span className="text-[#826BC2]">→</span>
+              <span className="text-[var(--muted)]">→</span>
               <span
                 className={
-                  activeNode.layer === 'core' ? 'text-white font-semibold' : 'text-[#8E89A3]'
+                  activeNode.layer === 'core' ? 'text-white font-semibold' : 'text-[var(--muted)]'
                 }
               >
                 02 Gateway Multi-Tenant
               </span>
-              <span className="text-[#826BC2]">→</span>
+              <span className="text-[var(--muted)]">→</span>
               <span
                 className={
-                  activeNode.layer === 'data' ? 'text-white font-semibold' : 'text-[#8E89A3]'
+                  activeNode.layer === 'data' ? 'text-white font-semibold' : 'text-[var(--muted)]'
                 }
               >
                 03 Serviços &amp; Firebird SQL
               </span>
             </div>
-            <span className="font-mono-tabular text-[11px] text-[#9B86D6]">
+            <span className="font-mono-tabular text-[11px] text-[var(--soft)]">
               Foco: {activeNode.shortTitle}
             </span>
           </div>
@@ -548,10 +549,10 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4 bg-[#0F1017] border border-white/12 p-5 sm:p-6"
+              className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4 bg-[var(--bg)] border border-[var(--line)] p-5 sm:p-6"
             >
               <div className="flex flex-col gap-3">
-                <p className="text-[11px] font-mono-tabular uppercase tracking-wider text-[#A49EB8] pb-2 border-b border-white/12">
+                <p className="text-[11px] font-mono-tabular uppercase tracking-wider text-[var(--soft)] pb-2 border-b border-[var(--line)]">
                   01 · Camada Cliente
                 </p>
                 {clientNodes.map((node) => {
@@ -566,8 +567,8 @@ export default function ProjectsSection() {
                       }}
                       className={`text-left p-3.5 border transition-all duration-200 min-h-[76px] flex flex-col justify-between ${
                         active
-                          ? 'bg-[#3B0764] text-white border-[#9B86D6]'
-                          : 'bg-[#161722] text-[#F5F4FA] border-white/12 hover:border-[#5B21B6]/60'
+                          ? 'bg-[var(--card)] text-[var(--fg)] border-[var(--line)]'
+                          : 'bg-[var(--bg)] text-[var(--fg)] border-[var(--line)] hover:border-[var(--line)]/60'
                       }`}
                     >
                       <div className="flex items-center justify-between gap-2">
@@ -578,7 +579,7 @@ export default function ProjectsSection() {
                       </div>
                       <span
                         className={`text-[11px] font-mono-tabular mt-2 ${
-                          active ? 'text-[#D4C8F2]' : 'text-[#8E89A3]'
+                          active ? 'text-[var(--fg)]' : 'text-[var(--muted)]'
                         }`}
                       >
                         {node.shortSub}
@@ -589,7 +590,7 @@ export default function ProjectsSection() {
               </div>
 
               <div className="flex flex-col gap-3">
-                <p className="text-[11px] font-mono-tabular uppercase tracking-wider text-[#A49EB8] pb-2 border-b border-white/12">
+                <p className="text-[11px] font-mono-tabular uppercase tracking-wider text-[var(--soft)] pb-2 border-b border-[var(--line)]">
                   02 · Núcleo Multi-Tenant
                 </p>
                 {coreNodes.map((node) => {
@@ -604,8 +605,8 @@ export default function ProjectsSection() {
                       }}
                       className={`flex-1 text-left p-4 border transition-all duration-200 flex flex-col justify-between min-h-[140px] ${
                         active
-                          ? 'bg-[#3B0764] text-white border-[#9B86D6]'
-                          : 'bg-[#161722] text-[#F5F4FA] border-white/12 hover:border-[#5B21B6]/60'
+                          ? 'bg-[var(--card)] text-[var(--fg)] border-[var(--line)]'
+                          : 'bg-[var(--bg)] text-[var(--fg)] border-[var(--line)] hover:border-[var(--line)]/60'
                       }`}
                     >
                       <div className="flex items-center justify-between gap-2">
@@ -617,14 +618,14 @@ export default function ProjectsSection() {
                       <div>
                         <p
                           className={`text-xs leading-relaxed ${
-                            active ? 'text-[#D4C8F2]' : 'text-[#A49EB8]'
+                            active ? 'text-[var(--fg)]' : 'text-[var(--soft)]'
                           }`}
                         >
                           {node.shortSub}
                         </p>
                         <p
                           className={`text-[11px] font-mono-tabular mt-3 ${
-                            active ? 'text-white' : 'text-[#9B86D6]'
+                            active ? 'text-[var(--fg)]' : 'text-[var(--soft)]'
                           }`}
                         >
                           Delphi Horse · C# .NET
@@ -636,7 +637,7 @@ export default function ProjectsSection() {
               </div>
 
               <div className="flex flex-col gap-3">
-                <p className="text-[11px] font-mono-tabular uppercase tracking-wider text-[#A49EB8] pb-2 border-b border-white/12">
+                <p className="text-[11px] font-mono-tabular uppercase tracking-wider text-[var(--soft)] pb-2 border-b border-[var(--line)]">
                   03 · Domínio &amp; Dados
                 </p>
                 {dataNodes.map((node) => {
@@ -651,8 +652,8 @@ export default function ProjectsSection() {
                       }}
                       className={`flex-1 text-left p-3.5 border transition-all duration-200 min-h-[96px] flex flex-col justify-between ${
                         active
-                          ? 'bg-[#3B0764] text-white border-[#9B86D6]'
-                          : 'bg-[#161722] text-[#F5F4FA] border-white/12 hover:border-[#5B21B6]/60'
+                          ? 'bg-[var(--card)] text-[var(--fg)] border-[var(--line)]'
+                          : 'bg-[var(--bg)] text-[var(--fg)] border-[var(--line)] hover:border-[var(--line)]/60'
                       }`}
                     >
                       <div className="flex items-center justify-between gap-2">
@@ -663,7 +664,7 @@ export default function ProjectsSection() {
                       </div>
                       <span
                         className={`text-[11px] font-mono-tabular mt-2 ${
-                          active ? 'text-[#D4C8F2]' : 'text-[#8E89A3]'
+                          active ? 'text-[var(--fg)]' : 'text-[var(--muted)]'
                         }`}
                       >
                         {node.shortSub}
@@ -675,7 +676,7 @@ export default function ProjectsSection() {
             </motion.div>
 
             {/* Detail Inspector */}
-            <div className="lg:col-span-5 bg-[#12131D] border border-white/12 p-6 sm:p-8 flex flex-col justify-between overflow-hidden">
+            <div className="lg:col-span-5 bg-[var(--bg)] border border-[var(--line)] p-6 sm:p-8 flex flex-col justify-between overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeNode.id}
@@ -684,26 +685,26 @@ export default function ProjectsSection() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#9B86D6] mb-2">
+                  <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--soft)] mb-2">
                     {activeNode.stackLabel}
                   </p>
-                  <h4 className="font-display text-xl sm:text-2xl font-bold text-white mb-3">
+                  <h4 className="font-display text-xl sm:text-2xl font-bold text-[var(--fg)] mb-3">
                     {activeNode.title}
                   </h4>
-                  <p className="text-sm sm:text-[15px] leading-relaxed text-[#C4C0D4] mb-6">
+                  <p className="text-sm sm:text-[15px] leading-relaxed text-[var(--soft)] mb-6">
                     {activeNode.desc}
                   </p>
 
-                  <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#8E89A3] mb-3">
+                  <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--muted)] mb-3">
                     Responsabilidades-Chave
                   </p>
-                  <ul className="space-y-2.5 text-sm text-[#E5E3EF]">
+                  <ul className="space-y-2.5 text-sm text-[var(--fg)]">
                     {activeNode.responsibilities.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-2.5 pb-2 border-b border-white/10 last:border-b-0"
+                        className="flex items-start gap-2.5 pb-2 border-b border-[var(--line)] last:border-b-0"
                       >
-                        <span className="font-mono-tabular text-xs text-[#826BC2] mt-0.5">
+                        <span className="font-mono-tabular text-xs text-[var(--muted)] mt-0.5">
                           —
                         </span>
                         <span>{item}</span>
@@ -717,14 +718,14 @@ export default function ProjectsSection() {
         </div>
 
         {/* Ecossistema Técnico + Atividade & Repositórios GitHub */}
-        <div className="mt-20 sm:mt-24 pt-16 border-t border-white/15 grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="mt-20 sm:mt-24 pt-16 border-t border-[var(--line)] grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7">
             <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
               <div>
-                <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#9B86D6] mb-1">
+                <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--soft)] mb-1">
                   Ecossistema Técnico · {TECH_STACK.length} Tecnologias
                 </p>
-                <h3 className="font-display text-2xl font-bold text-white">
+                <h3 className="font-display text-2xl font-bold text-[var(--fg)]">
                   Stack Tecnológica
                 </h3>
               </div>
@@ -732,7 +733,7 @@ export default function ProjectsSection() {
               <div
                 role="tablist"
                 aria-label="Filtrar stack tecnológica"
-                className="flex flex-wrap gap-1 bg-[#12131D] p-1 border border-white/12"
+                className="flex flex-wrap gap-1 bg-[var(--bg)] p-1 border border-[var(--line)]"
               >
                 {STACK_FILTERS.map((filter) => {
                   const active = stackFilter === filter.id;
@@ -745,8 +746,8 @@ export default function ProjectsSection() {
                       onClick={() => setStackFilter(filter.id)}
                       className={`relative px-3 py-1.5 text-xs font-medium transition-colors whitespace-nowrap shrink-0 z-10 ${
                         active
-                          ? 'text-white'
-                          : 'text-[#A49EB8] hover:text-white'
+                          ? 'text-[var(--btn-fg)]'
+                          : 'text-[var(--soft)] hover:text-[var(--fg)]'
                       }`}
                     >
                       {active && (
@@ -757,7 +758,7 @@ export default function ProjectsSection() {
                             stiffness: 380,
                             damping: 32,
                           }}
-                          className="absolute inset-0 bg-[#4C1D95] -z-10"
+                          className="absolute inset-0 bg-[var(--btn)] -z-10"
                         />
                       )}
                       {filter.label}
@@ -768,16 +769,16 @@ export default function ProjectsSection() {
             </div>
 
             {/* Interactive Domain Distribution Graphic */}
-            <div className="bg-[#0F1017] border border-white/12 p-4 sm:p-5 mb-5">
+            <div className="bg-[var(--bg)] border border-[var(--line)] p-4 sm:p-5 mb-5">
               <div className="flex items-center justify-between gap-2 mb-3">
-                <span className="font-mono-tabular text-[11px] uppercase tracking-wider text-[#8E89A3]">
+                <span className="font-mono-tabular text-[11px] uppercase tracking-wider text-[var(--muted)]">
                   Distribuição por Domínio (clique para filtrar)
                 </span>
                 {stackFilter !== 'all' && (
                   <button
                     type="button"
                     onClick={() => setStackFilter('all')}
-                    className="font-mono-tabular text-[11px] text-[#9B86D6] hover:underline"
+                    className="font-mono-tabular text-[11px] text-[var(--soft)] hover:underline"
                   >
                     Mostrar todas
                   </button>
@@ -796,19 +797,19 @@ export default function ProjectsSection() {
                       }
                       className={`text-left p-2.5 border transition-colors ${
                         active
-                          ? 'border-[#826BC2] bg-[#4C1D95]/18'
-                          : 'border-white/5 hover:border-[#5B21B6]/45'
+                          ? 'border-[var(--line)] bg-[var(--card)]/18'
+                          : 'border-white/5 hover:border-[var(--line)]/45'
                       }`}
                     >
                       <div className="flex items-center justify-between text-xs mb-1.5">
-                        <span className="font-medium text-white">
+                        <span className="font-medium text-[var(--fg)]">
                           {dom.label}
                         </span>
-                        <span className="font-mono-tabular text-[#9B86D6] font-semibold">
+                        <span className="font-mono-tabular text-[var(--soft)] font-semibold">
                           {dom.count} itens
                         </span>
                       </div>
-                      <div className="h-2 w-full bg-white/10 overflow-hidden">
+                      <div className="h-2 w-full bg-[var(--wash)] overflow-hidden">
                         <motion.div
                           initial={{ scaleX: 0 }}
                           whileInView={{ scaleX: 1 }}
@@ -817,8 +818,8 @@ export default function ProjectsSection() {
                           style={{ width: `${pct}%` }}
                           className={`h-full origin-left ${
                             active
-                              ? 'bg-[#9B86D6]'
-                              : 'bg-gradient-to-r from-[#4C1D95] to-[#826BC2]'
+                              ? 'bg-[var(--soft)]'
+                              : 'bg-gradient-to-r from-[var(--card)] to-[var(--card)]'
                           }`}
                         />
                       </div>
@@ -830,7 +831,7 @@ export default function ProjectsSection() {
 
             <motion.div
               layout
-              className="grid grid-cols-2 sm:grid-cols-3 border-t border-l border-white/12"
+              className="grid grid-cols-2 sm:grid-cols-3 border-t border-l border-[var(--line)]"
             >
               <AnimatePresence mode="popLayout">
                 {filteredStack.map((item) => {
@@ -845,10 +846,10 @@ export default function ProjectsSection() {
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.96 }}
                       transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                      className={`text-left p-3.5 sm:p-4 border-r border-b border-white/12 transition-colors cursor-pointer group ${
+                      className={`text-left p-3.5 sm:p-4 border-r border-b border-[var(--line)] transition-colors cursor-pointer group ${
                         isSelected
-                          ? 'bg-[#3B0764] text-white'
-                          : 'bg-[#0F1017]/95 text-[#F5F4FA] hover:bg-[#171825]'
+                          ? 'bg-[var(--card)] text-[var(--fg)]'
+                          : 'bg-[var(--bg)]/95 text-[var(--fg)] hover:bg-[var(--card)]'
                       }`}
                     >
                       <div className="flex items-start justify-between gap-2.5">
@@ -858,7 +859,7 @@ export default function ProjectsSection() {
                           </p>
                           <p
                             className={`text-[12px] mt-0.5 truncate ${
-                              isSelected ? 'text-[#D4C8F2]' : 'text-[#8E89A3]'
+                              isSelected ? 'text-[var(--fg)]' : 'text-[var(--muted)]'
                             }`}
                           >
                             {item.sub}
@@ -867,8 +868,8 @@ export default function ProjectsSection() {
                         <span
                           className={`inline-flex items-center justify-center w-8 h-8 border shrink-0 transition-colors ${
                             isSelected
-                              ? 'bg-white/15 border-white/30 text-white'
-                              : 'bg-[#151622] border-[#5B21B6]/25 text-[#9B86D6] group-hover:border-[#826BC2] group-hover:text-white'
+                              ? 'bg-[var(--wash)] border-[var(--line)] text-[var(--fg)]'
+                              : 'bg-[var(--bg)] border-[var(--line)]/25 text-[var(--soft)] group-hover:border-[var(--line)] group-hover:text-[var(--fg)]'
                           }`}
                         >
                           <TechIcon id={item.id} className="w-4 h-4" />
@@ -881,7 +882,7 @@ export default function ProjectsSection() {
             </motion.div>
 
             {/* Interactive Tech Usage Spotlight Bar */}
-            <div className="mt-4 bg-[#12131D]/95 text-[#F5F4FA] border border-[#5B21B6]/35 p-4 sm:p-5">
+            <div className="mt-4 bg-[var(--bg)]/95 text-[var(--fg)] border border-[var(--line)]/35 p-4 sm:p-5">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedTech.id}
@@ -891,14 +892,14 @@ export default function ProjectsSection() {
                   transition={{ duration: 0.18 }}
                   className="flex items-start gap-3.5"
                 >
-                  <span className="inline-flex items-center justify-center w-10 h-10 bg-[#4C1D95]/20 border border-[#5B21B6]/45 text-[#9B86D6] shrink-0">
+                  <span className="inline-flex items-center justify-center w-10 h-10 bg-[var(--card)]/20 border border-[var(--line)]/45 text-[var(--soft)] shrink-0">
                     <TechIcon id={selectedTech.id} className="w-5 h-5" />
                   </span>
                   <div className="min-w-0">
-                    <p className="font-mono-tabular text-[11px] uppercase tracking-wider text-[#9B86D6]">
+                    <p className="font-mono-tabular text-[11px] uppercase tracking-wider text-[var(--soft)]">
                       Aplicação em Produção · {selectedTech.name}
                     </p>
-                    <p className="text-sm text-[#E5E3EF] mt-1">
+                    <p className="text-sm text-[var(--fg)] mt-1">
                       {selectedTech.usage}
                     </p>
                   </div>
@@ -912,29 +913,29 @@ export default function ProjectsSection() {
             <div>
               <div className="flex items-center justify-between gap-4 mb-4">
                 <div>
-                  <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#9B86D6] mb-1">
+                  <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--soft)] mb-1">
                     Atividade Pública
                   </p>
-                  <h3 className="font-display text-2xl font-bold text-white">
+                  <h3 className="font-display text-2xl font-bold text-[var(--fg)]">
                     GitHub (@dreyranos)
                   </h3>
                 </div>
-                <span className="font-mono-tabular text-xs text-[#8E89A3]">
+                <span className="font-mono-tabular text-xs text-[var(--muted)]">
                   {githubPublicRepos} repos públicos
                 </span>
               </div>
 
               {/* Aesthetic Interactive Dark Violet-Black Activity Chart */}
-              <div className="bg-[#0E0D17] text-[#F5F4FA] border border-[#5B21B6]/35 p-5 mb-6">
+              <div className="bg-[var(--bg)] text-[var(--fg)] border border-[var(--line)]/35 p-5 mb-6">
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                   <div>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-white">
-                      <Activity className="w-3.5 h-3.5 text-[#9B86D6]" />
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--fg)]">
+                      <Activity className="w-3.5 h-3.5 text-[var(--soft)]" />
                       <span>Frequência Semanal ({totalWeekEvents} eventos)</span>
                     </span>
-                    <p className="font-mono-tabular text-[11px] text-[#8E89A3] mt-0.5">
+                    <p className="font-mono-tabular text-[11px] text-[var(--muted)] mt-0.5">
                       {activitySource === 'live' ? 'Sincronizado via API GitHub' : 'Resumo recente'} ·{' '}
-                      <span className="text-[#9B86D6]">
+                      <span className="text-[var(--soft)]">
                         {WEEKDAY_LABELS[activeDayIdx]}: {weekdayCounts[activeDayIdx]} eventos
                       </span>
                     </p>
@@ -944,7 +945,7 @@ export default function ProjectsSection() {
                   <div
                     role="tablist"
                     aria-label="Modo de visualização do gráfico GitHub"
-                    className="flex items-center gap-1 bg-white/[0.05] p-1 border border-white/12"
+                    className="flex items-center gap-1 bg-[var(--wash)] p-1 border border-[var(--line)]"
                   >
                     <button
                       type="button"
@@ -953,15 +954,15 @@ export default function ProjectsSection() {
                       onClick={() => setChartMode('area')}
                       className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-medium transition-colors whitespace-nowrap shrink-0 ${
                         chartMode === 'area'
-                          ? 'text-white'
-                          : 'text-[#A49EB8] hover:text-white'
+                          ? 'text-[var(--btn-fg)]'
+                          : 'text-[var(--soft)] hover:text-[var(--fg)]'
                       }`}
                     >
                       {chartMode === 'area' && (
                         <motion.span
                           layoutId="ghChartMode"
                           transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                          className="absolute inset-0 bg-[#4C1D95] -z-10"
+                          className="absolute inset-0 bg-[var(--btn)] -z-10"
                         />
                       )}
                       <TrendingUp className="w-3 h-3" />
@@ -974,15 +975,15 @@ export default function ProjectsSection() {
                       onClick={() => setChartMode('bars')}
                       className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-medium transition-colors whitespace-nowrap shrink-0 ${
                         chartMode === 'bars'
-                          ? 'text-white'
-                          : 'text-[#A49EB8] hover:text-white'
+                          ? 'text-[var(--btn-fg)]'
+                          : 'text-[var(--soft)] hover:text-[var(--fg)]'
                       }`}
                     >
                       {chartMode === 'bars' && (
                         <motion.span
                           layoutId="ghChartMode"
                           transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                          className="absolute inset-0 bg-[#4C1D95] -z-10"
+                          className="absolute inset-0 bg-[var(--btn)] -z-10"
                         />
                       )}
                       <BarChart3 className="w-3 h-3" />
@@ -1008,8 +1009,8 @@ export default function ProjectsSection() {
                       >
                         <defs>
                           <linearGradient id="ghAreaGradPurple" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#5B21B6" stopOpacity="0.62" />
-                            <stop offset="100%" stopColor="#4C1D95" stopOpacity="0.02" />
+                            <stop offset="0%" stopColor="#4B424C" stopOpacity="0.62" />
+                            <stop offset="100%" stopColor="#40383F" stopOpacity="0.02" />
                           </linearGradient>
                         </defs>
 
@@ -1025,7 +1026,7 @@ export default function ProjectsSection() {
                               y1={gy}
                               x2={ghW - ghPadX + 10}
                               y2={gy}
-                              stroke="rgba(167,139,250,0.12)"
+                              stroke="rgba(166,160,166,0.12)"
                               strokeDasharray="3 3"
                             />
                           );
@@ -1036,7 +1037,7 @@ export default function ProjectsSection() {
                         <motion.path
                           d={ghCurvePath}
                           fill="none"
-                          stroke="#9B86D6"
+                          stroke="#9B9699"
                           strokeWidth="2.5"
                           initial={{ pathLength: 0 }}
                           whileInView={{ pathLength: 1 }}
@@ -1059,7 +1060,7 @@ export default function ProjectsSection() {
                                   y1={pt.y}
                                   x2={pt.x}
                                   y2={ghH - ghPadBot}
-                                  stroke="#9B86D6"
+                                  stroke="#9B9699"
                                   strokeWidth="1"
                                   strokeDasharray="2 2"
                                 />
@@ -1071,7 +1072,7 @@ export default function ProjectsSection() {
                                   cy={pt.y}
                                   r={9}
                                   fill="none"
-                                  stroke="#9B86D6"
+                                  stroke="#9B9699"
                                   strokeOpacity="0.55"
                                 />
                               )}
@@ -1079,8 +1080,8 @@ export default function ProjectsSection() {
                                 cx={pt.x}
                                 cy={pt.y}
                                 r={isActive ? 5 : 3.5}
-                                fill={isActive ? '#9B86D6' : '#0E0D17'}
-                                stroke="#826BC2"
+                                fill={isActive ? '#9B9699' : '#0E0D17'}
+                                stroke="#817C80"
                                 strokeWidth="2"
                               />
                               <text
@@ -1088,7 +1089,7 @@ export default function ProjectsSection() {
                                 y={ghH - 6}
                                 textAnchor="middle"
                                 className={`text-[10px] font-mono-tabular ${
-                                  isActive ? 'fill-white font-semibold' : 'fill-[#8E89A3]'
+                                  isActive ? 'fill-white font-semibold' : 'fill-[var(--card)]'
                                 }`}
                               >
                                 {pt.label}
@@ -1123,7 +1124,7 @@ export default function ProjectsSection() {
                           >
                             <span
                               className={`font-mono-tabular text-[10px] transition-opacity ${
-                                isActive ? 'text-[#9B86D6] opacity-100' : 'text-[#8E89A3] opacity-70'
+                                isActive ? 'text-[var(--soft)] opacity-100' : 'text-[var(--muted)] opacity-70'
                               }`}
                             >
                               {count}
@@ -1140,14 +1141,14 @@ export default function ProjectsSection() {
                                 style={{ height: `${heightPct}%` }}
                                 className={`w-full origin-bottom transition-colors will-change-transform ${
                                   isActive
-                                    ? 'bg-[#9B86D6]'
-                                    : 'bg-[#4C1D95] group-hover:bg-[#826BC2]'
+                                    ? 'bg-[var(--soft)]'
+                                    : 'bg-[var(--card)] group-hover:bg-[var(--card)]'
                                 }`}
                               />
                             </div>
                             <span
                               className={`font-mono-tabular text-[10px] ${
-                                isActive ? 'text-white font-semibold' : 'text-[#8E89A3]'
+                                isActive ? 'text-[var(--fg)] font-semibold' : 'text-[var(--muted)]'
                               }`}
                             >
                               {WEEKDAY_LABELS[i]}
@@ -1161,22 +1162,22 @@ export default function ProjectsSection() {
               </div>
 
               <div className="flex items-center justify-between mb-3">
-                <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#8E89A3]">
+                <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--muted)]">
                   Repositórios Recentes
                 </p>
                 <a
                   href={PROFILE.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-semibold uppercase tracking-wider text-[#9B86D6] hover:underline whitespace-nowrap shrink-0"
+                  className="text-xs font-semibold uppercase tracking-wider text-[var(--soft)] hover:underline whitespace-nowrap shrink-0"
                 >
                   Ver perfil ↗
                 </a>
               </div>
 
-              <div className="divide-y divide-white/12 border-y border-white/12">
+              <div className="divide-y divide-white/12 border-y border-[var(--line)]">
                 {reposLoading && repos.length === 0 ? (
-                  <p className="py-6 text-sm text-[#8E89A3]">
+                  <p className="py-6 text-sm text-[var(--muted)]">
                     Carregando repositórios...
                   </p>
                 ) : (
@@ -1186,20 +1187,20 @@ export default function ProjectsSection() {
                       href={repo.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block py-3.5 group hover:bg-[#141522] px-2 -mx-2 transition-colors"
+                      className="block py-3.5 group hover:bg-[var(--bg)] px-2 -mx-2 transition-colors"
                     >
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex items-center gap-2 min-w-0">
-                          <GitBranch className="w-4 h-4 text-[#826BC2] shrink-0" />
-                          <span className="font-display font-bold text-[15px] text-white group-hover:text-[#9B86D6] truncate">
+                          <GitBranch className="w-4 h-4 text-[var(--muted)] shrink-0" />
+                          <span className="font-display font-bold text-[15px] text-[var(--fg)] group-hover:text-[var(--soft)] truncate">
                             {repo.name}
                           </span>
                         </div>
-                        <span className="font-mono-tabular text-xs text-[#9B86D6] shrink-0">
+                        <span className="font-mono-tabular text-xs text-[var(--soft)] shrink-0">
                           {repo.language ?? 'Code'}
                         </span>
                       </div>
-                      <p className="text-xs sm:text-[13px] text-[#A49EB8] mt-1 line-clamp-2">
+                      <p className="text-xs sm:text-[13px] text-[var(--soft)] mt-1 line-clamp-2">
                         {repo.description ||
                           'Repositório público no GitHub de Andrey Ramos.'}
                       </p>
@@ -1231,16 +1232,16 @@ export default function ProjectsSection() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 24, opacity: 0 }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-[#0B0B12] text-[#F5F4FA] border border-[#4C1D95]/50 max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 relative my-auto shadow-[0_24px_80px_rgba(59,7,100,0.42)]"
+              className="bg-[var(--bg)] text-[var(--fg)] border border-[var(--line)]/50 max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 relative my-auto shadow-[0_24px_80px_rgba(41,33,37,0.42)]"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-start justify-between gap-4 pb-5 border-b border-white/15">
+              <div className="flex items-start justify-between gap-4 pb-5 border-b border-[var(--line)]">
                 <div>
-                  <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#9B86D6]">
+                  <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--soft)]">
                     {selectedProject.index} · {selectedProject.category} ·{' '}
                     {selectedProject.year}
                   </p>
-                  <h3 className="font-display font-extrabold uppercase text-3xl sm:text-5xl tracking-tight text-white mt-2">
+                  <h3 className="font-display font-extrabold uppercase text-3xl sm:text-5xl tracking-tight text-[var(--fg)] mt-2">
                     {selectedProject.titleTop} {selectedProject.titleBottom}
                   </h3>
                 </div>
@@ -1249,14 +1250,14 @@ export default function ProjectsSection() {
                   type="button"
                   onClick={() => setSelectedProject(null)}
                   aria-label="Fechar detalhes do projeto"
-                  className="inline-flex items-center justify-center w-11 h-11 border border-white/25 text-white hover:bg-[#4C1D95] hover:border-[#826BC2] transition-colors shrink-0"
+                  className="inline-flex items-center justify-center w-11 h-11 border border-[var(--line)] text-[var(--fg)] hover:bg-[var(--card)] hover:border-[var(--line)] transition-colors shrink-0"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mt-7">
-                <div className="md:col-span-5 aspect-[4/3] overflow-hidden border border-white/15 bg-[#07070A]">
+                <div className="md:col-span-5 aspect-[4/3] overflow-hidden border border-[var(--line)] bg-[var(--bg)]">
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.imageAlt}
@@ -1267,17 +1268,17 @@ export default function ProjectsSection() {
 
                 <div className="md:col-span-7 flex flex-col justify-between">
                   <div>
-                    <p className="text-[15px] sm:text-[16px] leading-[1.65] text-[#C4C0D4] mb-6">
+                    <p className="text-[15px] sm:text-[16px] leading-[1.65] text-[var(--soft)] mb-6">
                       {selectedProject.fullDesc}
                     </p>
 
-                    <p className="text-xs font-mono-tabular uppercase tracking-wider text-[#8E89A3] mb-3">
-                      Decisões de Engenharia
+                    <p className="text-xs font-mono-tabular uppercase tracking-wider text-[var(--muted)] mb-3">
+                      {ui.howBuilt}
                     </p>
-                    <ul className="space-y-2.5 text-sm text-[#E5E3EF] mb-6">
+                    <ul className="space-y-2.5 text-sm text-[var(--fg)] mb-6">
                       {selectedProject.architectureNotes.map((note) => (
                         <li key={note} className="flex items-start gap-2.5">
-                          <span className="font-mono-tabular text-[#826BC2] font-bold">
+                          <span className="font-mono-tabular text-[var(--muted)] font-bold">
                             —
                           </span>
                           <span>{note}</span>
@@ -1286,8 +1287,8 @@ export default function ProjectsSection() {
                     </ul>
                   </div>
 
-                  <div className="pt-5 border-t border-white/12 flex flex-wrap items-center justify-between gap-4">
-                    <div className="text-xs font-mono-tabular text-[#8E89A3]">
+                  <div className="pt-5 border-t border-[var(--line)] flex flex-wrap items-center justify-between gap-4">
+                    <div className="text-xs font-mono-tabular text-[var(--muted)]">
                       {selectedProject.stack.join(' · ')}
                     </div>
 
@@ -1296,7 +1297,7 @@ export default function ProjectsSection() {
                         href={selectedProject.repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#4C1D95] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#5B21B6] transition-colors whitespace-nowrap shrink-0"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--btn)] text-[var(--btn-fg)] text-xs font-semibold uppercase tracking-wider hover:bg-[var(--soft)] transition-colors whitespace-nowrap shrink-0"
                       >
                         <span>{selectedProject.repoLabel}</span>
                         <ArrowUpRight className="w-4 h-4" />
@@ -1309,7 +1310,7 @@ export default function ProjectsSection() {
                           setSelectedProject(null);
                           setTimeout(() => smoothScrollTo('#contato'), 220);
                         }}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#4C1D95] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#5B21B6] transition-colors whitespace-nowrap shrink-0"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--btn)] text-[var(--btn-fg)] text-xs font-semibold uppercase tracking-wider hover:bg-[var(--soft)] transition-colors whitespace-nowrap shrink-0"
                       >
                         <span>Conversar sobre esta arquitetura</span>
                         <ArrowUpRight className="w-4 h-4" />

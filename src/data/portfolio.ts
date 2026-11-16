@@ -79,11 +79,11 @@ export interface TestimonialItem {
 export const PROFILE = {
   name: 'Andrey Ramos',
   handle: '@dreyranos',
-  role: 'Desenvolvedor Full Stack',
+  role: 'Quem cria o sistema da empresa',
   location: 'São José do Rio Preto, SP',
   country: 'Brasil',
-  experienceLabel: '9+ anos de experiência',
-  availability: 'Disponível para novos projetos',
+  experienceLabel: 'Mais de 9 anos na área',
+  availability: 'Aberto a novos projetos',
   email: 'andreyranos@gmail.com',
   whatsappRaw: '5517992083142',
   whatsappDisplay: '(17) 99208-3142',
@@ -91,20 +91,20 @@ export const PROFILE = {
   linkedinUrl: 'https://www.linkedin.com/in/andrey-ramos-6302722a3',
   avatarUrl: 'https://github.com/dreyranos.png',
   heroImage: '/src/assets/images/hero_engineering_studio_1794851124552.jpg',
-  currentRoleBadge: 'Atuação Atual · Full Stack @ PROANSI',
-  bio: 'Construo e sustento sistemas em produção combinando arquitetura de APIs multi-tenant, modernização de sistemas legados e aplicações mobile, web e desktop com foco em precisão técnica, escalabilidade e valor ao negócio.',
+  currentRoleBadge: 'Hoje na PROANSI',
+  bio: 'Atualizo o que já existe sem parar a empresa. E coloco no automático o que hoje alguém faz na mão.',
   manifestoParts: {
     statement1:
-      'Desenvolvedor Full Stack com mais de 9 anos criando APIs Multi-Tenant, modernizando sistemas em Firebird e Delphi e entregando software escalável.',
+      'Várias empresas usam o mesmo sistema, cada uma no seu canto, com telas rápidas.',
     statement2:
-      'Código legível — decisões documentadas, mudanças incrementais e automação de tudo que for repetitivo.',
+      'Atualizo sem parar a operação — e coloco no automático o que se repete.',
   },
-  pillars: ['Escalabilidade', 'Desempenho', 'Valor ao Negócio'],
+  pillars: ['Várias empresas', 'Uso no dia a dia', 'Menos trabalho manual'],
   metrics: [
-    { value: '9+ anos', label: 'Engenharia em Produção' },
-    { value: 'Multi-Tenant', label: 'APIs Delphi Horse & C# .NET' },
-    { value: 'Full Stack', label: 'Web, React Native & Desktop' },
-    { value: 'Automação', label: 'Python, Bash & Fluxos de IA' },
+    { value: '9+ anos', label: 'Fazendo sistemas de verdade' },
+    { value: 'Várias empresas', label: 'No mesmo sistema, sem misturar' },
+    { value: 'Celular e PC', label: 'Site, app e programa' },
+    { value: 'No automático', label: 'Rotinas e inteligência artificial' },
   ],
 };
 
@@ -112,14 +112,14 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     id: 'multi-tenant-core',
     index: '01',
-    titleTop: 'MULTI',
-    titleBottom: 'TENANT',
-    category: 'Backend & Arquitetura',
+    titleTop: 'VÁRIAS',
+    titleBottom: 'EMPRESAS',
+    category: 'Um sistema, muitos clientes',
     year: '2023 — Atual',
     shortDesc:
-      'APIs em Delphi Horse e C# .NET com isolamento estrito por cliente sobre bases Firebird SQL modernizadas.',
+      'Um sistema só atende várias empresas. Os dados de cada uma ficam separados e seguros.',
     fullDesc:
-      'Núcleo de serviços corporativos projetado para atender múltiplos clientes simultaneamente com resolução automática de contexto de tenant, autenticação centralizada e refatoração gradual do legado sem interromper a operação em produção.',
+      'Várias empresas entram no mesmo lugar, cada uma vê só o que é dela, e o sistema antigo continua no ar enquanto isso acontece.',
     architectureNotes: [
       'Roteamento centralizado com validação de credenciais e isolamento lógico por tenant.',
       'Tuning de consultas críticas em Firebird SQL garantindo baixa latência sob carga concorrente.',
@@ -136,14 +136,14 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     id: 'mobile-desktop',
     index: '02',
-    titleTop: 'MOBILE',
-    titleBottom: 'DESKTOP',
-    category: 'Ecossistema Multiplataforma',
+    titleTop: 'NO',
+    titleBottom: 'BOLSO',
+    category: 'Celular, site e computador',
     year: '2020 — Atual',
     shortDesc:
-      'Aplicativos em React Native (Expo + NativeWind), interfaces React/Angular e sistemas robustos Delphi VCL/FMX.',
+      'App de celular, site e programa de computador. Tudo ligado ao mesmo sistema.',
     fullDesc:
-      'Entrega ponta a ponta de clientes nativos e web conectados ao mesmo ecossistema de APIs. Aplicativos móveis fluidos para operação em campo e softwares desktop de alta performance para ambientes corporativos e industriais.',
+      'Quem está na rua usa o celular. Quem está no escritório usa o computador. Os dois falam com a mesma base.',
     architectureNotes: [
       'Interfaces mobile responsivas construídas com React Native, Expo e NativeWind.',
       'Aplicações desktop corporativas em Delphi VCL e FMX com comunicação direta com serviços REST.',
@@ -160,14 +160,14 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     id: 'automation-ai',
     index: '03',
-    titleTop: 'PYTHON',
-    titleBottom: '& IA OPS',
-    category: 'Automação & Compilação',
-    year: 'Open Source · 2026',
+    titleTop: 'NO',
+    titleBottom: 'AUTOMÁTICO',
+    category: 'Menos trabalho na mão',
+    year: 'Aberto · 2026',
     shortDesc:
-      'Scripts avançados em Python e Bash, pipelines operacionais, compiladores de projetos e fluxos inteligentes com IA.',
+      'O que a equipe repete todo dia passa a rodar sozinho, com ajuda de inteligência artificial.',
     fullDesc:
-      'Ferramentas e rotinas desenhadas para eliminar trabalho manual repetitivo. Inclui o projeto aberto Compilador_Python para empacotamento e automação de builds Python, além de orquestrações Bash e workflows assistidos por inteligência artificial.',
+      'Rotinas, empacotamento e triagem deixam de depender de alguém clicando o mesmo botão. Inclui o projeto aberto Compilador Python.',
     architectureNotes: [
       'Automação de rotinas de build, empacotamento e deploy via Python e Bash em servidores Linux.',
       'Integração de fluxos com modelos de IA para triagem técnica, documentação e produtividade.',
@@ -186,14 +186,14 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     id: 'android-aosp',
     index: '04',
-    titleTop: 'ANDROID',
-    titleBottom: 'SYSTEMS',
-    category: 'Baixo Nível & AOSP',
-    year: 'Pesquisa & Builds',
+    titleTop: 'POR',
+    titleBottom: 'DENTRO',
+    category: 'O celular por dentro',
+    year: 'Pesquisa',
     shortDesc:
-      'Compilação e customização de ROMs Android com AOSP e LineageOS, além de projetos nativos em C como MCLA-Recompiled-Mobile.',
+      'Quando um app comum não resolve, eu mexo no próprio sistema do Android.',
     fullDesc:
-      'Exploração profunda da camada de sistema operacional e compilação nativa: configuração de árvores de dispositivos, builds completos de AOSP e LineageOS em Linux e recompilação/portabilidade de software nativo em C para dispositivos móveis.',
+      'Montagem e ajuste do sistema do celular, para casos em que a loja de aplicativos não basta.',
     architectureNotes: [
       'Build e customização de imagens AOSP e LineageOS sob medida em ambiente Linux.',
       'Portabilidade de código nativo em C para arquitetura mobile no repositório MCLA-Recompiled-Mobile.',
@@ -215,10 +215,10 @@ export const ARCH_NODES: ArchNode[] = [
   {
     id: 'mobile',
     layer: 'client',
-    shortTitle: 'App Mobile',
-    shortSub: 'React Native + Expo',
-    title: 'App Mobile — React Native + Expo',
-    desc: 'Aplicativos móveis multiplataforma com interface fluida usando NativeWind, consumindo endpoints autenticados e isolados por tenant.',
+    shortTitle: 'No celular',
+    shortSub: 'App para o dia a dia',
+    title: 'App de celular',
+    desc: 'O aplicativo que a equipe usa na rua, ligado ao mesmo sistema da empresa.',
     stackLabel: 'React Native · Expo · NativeWind',
     responsibilities: [
       'Navegação nativa e cache local resiliente',
@@ -229,10 +229,10 @@ export const ARCH_NODES: ArchNode[] = [
   {
     id: 'desktop',
     layer: 'client',
-    shortTitle: 'App Desktop',
-    shortSub: 'Delphi FMX / VCL',
-    title: 'App Desktop — Delphi FMX / VCL',
-    desc: 'Aplicações desktop de alto desempenho em ambientes corporativos e industriais, integradas às APIs modernas e sistemas em produção.',
+    shortTitle: 'No computador',
+    shortSub: 'Programa de escritório',
+    title: 'Programa de computador',
+    desc: 'O programa que fica aberto o dia inteiro no escritório ou na fábrica.',
     stackLabel: 'Delphi FMX · Delphi VCL',
     responsibilities: [
       'Operação contínua em estações Windows corporativas',
@@ -243,10 +243,10 @@ export const ARCH_NODES: ArchNode[] = [
   {
     id: 'auto',
     layer: 'client',
-    shortTitle: 'Automações',
-    shortSub: 'Python / Bash / IA',
-    title: 'Automações — Python / Bash / IA',
-    desc: 'Pipelines automatizados, rotinas agendadas e fluxos inteligentes com IA eliminando tarefas manuais e integrando sistemas.',
+    shortTitle: 'No automático',
+    shortSub: 'Rotinas e IA',
+    title: 'Rotinas automáticas',
+    desc: 'Tarefas repetidas passam a acontecer sozinhas, com ajuda de inteligência artificial.',
     stackLabel: 'Python · Bash · Fluxos com IA',
     responsibilities: [
       'Orquestração de backups, builds e verificações em Linux',
@@ -257,10 +257,10 @@ export const ARCH_NODES: ArchNode[] = [
   {
     id: 'gateway',
     layer: 'core',
-    shortTitle: 'API Gateway',
-    shortSub: 'Autenticação + Tenant Isolation',
-    title: 'API Gateway — Autenticação + Tenant',
-    desc: 'Roteamento centralizado com validação de credenciais e resolução automática de contexto por tenant, permitindo que múltiplos clientes operem de forma isolada e segura sobre a mesma infraestrutura.',
+    shortTitle: 'A porta de entrada',
+    shortSub: 'Quem entra e o que vê',
+    title: 'A porta de entrada',
+    desc: 'Cada pessoa entra com a sua senha e só enxerga a empresa dela.',
     stackLabel: 'Delphi Horse · C# .NET',
     responsibilities: [
       'Validação de tokens e resolução imediata do contexto do cliente',
@@ -271,10 +271,10 @@ export const ARCH_NODES: ArchNode[] = [
   {
     id: 'services',
     layer: 'data',
-    shortTitle: 'Serviços de Negócio',
-    shortSub: 'Regras padronizadas & integrações',
-    title: 'Serviços de Negócio & Integrações',
-    desc: 'Camada desacoplada com regras de negócio padronizadas, integração com serviços externos e evolução incremental sem impacto no cliente.',
+    shortTitle: 'As regras',
+    shortSub: 'Como a empresa funciona',
+    title: 'As regras do negócio',
+    desc: 'Preço, pedido e rotina ficam no mesmo lugar, e dá para mudar sem derrubar o sistema.',
     stackLabel: 'Arquitetura Backend · Integrações',
     responsibilities: [
       'Encapsulamento de regras fiscais, operacionais e de domínio',
@@ -285,10 +285,10 @@ export const ARCH_NODES: ArchNode[] = [
   {
     id: 'database',
     layer: 'data',
-    shortTitle: 'Firebird SQL',
-    shortSub: 'Base legada modernizada & otimizada',
-    title: 'Firebird SQL — Camada de Dados',
-    desc: 'Otimização de queries críticas, modelagem relacional segura e modernização gradual de bases legadas mantendo total integridade em produção.',
+    shortTitle: 'Os dados',
+    shortSub: 'O arquivo da empresa',
+    title: 'Onde os dados ficam',
+    desc: 'Deixo as consultas mais rápidas e atualizo a base antiga sem perder o que já está lá.',
     stackLabel: 'Firebird SQL · Tuning & Legado',
     responsibilities: [
       'Análise de planos de execução e criação de índices estratégicos',
@@ -301,47 +301,47 @@ export const ARCH_NODES: ArchNode[] = [
 export const SERVICES_LIST = [
   {
     index: '01.',
-    line1: 'BACKEND &',
-    line2: 'ARQUITETURA',
+    line1: 'POR TRÁS',
+    line2: 'DO SISTEMA',
     align: 'left' as const,
     summary:
-      'APIs em Delphi com Horse e em C# .NET, modelagem multi-tenant com isolamento por cliente, integrações complexas e padronização de serviços.',
+      'O motor que recebe os pedidos, separa cada empresa e não mistura os dados.',
     highlights: ['Delphi Horse', 'C# .NET', 'Multi-Tenant'],
   },
   {
     index: '02.',
-    line1: 'WEB, MOBILE',
-    line2: '& DESKTOP',
+    line1: 'O QUE',
+    line2: 'A GENTE USA',
     align: 'right' as const,
     summary:
-      'Interfaces web modernas com Angular e React, aplicativos com React Native (Expo) + NativeWind e desktop robusto em Delphi VCL e FMX.',
+      'Site, app de celular e programa de computador, feitos para o dia a dia.',
     highlights: ['React Native + Expo', 'Angular / React', 'Delphi FMX / VCL'],
   },
   {
     index: '03.',
-    line1: 'DADOS &',
-    line2: 'LEGADO',
+    line1: 'SISTEMAS',
+    line2: 'ANTIGOS',
     align: 'left' as const,
     summary:
-      'Especialista em Firebird SQL, tuning de consultas críticas e refatoração incremental sem parar a operação em produção.',
+      'Deixo o sistema que já existe mais rápido, sem fechar a empresa para isso.',
     highlights: ['Firebird SQL', 'Tuning de Queries', 'Refatoração Segura'],
   },
   {
     index: '04.',
-    line1: 'AUTOMAÇÃO',
-    line2: '& FLUXOS IA',
+    line1: 'NO',
+    line2: 'AUTOMÁTICO',
     align: 'right' as const,
     summary:
-      'Scripts avançados em Python e Bash, pipelines de automação operacional e fluxos de trabalho inteligentes com IA.',
+      'O que se repete passa a rodar sozinho, com ajuda de inteligência artificial.',
     highlights: ['Python', 'Bash', 'Fluxos de IA'],
   },
   {
     index: '05.',
-    line1: 'ANDROID',
-    line2: 'CUSTOMIZADO',
+    line1: 'CELULAR',
+    line2: 'SOB MEDIDA',
     align: 'left' as const,
     summary:
-      'Customização em baixo nível, compilação e build de ROMs Android sob medida utilizando AOSP e LineageOS em ambiente Linux.',
+      'Ajusto o próprio sistema do Android quando um aplicativo comum não basta.',
     highlights: ['AOSP', 'LineageOS', 'Linux'],
   },
 ];
@@ -389,11 +389,11 @@ export const EXPERIENCE: ExperienceRole[] = [
     location: 'São José do Rio Preto, SP',
     current: true,
     summary:
-      'Atuação direta no desenvolvimento full stack, arquitetura de APIs multi-tenant, evolução de aplicativos mobile e desktop e modernização contínua de sistemas em produção.',
+      'Hoje crio os sistemas da empresa: celular, computador e o que roda por trás, sem parar o que já funciona.',
     highlights: [
-      'Arquitetura de APIs multi-tenant em Delphi Horse e C# .NET',
-      'Aplicativos mobile (React Native + Expo) e portais Web integrados',
-      'Otimização crítica em Firebird SQL e evolução de legado sem downtime',
+      'Várias empresas no mesmo sistema, cada uma no seu canto',
+      'App, site e programa ligados entre si',
+      'Sistema antigo mais rápido, sem fechar a operação',
     ],
     transitionNote:
       'Ciclo atual consolidando visão de infraestrutura, suporte N2 e gestão em arquitetura de produção end-to-end.',
@@ -411,7 +411,7 @@ export const EXPERIENCE: ExperienceRole[] = [
     elevation: 4,
     location: 'São José do Rio Preto, SP',
     summary:
-      'Diagnóstico avançado de incidentes em produção, análise de banco de dados, sustentação técnica e interface direta entre operação e engenharia.',
+      'Quando o sistema travava, eu achava a causa e explicava para quem ia corrigir.',
     highlights: [
       'Investigação de causa raiz diretamente em logs e consultas SQL',
       'Resolução de gargalos críticos antes do escalonamento para código',
@@ -433,7 +433,7 @@ export const EXPERIENCE: ExperienceRole[] = [
     elevation: 3.5,
     location: 'São José do Rio Preto, SP',
     summary:
-      'Gestão de infraestrutura, governança de tecnologia, continuidade operacional e alinhamento técnico junto às áreas industriais.',
+      'Cuidei da tecnologia da fábrica: o que precisava funcionar todo dia.',
     highlights: [
       'Governança de parque tecnológico e priorização de demandas industriais',
       'Continuidade operacional e padronização de rotinas de infraestrutura',
@@ -455,7 +455,7 @@ export const EXPERIENCE: ExperienceRole[] = [
     elevation: 2.5,
     location: 'São José do Rio Preto, SP',
     summary:
-      'Trajetória contínua evoluindo da sustentação de infraestrutura de TI até o desenvolvimento interno de sistemas e automações operacionais.',
+      'Comecei no suporte e passei a criar os sistemas da própria empresa.',
     highlights: [
       'Promoção interna de Assistente de TI para Desenvolvedor após 3 anos',
       'Criação de ferramentas internas e automação de rotinas clínicas/operacionais',
@@ -481,7 +481,7 @@ export const EDUCATION = {
   trackLabel: 'Formação Técnica em TI',
   elevation: 1.3,
   summary:
-    'Formação técnica estruturada em lógica de programação, bancos de dados relacionais, redes e fundamentos de engenharia de software.',
+    'Curso técnico de informática: programação, dados e redes.',
   highlights: [
     'Lógica estruturada, algoritmos e orientação a objetos',
     'Fundamentos de modelagem SQL, redes e sistemas operacionais',
@@ -492,9 +492,9 @@ export const EDUCATION = {
 };
 
 export const EXECUTIVE_EDGE = [
-  'Vivência real de infraestrutura e suporte N2 até arquitetura e gestão de TI.',
-  'Capacidade de manter o legado estável enquanto constrói o novo ecossistema.',
-  'Foco pragmático em produtividade com automação (Python, Bash e IA).',
+  'Já fui do suporte ao comando da tecnologia.',
+  'Atualizo o sistema antigo sem parar a empresa.',
+  'Tiro da equipe o trabalho que se repete.',
 ];
 
 export const FALLBACK_REPOS: GitHubRepo[] = [
