@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,10 +11,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS v3 CDN -->
+  <!-- Tailwind CSS v3 CDN (com darkMode class para alternância Noir Dark / White Glass) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
@@ -24,15 +25,11 @@
           },
           colors: {
             noir: '#030304',
-            carbon: '#09090b',
-            graphite: '#141418',
-            titanium: '#e4e4e7',
-            silver: '#a1a1aa',
+            alabaster: '#f4f4f6',
           },
           animation: {
             'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             'float': 'float 8s ease-in-out infinite',
-            'dash': 'dash 2.8s linear infinite',
           },
           keyframes: {
             float: {
@@ -49,36 +46,68 @@
   </script>
 
   <style>
+    /* ================= TEMA WHITE GLASS (LIGHT MODE) ================= */
     :root {
-      --bg-noir: #030304;
+      --bg-canvas: #f3f4f6;
+      --grid-line: rgba(9, 9, 11, 0.045);
+      --glass-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(244, 244, 247, 0.56));
+      --glass-border: rgba(9, 9, 11, 0.09);
+      --glass-shadow: 0 12px 36px -8px rgba(15, 23, 42, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+      --glass-hover-shadow: 0 22px 44px -10px rgba(15, 23, 42, 0.14), inset 0 1px 0 0 rgba(255, 255, 255, 1);
+      --spotlight-border: rgba(9, 9, 11, 0.24);
+      --spotlight-fill: rgba(9, 9, 11, 0.035);
+      --badge-bg: rgba(255, 255, 255, 0.72);
+      --badge-border: rgba(9, 9, 11, 0.11);
+      --btn-bg: linear-gradient(135deg, #09090b 0%, #27272a 100%);
+      --btn-color: #ffffff;
+      --btn-shadow: 0 10px 25px -6px rgba(9, 9, 11, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      --platinum-grad: linear-gradient(135deg, #09090b 0%, #27272a 45%, #52525b 85%, #71717a 100%);
+      --scroll-thumb: linear-gradient(180deg, #a1a1aa, #52525b);
+    }
+
+    /* ================= TEMA NOIR GLASS (DARK MODE) ================= */
+    html.dark {
+      --bg-canvas: #030304;
+      --grid-line: rgba(255, 255, 255, 0.035);
+      --glass-bg: linear-gradient(145deg, rgba(20, 20, 24, 0.72), rgba(7, 7, 9, 0.88));
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: 0 10px 36px -6px rgba(0, 0, 0, 0.85), inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+      --glass-hover-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.95), 0 0 28px -10px rgba(255, 255, 255, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+      --spotlight-border: rgba(255, 255, 255, 0.42);
+      --spotlight-fill: rgba(255, 255, 255, 0.055);
+      --badge-bg: rgba(24, 24, 27, 0.65);
+      --badge-border: rgba(255, 255, 255, 0.14);
+      --btn-bg: linear-gradient(135deg, #ffffff 0%, #d4d4d8 100%);
+      --btn-color: #09090b;
+      --btn-shadow: 0 0 28px -6px rgba(255, 255, 255, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      --platinum-grad: linear-gradient(135deg, #ffffff 0%, #e4e4e7 45%, #a1a1aa 85%, #71717a 100%);
+      --scroll-thumb: linear-gradient(180deg, #3f3f46, #a1a1aa);
     }
 
     body {
-      background-color: var(--bg-noir);
-      color: #f4f4f5;
+      background-color: var(--bg-canvas);
       overflow-x: hidden;
       font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    .noir-grid {
+    .studio-grid {
       background-size: 52px 52px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
       mask-image: radial-gradient(ellipse 85% 75% at 50% 15%, #000 35%, transparent 100%);
       -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 15%, #000 35%, transparent 100%);
     }
 
     .glass-panel {
-      background: linear-gradient(145deg, rgba(20, 20, 24, 0.72), rgba(7, 7, 9, 0.88));
-      backdrop-filter: blur(22px) saturate(140%);
-      -webkit-backdrop-filter: blur(22px) saturate(140%);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 
-        0 10px 36px -6px rgba(0, 0, 0, 0.85),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
       position: relative;
-      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease, background 0.4s ease;
     }
 
     .spotlight-card::before {
@@ -89,7 +118,7 @@
       padding: 1px;
       background: radial-gradient(
         400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(255, 255, 255, 0.42),
+        var(--spotlight-border),
         transparent 60%
       );
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -107,7 +136,7 @@
       border-radius: inherit;
       background: radial-gradient(
         460px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(255, 255, 255, 0.055),
+        var(--spotlight-fill),
         transparent 60%
       );
       pointer-events: none;
@@ -122,33 +151,30 @@
 
     .spotlight-card:hover {
       transform: translateY(-3px);
-      box-shadow: 
-        0 24px 48px -12px rgba(0, 0, 0, 0.95),
-        0 0 28px -10px rgba(255, 255, 255, 0.12),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+      box-shadow: var(--glass-hover-shadow);
     }
 
     .glass-badge {
-      background: rgba(24, 24, 27, 0.65);
+      background: var(--badge-bg);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--badge-border);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
 
-    .btn-noir {
-      background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 100%);
-      color: #09090b;
-      box-shadow: 0 0 28px -6px rgba(255, 255, 255, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+    .btn-theme {
+      background: var(--btn-bg);
+      color: var(--btn-color);
+      box-shadow: var(--btn-shadow);
       transition: all 0.3s ease;
     }
-    .btn-noir:hover {
-      background: linear-gradient(135deg, #ffffff 0%, #f4f4f5 100%);
-      box-shadow: 0 0 40px -2px rgba(255, 255, 255, 0.55);
+    .btn-theme:hover {
       transform: translateY(-2px);
+      filter: brightness(1.06);
     }
 
     .text-platinum {
-      background: linear-gradient(135deg, #ffffff 0%, #e4e4e7 45%, #a1a1aa 85%, #71717a 100%);
+      background: var(--platinum-grad);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -164,15 +190,18 @@
     }
 
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #030304; }
+    ::-webkit-scrollbar-track { background: var(--bg-canvas); }
     ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, #3f3f46, #a1a1aa);
+      background: var(--scroll-thumb);
       border-radius: 9999px;
     }
 
     .flow-line {
       stroke-dasharray: 8 8;
       animation: dash 2.2s linear infinite;
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -48; }
     }
 
     .cursor-blink {
@@ -183,21 +212,21 @@
     }
   </style>
 </head>
-<body class="antialiased selection:bg-white/20 selection:text-white">
+<body class="antialiased text-zinc-900 dark:text-zinc-100 selection:bg-zinc-900/15 dark:selection:bg-white/20">
 
-  <!-- Iluminação Studio Chiaroscuro de Fundo -->
+  <!-- Iluminação Studio Chiaroscuro / White Frost de Fundo -->
   <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
-    <div class="absolute inset-0 noir-grid"></div>
-    <div class="absolute -top-48 left-1/4 w-[620px] h-[520px] rounded-full bg-white/[0.04] blur-[150px] animate-pulse-slow"></div>
-    <div class="absolute top-1/3 -right-40 w-[460px] h-[460px] rounded-full bg-zinc-400/[0.035] blur-[140px] animate-float"></div>
-    <div class="absolute -bottom-48 -left-24 w-[520px] h-[520px] rounded-full bg-zinc-600/[0.04] blur-[150px]"></div>
+    <div class="absolute inset-0 studio-grid"></div>
+    <div class="absolute -top-48 left-1/4 w-[620px] h-[520px] rounded-full bg-white/80 dark:bg-white/[0.04] blur-[150px] animate-pulse-slow"></div>
+    <div class="absolute top-1/3 -right-40 w-[460px] h-[460px] rounded-full bg-zinc-300/60 dark:bg-zinc-400/[0.035] blur-[140px] animate-float"></div>
+    <div class="absolute -bottom-48 -left-24 w-[520px] h-[520px] rounded-full bg-zinc-200/70 dark:bg-zinc-600/[0.04] blur-[150px]"></div>
   </div>
 
-  <!-- Navbar Flutuante em Vidro Fumê -->
+  <!-- Navbar Flutuante em Glass -->
   <header class="fixed top-4 inset-x-0 z-50 px-4">
-    <nav class="max-w-6xl mx-auto glass-panel rounded-2xl px-4 sm:px-6 py-2.5 flex items-center justify-between">
-      <a href="#topo" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-xl overflow-hidden border border-white/20 bg-black shrink-0">
+    <nav class="max-w-6xl mx-auto glass-panel rounded-2xl px-4 sm:px-6 py-2.5 flex items-center justify-between gap-2">
+      <a href="#topo" class="flex items-center gap-3 group shrink-0">
+        <div class="w-9 h-9 rounded-xl overflow-hidden border border-zinc-900/15 dark:border-white/20 bg-black shrink-0">
           <img
             src="./assets/profile.jpg"
             onerror="this.onerror=null; this.src='https://github.com/dreyranos.png';"
@@ -206,31 +235,47 @@
           />
         </div>
         <div class="hidden sm:block">
-          <span class="font-display font-bold text-sm tracking-wide text-white block leading-none">Andrey Ramos</span>
-          <span class="font-mono text-[11px] text-zinc-400 group-hover:text-zinc-200 transition">@dreyranos</span>
+          <span class="font-display font-bold text-sm tracking-wide text-zinc-950 dark:text-white block leading-none">Andrey Ramos</span>
+          <span class="font-mono text-[11px] text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-200 transition">@dreyranos</span>
         </div>
       </a>
 
       <!-- Links Desktop -->
-      <div class="hidden md:flex items-center gap-1 text-sm font-medium text-zinc-400">
-        <a href="#sobre" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/[0.06] transition">Sobre</a>
-        <a href="#arquitetura" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/[0.06] transition">Arquitetura</a>
-        <a href="#stack" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/[0.06] transition">Stack</a>
-        <a href="#experiencia" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/[0.06] transition">Experiência</a>
-        <a href="#github" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/[0.06] transition">GitHub</a>
+      <div class="hidden lg:flex items-center gap-1 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+        <a href="#sobre" data-i18n="nav_about" class="px-3 py-1.5 rounded-lg hover:text-zinc-950 hover:bg-black/[0.05] dark:hover:text-white dark:hover:bg-white/[0.06] transition">Sobre</a>
+        <a href="#arquitetura" data-i18n="nav_arch" class="px-3 py-1.5 rounded-lg hover:text-zinc-950 hover:bg-black/[0.05] dark:hover:text-white dark:hover:bg-white/[0.06] transition">Arquitetura</a>
+        <a href="#stack" data-i18n="nav_stack" class="px-3 py-1.5 rounded-lg hover:text-zinc-950 hover:bg-black/[0.05] dark:hover:text-white dark:hover:bg-white/[0.06] transition">Stack</a>
+        <a href="#experiencia" data-i18n="nav_exp" class="px-3 py-1.5 rounded-lg hover:text-zinc-950 hover:bg-black/[0.05] dark:hover:text-white dark:hover:bg-white/[0.06] transition">Experiência</a>
+        <a href="#github" class="px-3 py-1.5 rounded-lg hover:text-zinc-950 hover:bg-black/[0.05] dark:hover:text-white dark:hover:bg-white/[0.06] transition">GitHub</a>
       </div>
 
-      <!-- Status & CTA -->
-      <div class="flex items-center gap-3">
-        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/15 text-xs font-mono text-zinc-200">
+      <!-- Controles: Idioma (PT/EN), Tema (Noir/White Glass) & CTA -->
+      <div class="flex items-center gap-2">
+        <!-- Seletor de Idioma -->
+        <button id="lang-toggle" type="button" aria-label="Alternar idioma" class="glass-badge px-2.5 py-1.5 rounded-xl font-mono text-xs font-semibold text-zinc-800 dark:text-zinc-200 hover:border-zinc-900/30 dark:hover:border-white/35 transition flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+          <span id="lang-label">PT</span>
+        </button>
+
+        <!-- Seletor de Tema (Noir Dark / White Glass) -->
+        <button id="theme-toggle" type="button" aria-label="Alternar tema" class="glass-badge p-2 rounded-xl text-zinc-800 dark:text-zinc-200 hover:border-zinc-900/30 dark:hover:border-white/35 transition flex items-center gap-1.5">
+          <!-- Sol (visível no Dark Mode para ir ao White Glass) -->
+          <svg id="icon-sun" class="w-4 h-4 block dark:block hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <!-- Lua (visível no White Glass para ir ao Noir Dark) -->
+          <svg id="icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <span id="theme-label" class="hidden xl:inline font-mono text-[11px]">White</span>
+        </button>
+
+        <div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/15 text-xs font-mono text-zinc-700 dark:text-zinc-200">
           <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          Disponível para oportunidades
+          <span data-i18n="nav_status">Disponível</span>
         </div>
-        <a href="#oportunidades" class="btn-noir px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-2">
-          <span>Conectar</span>
+
+        <a href="#oportunidades" class="btn-theme px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-1.5">
+          <span data-i18n="nav_connect">Conectar</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
       </div>
@@ -246,47 +291,47 @@
         <!-- Coluna Esquerda -->
         <div class="lg:col-span-7 space-y-6 order-2 lg:order-1">
           <div class="inline-flex flex-wrap items-center gap-2">
-            <span class="glass-badge px-3 py-1 rounded-full text-xs font-mono text-zinc-200 flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
-              9+ ANOS DE EXPERIÊNCIA
+            <span class="glass-badge px-3 py-1 rounded-full text-xs font-mono text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-zinc-900 dark:bg-white"></span>
+              <span data-i18n="hero_exp_badge">9+ ANOS DE EXPERIÊNCIA</span>
             </span>
-            <span class="glass-badge px-3 py-1 rounded-full text-xs font-mono text-zinc-400 flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5 text-zinc-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              São José do Rio Preto, SP · Brasil
+            <span class="glass-badge px-3 py-1 rounded-full text-xs font-mono text-zinc-600 dark:text-zinc-400 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-zinc-700 dark:text-zinc-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span data-i18n="hero_location">São José do Rio Preto, SP · Brasil</span>
             </span>
           </div>
 
           <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08]">
-            <span class="text-white">Andrey Ramos</span>
-            <span class="block text-platinum mt-2 text-2xl sm:text-4xl lg:text-[2.6rem] font-semibold">
+            <span class="text-zinc-950 dark:text-white">Andrey Ramos</span>
+            <span data-i18n="hero_subtitle" class="block text-platinum mt-2 text-2xl sm:text-4xl lg:text-[2.6rem] font-semibold">
               Desenvolvedor Full Stack & Engenharia de Software
             </span>
           </h1>
 
           <!-- Terminal Typing Effect -->
-          <div class="glass-panel rounded-xl px-4 py-3 flex items-center gap-3 font-mono text-xs sm:text-sm text-zinc-200">
-            <span class="text-white select-none font-bold">&gt;_</span>
+          <div class="glass-panel rounded-xl px-4 py-3 flex items-center gap-3 font-mono text-xs sm:text-sm text-zinc-800 dark:text-zinc-200">
+            <span class="text-zinc-950 dark:text-white select-none font-bold">&gt;_</span>
             <span id="typing-text" class="truncate">APIs Multi-Tenant | Arquitetura Backend</span>
-            <span class="w-2 h-4 bg-white cursor-blink inline-block shrink-0"></span>
+            <span class="w-2 h-4 bg-zinc-950 dark:bg-white cursor-blink inline-block shrink-0"></span>
           </div>
 
-          <p class="text-zinc-400 text-base sm:text-lg leading-relaxed max-w-2xl">
-            Construo e sustento sistemas em produção combinando <strong class="text-white font-medium">arquitetura de APIs multi-tenant</strong>, <strong class="text-white font-medium">modernização de sistemas legados</strong> e <strong class="text-white font-medium">aplicações mobile, web e desktop</strong> com foco em precisão técnica, escalabilidade e valor ao negócio.
+          <p data-i18n-html="hero_bio" class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Construo e sustento sistemas em produção combinando <strong class="text-zinc-950 dark:text-white font-medium">arquitetura de APIs multi-tenant</strong>, <strong class="text-zinc-950 dark:text-white font-medium">modernização de sistemas legados</strong> e <strong class="text-zinc-950 dark:text-white font-medium">aplicações mobile, web e desktop</strong> com foco em precisão técnica, escalabilidade e valor ao negócio.
           </p>
 
           <div class="flex flex-wrap items-center gap-4 pt-2">
-            <a href="#oportunidades" class="btn-noir px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base flex items-center gap-2.5">
-              <span>Explorar Oportunidades & Contato</span>
+            <a href="#oportunidades" class="btn-theme px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base flex items-center gap-2.5">
+              <span data-i18n="hero_cta_primary">Explorar Oportunidades & Contato</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
-            <a href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer" class="glass-panel px-6 py-3.5 rounded-xl font-semibold text-zinc-200 hover:text-white text-sm sm:text-base flex items-center gap-2.5 hover:border-white/30 transition">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <a href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer" class="glass-panel px-6 py-3.5 rounded-xl font-semibold text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white text-sm sm:text-base flex items-center gap-2.5 transition">
+              <svg class="w-5 h-5 text-zinc-950 dark:text-white" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
               <span>GitHub @dreyranos</span>
             </a>
           </div>
         </div>
 
-        <!-- Coluna Direita: Retrato Studio Noir -->
+        <!-- Coluna Direita: Retrato Studio em Glass -->
         <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center">
           <div class="glass-panel spotlight-card rounded-[2rem] p-3 w-full max-w-[410px] relative overflow-hidden group">
             <div class="relative rounded-[1.5rem] overflow-hidden bg-black aspect-[4/4.4]">
@@ -308,13 +353,14 @@
                 </span>
               </div>
 
-              <div class="absolute bottom-3.5 left-3.5 right-3.5 glass-panel rounded-2xl p-3.5 border-white/15">
+              <!-- Pill de vidro fumê sobre a base escura do terno (legível em ambos os temas) -->
+              <div class="absolute bottom-3.5 left-3.5 right-3.5 rounded-2xl p-3.5 bg-zinc-950/75 backdrop-blur-xl border border-white/15 shadow-lg">
                 <div class="flex items-center justify-between">
                   <div>
                     <div class="font-display font-bold text-white text-sm">Andrey Ramos</div>
-                    <div class="font-mono text-[11px] text-zinc-400">Full Stack @ PROANSI · +9 anos em TI</div>
+                    <div data-i18n="photo_role" class="font-mono text-[11px] text-zinc-300">Full Stack @ PROANSI · +9 anos em TI</div>
                   </div>
-                  <div class="text-right font-mono text-[10px] text-zinc-300 bg-white/[0.06] px-2.5 py-1.5 rounded-lg border border-white/10">
+                  <div class="text-right font-mono text-[10px] text-zinc-200 bg-white/[0.08] px-2.5 py-1.5 rounded-lg border border-white/15">
                     SJRP · BR
                   </div>
                 </div>
@@ -330,10 +376,10 @@
     <section id="sobre" class="max-w-6xl mx-auto mb-24 sm:mb-32 reveal">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
         <div>
-          <span class="font-mono text-xs uppercase tracking-widest text-zinc-400">// Visão & Especialidades</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Sobre & Áreas de Atuação</h2>
+          <span data-i18n="about_kicker" class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">// Visão & Especialidades</span>
+          <h2 data-i18n="about_title" class="font-display text-3xl sm:text-4xl font-bold text-zinc-950 dark:text-white mt-2">Sobre & Áreas de Atuação</h2>
         </div>
-        <p class="text-zinc-400 text-sm max-w-md">
+        <p data-i18n="about_desc" class="text-zinc-600 dark:text-zinc-400 text-sm max-w-md">
           Princípios de engenharia aplicados em sistemas críticos: código legível, decisões documentadas, evolução incremental e automação contínua.
         </p>
       </div>
@@ -343,96 +389,96 @@
         <!-- Manifesto Técnico -->
         <div class="md:col-span-6 glass-panel spotlight-card rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div class="space-y-2 max-w-3xl">
-            <div class="inline-flex items-center gap-2 text-xs font-mono text-zinc-200 bg-white/[0.06] border border-white/15 px-3 py-1 rounded-full">
-              <span>Manifesto Técnico</span>
+            <div class="inline-flex items-center gap-2 text-xs font-mono text-zinc-700 dark:text-zinc-200 bg-black/[0.05] dark:bg-white/[0.06] border border-zinc-900/10 dark:border-white/15 px-3 py-1 rounded-full">
+              <span data-i18n="manifesto_tag">Manifesto Técnico</span>
             </div>
-            <p class="text-lg sm:text-2xl text-white font-display font-medium leading-snug">
+            <p data-i18n="manifesto_quote" class="text-lg sm:text-2xl text-zinc-950 dark:text-white font-display font-medium leading-snug">
               “Código legível, decisões documentadas, mudanças incrementais e automação de tudo que for repetitivo.”
             </p>
           </div>
           <div class="flex flex-wrap gap-2 shrink-0">
-            <span class="px-3 py-1.5 rounded-xl bg-white/[0.05] border border-white/10 font-mono text-xs text-zinc-200">Escalabilidade</span>
-            <span class="px-3 py-1.5 rounded-xl bg-white/[0.05] border border-white/10 font-mono text-xs text-zinc-200">Desempenho</span>
-            <span class="px-3 py-1.5 rounded-xl bg-white/[0.05] border border-white/10 font-mono text-xs text-zinc-200">Valor ao Negócio</span>
+            <span data-i18n="pill_scale" class="px-3 py-1.5 rounded-xl bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 font-mono text-xs text-zinc-700 dark:text-zinc-200">Escalabilidade</span>
+            <span data-i18n="pill_perf" class="px-3 py-1.5 rounded-xl bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 font-mono text-xs text-zinc-700 dark:text-zinc-200">Desempenho</span>
+            <span data-i18n="pill_biz" class="px-3 py-1.5 rounded-xl bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 font-mono text-xs text-zinc-700 dark:text-zinc-200">Valor ao Negócio</span>
           </div>
         </div>
 
         <!-- Card 1: Backend & Arquitetura -->
         <div class="md:col-span-3 glass-panel spotlight-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-2xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white mb-5">
+            <div class="w-12 h-12 rounded-2xl bg-black/[0.05] dark:bg-white/[0.06] border border-zinc-900/10 dark:border-white/15 flex items-center justify-center text-zinc-950 dark:text-white mb-5">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
             </div>
-            <h3 class="font-display text-xl font-bold text-white mb-2">Backend & Arquitetura</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">
-              APIs em <strong class="text-zinc-100">Delphi com Horse</strong> e em <strong class="text-zinc-100">C# .NET</strong>, modelagem multi-tenant com isolamento por cliente, integrações complexas e padronização de serviços.
+            <h3 data-i18n="area1_title" class="font-display text-xl font-bold text-zinc-950 dark:text-white mb-2">Backend & Arquitetura</h3>
+            <p data-i18n-html="area1_desc" class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+              APIs em <strong class="text-zinc-950 dark:text-zinc-100">Delphi com Horse</strong> e em <strong class="text-zinc-950 dark:text-zinc-100">C# .NET</strong>, modelagem multi-tenant com isolamento por cliente, integrações complexas e padronização de serviços.
             </p>
           </div>
           <div class="mt-6 flex flex-wrap gap-2">
-            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-zinc-200">Delphi Horse</span>
-            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-zinc-200">C# .NET</span>
-            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-zinc-200">Multi-Tenant</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 text-zinc-700 dark:text-zinc-200">Delphi Horse</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 text-zinc-700 dark:text-zinc-200">C# .NET</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 text-zinc-700 dark:text-zinc-200">Multi-Tenant</span>
           </div>
         </div>
 
         <!-- Card 2: Web, Mobile e Desktop -->
         <div class="md:col-span-3 glass-panel spotlight-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
           <div>
-            <div class="w-12 h-12 rounded-2xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white mb-5">
+            <div class="w-12 h-12 rounded-2xl bg-black/[0.05] dark:bg-white/[0.06] border border-zinc-900/10 dark:border-white/15 flex items-center justify-center text-zinc-950 dark:text-white mb-5">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
             </div>
-            <h3 class="font-display text-xl font-bold text-white mb-2">Web, Mobile & Desktop</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">
-              Interfaces web modernas com <strong class="text-zinc-100">Angular e React</strong>, aplicativos com <strong class="text-zinc-100">React Native (Expo) + NativeWind</strong> e desktop robusto em <strong class="text-zinc-100">Delphi VCL e FMX</strong>.
+            <h3 data-i18n="area2_title" class="font-display text-xl font-bold text-zinc-950 dark:text-white mb-2">Web, Mobile & Desktop</h3>
+            <p data-i18n-html="area2_desc" class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+              Interfaces web modernas com <strong class="text-zinc-950 dark:text-zinc-100">Angular e React</strong>, aplicativos com <strong class="text-zinc-950 dark:text-zinc-100">React Native (Expo) + NativeWind</strong> e desktop robusto em <strong class="text-zinc-950 dark:text-zinc-100">Delphi VCL e FMX</strong>.
             </p>
           </div>
           <div class="mt-6 flex flex-wrap gap-2">
-            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-zinc-200">React Native + Expo</span>
-            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-zinc-200">Angular / React</span>
-            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-white/[0.05] border border-white/10 text-zinc-200">Delphi FMX / VCL</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 text-zinc-700 dark:text-zinc-200">React Native + Expo</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 text-zinc-700 dark:text-zinc-200">Angular / React</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 text-zinc-700 dark:text-zinc-200">Delphi FMX / VCL</span>
           </div>
         </div>
 
         <!-- Card 3: Banco de Dados & Legado -->
         <div class="md:col-span-2 glass-panel spotlight-card rounded-3xl p-6 flex flex-col justify-between">
           <div>
-            <div class="w-11 h-11 rounded-2xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-zinc-200 mb-4">
+            <div class="w-11 h-11 rounded-2xl bg-black/[0.05] dark:bg-white/[0.06] border border-zinc-900/10 dark:border-white/15 flex items-center justify-center text-zinc-900 dark:text-zinc-200 mb-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
             </div>
-            <h3 class="font-display text-lg font-bold text-white mb-2">Banco de Dados & Legado</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">
-              Especialista em <strong class="text-zinc-100">Firebird SQL</strong>, tuning de consultas críticas e refatoração incremental sem parar a operação.
+            <h3 data-i18n="area3_title" class="font-display text-lg font-bold text-zinc-950 dark:text-white mb-2">Banco de Dados & Legado</h3>
+            <p data-i18n-html="area3_desc" class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+              Especialista em <strong class="text-zinc-950 dark:text-zinc-100">Firebird SQL</strong>, tuning de consultas críticas e refatoração incremental sem parar a operação.
             </p>
           </div>
-          <div class="mt-5 font-mono text-[11px] text-zinc-300">Firebird SQL · Refatoração Segura</div>
+          <div data-i18n="area3_foot" class="mt-5 font-mono text-[11px] text-zinc-700 dark:text-zinc-300">Firebird SQL · Refatoração Segura</div>
         </div>
 
         <!-- Card 4: Automação & IA -->
         <div class="md:col-span-2 glass-panel spotlight-card rounded-3xl p-6 flex flex-col justify-between">
           <div>
-            <div class="w-11 h-11 rounded-2xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-zinc-200 mb-4">
+            <div class="w-11 h-11 rounded-2xl bg-black/[0.05] dark:bg-white/[0.06] border border-zinc-900/10 dark:border-white/15 flex items-center justify-center text-zinc-900 dark:text-zinc-200 mb-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             </div>
-            <h3 class="font-display text-lg font-bold text-white mb-2">Automação & IA</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">
-              Scripts avançados em <strong class="text-zinc-100">Python e Bash</strong>, pipelines de automação operacional e fluxos de trabalho inteligentes com <strong class="text-zinc-100">IA</strong>.
+            <h3 data-i18n="area4_title" class="font-display text-lg font-bold text-zinc-950 dark:text-white mb-2">Automação & IA</h3>
+            <p data-i18n-html="area4_desc" class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+              Scripts avançados em <strong class="text-zinc-950 dark:text-zinc-100">Python e Bash</strong>, pipelines de automação operacional e fluxos de trabalho inteligentes com <strong class="text-zinc-950 dark:text-zinc-100">IA</strong>.
             </p>
           </div>
-          <div class="mt-5 font-mono text-[11px] text-zinc-300">Python · Bash · Fluxos de IA</div>
+          <div data-i18n="area4_foot" class="mt-5 font-mono text-[11px] text-zinc-700 dark:text-zinc-300">Python · Bash · Fluxos de IA</div>
         </div>
 
         <!-- Card 5: Android Customizado -->
         <div class="md:col-span-2 glass-panel spotlight-card rounded-3xl p-6 flex flex-col justify-between">
           <div>
-            <div class="w-11 h-11 rounded-2xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-zinc-200 mb-4">
+            <div class="w-11 h-11 rounded-2xl bg-black/[0.05] dark:bg-white/[0.06] border border-zinc-900/10 dark:border-white/15 flex items-center justify-center text-zinc-900 dark:text-zinc-200 mb-4">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
             </div>
-            <h3 class="font-display text-lg font-bold text-white mb-2">Android Customizado</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed">
-              Customização em baixo nível, compilação e build de ROMs Android sob medida utilizando <strong class="text-zinc-100">AOSP</strong> e <strong class="text-zinc-100">LineageOS</strong>.
+            <h3 data-i18n="area5_title" class="font-display text-lg font-bold text-zinc-950 dark:text-white mb-2">Android Customizado</h3>
+            <p data-i18n-html="area5_desc" class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+              Customização em baixo nível, compilação e build de ROMs Android sob medida utilizando <strong class="text-zinc-950 dark:text-zinc-100">AOSP</strong> e <strong class="text-zinc-950 dark:text-zinc-100">LineageOS</strong>.
             </p>
           </div>
-          <div class="mt-5 font-mono text-[11px] text-zinc-300">AOSP · LineageOS · Linux</div>
+          <div class="mt-5 font-mono text-[11px] text-zinc-700 dark:text-zinc-300">AOSP · LineageOS · Linux</div>
         </div>
 
       </div>
@@ -441,10 +487,10 @@
     <!-- SEÇÃO: ARQUITETURA DE REFERÊNCIA INTERATIVA -->
     <section id="arquitetura" class="max-w-6xl mx-auto mb-24 sm:mb-32 reveal">
       <div class="mb-10">
-        <span class="font-mono text-xs uppercase tracking-widest text-zinc-400">// Blueprint em Produção</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Arquitetura de Referência</h2>
-        <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-3xl">
-          Modelo que resume o tipo de solução em que mais atuo: clientes múltiplos consumindo uma API multi-tenant com isolamento por tenant sobre uma camada de dados legada e modernizada. <span class="text-zinc-200 underline decoration-white/30 underline-offset-4">Clique nos nós abaixo para inspecionar cada camada.</span>
+        <span data-i18n="arch_kicker" class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">// Blueprint em Produção</span>
+        <h2 data-i18n="arch_title" class="font-display text-3xl sm:text-4xl font-bold text-zinc-950 dark:text-white mt-2">Arquitetura de Referência</h2>
+        <p data-i18n-html="arch_desc" class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2 max-w-3xl">
+          Modelo que resume o tipo de solução em que mais atuo: clientes múltiplos consumindo uma API multi-tenant com isolamento por tenant sobre uma camada de dados legada e modernizada. <span class="text-zinc-900 dark:text-zinc-200 underline decoration-zinc-900/30 dark:decoration-white/30 underline-offset-4">Clique nos nós abaixo para inspecionar cada camada.</span>
         </p>
       </div>
 
@@ -452,99 +498,93 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center relative z-10">
           
           <div class="lg:col-span-3 space-y-3">
-            <div class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 mb-2">01 · Camada Cliente</div>
+            <div data-i18n="arch_col1" class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 mb-2">01 · Camada Cliente</div>
             
-            <button onclick="selectNode('mobile')" id="node-mobile" class="arch-node w-full text-left p-4 rounded-2xl bg-white/[0.04] border border-white/15 hover:border-white/50 transition group">
+            <button onclick="selectNode('mobile')" id="node-mobile" class="arch-node w-full text-left p-4 rounded-2xl bg-white/70 dark:bg-white/[0.04] border border-zinc-900/15 dark:border-white/15 hover:border-zinc-900/45 dark:hover:border-white/50 transition group">
               <div class="flex items-center justify-between">
-                <span class="font-display font-semibold text-white text-sm">App Mobile</span>
-                <span class="w-2 h-2 rounded-full bg-zinc-300 group-hover:animate-ping"></span>
+                <span data-i18n="node_mobile_title" class="font-display font-semibold text-zinc-950 dark:text-white text-sm">App Mobile</span>
+                <span class="w-2 h-2 rounded-full bg-zinc-500 dark:bg-zinc-300 group-hover:animate-ping"></span>
               </div>
-              <div class="font-mono text-xs text-zinc-400 mt-1">React Native + Expo</div>
+              <div class="font-mono text-xs text-zinc-600 dark:text-zinc-400 mt-1">React Native + Expo</div>
             </button>
 
-            <button onclick="selectNode('desktop')" id="node-desktop" class="arch-node w-full text-left p-4 rounded-2xl bg-white/[0.04] border border-white/15 hover:border-white/50 transition group">
+            <button onclick="selectNode('desktop')" id="node-desktop" class="arch-node w-full text-left p-4 rounded-2xl bg-white/70 dark:bg-white/[0.04] border border-zinc-900/15 dark:border-white/15 hover:border-zinc-900/45 dark:hover:border-white/50 transition group">
               <div class="flex items-center justify-between">
-                <span class="font-display font-semibold text-white text-sm">App Desktop</span>
-                <span class="w-2 h-2 rounded-full bg-zinc-300 group-hover:animate-ping"></span>
+                <span data-i18n="node_desktop_title" class="font-display font-semibold text-zinc-950 dark:text-white text-sm">App Desktop</span>
+                <span class="w-2 h-2 rounded-full bg-zinc-500 dark:bg-zinc-300 group-hover:animate-ping"></span>
               </div>
-              <div class="font-mono text-xs text-zinc-400 mt-1">Delphi FMX / VCL</div>
+              <div class="font-mono text-xs text-zinc-600 dark:text-zinc-400 mt-1">Delphi FMX / VCL</div>
             </button>
 
-            <button onclick="selectNode('auto')" id="node-auto" class="arch-node w-full text-left p-4 rounded-2xl bg-white/[0.04] border border-white/15 hover:border-white/50 transition group">
+            <button onclick="selectNode('auto')" id="node-auto" class="arch-node w-full text-left p-4 rounded-2xl bg-white/70 dark:bg-white/[0.04] border border-zinc-900/15 dark:border-white/15 hover:border-zinc-900/45 dark:hover:border-white/50 transition group">
               <div class="flex items-center justify-between">
-                <span class="font-display font-semibold text-white text-sm">Automações</span>
-                <span class="w-2 h-2 rounded-full bg-zinc-300 group-hover:animate-ping"></span>
+                <span data-i18n="node_auto_title" class="font-display font-semibold text-zinc-950 dark:text-white text-sm">Automações</span>
+                <span class="w-2 h-2 rounded-full bg-zinc-500 dark:bg-zinc-300 group-hover:animate-ping"></span>
               </div>
-              <div class="font-mono text-xs text-zinc-400 mt-1">Python / Bash / IA</div>
+              <div data-i18n="node_auto_sub" class="font-mono text-xs text-zinc-600 dark:text-zinc-400 mt-1">Python / Bash / IA</div>
             </button>
           </div>
 
-          <div class="hidden lg:flex lg:col-span-1 justify-center">
+          <div class="hidden lg:flex lg:col-span-1 justify-center text-zinc-500 dark:text-zinc-400">
             <svg class="w-full h-48" viewBox="0 0 80 200" fill="none">
-              <path d="M0 30 C 40 30, 40 100, 80 100" stroke="url(#gradNoir)" stroke-width="2" class="flow-line"/>
-              <path d="M0 100 L 80 100" stroke="url(#gradNoir)" stroke-width="2" class="flow-line"/>
-              <path d="M0 170 C 40 170, 40 100, 80 100" stroke="url(#gradNoir)" stroke-width="2" class="flow-line"/>
-              <defs>
-                <linearGradient id="gradNoir" x1="0" y1="0" x2="80" y2="0" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#71717a"/>
-                  <stop offset="1" stop-color="#ffffff"/>
-                </linearGradient>
-              </defs>
+              <path d="M0 30 C 40 30, 40 100, 80 100" stroke="currentColor" stroke-width="2" class="flow-line"/>
+              <path d="M0 100 L 80 100" stroke="currentColor" stroke-width="2" class="flow-line"/>
+              <path d="M0 170 C 40 170, 40 100, 80 100" stroke="currentColor" stroke-width="2" class="flow-line"/>
             </svg>
           </div>
 
           <div class="lg:col-span-3">
-            <div class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 mb-2">02 · Núcleo Multi-Tenant</div>
-            <button onclick="selectNode('gateway')" id="node-gateway" class="arch-node w-full text-left p-6 rounded-2xl bg-gradient-to-br from-white/15 to-white/[0.03] border-2 border-white/40 shadow-lg shadow-white/5 hover:scale-[1.02] transition">
+            <div data-i18n="arch_col2" class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 mb-2">02 · Núcleo Multi-Tenant</div>
+            <button onclick="selectNode('gateway')" id="node-gateway" class="arch-node w-full text-left p-6 rounded-2xl bg-gradient-to-br from-zinc-900/[0.08] to-zinc-900/[0.02] dark:from-white/15 dark:to-white/[0.03] border-2 border-zinc-900/35 dark:border-white/40 shadow-lg hover:scale-[1.02] transition">
               <div class="flex items-center gap-2 mb-2">
-                <span class="px-2 py-0.5 rounded bg-white/15 text-white font-mono text-[10px] uppercase">Core Gateway</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-900/10 dark:bg-white/15 text-zinc-950 dark:text-white font-mono text-[10px] uppercase">Core Gateway</span>
               </div>
-              <div class="font-display font-bold text-lg text-white">API Gateway</div>
-              <div class="font-mono text-xs text-zinc-200 mt-1">Autenticação + Isolamento por Tenant</div>
-              <div class="mt-3 pt-3 border-t border-white/15 font-mono text-[11px] text-zinc-300">
+              <div class="font-display font-bold text-lg text-zinc-950 dark:text-white">API Gateway</div>
+              <div data-i18n="node_gw_sub" class="font-mono text-xs text-zinc-700 dark:text-zinc-200 mt-1">Autenticação + Isolamento por Tenant</div>
+              <div class="mt-3 pt-3 border-t border-zinc-900/15 dark:border-white/15 font-mono text-[11px] text-zinc-600 dark:text-zinc-300">
                 Horse (Delphi) · C# .NET
               </div>
             </button>
           </div>
 
-          <div class="hidden lg:flex lg:col-span-1 justify-center">
+          <div class="hidden lg:flex lg:col-span-1 justify-center text-zinc-500 dark:text-zinc-400">
             <svg class="w-full h-36" viewBox="0 0 80 140" fill="none">
-              <path d="M0 70 C 40 70, 40 30, 80 30" stroke="#e4e4e7" stroke-width="2" class="flow-line"/>
-              <path d="M0 70 C 40 70, 40 110, 80 110" stroke="#71717a" stroke-width="2" class="flow-line"/>
+              <path d="M0 70 C 40 70, 40 30, 80 30" stroke="currentColor" stroke-width="2" class="flow-line"/>
+              <path d="M0 70 C 40 70, 40 110, 80 110" stroke="currentColor" stroke-width="2" class="flow-line"/>
             </svg>
           </div>
 
           <div class="lg:col-span-4 space-y-4">
-            <div class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 mb-2">03 · Domínio & Persistência</div>
+            <div data-i18n="arch_col3" class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 mb-2">03 · Domínio & Persistência</div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
-              <button onclick="selectNode('services')" id="node-services" class="arch-node w-full text-left p-4 rounded-2xl bg-white/[0.04] border border-white/15 hover:border-white/50 transition">
-                <div class="font-display font-semibold text-white text-sm">Serviços de Negócio & Integrações</div>
-                <div class="font-mono text-xs text-zinc-400 mt-1">Regras padronizadas & mensageria/APIs</div>
+              <button onclick="selectNode('services')" id="node-services" class="arch-node w-full text-left p-4 rounded-2xl bg-white/70 dark:bg-white/[0.04] border border-zinc-900/15 dark:border-white/15 hover:border-zinc-900/45 dark:hover:border-white/50 transition">
+                <div data-i18n="node_svc_title" class="font-display font-semibold text-zinc-950 dark:text-white text-sm">Serviços de Negócio & Integrações</div>
+                <div data-i18n="node_svc_sub" class="font-mono text-xs text-zinc-600 dark:text-zinc-400 mt-1">Regras padronizadas & mensageria/APIs</div>
               </button>
 
-              <button onclick="selectNode('database')" id="node-database" class="arch-node w-full text-left p-4 rounded-2xl bg-black/80 border border-white/25 hover:border-white/60 transition">
+              <button onclick="selectNode('database')" id="node-database" class="arch-node w-full text-left p-4 rounded-2xl bg-zinc-900/[0.05] dark:bg-black/80 border border-zinc-900/20 dark:border-white/25 hover:border-zinc-900/50 dark:hover:border-white/60 transition">
                 <div class="flex items-center justify-between">
-                  <span class="font-display font-semibold text-white text-sm">Firebird SQL</span>
-                  <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-white/10 text-zinc-200">Data Layer</span>
+                  <span class="font-display font-semibold text-zinc-950 dark:text-white text-sm">Firebird SQL</span>
+                  <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-zinc-900/10 dark:bg-white/10 text-zinc-800 dark:text-zinc-200">Data Layer</span>
                 </div>
-                <div class="font-mono text-xs text-zinc-400 mt-1">Base legada modernizada & otimizada</div>
+                <div data-i18n="node_db_sub" class="font-mono text-xs text-zinc-600 dark:text-zinc-400 mt-1">Base legada modernizada & otimizada</div>
               </button>
             </div>
           </div>
 
         </div>
 
-        <div id="arch-inspector" class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div id="arch-inspector" class="mt-8 pt-6 border-t border-zinc-900/10 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-white"></span>
-              <span id="inspector-title" class="font-display font-bold text-white text-base">API Gateway — Autenticação + Tenant</span>
+              <span class="w-2 h-2 rounded-full bg-zinc-950 dark:bg-white"></span>
+              <span id="inspector-title" class="font-display font-bold text-zinc-950 dark:text-white text-base">API Gateway — Autenticação + Tenant</span>
             </div>
-            <p id="inspector-desc" class="text-zinc-400 text-sm mt-1">
+            <p id="inspector-desc" class="text-zinc-600 dark:text-zinc-400 text-sm mt-1">
               Roteamento centralizado com validação de credenciais e resolução automática de contexto por tenant, permitindo que múltiplos clientes operem de forma isolada e segura sobre a mesma infraestrutura.
             </p>
           </div>
-          <span id="inspector-tag" class="shrink-0 font-mono text-xs px-3 py-1.5 rounded-xl bg-white/[0.07] border border-white/15 text-zinc-200">
+          <span id="inspector-tag" class="shrink-0 font-mono text-xs px-3 py-1.5 rounded-xl bg-black/[0.05] dark:bg-white/[0.07] border border-zinc-900/10 dark:border-white/15 text-zinc-800 dark:text-zinc-200">
             Delphi Horse · C# .NET
           </span>
         </div>
@@ -555,16 +595,16 @@
     <section id="stack" class="max-w-6xl mx-auto mb-24 sm:mb-32 reveal">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <div>
-          <span class="font-mono text-xs uppercase tracking-widest text-zinc-400">// Ferramentas & Ecossistema</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Stack Tecnológica</h2>
+          <span data-i18n="stack_kicker" class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">// Ferramentas & Ecossistema</span>
+          <h2 data-i18n="stack_title" class="font-display text-3xl sm:text-4xl font-bold text-zinc-950 dark:text-white mt-2">Stack Tecnológica</h2>
         </div>
 
         <div class="flex flex-wrap gap-2" id="stack-filters">
-          <button data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-xl font-mono text-xs bg-white text-black font-semibold transition">Todas</button>
-          <button data-filter="backend" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-white/[0.05] border border-white/10 text-zinc-300 hover:text-white transition">Backend & APIs</button>
-          <button data-filter="frontend" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-white/[0.05] border border-white/10 text-zinc-300 hover:text-white transition">Web, Mobile & Desktop</button>
-          <button data-filter="infra" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-white/[0.05] border border-white/10 text-zinc-300 hover:text-white transition">Dados & Infra</button>
-          <button data-filter="praticas" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-white/[0.05] border border-white/10 text-zinc-300 hover:text-white transition">Práticas</button>
+          <button data-filter="all" data-i18n="filter_all" class="filter-btn active px-3.5 py-1.5 rounded-xl font-mono text-xs bg-zinc-950 text-white dark:bg-white dark:text-black font-semibold transition">Todas</button>
+          <button data-filter="backend" data-i18n="filter_backend" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition">Backend & APIs</button>
+          <button data-filter="frontend" data-i18n="filter_frontend" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition">Web, Mobile & Desktop</button>
+          <button data-filter="infra" data-i18n="filter_infra" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition">Dados & Infra</button>
+          <button data-filter="praticas" data-i18n="filter_practices" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-black/[0.04] dark:bg-white/[0.05] border border-zinc-900/10 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition">Práticas</button>
         </div>
       </div>
 
@@ -574,63 +614,63 @@
     <!-- SEÇÃO: EXPERIÊNCIA PROFISSIONAL & FORMAÇÃO -->
     <section id="experiencia" class="max-w-6xl mx-auto mb-24 sm:mb-32 reveal">
       <div class="mb-12">
-        <span class="font-mono text-xs uppercase tracking-widest text-zinc-400">// Trajetória de 9+ Anos</span>
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Experiência & Formação</h2>
+        <span data-i18n="exp_kicker" class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">// Trajetória de 9+ Anos</span>
+        <h2 data-i18n="exp_title" class="font-display text-3xl sm:text-4xl font-bold text-zinc-950 dark:text-white mt-2">Experiência & Formação</h2>
       </div>
 
       <div class="grid lg:grid-cols-12 gap-8">
         
-        <div class="lg:col-span-8 relative pl-6 sm:pl-8 space-y-6 before:content-[''] before:absolute before:left-[11px] sm:before:left-[15px] before:top-2 before:bottom-2 before:w-[2px] before:bg-gradient-to-b before:from-white before:via-zinc-600 before:to-zinc-900">
+        <div class="lg:col-span-8 relative pl-6 sm:pl-8 space-y-6 before:content-[''] before:absolute before:left-[11px] sm:before:left-[15px] before:top-2 before:bottom-2 before:w-[2px] before:bg-gradient-to-b before:from-zinc-900 before:via-zinc-400 before:to-zinc-200 dark:before:from-white dark:before:via-zinc-600 dark:before:to-zinc-900">
 
-          <div class="relative glass-panel spotlight-card rounded-2xl p-6 border-white/25">
-            <span class="absolute -left-[25px] sm:-left-[29px] top-7 w-4 h-4 rounded-full bg-white ring-4 ring-noir shadow-[0_0_15px_rgba(255,255,255,0.6)]"></span>
+          <div class="relative glass-panel spotlight-card rounded-2xl p-6 border-zinc-900/20 dark:border-white/25">
+            <span class="absolute -left-[25px] sm:-left-[29px] top-7 w-4 h-4 rounded-full bg-zinc-950 dark:bg-white ring-4 ring-alabaster dark:ring-noir shadow"></span>
             <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
               <div class="flex items-center gap-2.5">
-                <h3 class="font-display text-lg sm:text-xl font-bold text-white">Desenvolvedor Full Stack</h3>
-                <span class="px-2.5 py-0.5 rounded-full bg-white text-black font-mono text-[10px] font-bold uppercase">Atual</span>
+                <h3 data-i18n="role_proansi" class="font-display text-lg sm:text-xl font-bold text-zinc-950 dark:text-white">Desenvolvedor Full Stack</h3>
+                <span data-i18n="badge_current" class="px-2.5 py-0.5 rounded-full bg-zinc-950 text-white dark:bg-white dark:text-black font-mono text-[10px] font-bold uppercase">Atual</span>
               </div>
-              <span class="font-mono text-xs text-zinc-300">jul. 2023 – presente · 3 anos 5 meses</span>
+              <span data-i18n="date_proansi" class="font-mono text-xs text-zinc-600 dark:text-zinc-300">jul. 2023 – presente · 3 anos 5 meses</span>
             </div>
-            <div class="font-mono text-xs text-zinc-400 mb-3">PROANSI · São José do Rio Preto, SP</div>
-            <p class="text-sm text-zinc-300 leading-relaxed">
+            <div class="font-mono text-xs text-zinc-500 dark:text-zinc-400 mb-3">PROANSI · São José do Rio Preto, SP</div>
+            <p data-i18n="desc_proansi" class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
               Atuação direta no desenvolvimento full stack, arquitetura de APIs multi-tenant, evolução de aplicativos mobile e desktop e modernização contínua de sistemas em produção.
             </p>
           </div>
 
           <div class="relative glass-panel spotlight-card rounded-2xl p-5 sm:p-6">
-            <span class="absolute -left-[24px] sm:-left-[28px] top-7 w-3.5 h-3.5 rounded-full bg-zinc-400 ring-4 ring-noir"></span>
+            <span class="absolute -left-[24px] sm:-left-[28px] top-7 w-3.5 h-3.5 rounded-full bg-zinc-500 dark:bg-zinc-400 ring-4 ring-alabaster dark:ring-noir"></span>
             <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-              <h3 class="font-display text-lg font-bold text-white">Analista de Suporte N2</h3>
-              <span class="font-mono text-xs text-zinc-400">out. 2022 – jun. 2023 · 9 meses</span>
+              <h3 data-i18n="role_hepta" class="font-display text-lg font-bold text-zinc-950 dark:text-white">Analista de Suporte N2</h3>
+              <span data-i18n="date_hepta" class="font-mono text-xs text-zinc-500 dark:text-zinc-400">out. 2022 – jun. 2023 · 9 meses</span>
             </div>
-            <div class="font-mono text-xs text-zinc-400">Hepta Tecnologia e Informática · São José do Rio Preto, SP</div>
+            <div class="font-mono text-xs text-zinc-500 dark:text-zinc-400">Hepta Tecnologia e Informática · São José do Rio Preto, SP</div>
           </div>
 
           <div class="relative glass-panel spotlight-card rounded-2xl p-5 sm:p-6">
-            <span class="absolute -left-[24px] sm:-left-[28px] top-7 w-3.5 h-3.5 rounded-full bg-zinc-500 ring-4 ring-noir"></span>
+            <span class="absolute -left-[24px] sm:-left-[28px] top-7 w-3.5 h-3.5 rounded-full bg-zinc-400 dark:bg-zinc-500 ring-4 ring-alabaster dark:ring-noir"></span>
             <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-              <h3 class="font-display text-lg font-bold text-white">Gestor de TI</h3>
-              <span class="font-mono text-xs text-zinc-400">jun. 2022 – set. 2022 · 4 meses</span>
+              <h3 data-i18n="role_tesla" class="font-display text-lg font-bold text-zinc-950 dark:text-white">Gestor de TI</h3>
+              <span data-i18n="date_tesla" class="font-mono text-xs text-zinc-500 dark:text-zinc-400">jun. 2022 – set. 2022 · 4 meses</span>
             </div>
-            <div class="font-mono text-xs text-zinc-400">Tesla Marcações Industriais · São José do Rio Preto, SP</div>
+            <div class="font-mono text-xs text-zinc-500 dark:text-zinc-400">Tesla Marcações Industriais · São José do Rio Preto, SP</div>
           </div>
 
           <div class="relative glass-panel spotlight-card rounded-2xl p-5 sm:p-6">
-            <span class="absolute -left-[24px] sm:-left-[28px] top-7 w-3.5 h-3.5 rounded-full bg-zinc-600 ring-4 ring-noir"></span>
+            <span class="absolute -left-[24px] sm:-left-[28px] top-7 w-3.5 h-3.5 rounded-full bg-zinc-300 dark:bg-zinc-600 ring-4 ring-alabaster dark:ring-noir"></span>
             <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
               <div class="flex items-center gap-2.5">
-                <h3 class="font-display text-lg font-bold text-white">Casa das Vacinas</h3>
-                <span class="px-2 py-0.5 rounded-md bg-white/10 border border-white/15 font-mono text-[10px] text-zinc-200">5 anos e 6 meses</span>
+                <h3 class="font-display text-lg font-bold text-zinc-950 dark:text-white">Casa das Vacinas</h3>
+                <span data-i18n="date_casa_total" class="px-2 py-0.5 rounded-md bg-black/[0.06] dark:bg-white/10 border border-zinc-900/10 dark:border-white/15 font-mono text-[10px] text-zinc-700 dark:text-zinc-200">5 anos e 6 meses</span>
               </div>
             </div>
-            <div class="space-y-2.5 pl-3 border-l border-white/10">
+            <div class="space-y-2.5 pl-3 border-l border-zinc-900/10 dark:border-white/10">
               <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="text-sm font-semibold text-zinc-100">↳ Desenvolvedor</span>
-                <span class="font-mono text-xs text-zinc-400">jan. 2020 – jun. 2022 · 2 anos 6 meses</span>
+                <span data-i18n="role_casa_dev" class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">↳ Desenvolvedor</span>
+                <span data-i18n="date_casa_dev" class="font-mono text-xs text-zinc-500 dark:text-zinc-400">jan. 2020 – jun. 2022 · 2 anos 6 meses</span>
               </div>
               <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="text-sm font-medium text-zinc-400">↳ Assistente de TI</span>
-                <span class="font-mono text-xs text-zinc-500">jan. 2017 – jan. 2020 · 3 anos 1 mês</span>
+                <span data-i18n="role_casa_it" class="text-sm font-medium text-zinc-600 dark:text-zinc-400">↳ Assistente de TI</span>
+                <span data-i18n="date_casa_it" class="font-mono text-xs text-zinc-500">jan. 2017 – jan. 2020 · 3 anos 1 mês</span>
               </div>
             </div>
           </div>
@@ -640,36 +680,36 @@
         <div class="lg:col-span-4 space-y-6">
           <div class="glass-panel spotlight-card rounded-3xl p-6">
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white">
+              <div class="w-10 h-10 rounded-xl bg-black/[0.05] dark:bg-white/[0.06] border border-zinc-900/10 dark:border-white/15 flex items-center justify-center text-zinc-950 dark:text-white">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
               </div>
               <div>
-                <span class="font-mono text-[10px] uppercase tracking-wider text-zinc-400">Formação Acadêmica</span>
-                <h3 class="font-display font-bold text-white text-base">Base Técnica</h3>
+                <span data-i18n="edu_kicker" class="font-mono text-[10px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Formação Acadêmica</span>
+                <h3 data-i18n="edu_title" class="font-display font-bold text-zinc-950 dark:text-white text-base">Base Técnica</h3>
               </div>
             </div>
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
-              <div class="font-display font-semibold text-white text-sm">Etec Philadelpho Gouvêa Netto</div>
-              <div class="text-xs text-zinc-300 mt-1">Curso Técnico Integrado em Tecnologia da Informação</div>
+            <div class="p-4 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-zinc-900/10 dark:border-white/10">
+              <div class="font-display font-semibold text-zinc-950 dark:text-white text-sm">Etec Philadelpho Gouvêa Netto</div>
+              <div data-i18n="edu_course" class="text-xs text-zinc-700 dark:text-zinc-300 mt-1">Curso Técnico Integrado em Tecnologia da Informação</div>
               <div class="font-mono text-[11px] text-zinc-500 mt-2">2014 – 2016</div>
             </div>
           </div>
 
           <div class="glass-panel spotlight-card rounded-3xl p-6">
-            <span class="font-mono text-[10px] uppercase tracking-wider text-zinc-400">Diferencial Executivo</span>
-            <h3 class="font-display font-bold text-white text-lg mt-1 mb-4">Visão End-to-End</h3>
-            <ul class="space-y-3 text-sm text-zinc-300">
+            <span data-i18n="diff_kicker" class="font-mono text-[10px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Diferencial Executivo</span>
+            <h3 data-i18n="diff_title" class="font-display font-bold text-zinc-950 dark:text-white text-lg mt-1 mb-4">Visão End-to-End</h3>
+            <ul class="space-y-3 text-sm text-zinc-600 dark:text-zinc-300">
               <li class="flex items-start gap-2.5">
-                <span class="text-white mt-0.5">▹</span>
-                <span>Vivência real de infraestrutura e suporte N2 até arquitetura e gestão de TI.</span>
+                <span class="text-zinc-950 dark:text-white mt-0.5">▹</span>
+                <span data-i18n="diff_1">Vivência real de infraestrutura e suporte N2 até arquitetura e gestão de TI.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="text-white mt-0.5">▹</span>
-                <span>Capacidade de manter o legado estável enquanto constrói o novo ecossistema.</span>
+                <span class="text-zinc-950 dark:text-white mt-0.5">▹</span>
+                <span data-i18n="diff_2">Capacidade de manter o legado estável enquanto constrói o novo ecossistema.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <span class="text-white mt-0.5">▹</span>
-                <span>Foco pragmático em produtividade com automação (Python, Bash e IA).</span>
+                <span class="text-zinc-950 dark:text-white mt-0.5">▹</span>
+                <span data-i18n="diff_3">Foco pragmático em produtividade com automação (Python, Bash e IA).</span>
               </li>
             </ul>
           </div>
@@ -682,58 +722,61 @@
     <section id="github" class="max-w-6xl mx-auto mb-24 sm:mb-32 reveal">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
-          <span class="font-mono text-xs uppercase tracking-widest text-zinc-400">// Código & Constância</span>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Atividade no GitHub</h2>
+          <span data-i18n="gh_kicker" class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">// Código & Constância</span>
+          <h2 data-i18n="gh_title" class="font-display text-3xl sm:text-4xl font-bold text-zinc-950 dark:text-white mt-2">Atividade no GitHub</h2>
         </div>
-        <a href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-zinc-300 hover:text-white flex items-center gap-1.5 transition">
+        <a href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white flex items-center gap-1.5 transition">
           <span>github.com/dreyranos</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
       </div>
 
       <div class="grid lg:grid-cols-12 gap-6 items-stretch">
-        <!-- Streak Stats Noir -->
+        <!-- Streak Stats (atualizado conforme tema e idioma) -->
         <div class="lg:col-span-5 glass-panel spotlight-card rounded-3xl p-5 flex flex-col items-center justify-center">
           <img
+            id="gh-streak-img"
             src="https://streak-stats.demolab.com?user=dreyranos&theme=transparent&border=ffffff22&border_radius=12&ring=e4e4e7&fire=ffffff&currStreakLabel=e4e4e7&sideLabels=a1a1aa&currStreakNum=ffffff&sideNums=d4d4d8&dates=71717a&locale=pt_BR"
-            alt="Sequência de contribuições no GitHub"
+            alt="GitHub Streak"
             class="w-full max-w-md rounded-xl"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
           />
           <div class="hidden flex-col items-center text-center p-6">
-            <span class="font-mono text-sm text-zinc-200">GitHub Streak @dreyranos</span>
-            <a href="https://github.com/dreyranos" target="_blank" class="mt-2 text-xs text-zinc-400 underline">Visualizar estatísticas direto no GitHub</a>
+            <span class="font-mono text-sm text-zinc-700 dark:text-zinc-200">GitHub Streak @dreyranos</span>
+            <a href="https://github.com/dreyranos" target="_blank" class="mt-2 text-xs text-zinc-500 underline">github.com/dreyranos</a>
           </div>
         </div>
 
-        <!-- Activity Graph Noir -->
+        <!-- Activity Graph -->
         <div class="lg:col-span-7 glass-panel spotlight-card rounded-3xl p-5 flex flex-col items-center justify-center overflow-hidden">
           <img
+            id="gh-activity-img"
             src="https://github-readme-activity-graph.vercel.app/graph?username=dreyranos&bg_color=05050700&color=e4e4e7&line=71717a&point=ffffff&area=true&hide_border=true"
-            alt="Gráfico de atividade no GitHub"
+            alt="GitHub Activity Graph"
             class="w-full rounded-xl"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
           />
           <div class="hidden flex-col items-center text-center p-6">
-            <span class="font-mono text-sm text-zinc-200">Gráfico de Contribuições @dreyranos</span>
-            <a href="https://github.com/dreyranos" target="_blank" class="mt-2 text-xs text-zinc-400 underline">Abrir perfil no GitHub</a>
+            <span class="font-mono text-sm text-zinc-700 dark:text-zinc-200">GitHub Activity @dreyranos</span>
+            <a href="https://github.com/dreyranos" target="_blank" class="mt-2 text-xs text-zinc-500 underline">github.com/dreyranos</a>
           </div>
         </div>
 
-        <!-- Puzzle Bobble Arcade Animation (gerado pelo arcade.yml) -->
+        <!-- Puzzle Bobble Arcade Animation (Dark & Light automático) -->
         <div class="lg:col-span-12 glass-panel spotlight-card rounded-3xl p-4 sm:p-6 flex flex-col items-center justify-center overflow-hidden">
           <div class="w-full flex items-center justify-between mb-3 px-2">
-            <span class="font-mono text-[11px] uppercase tracking-wider text-zinc-400">Arcade Contribution Graph · Puzzle Bobble</span>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Arcade Contribution Graph · Puzzle Bobble</span>
             <span class="font-mono text-[10px] text-zinc-500">via arcade.yml</span>
           </div>
           <img
+            id="gh-arcade-img"
             src="https://raw.githubusercontent.com/dreyranos/dreyranos/output/puzzle-bobble-contribution-graph-dark.svg"
             alt="Puzzle Bobble - Contribuições"
             class="w-full max-w-4xl rounded-xl"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
           />
           <div class="hidden flex-col items-center text-center p-6">
-            <span class="font-mono text-xs text-zinc-400">Execute o workflow <code class="text-white">arcade.yml</code> na aba Actions do GitHub para gerar a animação Puzzle Bobble.</span>
+            <span data-i18n="arcade_fallback" class="font-mono text-xs text-zinc-500 dark:text-zinc-400">Execute o workflow arcade.yml na aba Actions do GitHub para gerar a animação Puzzle Bobble.</span>
           </div>
         </div>
       </div>
@@ -741,32 +784,32 @@
 
     <!-- SEÇÃO: PORTAL DE OPORTUNIDADES & CONTATO -->
     <section id="oportunidades" class="max-w-5xl mx-auto reveal">
-      <div class="glass-panel rounded-[2rem] p-8 sm:p-12 relative overflow-hidden border-white/20 text-center">
-        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-white/[0.08] blur-[100px] pointer-events-none"></div>
+      <div class="glass-panel rounded-[2rem] p-8 sm:p-12 relative overflow-hidden border-zinc-900/15 dark:border-white/20 text-center">
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-black/[0.04] dark:bg-white/[0.08] blur-[100px] pointer-events-none"></div>
 
         <div class="relative z-10 max-w-2xl mx-auto space-y-6">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.07] border border-white/15 font-mono text-xs text-zinc-200">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            PORTA DE ENTRADA · NOVAS OPORTUNIDADES
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/[0.05] dark:bg-white/[0.07] border border-zinc-900/10 dark:border-white/15 font-mono text-xs text-zinc-800 dark:text-zinc-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span data-i18n="cta_badge">PORTA DE ENTRADA · NOVAS OPORTUNIDADES</span>
           </div>
 
-          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
+          <h2 data-i18n-html="cta_title" class="font-display text-3xl sm:text-5xl font-bold text-zinc-950 dark:text-white leading-tight">
             Vamos construir o próximo <span class="text-platinum">sistema em produção?</span>
           </h2>
 
-          <p class="text-zinc-400 text-base sm:text-lg leading-relaxed">
-            Aberto a <strong class="text-white">projetos</strong>, <strong class="text-white">parcerias técnicas</strong>, <strong class="text-white">consultoria em modernização de legado</strong> e <strong class="text-white">novas oportunidades profissionais</strong> (Full Stack, Arquitetura Backend ou Mobile).
+          <p data-i18n-html="cta_desc" class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg leading-relaxed">
+            Aberto a <strong class="text-zinc-950 dark:text-white">projetos</strong>, <strong class="text-zinc-950 dark:text-white">parcerias técnicas</strong>, <strong class="text-zinc-950 dark:text-white">consultoria em modernização de legado</strong> e <strong class="text-zinc-950 dark:text-white">novas oportunidades profissionais</strong> (Full Stack, Arquitetura Backend ou Mobile).
           </p>
 
           <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <a href="https://www.linkedin.com/in/andrey-ramos-6302722a3" target="_blank" rel="noopener noreferrer" class="btn-noir px-7 py-4 rounded-2xl font-semibold flex items-center gap-3 text-base">
+            <a href="https://www.linkedin.com/in/andrey-ramos-6302722a3" target="_blank" rel="noopener noreferrer" class="btn-theme px-7 py-4 rounded-2xl font-semibold flex items-center gap-3 text-base">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              <span>Chamar no LinkedIn</span>
+              <span data-i18n="cta_linkedin">Chamar no LinkedIn</span>
             </a>
 
-            <a href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer" class="glass-panel px-7 py-4 rounded-2xl font-semibold text-white hover:border-white/40 flex items-center gap-3 text-base transition">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              <span>Repositórios GitHub</span>
+            <a href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer" class="glass-panel px-7 py-4 rounded-2xl font-semibold text-zinc-900 dark:text-white hover:border-zinc-900/35 dark:hover:border-white/40 flex items-center gap-3 text-base transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span data-i18n="cta_github">Repositórios GitHub</span>
             </a>
           </div>
         </div>
@@ -775,152 +818,392 @@
 
   </main>
 
-  <footer class="border-t border-white/10 py-8 px-4 text-center">
+  <footer class="border-t border-zinc-900/10 dark:border-white/10 py-8 px-4 text-center">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
       <div>© 2026 Andrey Ramos (@dreyranos) · São José do Rio Preto, SP</div>
-      <div>Desenvolvedor Full Stack | Engenharia de Software</div>
+      <div data-i18n="footer_role">Desenvolvedor Full Stack | Engenharia de Software</div>
     </div>
   </footer>
 
   <script>
-    document.querySelectorAll('.spotlight-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-      });
-    });
-
-    const phrases = [
-      "APIs Multi-Tenant | Arquitetura Backend",
-      "React Native (Expo) | Delphi FMX",
-      "Firebird SQL | Modernização de Sistemas Legados",
-      "Automação com Python, Bash e Fluxos de IA"
-    ];
-    let phraseIndex = 0;
-    let charIndex = phrases[0].length;
-    let isDeleting = true;
-    const typingEl = document.getElementById('typing-text');
-
-    function typeLoop() {
-      const current = phrases[phraseIndex];
-      if (isDeleting) {
-        charIndex--;
-        typingEl.textContent = current.substring(0, charIndex);
-        if (charIndex === 0) {
-          isDeleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeLoop, 350);
-          return;
-        }
-        setTimeout(typeLoop, 28);
-      } else {
-        charIndex++;
-        typingEl.textContent = current.substring(0, charIndex);
-        if (charIndex === current.length) {
-          isDeleting = true;
-          setTimeout(typeLoop, 1800);
-          return;
-        }
-        setTimeout(typeLoop, 48);
-      }
-    }
-    setTimeout(typeLoop, 1800);
-
-    const archDetails = {
-      mobile: {
-        title: "App Mobile — React Native + Expo",
-        desc: "Aplicativos móveis multiplataforma com interface fluida usando NativeWind, consumindo endpoints autenticados e isolados por tenant.",
-        tag: "React Native · Expo · NativeWind"
+    // ================= 1. DICIONÁRIO BILINGUE (PT / EN) =================
+    const translations = {
+      pt: {
+        doc_title: "Andrey Ramos | Desenvolvedor Full Stack & Engenharia de Software",
+        nav_about: "Sobre",
+        nav_arch: "Arquitetura",
+        nav_stack: "Stack",
+        nav_exp: "Experiência",
+        nav_status: "Disponível",
+        nav_connect: "Conectar",
+        hero_exp_badge: "9+ ANOS DE EXPERIÊNCIA",
+        hero_location: "São José do Rio Preto, SP · Brasil",
+        hero_subtitle: "Desenvolvedor Full Stack & Engenharia de Software",
+        hero_bio: `Construo e sustento sistemas em produção combinando <strong class="text-zinc-950 dark:text-white font-medium">arquitetura de APIs multi-tenant</strong>, <strong class="text-zinc-950 dark:text-white font-medium">modernização de sistemas legados</strong> e <strong class="text-zinc-950 dark:text-white font-medium">aplicações mobile, web e desktop</strong> com foco em precisão técnica, escalabilidade e valor ao negócio.`,
+        hero_cta_primary: "Explorar Oportunidades & Contato",
+        photo_role: "Full Stack @ PROANSI · +9 anos em TI",
+        about_kicker: "// Visão & Especialidades",
+        about_title: "Sobre & Áreas de Atuação",
+        about_desc: "Princípios de engenharia aplicados em sistemas críticos: código legível, decisões documentadas, evolução incremental e automação contínua.",
+        manifesto_tag: "Manifesto Técnico",
+        manifesto_quote: "“Código legível, decisões documentadas, mudanças incrementais e automação de tudo que for repetitivo.”",
+        pill_scale: "Escalabilidade",
+        pill_perf: "Desempenho",
+        pill_biz: "Valor ao Negócio",
+        area1_title: "Backend & Arquitetura",
+        area1_desc: `APIs em <strong class="text-zinc-950 dark:text-zinc-100">Delphi com Horse</strong> e em <strong class="text-zinc-950 dark:text-zinc-100">C# .NET</strong>, modelagem multi-tenant com isolamento por cliente, integrações complexas e padronização de serviços.`,
+        area2_title: "Web, Mobile & Desktop",
+        area2_desc: `Interfaces web modernas com <strong class="text-zinc-950 dark:text-zinc-100">Angular e React</strong>, aplicativos com <strong class="text-zinc-950 dark:text-zinc-100">React Native (Expo) + NativeWind</strong> e desktop robusto em <strong class="text-zinc-950 dark:text-zinc-100">Delphi VCL e FMX</strong>.`,
+        area3_title: "Banco de Dados & Legado",
+        area3_desc: `Especialista em <strong class="text-zinc-950 dark:text-zinc-100">Firebird SQL</strong>, tuning de consultas críticas e refatoração incremental sem parar a operação.`,
+        area3_foot: "Firebird SQL · Refatoração Segura",
+        area4_title: "Automação & IA",
+        area4_desc: `Scripts avançados em <strong class="text-zinc-950 dark:text-zinc-100">Python e Bash</strong>, pipelines de automação operacional e fluxos de trabalho inteligentes com <strong class="text-zinc-950 dark:text-zinc-100">IA</strong>.`,
+        area4_foot: "Python · Bash · Fluxos de IA",
+        area5_title: "Android Customizado",
+        area5_desc: `Customização em baixo nível, compilação e build de ROMs Android sob medida utilizando <strong class="text-zinc-950 dark:text-zinc-100">AOSP</strong> e <strong class="text-zinc-950 dark:text-zinc-100">LineageOS</strong>.`,
+        arch_kicker: "// Blueprint em Produção",
+        arch_title: "Arquitetura de Referência",
+        arch_desc: `Modelo que resume o tipo de solução em que mais atuo: clientes múltiplos consumindo uma API multi-tenant com isolamento por tenant sobre uma camada de dados legada e modernizada. <span class="text-zinc-900 dark:text-zinc-200 underline decoration-zinc-900/30 dark:decoration-white/30 underline-offset-4">Clique nos nós abaixo para inspecionar cada camada.</span>`,
+        arch_col1: "01 · Camada Cliente",
+        arch_col2: "02 · Núcleo Multi-Tenant",
+        arch_col3: "03 · Domínio & Persistência",
+        node_mobile_title: "App Mobile",
+        node_desktop_title: "App Desktop",
+        node_auto_title: "Automações",
+        node_auto_sub: "Python / Bash / IA",
+        node_gw_sub: "Autenticação + Isolamento por Tenant",
+        node_svc_title: "Serviços de Negócio & Integrações",
+        node_svc_sub: "Regras padronizadas & mensageria/APIs",
+        node_db_sub: "Base legada modernizada & otimizada",
+        stack_kicker: "// Ferramentas & Ecossistema",
+        stack_title: "Stack Tecnológica",
+        filter_all: "Todas",
+        filter_backend: "Backend & APIs",
+        filter_frontend: "Web, Mobile & Desktop",
+        filter_infra: "Dados & Infra",
+        filter_practices: "Práticas",
+        exp_kicker: "// Trajetória de 9+ Anos",
+        exp_title: "Experiência & Formação",
+        role_proansi: "Desenvolvedor Full Stack",
+        badge_current: "Atual",
+        date_proansi: "jul. 2023 – presente · 3 anos 5 meses",
+        desc_proansi: "Atuação direta no desenvolvimento full stack, arquitetura de APIs multi-tenant, evolução de aplicativos mobile e desktop e modernização contínua de sistemas em produção.",
+        role_hepta: "Analista de Suporte N2",
+        date_hepta: "out. 2022 – jun. 2023 · 9 meses",
+        role_tesla: "Gestor de TI",
+        date_tesla: "jun. 2022 – set. 2022 · 4 meses",
+        date_casa_total: "5 anos e 6 meses",
+        role_casa_dev: "↳ Desenvolvedor",
+        date_casa_dev: "jan. 2020 – jun. 2022 · 2 anos 6 meses",
+        role_casa_it: "↳ Assistente de TI",
+        date_casa_it: "jan. 2017 – jan. 2020 · 3 anos 1 mês",
+        edu_kicker: "Formação Acadêmica",
+        edu_title: "Base Técnica",
+        edu_course: "Curso Técnico Integrado em Tecnologia da Informação",
+        diff_kicker: "Diferencial Executivo",
+        diff_title: "Visão End-to-End",
+        diff_1: "Vivência real de infraestrutura e suporte N2 até arquitetura e gestão de TI.",
+        diff_2: "Capacidade de manter o legado estável enquanto constrói o novo ecossistema.",
+        diff_3: "Foco pragmático em produtividade com automação (Python, Bash e IA).",
+        gh_kicker: "// Código & Constância",
+        gh_title: "Atividade no GitHub",
+        arcade_fallback: "Execute o workflow arcade.yml na aba Actions do GitHub para gerar a animação Puzzle Bobble.",
+        cta_badge: "PORTA DE ENTRADA · NOVAS OPORTUNIDADES",
+        cta_title: `Vamos construir o próximo <span class="text-platinum">sistema em produção?</span>`,
+        cta_desc: `Aberto a <strong class="text-zinc-950 dark:text-white">projetos</strong>, <strong class="text-zinc-950 dark:text-white">parcerias técnicas</strong>, <strong class="text-zinc-950 dark:text-white">consultoria em modernização de legado</strong> e <strong class="text-zinc-950 dark:text-white">novas oportunidades profissionais</strong> (Full Stack, Arquitetura Backend ou Mobile).`,
+        cta_linkedin: "Chamar no LinkedIn",
+        cta_github: "Repositórios GitHub",
+        footer_role: "Desenvolvedor Full Stack | Engenharia de Software"
       },
-      desktop: {
-        title: "App Desktop — Delphi FMX / VCL",
-        desc: "Aplicações desktop de alto desempenho em ambientes corporativos e industriais, integradas às APIs modernas e sistemas em produção.",
-        tag: "Delphi FMX · Delphi VCL"
-      },
-      auto: {
-        title: "Automações — Python / Bash / IA",
-        desc: "Pipelines automatizados, rotinas agendadas e fluxos inteligentes com IA eliminando tarefas manuais e integrando sistemas.",
-        tag: "Python · Bash · Fluxos com IA"
-      },
-      gateway: {
-        title: "API Gateway — Autenticação + Tenant",
-        desc: "Roteamento centralizado com validação de credenciais e resolução automática de contexto por tenant, permitindo que múltiplos clientes operem de forma isolada e segura sobre a mesma infraestrutura.",
-        tag: "Delphi Horse · C# .NET"
-      },
-      services: {
-        title: "Serviços de Negócio & Integrações",
-        desc: "Camada desacoplada com regras de negócio padronizadas, integração com serviços externos e evolução incremental sem impacto no cliente.",
-        tag: "Arquitetura Backend · Integrações"
-      },
-      database: {
-        title: "Firebird SQL — Camada de Dados",
-        desc: "Otimização de queries críticas, modelagem relacional segura e modernização gradual de bases legadas mantendo total integridade em produção.",
-        tag: "Firebird SQL · Tuning & Legado"
+      en: {
+        doc_title: "Andrey Ramos | Full Stack Developer & Software Engineering",
+        nav_about: "About",
+        nav_arch: "Architecture",
+        nav_stack: "Stack",
+        nav_exp: "Experience",
+        nav_status: "Available",
+        nav_connect: "Connect",
+        hero_exp_badge: "9+ YEARS OF EXPERIENCE",
+        hero_location: "São José do Rio Preto, SP · Brazil",
+        hero_subtitle: "Full Stack Developer & Software Engineering",
+        hero_bio: `I build and maintain production-grade systems combining <strong class="text-zinc-950 dark:text-white font-medium">multi-tenant API architecture</strong>, <strong class="text-zinc-950 dark:text-white font-medium">legacy system modernization</strong>, and <strong class="text-zinc-950 dark:text-white font-medium">mobile, web, and desktop applications</strong> focused on technical precision, scalability, and business value.`,
+        hero_cta_primary: "Explore Opportunities & Contact",
+        photo_role: "Full Stack @ PROANSI · 9+ yrs in IT",
+        about_kicker: "// Vision & Specialties",
+        about_title: "About & Areas of Expertise",
+        about_desc: "Engineering principles applied to mission-critical systems: readable code, documented decisions, incremental changes, and continuous automation.",
+        manifesto_tag: "Engineering Manifesto",
+        manifesto_quote: "“Readable code, documented decisions, incremental changes, and automation of everything repetitive.”",
+        pill_scale: "Scalability",
+        pill_perf: "Performance",
+        pill_biz: "Business Value",
+        area1_title: "Backend & Architecture",
+        area1_desc: `APIs built with <strong class="text-zinc-950 dark:text-zinc-100">Delphi Horse</strong> and <strong class="text-zinc-950 dark:text-zinc-100">C# .NET</strong>, multi-tenant data modeling with strict isolation, complex integrations, and service standardization.`,
+        area2_title: "Web, Mobile & Desktop",
+        area2_desc: `Modern web UIs with <strong class="text-zinc-950 dark:text-zinc-100">Angular & React</strong>, mobile apps using <strong class="text-zinc-950 dark:text-zinc-100">React Native (Expo) + NativeWind</strong>, and robust desktop software in <strong class="text-zinc-950 dark:text-zinc-100">Delphi VCL & FMX</strong>.`,
+        area3_title: "Databases & Legacy",
+        area3_desc: `Specialist in <strong class="text-zinc-950 dark:text-zinc-100">Firebird SQL</strong>, critical query tuning, and safe incremental refactoring without disrupting live operations.`,
+        area3_foot: "Firebird SQL · Safe Refactoring",
+        area4_title: "Automation & AI",
+        area4_desc: `Advanced <strong class="text-zinc-950 dark:text-zinc-100">Python & Bash</strong> scripting, operational automation pipelines, and intelligent workflows powered by <strong class="text-zinc-950 dark:text-zinc-100">AI</strong>.`,
+        area4_foot: "Python · Bash · AI Workflows",
+        area5_title: "Custom Android",
+        area5_desc: `Low-level system customization, compilation, and custom Android ROM builds using <strong class="text-zinc-950 dark:text-zinc-100">AOSP</strong> and <strong class="text-zinc-950 dark:text-zinc-100">LineageOS</strong>.`,
+        arch_kicker: "// Production Blueprint",
+        arch_title: "Reference Architecture",
+        arch_desc: `Architecture model that summarizes my core work: multiple clients consuming a multi-tenant API with tenant isolation on top of a modernized legacy data layer. <span class="text-zinc-900 dark:text-zinc-200 underline decoration-zinc-900/30 dark:decoration-white/30 underline-offset-4">Click any node below to inspect each layer.</span>`,
+        arch_col1: "01 · Client Layer",
+        arch_col2: "02 · Multi-Tenant Core",
+        arch_col3: "03 · Domain & Persistence",
+        node_mobile_title: "Mobile App",
+        node_desktop_title: "Desktop App",
+        node_auto_title: "Automations",
+        node_auto_sub: "Python / Bash / AI",
+        node_gw_sub: "Authentication + Tenant Isolation",
+        node_svc_title: "Business Services & Integrations",
+        node_svc_sub: "Standardized rules & APIs/messaging",
+        node_db_sub: "Modernized & tuned legacy database",
+        stack_kicker: "// Tools & Ecosystem",
+        stack_title: "Tech Stack",
+        filter_all: "All",
+        filter_backend: "Backend & APIs",
+        filter_frontend: "Web, Mobile & Desktop",
+        filter_infra: "Data & Infra",
+        filter_practices: "Practices",
+        exp_kicker: "// 9+ Year Journey",
+        exp_title: "Experience & Education",
+        role_proansi: "Full Stack Developer",
+        badge_current: "Current",
+        date_proansi: "Jul 2023 – Present · 3 yrs 5 mos",
+        desc_proansi: "Hands-on full stack engineering, multi-tenant API architecture, mobile and desktop app development, and continuous modernization of production systems.",
+        role_hepta: "N2 Support Analyst",
+        date_hepta: "Oct 2022 – Jun 2023 · 9 mos",
+        role_tesla: "IT Manager",
+        date_tesla: "Jun 2022 – Sep 2022 · 4 mos",
+        date_casa_total: "5 yrs 6 mos",
+        role_casa_dev: "↳ Software Developer",
+        date_casa_dev: "Jan 2020 – Jun 2022 · 2 yrs 6 mos",
+        role_casa_it: "↳ IT Assistant",
+        date_casa_it: "Jan 2017 – Jan 2020 · 3 yrs 1 mo",
+        edu_kicker: "Education",
+        edu_title: "Technical Foundation",
+        edu_course: "Integrated Technical Degree in Information Technology",
+        diff_kicker: "Executive Edge",
+        diff_title: "End-to-End Vision",
+        diff_1: "Real-world background from infrastructure and N2 support to architecture and IT management.",
+        diff_2: "Proven ability to keep legacy systems stable while building the next-generation ecosystem.",
+        diff_3: "Pragmatic focus on productivity through automation (Python, Bash & AI).",
+        gh_kicker: "// Code & Consistency",
+        gh_title: "GitHub Activity",
+        arcade_fallback: "Run the arcade.yml workflow in GitHub Actions to generate the Puzzle Bobble animation.",
+        cta_badge: "GATEWAY · NEW OPPORTUNITIES",
+        cta_title: `Let's build your next <span class="text-platinum">production system?</span>`,
+        cta_desc: `Open to <strong class="text-zinc-950 dark:text-white">new full-time roles</strong>, <strong class="text-zinc-950 dark:text-white">contract projects</strong>, <strong class="text-zinc-950 dark:text-white">technical partnerships</strong>, and <strong class="text-zinc-950 dark:text-white">legacy modernization consulting</strong> (Full Stack, Backend Architecture, or Mobile).`,
+        cta_linkedin: "Message on LinkedIn",
+        cta_github: "GitHub Repositories",
+        footer_role: "Full Stack Developer | Software Engineering"
       }
     };
 
+    const typingPhrases = {
+      pt: [
+        "APIs Multi-Tenant | Arquitetura Backend",
+        "React Native (Expo) | Delphi FMX",
+        "Firebird SQL | Modernização de Sistemas Legados",
+        "Automação com Python, Bash e Fluxos de IA"
+      ],
+      en: [
+        "Multi-Tenant APIs | Backend Architecture",
+        "React Native (Expo) | Delphi FMX",
+        "Firebird SQL | Legacy System Modernization",
+        "Automation with Python, Bash & AI Workflows"
+      ]
+    };
+
+    const archDetails = {
+      pt: {
+        mobile: {
+          title: "App Mobile — React Native + Expo",
+          desc: "Aplicativos móveis multiplataforma com interface fluida usando NativeWind, consumindo endpoints autenticados e isolados por tenant.",
+          tag: "React Native · Expo · NativeWind"
+        },
+        desktop: {
+          title: "App Desktop — Delphi FMX / VCL",
+          desc: "Aplicações desktop de alto desempenho em ambientes corporativos e industriais, integradas às APIs modernas e sistemas em produção.",
+          tag: "Delphi FMX · Delphi VCL"
+        },
+        auto: {
+          title: "Automações — Python / Bash / IA",
+          desc: "Pipelines automatizados, rotinas agendadas e fluxos inteligentes com IA eliminando tarefas manuais e integrando sistemas.",
+          tag: "Python · Bash · Fluxos com IA"
+        },
+        gateway: {
+          title: "API Gateway — Autenticação + Tenant",
+          desc: "Roteamento centralizado com validação de credenciais e resolução automática de contexto por tenant, permitindo que múltiplos clientes operem de forma isolada e segura sobre a mesma infraestrutura.",
+          tag: "Delphi Horse · C# .NET"
+        },
+        services: {
+          title: "Serviços de Negócio & Integrações",
+          desc: "Camada desacoplada com regras de negócio padronizadas, integração com serviços externos e evolução incremental sem impacto no cliente.",
+          tag: "Arquitetura Backend · Integrações"
+        },
+        database: {
+          title: "Firebird SQL — Camada de Dados",
+          desc: "Otimização de queries críticas, modelagem relacional segura e modernização gradual de bases legadas mantendo total integridade em produção.",
+          tag: "Firebird SQL · Tuning & Legado"
+        }
+      },
+      en: {
+        mobile: {
+          title: "Mobile App — React Native + Expo",
+          desc: "Cross-platform mobile apps with fluid interfaces built in NativeWind, consuming authenticated tenant-isolated endpoints.",
+          tag: "React Native · Expo · NativeWind"
+        },
+        desktop: {
+          title: "Desktop App — Delphi FMX / VCL",
+          desc: "High-performance desktop software for corporate and industrial environments, seamlessly integrated with modern APIs.",
+          tag: "Delphi FMX · Delphi VCL"
+        },
+        auto: {
+          title: "Automations — Python / Bash / AI",
+          desc: "Automated pipelines, scheduled jobs, and intelligent AI workflows eliminating repetitive manual tasks.",
+          tag: "Python · Bash · AI Workflows"
+        },
+        gateway: {
+          title: "API Gateway — Authentication + Tenant",
+          desc: "Centralized routing with credential validation and automatic tenant context resolution, enabling multiple clients to run securely in isolation on shared infrastructure.",
+          tag: "Delphi Horse · C# .NET"
+        },
+        services: {
+          title: "Business Services & Integrations",
+          desc: "Decoupled domain layer with standardized business rules, external integrations, and incremental evolution with zero client disruption.",
+          tag: "Backend Architecture · Integrations"
+        },
+        database: {
+          title: "Firebird SQL — Data Layer",
+          desc: "Critical query optimization, safe relational modeling, and gradual modernization of legacy databases while maintaining full production integrity.",
+          tag: "Firebird SQL · Tuning & Legacy"
+        }
+      }
+    };
+
+    // ================= 2. ESTADO DE TEMA & IDIOMA =================
+    let currentLang = localStorage.getItem('ar_lang') || 'pt';
+    let currentTheme = localStorage.getItem('ar_theme') || 'dark';
+    let activeNodeKey = 'gateway';
+    let activeStackFilter = 'all';
+
+    // ================= 3. SPOTLIGHT MOUSE =================
+    function bindSpotlights(scope = document) {
+      scope.querySelectorAll('.spotlight-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+          card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        });
+      });
+    }
+    bindSpotlights();
+
+    // ================= 4. TYPING LOOP =================
+    let phraseIndex = 0;
+    let charIndex = typingPhrases[currentLang][0].length;
+    let isDeleting = true;
+    const typingEl = document.getElementById('typing-text');
+    let typingTimer;
+
+    function typeLoop() {
+      const list = typingPhrases[currentLang];
+      const current = list[phraseIndex % list.length];
+      if (isDeleting) {
+        charIndex = Math.max(0, charIndex - 1);
+        typingEl.textContent = current.substring(0, charIndex);
+        if (charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % list.length;
+          typingTimer = setTimeout(typeLoop, 320);
+          return;
+        }
+        typingTimer = setTimeout(typeLoop, 26);
+      } else {
+        charIndex++;
+        typingEl.textContent = current.substring(0, charIndex);
+        if (charIndex >= current.length) {
+          isDeleting = true;
+          typingTimer = setTimeout(typeLoop, 1800);
+          return;
+        }
+        typingTimer = setTimeout(typeLoop, 45);
+      }
+    }
+    typingTimer = setTimeout(typeLoop, 1600);
+
+    // ================= 5. INSPETOR DA ARQUITETURA =================
     function selectNode(key) {
-      const data = archDetails[key];
+      activeNodeKey = key;
+      const data = archDetails[currentLang][key];
       if (!data) return;
       document.getElementById('inspector-title').textContent = data.title;
       document.getElementById('inspector-desc').textContent = data.desc;
       document.getElementById('inspector-tag').textContent = data.tag;
 
       document.querySelectorAll('.arch-node').forEach(el => {
-        el.classList.remove('ring-2', 'ring-white');
+        el.classList.remove('ring-2', 'ring-zinc-900', 'dark:ring-white');
       });
       const activeEl = document.getElementById(`node-${key}`);
       if (activeEl) {
-        activeEl.classList.add('ring-2', 'ring-white');
+        activeEl.classList.add('ring-2', 'ring-zinc-900', 'dark:ring-white');
       }
     }
 
+    // ================= 6. STACK COM ÍCONES OFICIAIS =================
     const customSvgs = {
       windows: `<svg class="w-6 h-6 text-[#0ea5e9]" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8.5v8.5H3V3zm9.5 0H21v8.5h-8.5V3zM3 12.5h8.5V21H3v-8.5zm9.5 0H21V21h-8.5v-8.5z"/></svg>`,
       horse: `<svg class="w-6 h-6 text-[#d98b3a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5l2-4 1-5-3-1 3-5 4-1 2 2 3-1-1 4c2 2 2 5 1 7l2 4z"/></svg>`,
-      multitenant: `<svg class="w-6 h-6 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>`,
-      refactor: `<svg class="w-6 h-6 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>`,
-      automation: `<svg class="w-6 h-6 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
-      ai: `<svg class="w-6 h-6 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
-      fallback: `<svg class="w-5 h-5 text-zinc-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>`
+      multitenant: `<svg class="w-6 h-6 text-zinc-800 dark:text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>`,
+      refactor: `<svg class="w-6 h-6 text-zinc-800 dark:text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>`,
+      automation: `<svg class="w-6 h-6 text-zinc-800 dark:text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
+      ai: `<svg class="w-6 h-6 text-zinc-800 dark:text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+      fallback: `<svg class="w-5 h-5 text-zinc-600 dark:text-zinc-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>`
     };
 
     const stackItems = [
-      { name: "TypeScript", cat: "frontend", sub: "Tipagem Estática", slug: "typescript", color: "3178c6" },
-      { name: "JavaScript", cat: "frontend", sub: "Web & Runtime", slug: "javascript", color: "f7df1e" },
-      { name: "React", cat: "frontend", sub: "Interfaces Web", slug: "react", color: "61dafb" },
-      { name: "React Native", cat: "frontend", sub: "Apps Mobile", slug: "react", color: "38bdf8" },
-      { name: "Expo", cat: "frontend", sub: "Ecossistema Mobile", slug: "expo", color: "ffffff" },
-      { name: "NativeWind", cat: "frontend", sub: "Estilização Mobile", slug: "tailwindcss", color: "38bdf8" },
-      { name: "Tailwind CSS", cat: "frontend", sub: "UI Moderna", slug: "tailwindcss", color: "06b6d4" },
-      { name: "Angular", cat: "frontend", sub: "Web Corporativa", slug: "angular", color: "dd0031" },
-      { name: "Delphi FMX", cat: "frontend", sub: "Multiplataforma", slug: "delphi", color: "ef4444" },
-      { name: "Delphi VCL", cat: "frontend", sub: "Desktop Windows", slug: "delphi", color: "ef4444" },
-      { name: "Horse (Delphi)", cat: "backend", sub: "APIs em Delphi", custom: "horse" },
-      { name: "C# .NET", cat: "backend", sub: "Backend & APIs", slug: "dotnet", color: "8a6cf0" },
-      { name: "Python", cat: "backend", sub: "Automação & IA", slug: "python", color: "3776ab" },
-      { name: "Bash", cat: "backend", sub: "Scripts & Pipelines", slug: "gnubash", color: "4eaa25" },
-      { name: "Firebird SQL", cat: "infra", sub: "Banco de Dados", slug: "firebird", color: "f97316" },
-      { name: "Linux", cat: "infra", sub: "Servidores & CLI", slug: "linux", color: "fcc624" },
-      { name: "Windows", cat: "infra", sub: "Ambiente Desktop", custom: "windows" },
-      { name: "Docker", cat: "infra", sub: "Containers", slug: "docker", color: "2496ed" },
-      { name: "Git", cat: "infra", sub: "Versionamento", slug: "git", color: "f05032" },
-      { name: "Android", cat: "infra", sub: "Sistema & AOSP", slug: "android", color: "3ddc84" },
-      { name: "LineageOS", cat: "infra", sub: "ROMs Customizadas", slug: "lineageos", color: "22c55e" },
-      { name: "APIs Multi-Tenant", cat: "praticas", sub: "Arquitetura", custom: "multitenant" },
-      { name: "Refatoração de Legado", cat: "praticas", sub: "Evolução Segura", custom: "refactor" },
-      { name: "Automação de Processos", cat: "praticas", sub: "Produtividade", custom: "automation" },
-      { name: "Fluxos com IA", cat: "praticas", sub: "Workflows Inteligentes", custom: "ai" }
+      { name: "TypeScript", cat: "frontend", subPt: "Tipagem Estática", subEn: "Static Typing", slug: "typescript", colorDark: "3178c6", colorLight: "2563eb" },
+      { name: "JavaScript", cat: "frontend", subPt: "Web & Runtime", subEn: "Web & Runtime", slug: "javascript", colorDark: "f7df1e", colorLight: "ca8a04" },
+      { name: "React", cat: "frontend", subPt: "Interfaces Web", subEn: "Web Interfaces", slug: "react", colorDark: "61dafb", colorLight: "0284c7" },
+      { name: "React Native", cat: "frontend", subPt: "Apps Mobile", subEn: "Mobile Apps", slug: "react", colorDark: "38bdf8", colorLight: "0369a1" },
+      { name: "Expo", cat: "frontend", subPt: "Ecossistema Mobile", subEn: "Mobile Ecosystem", slug: "expo", colorDark: "ffffff", colorLight: "09090b" },
+      { name: "NativeWind", cat: "frontend", subPt: "Estilização Mobile", subEn: "Mobile Styling", slug: "tailwindcss", colorDark: "38bdf8", colorLight: "0284c7" },
+      { name: "Tailwind CSS", cat: "frontend", subPt: "UI Moderna", subEn: "Modern UI", slug: "tailwindcss", colorDark: "06b6d4", colorLight: "0891b2" },
+      { name: "Angular", cat: "frontend", subPt: "Web Corporativa", subEn: "Enterprise Web", slug: "angular", colorDark: "dd0031", colorLight: "dc2626" },
+      { name: "Delphi FMX", cat: "frontend", subPt: "Multiplataforma", subEn: "Cross-Platform", slug: "delphi", colorDark: "ef4444", colorLight: "dc2626" },
+      { name: "Delphi VCL", cat: "frontend", subPt: "Desktop Windows", subEn: "Windows Desktop", slug: "delphi", colorDark: "ef4444", colorLight: "dc2626" },
+      { name: "Horse (Delphi)", cat: "backend", subPt: "APIs em Delphi", subEn: "Delphi APIs", custom: "horse" },
+      { name: "C# .NET", cat: "backend", subPt: "Backend & APIs", subEn: "Backend & APIs", slug: "dotnet", colorDark: "8a6cf0", colorLight: "6d28d9" },
+      { name: "Python", cat: "backend", subPt: "Automação & IA", subEn: "Automation & AI", slug: "python", colorDark: "3776ab", colorLight: "2563eb" },
+      { name: "Bash", cat: "backend", subPt: "Scripts & Pipelines", subEn: "Scripts & Pipelines", slug: "gnubash", colorDark: "4eaa25", colorLight: "16a34a" },
+      { name: "Firebird SQL", cat: "infra", subPt: "Banco de Dados", subEn: "Database", slug: "firebird", colorDark: "f97316", colorLight: "ea580c" },
+      { name: "Linux", cat: "infra", subPt: "Servidores & CLI", subEn: "Servers & CLI", slug: "linux", colorDark: "fcc624", colorLight: "ca8a04" },
+      { name: "Windows", cat: "infra", subPt: "Ambiente Desktop", subEn: "Desktop OS", custom: "windows" },
+      { name: "Docker", cat: "infra", subPt: "Containers", subEn: "Containers", slug: "docker", colorDark: "2496ed", colorLight: "0284c7" },
+      { name: "Git", cat: "infra", subPt: "Versionamento", subEn: "Version Control", slug: "git", colorDark: "f05032", colorLight: "ea580c" },
+      { name: "Android", cat: "infra", subPt: "Sistema & AOSP", subEn: "OS & AOSP", slug: "android", colorDark: "3ddc84", colorLight: "16a34a" },
+      { name: "LineageOS", cat: "infra", subPt: "ROMs Customizadas", subEn: "Custom ROMs", slug: "lineageos", colorDark: "22c55e", colorLight: "15803d" },
+      { name: "APIs Multi-Tenant", nameEn: "Multi-Tenant APIs", cat: "praticas", subPt: "Arquitetura", subEn: "Architecture", custom: "multitenant" },
+      { name: "Refatoração de Legado", nameEn: "Legacy Refactoring", cat: "praticas", subPt: "Evolução Segura", subEn: "Safe Evolution", custom: "refactor" },
+      { name: "Automação de Processos", nameEn: "Process Automation", cat: "praticas", subPt: "Produtividade", subEn: "Productivity", custom: "automation" },
+      { name: "Fluxos com IA", nameEn: "AI Workflows", cat: "praticas", subPt: "Workflows Inteligentes", subEn: "Smart Pipelines", custom: "ai" }
     ];
 
     function getIconHtml(item) {
       if (item.custom && customSvgs[item.custom]) {
         return customSvgs[item.custom];
       }
+      const hex = currentTheme === 'dark' ? item.colorDark : item.colorLight;
       return `
         <img
-          src="https://cdn.simpleicons.org/${item.slug}/${item.color}"
+          src="https://cdn.simpleicons.org/${item.slug}/${hex}"
           alt="${item.name}"
           loading="lazy"
           class="w-6 h-6 object-contain"
@@ -931,46 +1214,135 @@
     }
 
     const stackGrid = document.getElementById('stack-grid');
-    function renderStack(filter = 'all') {
+    function renderStack(filter = activeStackFilter) {
+      activeStackFilter = filter;
       const filtered = filter === 'all' ? stackItems : stackItems.filter(i => i.cat === filter);
-      stackGrid.innerHTML = filtered.map(item => `
-        <div class="glass-panel spotlight-card rounded-2xl p-4 flex flex-col justify-between group cursor-default">
-          <div class="flex items-center justify-between mb-3.5">
-            <div class="w-10 h-10 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center group-hover:border-white/30 group-hover:scale-105 transition">
-              ${getIconHtml(item)}
+      stackGrid.innerHTML = filtered.map(item => {
+        const title = currentLang === 'en' && item.nameEn ? item.nameEn : item.name;
+        const sub = currentLang === 'en' ? item.subEn : item.subPt;
+        return `
+          <div class="glass-panel spotlight-card rounded-2xl p-4 flex flex-col justify-between group cursor-default">
+            <div class="flex items-center justify-between mb-3.5">
+              <div class="w-10 h-10 rounded-xl bg-white/80 dark:bg-black/60 border border-zinc-900/10 dark:border-white/10 flex items-center justify-center group-hover:border-zinc-900/30 dark:group-hover:border-white/30 group-hover:scale-105 transition">
+                ${getIconHtml(item)}
+              </div>
+              <span class="font-mono text-[10px] uppercase text-zinc-500">${item.cat}</span>
             </div>
-            <span class="font-mono text-[10px] uppercase text-zinc-500">${item.cat}</span>
+            <div>
+              <div class="font-display font-semibold text-zinc-950 dark:text-white text-sm sm:text-base transition">${title}</div>
+              <div class="font-mono text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">${sub}</div>
+            </div>
           </div>
-          <div>
-            <div class="font-display font-semibold text-white text-sm sm:text-base group-hover:text-zinc-200 transition">${item.name}</div>
-            <div class="font-mono text-[11px] text-zinc-400 mt-0.5">${item.sub}</div>
-          </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
 
-      stackGrid.querySelectorAll('.spotlight-card').forEach(card => {
-        card.addEventListener('mousemove', e => {
-          const rect = card.getBoundingClientRect();
-          card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-          card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-        });
-      });
+      bindSpotlights(stackGrid);
     }
-
-    renderStack('all');
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => {
-          b.classList.remove('active', 'bg-white', 'text-black', 'font-semibold');
-          b.classList.add('bg-white/[0.05]', 'border', 'border-white/10', 'text-zinc-300');
+          b.classList.remove('active', 'bg-zinc-950', 'text-white', 'dark:bg-white', 'dark:text-black', 'font-semibold');
+          b.classList.add('bg-black/[0.04]', 'dark:bg-white/[0.05]', 'border', 'border-zinc-900/10', 'dark:border-white/10', 'text-zinc-700', 'dark:text-zinc-300');
         });
-        btn.classList.add('active', 'bg-white', 'text-black', 'font-semibold');
-        btn.classList.remove('bg-white/[0.05]', 'border', 'border-white/10', 'text-zinc-300');
+        btn.classList.add('active', 'bg-zinc-950', 'text-white', 'dark:bg-white', 'dark:text-black', 'font-semibold');
+        btn.classList.remove('bg-black/[0.04]', 'dark:bg-white/[0.05]', 'border', 'border-zinc-900/10', 'dark:border-white/10', 'text-zinc-700', 'dark:text-zinc-300');
         renderStack(btn.dataset.filter);
       });
     });
 
+    // ================= 7. ATUALIZAÇÃO DOS WIDGETS DO GITHUB (TEMA + IDIOMA) =================
+    function updateGithubWidgets() {
+      const locale = currentLang === 'en' ? 'en' : 'pt_BR';
+      const streakImg = document.getElementById('gh-streak-img');
+      const activityImg = document.getElementById('gh-activity-img');
+      const arcadeImg = document.getElementById('gh-arcade-img');
+
+      if (currentTheme === 'dark') {
+        streakImg.src = `https://streak-stats.demolab.com?user=dreyranos&theme=transparent&border=ffffff22&border_radius=12&ring=e4e4e7&fire=ffffff&currStreakLabel=e4e4e7&sideLabels=a1a1aa&currStreakNum=ffffff&sideNums=d4d4d8&dates=71717a&locale=${locale}`;
+        activityImg.src = `https://github-readme-activity-graph.vercel.app/graph?username=dreyranos&bg_color=05050700&color=e4e4e7&line=71717a&point=ffffff&area=true&hide_border=true`;
+        arcadeImg.src = `https://raw.githubusercontent.com/dreyranos/dreyranos/output/puzzle-bobble-contribution-graph-dark.svg`;
+      } else {
+        streakImg.src = `https://streak-stats.demolab.com?user=dreyranos&theme=transparent&border=09090b1a&border_radius=12&ring=18181b&fire=09090b&currStreakLabel=3f3f46&sideLabels=52525b&currStreakNum=09090b&sideNums=27272a&dates=71717a&locale=${locale}`;
+        activityImg.src = `https://github-readme-activity-graph.vercel.app/graph?username=dreyranos&bg_color=f4f4f600&color=18181b&line=71717a&point=09090b&area=true&hide_border=true`;
+        arcadeImg.src = `https://raw.githubusercontent.com/dreyranos/dreyranos/output/puzzle-bobble-contribution-graph.svg`;
+      }
+    }
+
+    // ================= 8. APLICAÇÃO DE IDIOMA E TEMA =================
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('ar_lang', lang);
+      document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+      document.title = translations[lang].doc_title;
+      document.getElementById('lang-label').textContent = lang.toUpperCase();
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (translations[lang][key]) el.innerHTML = translations[lang][key];
+      });
+
+      // Reinicia o texto digitado no idioma selecionado
+      clearTimeout(typingTimer);
+      phraseIndex = 0;
+      const firstPhrase = typingPhrases[lang][0];
+      typingEl.textContent = firstPhrase;
+      charIndex = firstPhrase.length;
+      isDeleting = true;
+      typingTimer = setTimeout(typeLoop, 1400);
+
+      selectNode(activeNodeKey);
+      renderStack(activeStackFilter);
+      updateGithubWidgets();
+      updateThemeButtonLabel();
+    }
+
+    function updateThemeButtonLabel() {
+      const sun = document.getElementById('icon-sun');
+      const moon = document.getElementById('icon-moon');
+      const label = document.getElementById('theme-label');
+      if (currentTheme === 'dark') {
+        sun.classList.remove('hidden');
+        moon.classList.add('hidden');
+        label.textContent = 'White';
+      } else {
+        sun.classList.add('hidden');
+        moon.classList.remove('hidden');
+        label.textContent = 'Noir';
+      }
+    }
+
+    function applyTheme(theme) {
+      currentTheme = theme;
+      localStorage.setItem('ar_theme', theme);
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      updateThemeButtonLabel();
+      renderStack(activeStackFilter);
+      updateGithubWidgets();
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      applyLanguage(currentLang === 'pt' ? 'en' : 'pt');
+    });
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // Inicializa estado salvo
+    applyTheme(currentTheme);
+    applyLanguage(currentLang);
+
+    // Reveal Animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
