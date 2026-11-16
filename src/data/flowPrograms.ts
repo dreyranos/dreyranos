@@ -40,9 +40,17 @@ export interface FlowProgramScene {
   highlights: string[];
 }
 
+export type FlowStageMode =
+  | 'hub-topology'
+  | 'multi-device'
+  | 'sql-tuning'
+  | 'pipeline-terminal'
+  | 'aosp-stack';
+
 export interface FlowProgram {
   id: string;
   index: string;
+  stageMode: FlowStageMode;
   title: string;
   subtitle: string;
   linkedBlueprintNodeId: string;
@@ -65,6 +73,7 @@ export const FLOW_PROGRAMS: FlowProgram[] = [
   {
     id: '01.',
     index: '01',
+    stageMode: 'hub-topology',
     title: 'Backend & Arquitetura Multi-Tenant',
     subtitle: 'Delphi Horse · C# .NET · Isolamento por Cliente',
     linkedBlueprintNodeId: 'gateway',
@@ -206,6 +215,7 @@ export const FLOW_PROGRAMS: FlowProgram[] = [
   {
     id: '02.',
     index: '02',
+    stageMode: 'multi-device',
     title: 'Web, Mobile & Desktop Multiplataforma',
     subtitle: 'React Native + Expo · React / Angular · Delphi FMX & VCL',
     linkedBlueprintNodeId: 'mobile',
@@ -347,6 +357,7 @@ export const FLOW_PROGRAMS: FlowProgram[] = [
   {
     id: '03.',
     index: '03',
+    stageMode: 'sql-tuning',
     title: 'Dados & Modernização de Legado',
     subtitle: 'Firebird SQL · Tuning de Queries · Refatoração Segura',
     linkedBlueprintNodeId: 'database',
@@ -488,6 +499,7 @@ export const FLOW_PROGRAMS: FlowProgram[] = [
   {
     id: '04.',
     index: '04',
+    stageMode: 'pipeline-terminal',
     title: 'Automação & Fluxos Inteligentes com IA',
     subtitle: 'Python · Bash · Compilação · Workflows com IA',
     linkedBlueprintNodeId: 'auto',
@@ -629,6 +641,7 @@ export const FLOW_PROGRAMS: FlowProgram[] = [
   {
     id: '05.',
     index: '05',
+    stageMode: 'aosp-stack',
     title: 'Android Customizado & Baixo Nível',
     subtitle: 'AOSP · LineageOS · Linguagem C · Linux Build',
     linkedBlueprintNodeId: 'desktop',

@@ -8,68 +8,12 @@ import {
   SkipForward,
   RotateCcw,
   X,
-  Smartphone,
-  Monitor,
-  Globe,
-  Terminal,
-  Layers,
-  Server,
-  Database,
-  Cpu,
-  Sparkles,
-  ShieldCheck,
-  Flame,
-  Code2,
   Maximize2,
   Minimize2,
   Film,
 } from 'lucide-react';
-import {
-  FLOW_PROGRAMS,
-  SLOT_COORDS,
-  type FlowIconKey,
-  type FlowNodeSlot,
-} from '../data/flowPrograms';
-
-function getWirePath(from: FlowNodeSlot, to: FlowNodeSlot) {
-  const a = SLOT_COORDS[from];
-  const b = SLOT_COORDS[to];
-  if (Math.abs(a.x - b.x) < 10) {
-    const ctrlX = a.x + 48;
-    return `M ${a.x} ${a.y} Q ${ctrlX} ${(a.y + b.y) / 2}, ${b.x} ${b.y}`;
-  }
-  const mx = (a.x + b.x) / 2;
-  return `M ${a.x} ${a.y} C ${mx} ${a.y}, ${mx} ${b.y}, ${b.x} ${b.y}`;
-}
-
-function renderFlowIcon(icon: FlowIconKey) {
-  switch (icon) {
-    case 'mobile':
-      return <Smartphone className="w-4 h-4 shrink-0" />;
-    case 'desktop':
-      return <Monitor className="w-4 h-4 shrink-0" />;
-    case 'web':
-      return <Globe className="w-4 h-4 shrink-0" />;
-    case 'terminal':
-      return <Terminal className="w-4 h-4 shrink-0" />;
-    case 'layers':
-      return <Layers className="w-4 h-4 shrink-0" />;
-    case 'server':
-      return <Server className="w-4 h-4 shrink-0" />;
-    case 'database':
-      return <Database className="w-4 h-4 shrink-0" />;
-    case 'cpu':
-      return <Cpu className="w-4 h-4 shrink-0" />;
-    case 'sparkles':
-      return <Sparkles className="w-4 h-4 shrink-0" />;
-    case 'shield':
-      return <ShieldCheck className="w-4 h-4 shrink-0" />;
-    case 'flame':
-      return <Flame className="w-4 h-4 shrink-0" />;
-    default:
-      return <Code2 className="w-4 h-4 shrink-0" />;
-  }
-}
+import { FLOW_PROGRAMS } from '../data/flowPrograms';
+import FlowStageVisuals from './FlowStageVisuals';
 
 export default function FlowVideoSimulator({
   open,
@@ -242,10 +186,6 @@ export default function FlowVideoSimulator({
     setSceneProgress(0);
   };
 
-  const fromPt = SLOT_COORDS[currentScene.fromSlot];
-  const toPt = SLOT_COORDS[currentScene.toSlot];
-  const activeWirePath = getWirePath(currentScene.fromSlot, currentScene.toSlot);
-  const packetT = (sceneProgress * 2.2) % 1;
   const targetNodeInfo = activeProgram.nodes[currentScene.toSlot];
   const totalScenesStr = String(scenes.length).padStart(2, '0');
 
@@ -389,186 +329,25 @@ export default function FlowVideoSimulator({
                 </span>
               </div>
 
-              {/* SVG Live Architecture Canvas */}
-              <div className="relative flex-1 flex items-center justify-center my-2 min-h-[250px] sm:min-h-[310px]">
+              {/* Bespoke Visual Presentation Stage per Flow Area */}
+              <div className="relative flex-1 flex items-stretch justify-center my-2 min-h-[260px] sm:min-h-[320px]">
                 <AnimatePresence mode="wait">
-                  <motion.svg
+                  <motion.div
                     key={activeProgram.id}
-                    initial={{ opacity: 0.35, scale: 0.985 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0.35 }}
-                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    viewBox="0 0 860 440"
-                    className="w-full h-full max-h-[420px] select-none overflow-visible"
-                    role="img"
-                    aria-label={`Diagrama animado do fluxo: ${activeProgram.title}`}
+                    initial={{ opacity: 0.25, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0.2, y: -8 }}
+                    transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+                    className="w-full h-full flex"
                   >
-                    <defs>
-                      <filter id="purpleGlow" x="-30%" y="-30%" width="160%" height="160%">
-                        <feGaussianBlur stdDeviation="5" result="blur" />
-                        <feMerge>
-                          <feMergeNode in="blur" />
-                          <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                      </filter>
-                    </defs>
-
-                    {[
-                      { x: 30, w: 200, title: activeProgram.zones[0] },
-                      { x: 330, w: 200, title: activeProgram.zones[1] },
-                      { x: 630, w: 200, title: activeProgram.zones[2] },
-                    ].map((zone) => (
-                      <g key={zone.title}>
-                        <rect
-                          x={zone.x}
-                          y={20}
-                          width={zone.w}
-                          height={395}
-                          fill="rgba(255,255,255,0.012)"
-                          stroke="rgba(130,107,194,0.16)"
-                          strokeDasharray="4 4"
-                        />
-                        <text
-                          x={zone.x + zone.w / 2}
-                          y={40}
-                          textAnchor="middle"
-                          className="fill-[#8E89A3] text-[10px] font-mono-tabular uppercase tracking-wider"
-                        >
-                          {zone.title}
-                        </text>
-                      </g>
-                    ))}
-
-                    {activeProgram.wires.map((wire) => (
-                      <path
-                        key={`${wire.from}-${wire.to}`}
-                        d={getWirePath(wire.from, wire.to)}
-                        fill="none"
-                        stroke="rgba(130,107,194,0.22)"
-                        strokeWidth="2"
-                      />
-                    ))}
-
-                    <motion.path
-                      key={`wire-${activeProgram.id}-${currentScene.id}`}
-                      d={activeWirePath}
-                      fill="none"
-                      stroke="#826BC2"
-                      strokeWidth="3.5"
-                      strokeDasharray="10 6"
-                      initial={{ pathLength: 0.1, opacity: 0.5 }}
-                      animate={{ pathLength: 1, opacity: 1 }}
-                      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                      filter="url(#purpleGlow)"
+                    <FlowStageVisuals
+                      program={activeProgram}
+                      scene={currentScene}
+                      sceneIdx={safeSceneIdx}
+                      sceneProgress={sceneProgress}
+                      onJumpToScene={jumpToScene}
                     />
-
-                    {(() => {
-                      const midX = (fromPt.x + toPt.x) / 2;
-                      const midY = (fromPt.y + toPt.y) / 2;
-                      const t = packetT;
-                      const inv = 1 - t;
-                      const px =
-                        Math.abs(fromPt.x - toPt.x) < 10
-                          ? inv * inv * fromPt.x +
-                            2 * inv * t * (fromPt.x + 48) +
-                            t * t * toPt.x
-                          : inv * inv * fromPt.x +
-                            2 * inv * t * midX +
-                            t * t * toPt.x;
-                      const py =
-                        inv * inv * fromPt.y +
-                        2 * inv * t * midY +
-                        t * t * toPt.y;
-                      return (
-                        <g filter="url(#purpleGlow)">
-                          <circle
-                            cx={px}
-                            cy={py}
-                            r={11}
-                            fill="rgba(130,107,194,0.32)"
-                          />
-                          <circle cx={px} cy={py} r={5.5} fill="#FFFFFF" />
-                        </g>
-                      );
-                    })()}
-
-                    {(Object.keys(SLOT_COORDS) as FlowNodeSlot[]).map((slotKey) => {
-                      const coord = SLOT_COORDS[slotKey];
-                      const nodeData = activeProgram.nodes[slotKey];
-                      const isActive = currentScene.activeSlots.includes(slotKey);
-                      const isPrimaryTarget =
-                        currentScene.toSlot === slotKey ||
-                        currentScene.fromSlot === slotKey;
-                      const cardW = 168;
-                      const cardH = 68;
-                      return (
-                        <g
-                          key={slotKey}
-                          transform={`translate(${coord.x - cardW / 2}, ${
-                            coord.y - cardH / 2
-                          })`}
-                          onClick={() => {
-                            const targetIdx = scenes.findIndex(
-                              (sc) =>
-                                sc.toSlot === slotKey || sc.fromSlot === slotKey
-                            );
-                            if (targetIdx >= 0) jumpToScene(targetIdx);
-                          }}
-                          className="cursor-pointer"
-                        >
-                          {isPrimaryTarget && (
-                            <motion.rect
-                              x={-5}
-                              y={-5}
-                              width={cardW + 10}
-                              height={cardH + 10}
-                              fill="none"
-                              stroke="#9B86D6"
-                              strokeWidth="1.5"
-                              animate={{ opacity: [0.35, 0.9, 0.35] }}
-                              transition={{
-                                duration: 1.6,
-                                repeat: Infinity,
-                                ease: 'easeInOut',
-                              }}
-                            />
-                          )}
-                          <rect
-                            width={cardW}
-                            height={cardH}
-                            fill={isActive ? '#3B0764' : '#11111B'}
-                            stroke={
-                              isActive ? '#826BC2' : 'rgba(255,255,255,0.14)'
-                            }
-                            strokeWidth={isActive ? '2' : '1'}
-                          />
-                          <foreignObject width={cardW} height={cardH}>
-                            <div className="w-full h-full p-2.5 flex flex-col justify-between text-left">
-                              <div className="flex items-center justify-between gap-1.5 text-white">
-                                <span className="font-display font-bold text-[12px] leading-tight truncate">
-                                  {nodeData.label}
-                                </span>
-                                <span
-                                  className={
-                                    isActive ? 'text-[#D4C8F2]' : 'text-[#826BC2]'
-                                  }
-                                >
-                                  {renderFlowIcon(nodeData.icon)}
-                                </span>
-                              </div>
-                              <span
-                                className={`font-mono-tabular text-[10px] truncate ${
-                                  isActive ? 'text-[#D4C8F2]' : 'text-[#8E89A3]'
-                                }`}
-                              >
-                                {nodeData.sub}
-                              </span>
-                            </div>
-                          </foreignObject>
-                        </g>
-                      );
-                    })}
-                  </motion.svg>
+                  </motion.div>
                 </AnimatePresence>
               </div>
 
