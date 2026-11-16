@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import 'd3-transition';
 import { BarChart3, RefreshCw } from 'lucide-react';
 import { motion } from 'motion/react';
 import { CONTACT_INFO, COPY, type Lang, type Theme } from '../data/portfolioData';
@@ -237,7 +238,7 @@ export function GitHubCommitChart({ lang, theme }: GitHubCommitChartProps) {
       .attr('stroke-width', 2)
       .attr('d', lineGen);
 
-    if (!prefersReducedMotion) {
+    if (!prefersReducedMotion && typeof linePath.transition === 'function') {
       const totalLen = linePath.node()?.getTotalLength() || 0;
       linePath
         .attr('stroke-dasharray', `${totalLen} ${totalLen}`)
@@ -262,7 +263,7 @@ export function GitHubCommitChart({ lang, theme }: GitHubCommitChartProps) {
       .attr('fill', (d) => (d.count === peakCount && peakCount > 0 ? barPeak : barDefault))
       .style('cursor', 'pointer');
 
-    if (prefersReducedMotion) {
+    if (prefersReducedMotion || typeof bars.transition !== 'function') {
       bars.attr('y', (d) => y(d.count)).attr('height', (d) => Math.max(2, innerHeight - y(d.count)));
     } else {
       bars

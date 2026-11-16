@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import 'd3-transition';
 import { CalendarDays, RefreshCw } from 'lucide-react';
 import { COPY, type Lang, type Theme } from '../data/portfolioData';
 import { useGitHubContributions } from '../hooks/useGitHubContributions';
@@ -216,7 +217,7 @@ export function ContributionGraph({ lang, theme }: ContributionGraphProps) {
       .attr('stroke-width', 1)
       .style('cursor', 'pointer');
 
-    if (!prefersReducedMotion) {
+    if (!prefersReducedMotion && typeof rects.transition === 'function') {
       rects
         .attr('opacity', 0)
         .transition()
