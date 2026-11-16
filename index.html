@@ -1,640 +1,1001 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Andrey Ramos | Desenvolvedor Full Stack</title>
-<meta name="description" content="Desenvolvedor full stack com mais de nove anos de experiência em APIs multi-tenant, modernização de sistemas legados, React Native e Delphi FMX." />
-<meta name="author" content="Andrey Ramos" />
-<meta name="theme-color" content="#131314" />
-<link rel="canonical" href="https://dreyranos.github.io/dreyranos/" />
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="pt_BR" />
-<meta property="og:url" content="https://dreyranos.github.io/dreyranos/" />
-<meta property="og:title" content="Andrey Ramos | Desenvolvedor Full Stack" />
-<meta property="og:description" content="APIs multi-tenant, modernização de sistemas legados e aplicações mobile e desktop." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234285f4'/%3E%3Cstop offset='.5' stop-color='%239b72cb'/%3E%3Cstop offset='1' stop-color='%23d96570'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M18 46 32 16l14 30M24 37h16' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<style>
-:root {
-  color-scheme: light;
-  --bg: #f6f8fc;
-  --surface: #f0f4f9;
-  --surface-2: #e4eaf3;
-  --line: #d5dce8;
-  --text: #1f1f1f;
-  --muted: #565d6b;
-  --accent: #0b57d0;
-  --on-accent: #ffffff;
-  --accent-soft: rgba(11, 87, 208, 0.1);
-  --grad: linear-gradient(90deg, #4285f4 0%, #9b72cb 50%, #d96570 100%);
-  --code-bg: #1f2024;
-  --glass: rgba(255, 255, 255, 0.58);
-  --glass-hover: rgba(255, 255, 255, 0.8);
-  --glass-soft: rgba(31, 41, 80, 0.07);
-  --glass-border: rgba(255, 255, 255, 0.8);
-  --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 12px 36px -16px rgba(40, 50, 110, 0.3);
-  --blob-op: 0.5;
-  --code-text: #e3e3e3;
-  --code-key: #8ab4f8;
-  --code-str: #d7aefb;
-  --code-bool: #81c995;
-  --code-dim: #8e939c;
-  --sans: "Google Sans", "Figtree", "Segoe UI", system-ui, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --bg: #131314;
-    --surface: #1e1f20;
-    --surface-2: #282a2c;
-    --line: #3c4043;
-    --text: #e3e3e3;
-    --muted: #a9aeb7;
-    --accent: #a8c7fa;
-    --on-accent: #062e6f;
-    --accent-soft: rgba(168, 199, 250, 0.16);
-    --code-bg: #0e0f10;
-    --glass: rgba(30, 31, 32, 0.56);
-    --glass-hover: rgba(52, 54, 58, 0.68);
-    --glass-soft: rgba(255, 255, 255, 0.07);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 12px 36px -16px rgba(0, 0, 0, 0.65);
-    --blob-op: 0.4;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #131314;
-  --surface: #1e1f20;
-  --surface-2: #282a2c;
-  --line: #3c4043;
-  --text: #e3e3e3;
-  --muted: #a9aeb7;
-  --accent: #a8c7fa;
-  --on-accent: #062e6f;
-  --accent-soft: rgba(168, 199, 250, 0.16);
-  --code-bg: #0e0f10;
-  --glass: rgba(30, 31, 32, 0.56);
-  --glass-hover: rgba(52, 54, 58, 0.68);
-  --glass-soft: rgba(255, 255, 255, 0.07);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 12px 36px -16px rgba(0, 0, 0, 0.65);
-  --blob-op: 0.4;
-}
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 84px; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 1.0625rem;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-img { max-width: 100%; display: block; }
-a { color: inherit; }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 12px; }
-.wrap { width: min(960px, 100% - 40px); margin-inline: auto; }
-.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrey Ramos | Desenvolvedor Full Stack & Engenharia de Software</title>
+  <meta name="description" content="Portfólio e porta de entrada para novas oportunidades. Desenvolvedor Full Stack com +9 anos de experiência em APIs Multi-Tenant, React Native, Delphi, C# .NET, Firebird SQL e Automação com IA." />
 
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: var(--glass);
-  border-bottom: 1px solid var(--glass-border);
-  backdrop-filter: blur(22px) saturate(160%);
-  -webkit-backdrop-filter: blur(22px) saturate(160%);
-}
-.topbar .wrap { display: flex; align-items: center; gap: 20px; min-height: 68px; flex-wrap: wrap; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.3rem; text-decoration: none; letter-spacing: -0.01em; }
-.brand .mono { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 11px; background: var(--grad); color: #ffffff; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.02em; }
-.menu { display: flex; gap: 4px; margin-inline: auto; font-size: 0.95rem; font-weight: 500; overflow-x: auto; scrollbar-width: none; }
-.menu::-webkit-scrollbar { display: none; }
-.menu a { color: var(--muted); text-decoration: none; white-space: nowrap; padding: 8px 14px; border-radius: 999px; transition: background 0.15s, color 0.15s; }
-.menu a:hover { background: var(--glass-hover); color: var(--text); }
-.theme-btn {
-  font: inherit;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text);
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  border-radius: 999px;
-  padding: 10px 18px;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.theme-btn:hover { background: var(--glass-hover); }
-@media (max-width: 860px) {
-  .topbar .wrap { gap: 6px 14px; padding-block: 10px; }
-  .menu { order: 3; width: 100%; margin-inline: 0; }
-  .theme-btn { margin-left: auto; }
-}
+  <!-- Fontes Modernas: Space Grotesk + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-.hero { padding: 64px 0 56px; }
-.status { display: inline-flex; align-items: center; gap: 10px; background: var(--glass); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); border-radius: 999px; padding: 7px 16px; font-size: 0.92rem; font-weight: 500; color: var(--muted); margin: 0 0 28px; }
-.status i { width: 9px; height: 9px; border-radius: 50%; background: #34a853; }
-h1 { font-weight: 600; font-size: clamp(2.4rem, 7vw, 4.4rem); line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 22px; text-wrap: balance; }
-h1 .hi {
-  display: block;
-  color: var(--accent);
-  background: linear-gradient(90deg, #4285f4 0%, #9b72cb 25%, #d96570 50%, #d96570 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: sheen 1.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-h1 .sub { display: block; color: var(--muted); font-weight: 500; }
-@keyframes sheen { from { background-position: 100% 0; } to { background-position: 0 0; } }
-@media (prefers-reduced-motion: reduce) {
-  h1 .hi { animation: none; background-position: 0 0; }
-}
-.role { max-width: 60ch; color: var(--muted); font-size: 1.15rem; margin: 0 0 36px; }
+  <!-- Tailwind CSS v3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            obsidian: '#020617',
+            deepblue: '#1e3a8a',
+            electric: '#2563eb',
+            cyber: '#06b6d4',
+            neon: '#38bdf8',
+          },
+          animation: {
+            'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 8s ease-in-out infinite',
+            'dash': 'dash 2.8s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            dash: {
+              'to': { strokeDashoffset: '-48' }
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-.prompt {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  min-height: 68px;
-  padding: 10px 10px 10px 28px;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  border-radius: 999px;
-  text-decoration: none;
-  transition: background 0.15s;
-}
-.prompt:hover { background: var(--glass-hover); }
-.prompt .ph { flex: 1; min-width: 0; color: var(--muted); font-size: 1.08rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: opacity 0.25s; }
-.prompt .ph.out { opacity: 0; }
-.send { flex: none; width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; }
-.send svg { width: 22px; height: 22px; }
-.hint { margin: 12px 0 0 28px; color: var(--muted); font-size: 0.9rem; }
+  <style>
+    :root {
+      --bg-obsidian: #020617;
+      --glass-bg: rgba(15, 23, 42, 0.45);
+      --glass-border: rgba(56, 189, 248, 0.16);
+      --glass-highlight: rgba(186, 230, 253, 0.14);
+    }
 
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 36px; }
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 176px;
-  padding: 20px 20px 18px;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 1.02rem;
-  font-weight: 500;
-  line-height: 1.4;
-  transition: background 0.15s;
-}
-.card:hover { background: var(--glass-hover); }
-.card .go { align-self: flex-end; width: 40px; height: 40px; border-radius: 50%; background: var(--bg); color: var(--accent); display: grid; place-items: center; }
-.card .go svg { width: 20px; height: 20px; }
+    body {
+      background-color: var(--bg-obsidian);
+      color: #f8fafc;
+      overflow-x: hidden;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
 
-.sec { padding: 56px 0 8px; }
-.sec-head { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
-.sec-head::before { content: ""; flex: none; width: 6px; height: 30px; border-radius: 3px; background: var(--grad); }
-h2 { font-weight: 600; font-size: clamp(1.55rem, 3.4vw, 2.1rem); line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
-.sec-lead { margin: 0 0 24px 0; color: var(--muted); max-width: 62ch; }
-h3 { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.005em; margin: 0 0 4px; }
-.panel { background: var(--glass); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); border-radius: 28px; padding: 32px; }
-@media (max-width: 620px) {
-  .panel { padding: 22px; border-radius: 22px; }
-}
+    /* Grade cibernética sutil de fundo */
+    .cyber-grid {
+      background-size: 48px 48px;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.045) 1px, transparent 1px);
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, #000 40%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, #000 40%, transparent 100%);
+    }
 
-.about { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 32px; align-items: start; }
-@media (max-width: 820px) {
-  .about { grid-template-columns: 1fr; }
-}
-.about p { margin: 0 0 16px; }
-.about p:last-child { margin-bottom: 0; }
-.pull { padding: 14px 18px; border-radius: 16px; background: var(--accent-soft); font-size: 1rem; }
-.console { background: var(--code-bg); color: var(--code-text); border-radius: 18px; overflow: hidden; font-family: var(--mono); font-size: 0.86rem; line-height: 1.75; }
-.console-head { display: flex; justify-content: space-between; gap: 12px; padding: 12px 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.78rem; color: var(--code-dim); }
-.console-head b { color: var(--code-bool); font-weight: 500; }
-.console pre { margin: 0; padding: 16px 18px 20px; overflow-x: auto; }
-.k { color: var(--code-key); }
-.s { color: var(--code-str); }
-.b { color: var(--code-bool); }
+    /* Glassmorphism 2.0 / Liquid Glass */
+    .glass-panel {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.65), rgba(2, 6, 23, 0.8));
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      box-shadow: 
+        0 8px 32px -4px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    }
 
-.areas { list-style: none; margin: 0; padding: 0; }
-.areas li { display: grid; grid-template-columns: 24px 220px minmax(0, 1fr); gap: 16px; align-items: start; padding: 20px 0; border-top: 1px solid var(--line); }
-.areas li:first-child { border-top: 0; padding-top: 0; }
-.areas li:last-child { padding-bottom: 0; }
-.areas .dot { width: 10px; height: 10px; margin-top: 10px; border-radius: 50%; background: var(--grad); }
-.areas h3 { margin: 0; }
-.areas p { margin: 0; color: var(--muted); }
-@media (max-width: 700px) {
-  .areas li { grid-template-columns: 24px minmax(0, 1fr); }
-  .areas p { grid-column: 2; }
-}
+    /* Efeito Spotlight que segue o mouse nos cards */
+    .spotlight-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: radial-gradient(
+        420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(56, 189, 248, 0.45),
+        transparent 60%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
 
-.diagram { overflow-x: auto; }
-.diagram svg { display: block; width: 100%; min-width: 760px; height: auto; }
-.diagram .node { fill: var(--glass-soft); stroke: none; }
-.diagram .core { fill: var(--glass); stroke: url(#gem); stroke-width: 2.5; }
-.diagram .data { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
-.diagram .t { fill: var(--text); font-family: var(--sans); font-weight: 600; font-size: 15px; }
-.diagram .u { fill: var(--muted); font-family: var(--sans); font-size: 12.5px; }
-.diagram .flow { fill: none; stroke: var(--muted); stroke-width: 1.8; opacity: 0.7; }
-.diagram marker path { fill: var(--muted); }
-.caption { margin: 18px 0 0; color: var(--muted); font-size: 0.93rem; max-width: 68ch; }
+    .spotlight-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        480px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(37, 99, 235, 0.12),
+        transparent 60%
+      );
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
 
-.group + .group { margin-top: 28px; }
-.group h3 { color: var(--muted); font-size: 0.98rem; font-weight: 500; margin-bottom: 12px; }
-.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.chips li { font-size: 0.95rem; font-weight: 500; padding: 9px 18px; border-radius: 999px; background: var(--glass-soft); transition: background 0.15s; }
-.chips li:hover { background: var(--accent-soft); }
+    .spotlight-card:hover::before,
+    .spotlight-card:hover::after {
+      opacity: 1;
+    }
 
-.jobs { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-.job { position: relative; display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 18px; padding: 22px; background: var(--glass); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); border-radius: 22px; }
-.job.now::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  padding: 2px;
-  border-radius: inherit;
-  background: var(--grad);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  pointer-events: none;
-}
-.logo { position: relative; width: 56px; height: 56px; border-radius: 16px; background: var(--surface-2); overflow: hidden; display: grid; place-items: center; font-weight: 600; font-size: 0.95rem; color: var(--muted); }
-.logo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #ffffff; }
-.job h3 { margin-bottom: 2px; }
-.org { margin: 0; font-weight: 500; }
-.when { margin: 2px 0 0; color: var(--muted); font-size: 0.93rem; }
-.tag { display: inline-block; font-weight: 600; font-size: 0.78rem; padding: 3px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); vertical-align: middle; margin-left: 10px; }
-.roles { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
-.roles li { padding: 12px 16px; border-radius: 14px; background: var(--glass-soft); }
-.roles strong { font-weight: 600; }
-.roles span { display: block; color: var(--muted); font-size: 0.92rem; }
+    .spotlight-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 
+        0 20px 40px -10px rgba(2, 6, 23, 0.85),
+        0 0 28px -8px rgba(6, 182, 212, 0.22),
+        inset 0 1px 0 0 rgba(186, 230, 253, 0.18);
+    }
 
-.contact { padding: 64px 0 56px; }
-.contact .panel { padding: 52px 40px; border-radius: 32px; }
-.contact h2 { font-size: clamp(1.9rem, 4.6vw, 3rem); max-width: 18ch; line-height: 1.12; margin-bottom: 14px; }
-.contact h2 span {
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: var(--accent);
-}
-.contact p { color: var(--muted); max-width: 52ch; margin: 0 0 28px; }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.btn { display: inline-flex; align-items: center; font-weight: 600; font-size: 1rem; text-decoration: none; padding: 14px 26px; border-radius: 999px; background: var(--glass); border: 1px solid var(--glass-border); transition: background 0.15s; }
-.btn:hover { background: var(--glass-hover); }
-.btn.primary { background: var(--accent); border-color: transparent; color: var(--on-accent); }
-.btn.primary:hover { background: color-mix(in srgb, var(--accent) 88%, var(--text)); }
-@media (max-width: 620px) {
-  .contact .panel { padding: 34px 22px; }
-}
-footer { padding: 8px 0 40px; color: var(--muted); font-size: 0.9rem; }
-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
-.bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; contain: strict; }
-.bg i { position: absolute; border-radius: 50%; opacity: var(--blob-op); will-change: transform; }
-.bg .b1 { width: 60vmax; height: 60vmax; left: -16vmax; top: -22vmax; background: radial-gradient(circle, #4285f4 0%, rgba(66, 133, 244, 0) 68%); animation: drift-a 28s ease-in-out infinite alternate; }
-.bg .b2 { width: 54vmax; height: 54vmax; right: -18vmax; top: 4vmax; background: radial-gradient(circle, #9b72cb 0%, rgba(155, 114, 203, 0) 68%); animation: drift-b 34s ease-in-out infinite alternate; }
-.bg .b3 { width: 50vmax; height: 50vmax; left: 8vmax; bottom: -26vmax; background: radial-gradient(circle, #d96570 0%, rgba(217, 101, 112, 0) 68%); animation: drift-c 31s ease-in-out infinite alternate; }
-.bg .b4 { width: 36vmax; height: 36vmax; right: 6vmax; bottom: -12vmax; background: radial-gradient(circle, #4fc3f7 0%, rgba(79, 195, 247, 0) 68%); animation: drift-d 38s ease-in-out infinite alternate; }
-@keyframes drift-a { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(16vmax, 12vmax, 0) scale(1.18); } }
-@keyframes drift-b { from { transform: translate3d(0, 0, 0) scale(1.1); } to { transform: translate3d(-18vmax, 14vmax, 0) scale(0.92); } }
-@keyframes drift-c { from { transform: translate3d(0, 0, 0) scale(0.95); } to { transform: translate3d(20vmax, -12vmax, 0) scale(1.2); } }
-@keyframes drift-d { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(-14vmax, -16vmax, 0) scale(1.25); } }
-@media (prefers-reduced-motion: reduce) {
-  .bg i { animation: none; }
-}
-@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
-  .status, .theme-btn, .prompt, .card, .panel, .job {
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
-  }
-}
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .status, .theme-btn, .prompt, .card, .panel, .job, .topbar { background: var(--surface); }
-}
-</style>
+    /* Glass Pill / Badge */
+    .glass-badge {
+      background: rgba(30, 58, 138, 0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    /* Botão futurista com brilho */
+    .btn-cyber {
+      background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+      box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      transition: all 0.3s ease;
+    }
+    .btn-cyber:hover {
+      box-shadow: 0 0 36px 0px rgba(56, 189, 248, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Texto Gradiente */
+    .text-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #bae6fd 45%, #38bdf8 80%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Animação Reveal on Scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Scrollbar customizada */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #1e3a8a, #06b6d4);
+      border-radius: 9999px;
+    }
+
+    /* Pulso de diagrama SVG */
+    .flow-line {
+      stroke-dasharray: 8 8;
+      animation: dash 2.2s linear infinite;
+    }
+
+    /* Cursor piscante do terminal */
+    .cursor-blink {
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
 </head>
-<body>
+<body class="antialiased selection:bg-cyan-500/30 selection:text-sky-200">
 
-<div class="bg" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i></div>
-
-<svg class="defs" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="gem" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4285f4" />
-      <stop offset="0.5" stop-color="#9b72cb" />
-      <stop offset="1" stop-color="#d96570" />
-    </linearGradient>
-    <symbol id="seta" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9" />
-    </symbol>
-    <symbol id="enviar" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M5 12l7-7 7 7" />
-    </symbol>
-  </defs>
-</svg>
-
-<header class="topbar">
-  <div class="wrap">
-    <a class="brand" href="#topo"><span class="mono" aria-hidden="true">AR</span>Andrey Ramos</a>
-    <nav class="menu" aria-label="Navegação principal">
-      <a href="#sobre">Sobre</a>
-      <a href="#atuacao">Atuação</a>
-      <a href="#arquitetura">Arquitetura</a>
-      <a href="#stack">Stack</a>
-      <a href="#experiencia">Experiência</a>
-      <a href="#formacao">Formação</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <button class="theme-btn" id="theme" type="button" aria-pressed="false"><span>Modo escuro</span></button>
+  <!-- Camada de Fundo Espacial / Aurora + Grade Cibernética -->
+  <div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+    <div class="absolute inset-0 cyber-grid"></div>
+    <!-- Orbs de luz atmosférica -->
+    <div class="absolute -top-40 -left-32 w-[520px] h-[520px] rounded-full bg-blue-600/20 blur-[130px] animate-pulse-slow"></div>
+    <div class="absolute top-1/4 -right-32 w-[480px] h-[480px] rounded-full bg-cyan-500/15 blur-[140px] animate-float"></div>
+    <div class="absolute -bottom-40 left-1/3 w-[560px] h-[560px] rounded-full bg-indigo-900/25 blur-[150px]"></div>
   </div>
-</header>
 
-<main id="topo">
-  <section class="hero">
-    <div class="wrap">
-      <p class="status"><i></i>Disponível para novas oportunidades</p>
-      <h1>
-        <span class="hi">Olá, eu sou o Andrey.</span>
-        <span class="sub">Como posso ajudar no seu próximo projeto?</span>
-      </h1>
-      <p class="role">Desenvolvedor full stack especializado em APIs multi-tenant e na modernização de sistemas legados, com mais de nove anos de experiência.</p>
-
-      <a class="prompt" href="https://www.linkedin.com/in/andrey-ramos-6302722a3" target="_blank" rel="noopener noreferrer" aria-label="Enviar uma mensagem para Andrey Ramos no LinkedIn">
-        <span class="ph" id="ph" aria-hidden="true">Preciso de uma API multi-tenant para o meu produto</span>
-        <span class="send"><svg aria-hidden="true"><use href="#enviar" /></svg></span>
+  <!-- Navbar Flutuante em Liquid Glass -->
+  <header class="fixed top-4 inset-x-0 z-50 px-4">
+    <nav class="max-w-6xl mx-auto glass-panel rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between">
+      <a href="#topo" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-400 p-[1px] shadow-lg shadow-cyan-500/20">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center font-mono font-bold text-sky-300 text-sm group-hover:text-white transition">
+            AR
+          </div>
+        </div>
+        <div class="hidden sm:block">
+          <span class="font-display font-bold text-sm tracking-wide text-white block leading-none">Andrey Ramos</span>
+          <span class="font-mono text-[11px] text-cyan-400/80">@dreyranos</span>
+        </div>
       </a>
-      <p class="hint">Descreva sua necessidade em uma mensagem no LinkedIn.</p>
 
-      <div class="cards">
-        <a class="card" href="#experiencia">Conheça minha trajetória profissional<span class="go"><svg aria-hidden="true"><use href="#seta" /></svg></span></a>
-        <a class="card" href="#arquitetura">Veja uma arquitetura multi-tenant de referência<span class="go"><svg aria-hidden="true"><use href="#seta" /></svg></span></a>
-        <a class="card" href="#stack">Explore as tecnologias que utilizo<span class="go"><svg aria-hidden="true"><use href="#seta" /></svg></span></a>
-        <a class="card" href="#atuacao">Entenda minhas áreas de atuação<span class="go"><svg aria-hidden="true"><use href="#seta" /></svg></span></a>
+      <!-- Links Desktop -->
+      <div class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
+        <a href="#sobre" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition">Sobre</a>
+        <a href="#arquitetura" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition">Arquitetura</a>
+        <a href="#stack" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition">Stack</a>
+        <a href="#experiencia" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition">Experiência</a>
+        <a href="#github" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition">GitHub</a>
       </div>
-    </div>
-  </section>
 
-  <section class="sec" id="sobre">
-    <div class="wrap">
-      <div class="sec-head"><h2>Sobre</h2></div>
-      <p class="sec-lead">Quem sou e como trabalho.</p>
-      <div class="panel about">
-        <div>
-          <p>Atuo com tecnologia desde 2017. Comecei em suporte e infraestrutura de TI, passei por gestão e hoje trabalho como desenvolvedor full stack, o que me dá uma visão completa de como um sistema é construído, entregue e mantido.</p>
-          <p>Minha experiência combina <strong>arquitetura de APIs multi-tenant</strong>, <strong>modernização de sistemas legados</strong> e <strong>desenvolvimento de aplicações mobile e desktop</strong>. Prefiro mudanças incrementais e bem documentadas a reescritas arriscadas.</p>
-          <p class="pull"><strong>Princípios de engenharia:</strong> código legível, decisões documentadas, mudanças incrementais e automação de tarefas repetitivas.</p>
+      <!-- Status & CTA -->
+      <div class="flex items-center gap-3">
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-xs font-mono text-cyan-300">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+          </span>
+          Disponível para oportunidades
         </div>
-        <div class="console" role="img" aria-label="Resumo do perfil de Andrey Ramos em formato de resposta de API">
-          <div class="console-head"><span>GET /v1/andrey-ramos</span><b>200 OK</b></div>
-<pre>{
-  <span class="k">"nome"</span>: <span class="s">"Andrey Ramos"</span>,
-  <span class="k">"funcao"</span>: <span class="s">"Desenvolvedor Full Stack"</span>,
-  <span class="k">"local"</span>: <span class="s">"São José do Rio Preto, SP"</span>,
-  <span class="k">"experiencia_anos"</span>: <span class="b">9</span>,
-  <span class="k">"especialidades"</span>: [
-    <span class="s">"APIs multi-tenant"</span>,
-    <span class="s">"React Native (Expo)"</span>,
-    <span class="s">"Delphi FMX"</span>,
-    <span class="s">"Firebird SQL"</span>
+        <a href="#oportunidades" class="btn-cyber px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white flex items-center gap-2">
+          <span>Conectar</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="topo" class="pt-28 sm:pt-36 pb-20 px-4">
+
+    <!-- HERO SECTION -->
+    <section class="max-w-6xl mx-auto mb-24 sm:mb-32">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        
+        <!-- Coluna Esquerda: Apresentação & CTAs -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex flex-wrap items-center gap-2">
+            <span class="glass-badge px-3 py-1 rounded-full text-xs font-mono text-sky-300 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              9+ ANOS DE EXPERIÊNCIA
+            </span>
+            <span class="glass-badge px-3 py-1 rounded-full text-xs font-mono text-slate-300 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              São José do Rio Preto, SP · Brasil
+            </span>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08]">
+            <span class="text-white">Andrey Ramos</span>
+            <span class="block text-gradient mt-2 text-2xl sm:text-4xl lg:text-[2.65rem] font-semibold">
+              Desenvolvedor Full Stack & Engenharia de Software
+            </span>
+          </h1>
+
+          <!-- Terminal Typing Effect -->
+          <div class="glass-panel rounded-xl px-4 py-3 flex items-center gap-3 font-mono text-xs sm:text-sm text-sky-300 border-sky-400/20">
+            <span class="text-cyan-400 select-none font-bold">&gt;_</span>
+            <span id="typing-text" class="truncate">APIs Multi-Tenant | Arquitetura Backend</span>
+            <span class="w-2 h-4 bg-cyan-400 cursor-blink inline-block shrink-0"></span>
+          </div>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Construo e sustento sistemas em produção combinando <strong class="text-white font-medium">arquitetura de APIs multi-tenant</strong>, <strong class="text-white font-medium">modernização de sistemas legados</strong> e <strong class="text-white font-medium">aplicações mobile, web e desktop</strong> com foco em desempenho, escalabilidade e valor real de negócio.
+          </p>
+
+          <!-- Botões de Ação -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#oportunidades" class="btn-cyber px-6 py-3.5 rounded-xl font-semibold text-white text-sm sm:text-base flex items-center gap-2.5">
+              <span>Explorar Oportunidades & Contato</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer" class="glass-panel px-6 py-3.5 rounded-xl font-semibold text-slate-200 hover:text-white text-sm sm:text-base flex items-center gap-2.5 hover:border-sky-400/40 transition">
+              <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span>GitHub @dreyranos</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Console / Holograma de Engenharia -->
+        <div class="lg:col-span-5">
+          <div class="glass-panel spotlight-card rounded-3xl p-6 relative overflow-hidden">
+            <!-- Barra superior estilo janela -->
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-400/80"></span>
+              </div>
+              <span class="font-mono text-[11px] text-slate-400">engineering_profile.json</span>
+            </div>
+
+            <!-- Conteúdo JSON estilizado -->
+            <pre class="font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto text-slate-300"><code>{
+  <span class="text-sky-400">"status"</span>: <span class="text-emerald-400">"DISPONÍVEL_PARA_OPORTUNIDADES"</span>,
+  <span class="text-sky-400">"experience_years"</span>: <span class="text-amber-300">9+</span>,
+  <span class="text-sky-400">"current_role"</span>: <span class="text-cyan-300">"Full Stack @ PROANSI"</span>,
+  <span class="text-sky-400">"core_focus"</span>: [
+    <span class="text-blue-300">"APIs Multi-Tenant (Horse / .NET)"</span>,
+    <span class="text-blue-300">"React Native (Expo) & Angular"</span>,
+    <span class="text-blue-300">"Delphi FMX / VCL & Firebird SQL"</span>,
+    <span class="text-blue-300">"Automação Python, Bash & IA"</span>
   ],
-  <span class="k">"disponivel"</span>: <span class="b">true</span>
-}</pre>
+  <span class="text-sky-400">"principles"</span>: [
+    <span class="text-slate-200">"Código legível"</span>,
+    <span class="text-slate-200">"Decisões documentadas"</span>,
+    <span class="text-slate-200">"Mudanças incrementais"</span>,
+    <span class="text-slate-200">"Automação contínua"</span>
+  ]
+}</code></pre>
+
+            <!-- Mini métricas inferiores -->
+            <div class="grid grid-cols-3 gap-3 mt-5 pt-4 border-t border-white/10 text-center">
+              <div class="rounded-xl bg-white/[0.03] p-2.5 border border-white/5">
+                <div class="font-display font-bold text-lg text-white">9+</div>
+                <div class="font-mono text-[10px] text-slate-400 uppercase">Anos em TI</div>
+              </div>
+              <div class="rounded-xl bg-white/[0.03] p-2.5 border border-white/5">
+                <div class="font-display font-bold text-lg text-cyan-400">Full</div>
+                <div class="font-mono text-[10px] text-slate-400 uppercase">Stack & Arch</div>
+              </div>
+              <div class="rounded-xl bg-white/[0.03] p-2.5 border border-white/5">
+                <div class="font-display font-bold text-lg text-sky-300">Prod</div>
+                <div class="font-mono text-[10px] text-slate-400 uppercase">Sistemas Reais</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="sec" id="atuacao">
-    <div class="wrap">
-      <div class="sec-head"><h2>Áreas de atuação</h2></div>
-      <p class="sec-lead">Onde concentro meu trabalho.</p>
-      <ul class="panel areas">
-        <li><i class="dot"></i><h3>Backend e arquitetura</h3><p>Projeto e desenvolvimento de APIs, modelagem multi-tenant, integrações e padronização de serviços.</p></li>
-        <li><i class="dot"></i><h3>Desenvolvimento mobile</h3><p>Aplicações com React Native (Expo) e NativeWind, além de soluções desktop e mobile em Delphi FMX.</p></li>
-        <li><i class="dot"></i><h3>Banco de dados e legado</h3><p>Firebird SQL, otimização de consultas e refatoração incremental de sistemas legados.</p></li>
-        <li><i class="dot"></i><h3>Automação e IA</h3><p>Scripts em Python e Bash, pipelines de automação e fluxos de trabalho com inteligência artificial.</p></li>
-        <li><i class="dot"></i><h3>Android customizado</h3><p>Customização e build de ROMs com AOSP e LineageOS.</p></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="sec" id="arquitetura">
-    <div class="wrap">
-      <div class="sec-head"><h2>Arquitetura de referência</h2></div>
-      <p class="sec-lead">O tipo de solução em que mais atuo.</p>
-      <div class="panel">
-        <div class="diagram">
-          <svg viewBox="0 0 960 320" role="img" aria-labelledby="diag-t diag-d">
-            <title id="diag-t">Arquitetura de referência</title>
-            <desc id="diag-d">Aplicativo mobile, aplicativo desktop e automações consomem uma API multi-tenant, que se conecta a serviços de negócio e integrações, ambos sobre um banco Firebird SQL.</desc>
-            <defs>
-              <marker id="ponta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-                <path d="M0 0 10 5 0 10z" />
-              </marker>
-            </defs>
-            <path class="flow" d="M210 51 C250 51 250 160 290 160" marker-end="url(#ponta)" />
-            <path class="flow" d="M210 160 L290 160" marker-end="url(#ponta)" />
-            <path class="flow" d="M210 269 C250 269 250 160 290 160" marker-end="url(#ponta)" />
-            <path class="flow" d="M490 160 C525 160 525 71 560 71" marker-end="url(#ponta)" />
-            <path class="flow" d="M490 160 C525 160 525 249 560 249" marker-end="url(#ponta)" />
-            <path class="flow" d="M740 71 C770 71 770 160 800 160" marker-end="url(#ponta)" />
-            <path class="flow" d="M740 249 C770 249 770 160 800 160" marker-end="url(#ponta)" />
-            <rect class="node" x="10" y="20" width="200" height="62" rx="18" />
-            <text class="t" x="30" y="47">App mobile</text>
-            <text class="u" x="30" y="67">React Native + Expo</text>
-            <rect class="node" x="10" y="129" width="200" height="62" rx="18" />
-            <text class="t" x="30" y="156">App desktop</text>
-            <text class="u" x="30" y="176">Delphi FMX</text>
-            <rect class="node" x="10" y="238" width="200" height="62" rx="18" />
-            <text class="t" x="30" y="265">Automações</text>
-            <text class="u" x="30" y="285">Python, Bash e IA</text>
-            <rect class="core" x="290" y="110" width="200" height="100" rx="22" />
-            <text class="t" x="312" y="145">API multi-tenant</text>
-            <text class="u" x="312" y="168">Autenticação e isolamento</text>
-            <text class="u" x="312" y="186">por tenant</text>
-            <rect class="node" x="560" y="40" width="180" height="62" rx="18" />
-            <text class="t" x="580" y="67">Serviços de negócio</text>
-            <text class="u" x="580" y="87">Regras e processos</text>
-            <rect class="node" x="560" y="218" width="180" height="62" rx="18" />
-            <text class="t" x="580" y="245">Integrações</text>
-            <text class="u" x="580" y="265">Sistemas externos</text>
-            <rect class="data" x="800" y="115" width="150" height="90" rx="22" />
-            <text class="t" x="822" y="152">Firebird SQL</text>
-            <text class="u" x="822" y="172">Dados e legado</text>
-          </svg>
+    <!-- SEÇÃO: SOBRE & ÁREAS DE ATUAÇÃO (BENTO GRID) -->
+    <section id="sobre" class="max-w-6xl mx-auto mb-24 sm:mb-32 reveal">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-cyan-400">// Visão & Especialidades</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Sobre & Áreas de Atuação</h2>
         </div>
-        <p class="caption">Ilustração genérica do padrão de solução: múltiplos clientes consumindo uma API com isolamento por tenant, sobre uma camada de dados legada e modernizada de forma incremental.</p>
+        <p class="text-slate-400 text-sm max-w-md">
+          Princípios de engenharia aplicados em sistemas críticos: código legível, decisões documentadas, evolução incremental e automação.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <section class="sec" id="stack">
-    <div class="wrap">
-      <div class="sec-head"><h2>Stack tecnológica</h2></div>
-      <p class="sec-lead">Ferramentas que uso no dia a dia.</p>
-      <div class="panel">
-        <div class="group">
-          <h3>Linguagens e frameworks</h3>
-          <ul class="chips">
-            <li>TypeScript</li><li>JavaScript</li><li>React</li><li>React Native</li><li>Expo</li><li>NativeWind</li><li>Tailwind CSS</li><li>Python</li><li>Bash</li><li>Delphi FMX</li>
-          </ul>
+      <!-- Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-6 gap-5">
+
+        <!-- Card Destaque: Princípios -->
+        <div class="md:col-span-6 glass-panel spotlight-card rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div class="space-y-2 max-w-3xl">
+            <div class="inline-flex items-center gap-2 text-xs font-mono text-sky-300 bg-sky-500/10 border border-sky-400/20 px-3 py-1 rounded-full">
+              <span>Manifesto Técnico</span>
+            </div>
+            <p class="text-lg sm:text-xl text-slate-100 font-medium leading-relaxed">
+              “Código legível, decisões documentadas, mudanças incrementais e automação de tudo que for repetitivo.”
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 shrink-0">
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 font-mono text-xs text-cyan-300">Escalabilidade</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 font-mono text-xs text-sky-300">Desempenho</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 font-mono text-xs text-blue-300">Valor ao Negócio</span>
+          </div>
         </div>
-        <div class="group">
-          <h3>Dados, infraestrutura e ferramentas</h3>
-          <ul class="chips">
-            <li>Firebird SQL</li><li>Linux</li><li>Windows</li><li>Android (AOSP e LineageOS)</li><li>Git</li><li>Docker</li>
-          </ul>
+
+        <!-- Card 1: Backend & Arquitetura -->
+        <div class="md:col-span-3 glass-panel spotlight-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-sky-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white mb-2">Backend & Arquitetura</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              APIs em <strong class="text-white">Delphi com Horse</strong> e em <strong class="text-white">C# .NET</strong>, modelagem multi-tenant com isolamento por cliente, integrações complexas e padronização de serviços distribuídos.
+            </p>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-blue-950/60 border border-blue-500/20 text-sky-300">Delphi Horse</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-blue-950/60 border border-blue-500/20 text-sky-300">C# .NET</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-blue-950/60 border border-blue-500/20 text-sky-300">Multi-Tenant</span>
+          </div>
         </div>
-        <div class="group">
-          <h3>Práticas</h3>
-          <ul class="chips">
-            <li>APIs multi-tenant</li><li>Refatoração de legado</li><li>Automação de processos</li><li>Fluxos de trabalho com IA</li>
-          </ul>
+
+        <!-- Card 2: Web, Mobile e Desktop -->
+        <div class="md:col-span-3 glass-panel spotlight-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white mb-2">Web, Mobile & Desktop</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Interfaces web modernas com <strong class="text-white">Angular e React</strong>, aplicativos mobile com <strong class="text-white">React Native (Expo) + NativeWind</strong> e aplicações desktop robustas em <strong class="text-white">Delphi VCL e FMX</strong>.
+            </p>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-cyan-950/60 border border-cyan-500/20 text-cyan-300">React Native + Expo</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-cyan-950/60 border border-cyan-500/20 text-cyan-300">Angular / React</span>
+            <span class="font-mono text-[11px] px-2.5 py-1 rounded-lg bg-cyan-950/60 border border-cyan-500/20 text-cyan-300">Delphi FMX / VCL</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Banco de Dados & Legado -->
+        <div class="md:col-span-2 glass-panel spotlight-card rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-amber-500/10 border border-amber-400/25 flex items-center justify-center text-amber-300 mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-white mb-2">Banco de Dados & Legado</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Especialista em <strong class="text-white">Firebird SQL</strong>, tuning e otimização de consultas críticas e refatoração incremental de sistemas legados sem parar a operação.
+            </p>
+          </div>
+          <div class="mt-5 font-mono text-[11px] text-amber-300/90">Firebird SQL · Refatoração Segura</div>
+        </div>
+
+        <!-- Card 4: Automação & IA -->
+        <div class="md:col-span-2 glass-panel spotlight-card rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-violet-500/15 border border-violet-400/30 flex items-center justify-center text-violet-300 mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-white mb-2">Automação & IA</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Scripts avançados em <strong class="text-white">Python e Bash</strong>, pipelines de automação operacional e fluxos de trabalho inteligentes integrados com <strong class="text-white">IA</strong>.
+            </p>
+          </div>
+          <div class="mt-5 font-mono text-[11px] text-violet-300/90">Python · Bash · Fluxos de IA</div>
+        </div>
+
+        <!-- Card 5: Android Customizado -->
+        <div class="md:col-span-2 glass-panel spotlight-card rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center text-emerald-300 mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-white mb-2">Android Customizado</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Customização em baixo nível, compilação e build de ROMs Android sob medida utilizando <strong class="text-white">AOSP</strong> e <strong class="text-white">LineageOS</strong>.
+            </p>
+          </div>
+          <div class="mt-5 font-mono text-[11px] text-emerald-300/90">AOSP · LineageOS · Linux</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO: ARQUITETURA DE REFERÊNCIA INTERATIVA -->
+    <section id="arquitetura" class="max-w-6xl mx-auto mb-24 sm:mb-32 reveal">
+      <div class="mb-10">
+        <span class="font-mono text-xs uppercase tracking-widest text-cyan-400">// Blueprint em Produção</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Arquitetura de Referência</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-3xl">
+          Modelo que resume o tipo de solução em que mais atuo: clientes múltiplos consumindo uma API multi-tenant com isolamento por tenant sobre uma camada de dados legada e modernizada. <span class="text-sky-300">Clique nos nós abaixo para inspecionar cada camada.</span>
+        </p>
+      </div>
+
+      <div class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+        <!-- Fluxograma Interativo Responsivo -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center relative z-10">
+          
+          <!-- Coluna 1: Clientes Múltiplos -->
+          <div class="lg:col-span-3 space-y-3">
+            <div class="font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-2">01 · Camada Cliente</div>
+            
+            <button onclick="selectNode('mobile')" id="node-mobile" class="arch-node w-full text-left p-4 rounded-2xl bg-deepblue/30 border border-sky-400/30 hover:border-cyan-400 transition group">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-semibold text-white text-sm">App Mobile</span>
+                <span class="w-2 h-2 rounded-full bg-sky-400 group-hover:animate-ping"></span>
+              </div>
+              <div class="font-mono text-xs text-sky-300 mt-1">React Native + Expo</div>
+            </button>
+
+            <button onclick="selectNode('desktop')" id="node-desktop" class="arch-node w-full text-left p-4 rounded-2xl bg-deepblue/30 border border-sky-400/30 hover:border-cyan-400 transition group">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-semibold text-white text-sm">App Desktop</span>
+                <span class="w-2 h-2 rounded-full bg-sky-400 group-hover:animate-ping"></span>
+              </div>
+              <div class="font-mono text-xs text-sky-300 mt-1">Delphi FMX / VCL</div>
+            </button>
+
+            <button onclick="selectNode('auto')" id="node-auto" class="arch-node w-full text-left p-4 rounded-2xl bg-deepblue/30 border border-sky-400/30 hover:border-cyan-400 transition group">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-semibold text-white text-sm">Automações</span>
+                <span class="w-2 h-2 rounded-full bg-sky-400 group-hover:animate-ping"></span>
+              </div>
+              <div class="font-mono text-xs text-sky-300 mt-1">Python / Bash / IA</div>
+            </button>
+          </div>
+
+          <!-- Conector SVG Animado 1 -> 2 (Desktop) -->
+          <div class="hidden lg:flex lg:col-span-1 justify-center">
+            <svg class="w-full h-48" viewBox="0 0 80 200" fill="none">
+              <path d="M0 30 C 40 30, 40 100, 80 100" stroke="url(#grad1)" stroke-width="2" class="flow-line"/>
+              <path d="M0 100 L 80 100" stroke="url(#grad1)" stroke-width="2" class="flow-line"/>
+              <path d="M0 170 C 40 170, 40 100, 80 100" stroke="url(#grad1)" stroke-width="2" class="flow-line"/>
+              <defs>
+                <linearGradient id="grad1" x1="0" y1="0" x2="80" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#38bdf8"/>
+                  <stop offset="1" stop-color="#06b6d4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <!-- Coluna 2: API Gateway -->
+          <div class="lg:col-span-3">
+            <div class="font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-2">02 · Núcleo Multi-Tenant</div>
+            <button onclick="selectNode('gateway')" id="node-gateway" class="arch-node w-full text-left p-6 rounded-2xl bg-gradient-to-br from-blue-600/30 to-cyan-500/20 border-2 border-cyan-400/60 shadow-lg shadow-cyan-500/15 hover:scale-[1.02] transition">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 rounded bg-cyan-400/20 text-cyan-300 font-mono text-[10px] uppercase">Core Gateway</span>
+              </div>
+              <div class="font-display font-bold text-lg text-white">API Gateway</div>
+              <div class="font-mono text-xs text-sky-200 mt-1">Autenticação + Isolamento por Tenant</div>
+              <div class="mt-3 pt-3 border-t border-white/10 font-mono text-[11px] text-slate-300">
+                Horse (Delphi) · C# .NET
+              </div>
+            </button>
+          </div>
+
+          <!-- Conector SVG Animado 2 -> 3 -->
+          <div class="hidden lg:flex lg:col-span-1 justify-center">
+            <svg class="w-full h-36" viewBox="0 0 80 140" fill="none">
+              <path d="M0 70 C 40 70, 40 30, 80 30" stroke="#38bdf8" stroke-width="2" class="flow-line"/>
+              <path d="M0 70 C 40 70, 40 110, 80 110" stroke="#06b6d4" stroke-width="2" class="flow-line"/>
+            </svg>
+          </div>
+
+          <!-- Coluna 3: Serviços & Dados -->
+          <div class="lg:col-span-4 space-y-4">
+            <div class="font-mono text-[11px] uppercase tracking-wider text-slate-400 mb-2">03 · Domínio & Persistência</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
+              <button onclick="selectNode('services')" id="node-services" class="arch-node w-full text-left p-4 rounded-2xl bg-cyan-950/40 border border-cyan-400/30 hover:border-cyan-300 transition">
+                <div class="font-display font-semibold text-white text-sm">Serviços de Negócio & Integrações</div>
+                <div class="font-mono text-xs text-cyan-300 mt-1">Regras padronizadas & mensageria/APIs</div>
+              </button>
+
+              <button onclick="selectNode('database')" id="node-database" class="arch-node w-full text-left p-4 rounded-2xl bg-obsidian/90 border border-amber-400/35 hover:border-amber-300 transition">
+                <div class="flex items-center justify-between">
+                  <span class="font-display font-semibold text-white text-sm">Firebird SQL</span>
+                  <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-amber-500/15 text-amber-300">Data Layer</span>
+                </div>
+                <div class="font-mono text-xs text-slate-300 mt-1">Base legada modernizada & otimizada</div>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Painel Inspetor Dinâmico da Arquitetura -->
+        <div id="arch-inspector" class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+              <span id="inspector-title" class="font-display font-bold text-white text-base">API Gateway — Autenticação + Tenant</span>
+            </div>
+            <p id="inspector-desc" class="text-slate-300 text-sm mt-1">
+              Roteamento centralizado com validação de credenciais e resolução automática de contexto por tenant, permitindo que múltiplos clientes operem de forma isolada e segura sobre a mesma infraestrutura.
+            </p>
+          </div>
+          <span id="inspector-tag" class="shrink-0 font-mono text-xs px-3 py-1.5 rounded-xl bg-cyan-500/10 border border-cyan-400/25 text-cyan-300">
+            Delphi Horse · C# .NET
+          </span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="sec" id="experiencia">
-    <div class="wrap">
-      <div class="sec-head"><h2>Experiência profissional</h2></div>
-      <p class="sec-lead">Da infraestrutura ao desenvolvimento full stack.</p>
-      <ol class="jobs">
-        <li class="job now">
-          <div class="logo"><span>PR</span><img src="./assets/proansi.jpg" alt="Logo da PROANSI" loading="lazy" onerror="this.remove()" /></div>
-          <div>
-            <h3>Desenvolvedor Full Stack<span class="tag">Atual</span></h3>
-            <p class="org">PROANSI</p>
-            <p class="when">jul. 2023 a presente · 3 anos e 5 meses · São José do Rio Preto, SP</p>
+    <!-- SEÇÃO: STACK TECNOLÓGICA INTERATIVA -->
+    <section id="stack" class="max-w-6xl mx-auto mb-24 sm:mb-32 reveal">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-cyan-400">// Ferramentas & Ecossistema</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Stack Tecnológica</h2>
+        </div>
+
+        <!-- Filtros -->
+        <div class="flex flex-wrap gap-2" id="stack-filters">
+          <button data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-xl font-mono text-xs bg-cyan-500/20 border border-cyan-400/50 text-white transition">Todas</button>
+          <button data-filter="backend" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-white/5 border border-white/10 text-slate-300 hover:text-white transition">Backend & APIs</button>
+          <button data-filter="frontend" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-white/5 border border-white/10 text-slate-300 hover:text-white transition">Web & Mobile</button>
+          <button data-filter="infra" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-white/5 border border-white/10 text-slate-300 hover:text-white transition">Dados & Infra</button>
+          <button data-filter="praticas" class="filter-btn px-3.5 py-1.5 rounded-xl font-mono text-xs bg-white/5 border border-white/10 text-slate-300 hover:text-white transition">Práticas</button>
+        </div>
+      </div>
+
+      <!-- Grid de Badges Tech -->
+      <div id="stack-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5">
+        <!-- Populado via JS para facilitar filtro limpo -->
+      </div>
+    </section>
+
+    <!-- SEÇÃO: EXPERIÊNCIA PROFISSIONAL & FORMAÇÃO -->
+    <section id="experiencia" class="max-w-6xl mx-auto mb-24 sm:mb-32 reveal">
+      <div class="mb-12">
+        <span class="font-mono text-xs uppercase tracking-widest text-cyan-400">// Trajetória de 9+ Anos</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Experiência & Formação</h2>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8">
+        
+        <!-- Linha do Tempo Profissional -->
+        <div class="lg:col-span-8 relative pl-6 sm:pl-8 space-y-6 before:content-[''] before:absolute before:left-[11px] sm:before:left-[15px] before:top-2 before:bottom-2 before:w-[2px] before:bg-gradient-to-b before:from-cyan-400 before:via-blue-600 before:to-slate-800">
+
+          <!-- PROANSI -->
+          <div class="relative glass-panel spotlight-card rounded-2xl p-6 border-cyan-400/35">
+            <span class="absolute -left-[25px] sm:-left-[29px] top-7 w-4 h-4 rounded-full bg-cyan-400 ring-4 ring-obsidian shadow-[0_0_15px_#06b6d4]"></span>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <div class="flex items-center gap-2.5">
+                <h3 class="font-display text-lg sm:text-xl font-bold text-white">Desenvolvedor Full Stack</h3>
+                <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-400/40 font-mono text-[10px] font-semibold text-cyan-300 uppercase">Atual</span>
+              </div>
+              <span class="font-mono text-xs text-sky-300">jul. 2023 – presente · 3 anos 5 meses</span>
+            </div>
+            <div class="font-mono text-xs text-slate-400 mb-3">PROANSI · São José do Rio Preto, SP</div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Atuação direta no desenvolvimento full stack, arquitetura de APIs multi-tenant, evolução de aplicativos mobile e desktop e modernização contínua de sistemas em produção.
+            </p>
           </div>
-        </li>
-        <li class="job">
-          <div class="logo"><span>HE</span><img src="./assets/hepta.jpg" alt="Logo da Hepta" loading="lazy" onerror="this.remove()" /></div>
-          <div>
-            <h3>Analista de Suporte N2</h3>
-            <p class="org">Hepta Tecnologia e Informática</p>
-            <p class="when">out. 2022 a jun. 2023 · 9 meses · São José do Rio Preto, SP</p>
+
+          <!-- Hepta -->
+          <div class="relative glass-panel spotlight-card rounded-2xl p-5 sm:p-6">
+            <span class="absolute -left-[24px] sm:-left-[28px] top-7 w-3.5 h-3.5 rounded-full bg-blue-500 ring-4 ring-obsidian"></span>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+              <h3 class="font-display text-lg font-bold text-white">Analista de Suporte N2</h3>
+              <span class="font-mono text-xs text-slate-400">out. 2022 – jun. 2023 · 9 meses</span>
+            </div>
+            <div class="font-mono text-xs text-sky-400/90">Hepta Tecnologia e Informática · São José do Rio Preto, SP</div>
           </div>
-        </li>
-        <li class="job">
-          <div class="logo"><span>TM</span><img src="./assets/tesla.jpg" alt="Logo da Tesla Marcações Industriais" loading="lazy" onerror="this.remove()" /></div>
-          <div>
-            <h3>Gestor de TI</h3>
-            <p class="org">Tesla Marcações Industriais</p>
-            <p class="when">jun. 2022 a set. 2022 · 4 meses · São José do Rio Preto, SP</p>
+
+          <!-- Tesla -->
+          <div class="relative glass-panel spotlight-card rounded-2xl p-5 sm:p-6">
+            <span class="absolute -left-[24px] sm:-left-[28px] top-7 w-3.5 h-3.5 rounded-full bg-blue-600 ring-4 ring-obsidian"></span>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+              <h3 class="font-display text-lg font-bold text-white">Gestor de TI</h3>
+              <span class="font-mono text-xs text-slate-400">jun. 2022 – set. 2022 · 4 meses</span>
+            </div>
+            <div class="font-mono text-xs text-sky-400/90">Tesla Marcações Industriais · São José do Rio Preto, SP</div>
           </div>
-        </li>
-        <li class="job">
-          <div class="logo"><span>CV</span><img src="./assets/casavacinas.jpg" alt="Logo da Casa das Vacinas" loading="lazy" onerror="this.remove()" /></div>
-          <div>
-            <h3>Casa das Vacinas</h3>
-            <p class="when">jan. 2017 a jun. 2022 · 5 anos e 6 meses</p>
-            <ul class="roles">
-              <li><strong>Desenvolvedor</strong><span>jan. 2020 a jun. 2022 · 2 anos e 6 meses</span></li>
-              <li><strong>Assistente de TI</strong><span>jan. 2017 a jan. 2020 · 3 anos e 1 mês</span></li>
+
+          <!-- Casa das Vacinas -->
+          <div class="relative glass-panel spotlight-card rounded-2xl p-5 sm:p-6">
+            <span class="absolute -left-[24px] sm:-left-[28px] top-7 w-3.5 h-3.5 rounded-full bg-indigo-500 ring-4 ring-obsidian"></span>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2.5">
+                <h3 class="font-display text-lg font-bold text-white">Casa das Vacinas</h3>
+                <span class="px-2 py-0.5 rounded-md bg-blue-500/20 border border-blue-400/30 font-mono text-[10px] text-sky-300">5 anos e 6 meses</span>
+              </div>
+            </div>
+            <div class="space-y-2.5 pl-3 border-l border-white/10">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-sm font-semibold text-slate-100">↳ Desenvolvedor</span>
+                <span class="font-mono text-xs text-slate-400">jan. 2020 – jun. 2022 · 2 anos 6 meses</span>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-sm font-medium text-slate-300">↳ Assistente de TI</span>
+                <span class="font-mono text-xs text-slate-400">jan. 2017 – jan. 2020 · 3 anos 1 mês</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Coluna Direita: Formação Acadêmica & Resumo de Carreira -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="glass-panel spotlight-card rounded-3xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+              </div>
+              <div>
+                <span class="font-mono text-[10px] uppercase tracking-wider text-cyan-400">Formação Acadêmica</span>
+                <h3 class="font-display font-bold text-white text-base">Base Técnica</h3>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+              <div class="font-display font-semibold text-white text-sm">Etec Philadelpho Gouvêa Netto</div>
+              <div class="text-xs text-sky-300 mt-1">Curso Técnico Integrado em Tecnologia da Informação</div>
+              <div class="font-mono text-[11px] text-slate-400 mt-2">2014 – 2016</div>
+            </div>
+          </div>
+
+          <!-- Diferenciais para Contratantes / Parceiros -->
+          <div class="glass-panel spotlight-card rounded-3xl p-6">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-cyan-400">Por que trabalhar comigo</span>
+            <h3 class="font-display font-bold text-white text-lg mt-1 mb-4">Visão End-to-End</h3>
+            <ul class="space-y-3 text-sm text-slate-300">
+              <li class="flex items-start gap-2.5">
+                <span class="text-cyan-400 mt-0.5">▹</span>
+                <span>Vivência real de infraestrutura e suporte N2 até arquitetura e gestão de TI.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-cyan-400 mt-0.5">▹</span>
+                <span>Capacidade de manter o legado estável enquanto constrói o novo ecossistema.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-cyan-400 mt-0.5">▹</span>
+                <span>Foco pragmático em produtividade com automação (Python, Bash e IA).</span>
+              </li>
             </ul>
           </div>
-        </li>
-      </ol>
-    </div>
-  </section>
+        </div>
 
-  <section class="sec" id="formacao">
-    <div class="wrap">
-      <div class="sec-head"><h2>Formação acadêmica</h2></div>
-      <p class="sec-lead">Base técnica em tecnologia da informação.</p>
-      <ol class="jobs">
-        <li class="job">
-          <div class="logo"><span>ET</span><img src="./assets/etec.jpg" alt="Logo da Etec" loading="lazy" onerror="this.remove()" /></div>
-          <div>
-            <h3>Etec Philadelpho Gouvêa Netto</h3>
-            <p class="org">Curso Técnico Integrado em Tecnologia da Informação</p>
-            <p class="when">2014 a 2016</p>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: ATIVIDADE NO GITHUB -->
+    <section id="github" class="max-w-6xl mx-auto mb-24 sm:mb-32 reveal">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-cyan-400">// Código & Constância</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Atividade no GitHub</h2>
+        </div>
+        <a href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-sky-300 hover:text-cyan-300 flex items-center gap-1.5 transition">
+          <span>github.com/dreyranos</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-6 items-stretch">
+        <!-- Streak Stats -->
+        <div class="lg:col-span-5 glass-panel spotlight-card rounded-3xl p-5 flex flex-col items-center justify-center">
+          <img
+            src="https://streak-stats.demolab.com?user=dreyranos&theme=transparent&border=38bdf844&border_radius=12&ring=38bdf8&fire=06b6d4&currStreakLabel=bae6fd&sideLabels=94a3b8&currStreakNum=f8fafc&sideNums=e2e8f0&dates=94a3b8&locale=pt_BR"
+            alt="Sequência de contribuições no GitHub"
+            class="w-full max-w-md rounded-xl"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="hidden flex-col items-center text-center p-6">
+            <span class="font-mono text-sm text-sky-300">GitHub Streak @dreyranos</span>
+            <a href="https://github.com/dreyranos" target="_blank" class="mt-2 text-xs text-cyan-400 underline">Visualizar estatísticas direto no GitHub</a>
           </div>
-        </li>
-      </ol>
-    </div>
-  </section>
+        </div>
 
-  <section class="contact" id="contato">
-    <div class="wrap">
-      <div class="panel">
-        <h2><span>Vamos conversar sobre o seu próximo projeto.</span></h2>
-        <p>Aberto a projetos, parcerias e novas oportunidades profissionais. O caminho mais rápido é uma mensagem no LinkedIn.</p>
-        <div class="actions">
-          <a class="btn primary" href="https://www.linkedin.com/in/andrey-ramos-6302722a3" target="_blank" rel="noopener noreferrer">Abrir o LinkedIn</a>
-          <a class="btn" href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer">Ver o GitHub</a>
+        <!-- Activity Graph -->
+        <div class="lg:col-span-7 glass-panel spotlight-card rounded-3xl p-5 flex flex-col items-center justify-center overflow-hidden">
+          <img
+            src="https://github-readme-activity-graph.vercel.app/graph?username=dreyranos&bg_color=02061700&color=38bdf8&line=2563eb&point=e0f2fe&area=true&hide_border=true"
+            alt="Gráfico de atividade no GitHub"
+            class="w-full rounded-xl"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="hidden flex-col items-center text-center p-6">
+            <span class="font-mono text-sm text-sky-300">Gráfico de Contribuições @dreyranos</span>
+            <a href="https://github.com/dreyranos" target="_blank" class="mt-2 text-xs text-cyan-400 underline">Abrir perfil no GitHub</a>
+          </div>
+        </div>
+
+        <!-- Snake Animation -->
+        <div class="lg:col-span-12 glass-panel rounded-3xl p-4 sm:p-6 flex flex-col items-center justify-center overflow-hidden">
+          <img
+            src="https://raw.githubusercontent.com/dreyranos/dreyranos/output/github-snake-dark.svg"
+            alt="Contribuições Snake"
+            class="w-full max-w-4xl"
+            onerror="this.parentElement.style.display='none';"
+          />
         </div>
       </div>
+    </section>
+
+    <!-- SEÇÃO: PORTAL DE OPORTUNIDADES & CONTATO -->
+    <section id="oportunidades" class="max-w-5xl mx-auto reveal">
+      <div class="glass-panel rounded-[2rem] p-8 sm:p-12 relative overflow-hidden border-cyan-400/30 text-center">
+        <!-- Brilho interno decorativo -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-cyan-500/20 blur-[90px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/30 font-mono text-xs text-cyan-300">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            PORTA DE ENTRADA · NOVAS OPORTUNIDADES
+          </div>
+
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
+            Vamos construir o próximo <span class="text-gradient">sistema em produção?</span>
+          </h2>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+            Aberto a <strong class="text-white">projetos</strong>, <strong class="text-white">parcerias técnicas</strong>, <strong class="text-white">consultoria em modernização de legado</strong> e <strong class="text-white">novas oportunidades profissionais</strong> (Full Stack, Arquitetura Backend ou Mobile).
+          </p>
+
+          <!-- Botões Principais -->
+          <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+            <a href="https://www.linkedin.com/in/andrey-ramos-6302722a3" target="_blank" rel="noopener noreferrer" class="btn-cyber px-7 py-4 rounded-2xl font-semibold text-white flex items-center gap-3 text-base">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>Chamar no LinkedIn</span>
+            </a>
+
+            <a href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer" class="glass-panel px-7 py-4 rounded-2xl font-semibold text-white hover:border-sky-400/50 flex items-center gap-3 text-base transition">
+              <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span>Repositórios GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="border-t border-white/10 py-8 px-4 text-center">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+      <div>© 2026 Andrey Ramos (@dreyranos) · São José do Rio Preto, SP</div>
+      <div class="text-slate-500">Desenvolvedor Full Stack | Engenharia de Software</div>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer>
-  <div class="wrap">
-    <span>© 2026 Andrey Ramos</span>
-    <span>São José do Rio Preto, SP · Brasil</span>
-  </div>
-</footer>
+  <!-- Scripts de Interatividade -->
+  <script>
+    // 1. Efeito Spotlight seguindo o mouse nos cards Glass
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
+    });
 
-<script>
-(function () {
-  var root = document.documentElement;
-  var btn = document.getElementById("theme");
-  var saved = null;
-  try { saved = localStorage.getItem("theme"); } catch (e) {}
-  if (saved === "dark" || saved === "light") { root.setAttribute("data-theme", saved); }
-  function system() {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  }
-  function current() { return root.getAttribute("data-theme") || system(); }
-  function paint() {
-    var dark = current() === "dark";
-    btn.setAttribute("aria-pressed", String(dark));
-    btn.firstElementChild.textContent = dark ? "Modo claro" : "Modo escuro";
-  }
-  btn.addEventListener("click", function () {
-    var next = current() === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("theme", next); } catch (e) {}
-    paint();
-  });
-  paint();
+    // 2. Typing Effect dinâmico no Hero (dados do README)
+    const phrases = [
+      "APIs Multi-Tenant | Arquitetura Backend",
+      "React Native (Expo) | Delphi FMX",
+      "Firebird SQL | Modernização de Sistemas Legados",
+      "Automação com Python, Bash e Fluxos de IA"
+    ];
+    let phraseIndex = 0;
+    let charIndex = phrases[0].length;
+    let isDeleting = true;
+    const typingEl = document.getElementById('typing-text');
 
-  var ph = document.getElementById("ph");
-  var frases = [
-    "Preciso de uma API multi-tenant para o meu produto",
-    "Quero modernizar um sistema legado sem parar a operação",
-    "Vamos criar um aplicativo mobile com React Native",
-    "Tenho um processo manual que precisa ser automatizado"
-  ];
-  var i = 0;
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    setInterval(function () {
-      ph.classList.add("out");
-      setTimeout(function () {
-        i = (i + 1) % frases.length;
-        ph.textContent = frases[i];
-        ph.classList.remove("out");
-      }, 260);
-    }, 3600);
-  }
-})();
-</script>
+    function typeLoop() {
+      const current = phrases[phraseIndex];
+      if (isDeleting) {
+        charIndex--;
+        typingEl.textContent = current.substring(0, charIndex);
+        if (charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeLoop, 350);
+          return;
+        }
+        setTimeout(typeLoop, 28);
+      } else {
+        charIndex++;
+        typingEl.textContent = current.substring(0, charIndex);
+        if (charIndex === current.length) {
+          isDeleting = true;
+          setTimeout(typeLoop, 1800);
+          return;
+        }
+        setTimeout(typeLoop, 48);
+      }
+    }
+    setTimeout(typeLoop, 1800);
+
+    // 3. Inspetor Interativo da Arquitetura de Referência
+    const archDetails = {
+      mobile: {
+        title: "App Mobile — React Native + Expo",
+        desc: "Aplicativos móveis multiplataforma com interface fluida usando NativeWind, consumindo endpoints autenticados e isolados por tenant.",
+        tag: "React Native · Expo · NativeWind"
+      },
+      desktop: {
+        title: "App Desktop — Delphi FMX / VCL",
+        desc: "Aplicações desktop de alto desempenho em ambientes corporativos e industriais, integradas às APIs modernas e sistemas em produção.",
+        tag: "Delphi FMX · Delphi VCL"
+      },
+      auto: {
+        title: "Automações — Python / Bash / IA",
+        desc: "Pipelines automatizados, rotinas agendadas e fluxos inteligentes com IA eliminando tarefas manuais e integrando sistemas.",
+        tag: "Python · Bash · Fluxos com IA"
+      },
+      gateway: {
+        title: "API Gateway — Autenticação + Tenant",
+        desc: "Roteamento centralizado com validação de credenciais e resolução automática de contexto por tenant, permitindo que múltiplos clientes operem de forma isolada e segura sobre a mesma infraestrutura.",
+        tag: "Delphi Horse · C# .NET"
+      },
+      services: {
+        title: "Serviços de Negócio & Integrações",
+        desc: "Camada desacoplada com regras de negócio padronizadas, integração com serviços externos e evolução incremental sem impacto no cliente.",
+        tag: "Arquitetura Backend · Integrações"
+      },
+      database: {
+        title: "Firebird SQL — Camada de Dados",
+        desc: "Otimização de queries críticas, modelagem relacional segura e modernização gradual de bases legadas mantendo total integridade em produção.",
+        tag: "Firebird SQL · Tuning & Legado"
+      }
+    };
+
+    function selectNode(key) {
+      const data = archDetails[key];
+      if (!data) return;
+      document.getElementById('inspector-title').textContent = data.title;
+      document.getElementById('inspector-desc').textContent = data.desc;
+      document.getElementById('inspector-tag').textContent = data.tag;
+
+      document.querySelectorAll('.arch-node').forEach(el => {
+        el.classList.remove('ring-2', 'ring-cyan-400', 'bg-blue-600/20');
+      });
+      const activeEl = document.getElementById(`node-${key}`);
+      if (activeEl) {
+        activeEl.classList.add('ring-2', 'ring-cyan-400');
+      }
+    }
+
+    // 4. Stack Tecnológica Filtrável
+    const stackItems = [
+      { name: "TypeScript", cat: "frontend", accent: "text-blue-400", sub: "Tipagem Estática" },
+      { name: "JavaScript", cat: "frontend", accent: "text-amber-300", sub: "Web & Runtime" },
+      { name: "React", cat: "frontend", accent: "text-cyan-300", sub: "Interfaces Web" },
+      { name: "React Native", cat: "frontend", accent: "text-sky-400", sub: "Apps Mobile" },
+      { name: "Expo", cat: "frontend", accent: "text-slate-200", sub: "Ecossistema Mobile" },
+      { name: "NativeWind", cat: "frontend", accent: "text-sky-300", sub: "Estilização Mobile" },
+      { name: "Tailwind CSS", cat: "frontend", accent: "text-cyan-400", sub: "UI Moderna" },
+      { name: "Angular", cat: "frontend", accent: "text-rose-400", sub: "Web Corporativa" },
+      { name: "Delphi FMX", cat: "frontend", accent: "text-red-400", sub: "Multiplataforma" },
+      { name: "Delphi VCL", cat: "frontend", accent: "text-red-400", sub: "Desktop Windows" },
+      { name: "Horse (Delphi)", cat: "backend", accent: "text-amber-400", sub: "APIs em Delphi" },
+      { name: "C# .NET", cat: "backend", accent: "text-violet-400", sub: "Backend & APIs" },
+      { name: "Python", cat: "backend", accent: "text-sky-400", sub: "Automação & IA" },
+      { name: "Bash", cat: "backend", accent: "text-emerald-400", sub: "Scripts & Pipelines" },
+      { name: "Firebird SQL", cat: "infra", accent: "text-orange-400", sub: "Banco de Dados" },
+      { name: "Linux", cat: "infra", accent: "text-yellow-300", sub: "Servidores & CLI" },
+      { name: "Windows", cat: "infra", accent: "text-sky-400", sub: "Ambiente Desktop" },
+      { name: "Docker", cat: "infra", accent: "text-blue-400", sub: "Containers" },
+      { name: "Git", cat: "infra", accent: "text-orange-500", sub: "Versionamento" },
+      { name: "Android", cat: "infra", accent: "text-emerald-400", sub: "Sistema & AOSP" },
+      { name: "LineageOS", cat: "infra", accent: "text-green-400", sub: "ROMs Customizadas" },
+      { name: "APIs Multi-Tenant", cat: "praticas", accent: "text-cyan-300", sub: "Arquitetura" },
+      { name: "Refatoração de Legado", cat: "praticas", accent: "text-sky-300", sub: "Evolução Segura" },
+      { name: "Automação de Processos", cat: "praticas", accent: "text-violet-300", sub: "Produtividade" },
+      { name: "Fluxos com IA", cat: "praticas", accent: "text-emerald-300", sub: "Workflows Inteligentes" }
+    ];
+
+    const stackGrid = document.getElementById('stack-grid');
+    function renderStack(filter = 'all') {
+      const filtered = filter === 'all' ? stackItems : stackItems.filter(i => i.cat === filter);
+      stackGrid.innerHTML = filtered.map(item => `
+        <div class="glass-panel spotlight-card rounded-2xl p-4 flex flex-col justify-between group cursor-default">
+          <div class="flex items-center justify-between mb-2">
+            <span class="w-2 h-2 rounded-full bg-current ${item.accent}"></span>
+            <span class="font-mono text-[10px] uppercase text-slate-500">${item.cat}</span>
+          </div>
+          <div>
+            <div class="font-display font-semibold text-white text-sm sm:text-base group-hover:text-sky-300 transition">${item.name}</div>
+            <div class="font-mono text-[11px] text-slate-400 mt-0.5">${item.sub}</div>
+          </div>
+        </div>
+      `).join('');
+
+      // Reatribui efeito spotlight aos novos cards
+      stackGrid.querySelectorAll('.spotlight-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+          card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        });
+      });
+    }
+
+    renderStack('all');
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active', 'bg-cyan-500/20', 'border-cyan-400/50', 'text-white');
+          b.classList.add('bg-white/5', 'border-white/10', 'text-slate-300');
+        });
+        btn.classList.add('active', 'bg-cyan-500/20', 'border-cyan-400/50', 'text-white');
+        btn.classList.remove('bg-white/5', 'border-white/10', 'text-slate-300');
+        renderStack(btn.dataset.filter);
+      });
+    });
+
+    // 5. Reveal Animations ao Rolar a Página
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
