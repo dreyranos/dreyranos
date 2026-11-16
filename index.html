@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Andrey Ramos | Desenvolvedor Full Stack</title>
+<meta name="description" content="Desenvolvedor full stack com mais de nove anos de experiência em APIs multi-tenant, modernização de sistemas legados, React Native e Delphi FMX." />
+<meta name="author" content="Andrey Ramos" />
+<meta name="theme-color" content="#070d1c" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="Andrey Ramos | Desenvolvedor Full Stack" />
+<meta property="og:description" content="APIs multi-tenant, modernização de sistemas legados e aplicações mobile e desktop." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M18 46 32 16l14 30M24 37h16' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f5f8fd;
+  --surface: #ffffff;
+  --surface-2: #eaf0fa;
+  --line: #d6dfee;
+  --text: #0a1530;
+  --muted: #4d5c7b;
+  --accent: #1d4ed8;
+  --accent-2: #0e7490;
+  --accent-soft: rgba(29, 78, 216, 0.1);
+  --code-bg: #0a1530;
+  --code-text: #dbe6fb;
+  --code-key: #7fa8ff;
+  --code-str: #5fe3ef;
+  --code-dim: #7b8bad;
+  --shadow: 0 24px 60px -28px rgba(10, 21, 48, 0.35);
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #070d1c;
+    --surface: #0d1731;
+    --surface-2: #121f40;
+    --line: #1d2d52;
+    --text: #e8eefb;
+    --muted: #93a3c2;
+    --accent: #5b9bff;
+    --accent-2: #22d3ee;
+    --accent-soft: rgba(91, 155, 255, 0.14);
+    --code-bg: #0a1329;
+    --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #070d1c;
+  --surface: #0d1731;
+  --surface-2: #121f40;
+  --line: #1d2d52;
+  --text: #e8eefb;
+  --muted: #93a3c2;
+  --accent: #5b9bff;
+  --accent-2: #22d3ee;
+  --accent-soft: rgba(91, 155, 255, 0.14);
+  --code-bg: #0a1329;
+  --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.wrap { width: min(1120px, 100% - 48px); margin-inline: auto; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .wrap { display: flex; align-items: center; gap: 28px; min-height: 64px; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.01em; }
+.menu { display: flex; gap: 22px; margin-left: auto; font-size: 0.95rem; font-weight: 500; overflow-x: auto; scrollbar-width: none; }
+.menu::-webkit-scrollbar { display: none; }
+.menu a { color: var(--muted); text-decoration: none; white-space: nowrap; padding: 6px 0; transition: color 0.15s; }
+.menu a:hover { color: var(--text); }
+.theme-btn {
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.theme-btn:hover { border-color: var(--accent); }
+@media (max-width: 760px) {
+  .topbar .wrap { gap: 12px 16px; padding-block: 10px; }
+  .menu { order: 3; width: 100%; margin-left: 0; }
+  .theme-btn { margin-left: auto; }
+}
+
+.hero { padding: 88px 0 96px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 64px; align-items: center; }
+@media (max-width: 920px) {
+  .hero { padding: 56px 0 64px; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 48px; }
+}
+.status { display: inline-flex; align-items: center; gap: 10px; font-size: 0.925rem; color: var(--muted); font-weight: 500; }
+.status i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 0 4px var(--accent-soft); }
+h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.3rem, 5.4vw, 3.9rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin: 20px 0 22px;
+  text-wrap: balance;
+}
+.lead { max-width: 52ch; color: var(--muted); font-size: 1.15rem; margin: 0 0 34px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 13px 22px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: transform 0.15s, border-color 0.15s, background 0.15s;
+}
+.btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+:root[data-theme="dark"] .btn.primary { color: #04122e; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .btn.primary { color: #04122e; }
+}
+.btn.primary:hover { background: color-mix(in srgb, var(--accent) 88%, #000); }
+
+.console {
+  background: var(--code-bg);
+  color: var(--code-text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+.console-head { display: flex; justify-content: space-between; gap: 16px; padding: 14px 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.09); font-size: 0.82rem; }
+.console-head .verb { color: var(--code-str); font-weight: 500; }
+.console-head .code { color: var(--code-dim); }
+.console pre { margin: 0; padding: 20px 22px 24px; overflow-x: auto; white-space: pre; }
+.console .ln { display: block; opacity: 0; animation: reveal 0.35s ease forwards; animation-delay: calc(var(--i) * 110ms + 250ms); }
+.k { color: var(--code-key); }
+.s { color: var(--code-str); }
+.d { color: var(--code-dim); }
+@keyframes reveal { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .console .ln { animation: none; opacity: 1; }
+}
+
+.block { padding: 88px 0; border-top: 1px solid var(--line); }
+.block .wrap { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 48px; }
+.block-title { position: sticky; top: 100px; align-self: start; }
+@media (max-width: 860px) {
+  .block { padding: 60px 0; }
+  .block .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .block-title { position: static; }
+}
+h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 10px; }
+.block-title p { margin: 0; color: var(--muted); font-size: 0.98rem; max-width: 26ch; }
+h3 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.01em; margin: 0 0 6px; }
+.prose p { margin: 0 0 18px; max-width: 64ch; }
+.prose .pull { border-left: 3px solid var(--accent); padding: 4px 0 4px 20px; margin-top: 28px; color: var(--muted); font-size: 1.05rem; }
+.prose .pull strong { color: var(--text); }
+
+.areas { list-style: none; margin: 0; padding: 0; }
+.areas li { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
+.areas li:first-child { border-top: 0; padding-top: 0; }
+.areas h3 { margin: 0; font-size: 1.1rem; }
+.areas p { margin: 0; color: var(--muted); max-width: 56ch; }
+@media (max-width: 620px) {
+  .areas li { grid-template-columns: 1fr; gap: 6px; }
+}
+
+.diagram { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+.diagram svg { display: block; width: 100%; min-width: 760px; height: auto; }
+.diagram .node { fill: var(--surface-2); stroke: var(--line); stroke-width: 1.5; }
+.diagram .core { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
+.diagram .data { fill: var(--accent-soft); stroke: var(--accent-2); stroke-width: 2; }
+.diagram .t { fill: var(--text); font-family: var(--display); font-weight: 700; font-size: 15px; }
+.diagram .u { fill: var(--muted); font-family: var(--body); font-size: 12.5px; }
+.diagram .flow { fill: none; stroke: var(--accent); stroke-width: 2; opacity: 0.75; }
+.diagram marker path { fill: var(--accent); }
+.caption { margin: 14px 4px 0; color: var(--muted); font-size: 0.92rem; max-width: 68ch; }
+
+.stack-group + .stack-group { margin-top: 34px; }
+.stack-group h3 { font-size: 1.05rem; color: var(--muted); font-weight: 600; margin-bottom: 14px; }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.chips li {
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  transition: border-color 0.15s, background 0.15s;
+}
+.chips li:hover { border-color: var(--accent); background: var(--accent-soft); }
+
+.timeline { list-style: none; margin: 0; padding: 0 0 0 28px; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+.job { position: relative; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 18px; padding-bottom: 38px; }
+.job:last-child { padding-bottom: 0; }
+.job::before { content: ""; position: absolute; left: -28px; top: 14px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
+.job.now::before { background: var(--accent-2); border-color: var(--accent-2); box-shadow: 0 0 0 5px var(--accent-soft); }
+.logo { position: relative; width: 52px; height: 52px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); overflow: hidden; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 0.95rem; color: var(--muted); }
+.logo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #ffffff; }
+.job h3 { margin-bottom: 2px; }
+.org { margin: 0; font-weight: 500; }
+.when { margin: 2px 0 0; color: var(--muted); font-size: 0.93rem; }
+.tag { display: inline-block; font-family: var(--body); font-weight: 600; font-size: 0.78rem; padding: 2px 10px; border-radius: 999px; background: var(--accent-2); color: #04212b; vertical-align: middle; margin-left: 8px; }
+.roles { list-style: none; margin: 12px 0 0; padding: 0; }
+.roles li { padding: 10px 0; border-top: 1px solid var(--line); }
+.roles strong { font-weight: 600; }
+.roles span { display: block; color: var(--muted); font-size: 0.93rem; }
+
+.contact { padding: 96px 0 72px; border-top: 1px solid var(--line); }
+.contact h2 { font-size: clamp(1.9rem, 4.4vw, 3rem); max-width: 18ch; letter-spacing: -0.03em; margin-bottom: 16px; }
+.contact p { color: var(--muted); max-width: 52ch; margin: 0 0 30px; }
+footer { border-top: 1px solid var(--line); padding: 26px 0; color: var(--muted); font-size: 0.9rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#topo">Andrey Ramos</a>
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#atuacao">Atuação</a>
+      <a href="#arquitetura">Arquitetura</a>
+      <a href="#stack">Stack</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="theme-btn" id="theme" type="button" aria-pressed="false"><span>Modo escuro</span></button>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="status"><i></i>Disponível para novas oportunidades</p>
+        <h1>Desenvolvedor full stack para APIs multi-tenant e sistemas legados.</h1>
+        <p class="lead">Mais de nove anos construindo e sustentando software em produção, do banco de dados ao aplicativo mobile, com foco em qualidade de código, desempenho e escalabilidade.</p>
+        <div class="actions">
+          <a class="btn primary" href="#experiencia">Ver experiência</a>
+          <a class="btn" href="https://www.linkedin.com/in/andrey-ramos-6302722a3" target="_blank" rel="noopener noreferrer">Falar no LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="console" role="img" aria-label="Resumo do perfil de Andrey Ramos em formato de resposta de API">
+        <div class="console-head">
+          <span><span class="verb">GET</span> /v1/andrey-ramos</span>
+          <span class="code">200 OK · application/json</span>
+        </div>
+<pre><span class="ln" style="--i:0">{</span><span class="ln" style="--i:1">  <span class="k">"nome"</span>: <span class="s">"Andrey Ramos"</span>,</span><span class="ln" style="--i:2">  <span class="k">"funcao"</span>: <span class="s">"Desenvolvedor Full Stack"</span>,</span><span class="ln" style="--i:3">  <span class="k">"local"</span>: <span class="s">"São José do Rio Preto, SP"</span>,</span><span class="ln" style="--i:4">  <span class="k">"experiencia_anos"</span>: <span class="s">9</span>,</span><span class="ln" style="--i:5">  <span class="k">"especialidades"</span>: [</span><span class="ln" style="--i:6">    <span class="s">"APIs multi-tenant"</span>,</span><span class="ln" style="--i:7">    <span class="s">"React Native (Expo)"</span>,</span><span class="ln" style="--i:8">    <span class="s">"Delphi FMX"</span>,</span><span class="ln" style="--i:9">    <span class="s">"Firebird SQL"</span></span><span class="ln" style="--i:10">  ],</span><span class="ln" style="--i:11">  <span class="k">"disponivel"</span>: <span class="s">true</span></span><span class="ln" style="--i:12">}</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="sobre">
+    <div class="wrap">
+      <div class="block-title">
+        <h2>Sobre</h2>
+        <p>Quem sou e como trabalho.</p>
+      </div>
+      <div class="prose">
+        <p>Atuo com desenvolvimento de software desde 2017. Comecei em suporte e infraestrutura de TI, passei por gestão e hoje trabalho como desenvolvedor full stack, o que me dá uma visão completa de como um sistema é construído, entregue e mantido.</p>
+        <p>Minha experiência combina <strong>arquitetura de APIs multi-tenant</strong>, <strong>modernização de sistemas legados</strong> e <strong>desenvolvimento de aplicações mobile e desktop</strong>. Prefiro mudanças incrementais e bem documentadas a reescritas arriscadas, e automatizo tudo o que se repete.</p>
+        <p class="pull"><strong>Princípios de engenharia:</strong> código legível, decisões documentadas, mudanças incrementais e automação de tarefas repetitivas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="atuacao">
+    <div class="wrap">
+      <div class="block-title">
+        <h2>Áreas de atuação</h2>
+        <p>Onde concentro meu trabalho.</p>
+      </div>
+      <ul class="areas">
+        <li>
+          <h3>Backend e arquitetura</h3>
+          <p>Projeto e desenvolvimento de APIs, modelagem multi-tenant, integrações e padronização de serviços.</p>
+        </li>
+        <li>
+          <h3>Desenvolvimento mobile</h3>
+          <p>Aplicações com React Native (Expo) e NativeWind, além de soluções desktop e mobile em Delphi FMX.</p>
+        </li>
+        <li>
+          <h3>Banco de dados e legado</h3>
+          <p>Firebird SQL, otimização de consultas e refatoração incremental de sistemas legados.</p>
+        </li>
+        <li>
+          <h3>Automação e IA</h3>
+          <p>Scripts em Python e Bash, pipelines de automação e fluxos de trabalho com inteligência artificial.</p>
+        </li>
+        <li>
+          <h3>Android customizado</h3>
+          <p>Customização e build de ROMs com AOSP e LineageOS.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="arquitetura">
+    <div class="wrap">
+      <div class="block-title">
+        <h2>Arquitetura de referência</h2>
+        <p>O tipo de solução em que mais atuo.</p>
+      </div>
+      <div>
+        <div class="diagram">
+          <svg viewBox="0 0 960 320" role="img" aria-labelledby="diag-t diag-d">
+            <title id="diag-t">Arquitetura de referência</title>
+            <desc id="diag-d">Aplicativo mobile, aplicativo desktop e automações consomem uma API multi-tenant, que se conecta a serviços de negócio e integrações, ambos sobre um banco Firebird SQL.</desc>
+            <defs>
+              <marker id="seta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M0 0 10 5 0 10z" />
+              </marker>
+            </defs>
+
+            <path class="flow" d="M210 51 C250 51 250 160 290 160" marker-end="url(#seta)" />
+            <path class="flow" d="M210 160 L290 160" marker-end="url(#seta)" />
+            <path class="flow" d="M210 269 C250 269 250 160 290 160" marker-end="url(#seta)" />
+            <path class="flow" d="M490 160 C525 160 525 71 560 71" marker-end="url(#seta)" />
+            <path class="flow" d="M490 160 C525 160 525 249 560 249" marker-end="url(#seta)" />
+            <path class="flow" d="M740 71 C770 71 770 160 800 160" marker-end="url(#seta)" />
+            <path class="flow" d="M740 249 C770 249 770 160 800 160" marker-end="url(#seta)" />
+
+            <rect class="node" x="10" y="20" width="200" height="62" rx="12" />
+            <text class="t" x="28" y="47">App mobile</text>
+            <text class="u" x="28" y="67">React Native + Expo</text>
+
+            <rect class="node" x="10" y="129" width="200" height="62" rx="12" />
+            <text class="t" x="28" y="156">App desktop</text>
+            <text class="u" x="28" y="176">Delphi FMX</text>
+
+            <rect class="node" x="10" y="238" width="200" height="62" rx="12" />
+            <text class="t" x="28" y="265">Automações</text>
+            <text class="u" x="28" y="285">Python, Bash e IA</text>
+
+            <rect class="core" x="290" y="110" width="200" height="100" rx="14" />
+            <text class="t" x="310" y="145">API multi-tenant</text>
+            <text class="u" x="310" y="168">Autenticação e isolamento</text>
+            <text class="u" x="310" y="186">por tenant</text>
+
+            <rect class="node" x="560" y="40" width="180" height="62" rx="12" />
+            <text class="t" x="578" y="67">Serviços de negócio</text>
+            <text class="u" x="578" y="87">Regras e processos</text>
+
+            <rect class="node" x="560" y="218" width="180" height="62" rx="12" />
+            <text class="t" x="578" y="245">Integrações</text>
+            <text class="u" x="578" y="265">Sistemas externos</text>
+
+            <rect class="data" x="800" y="115" width="150" height="90" rx="14" />
+            <text class="t" x="820" y="152">Firebird SQL</text>
+            <text class="u" x="820" y="172">Dados e legado</text>
+          </svg>
+        </div>
+        <p class="caption">Ilustração genérica do padrão de solução: múltiplos clientes consumindo uma API com isolamento por tenant, sobre uma camada de dados legada e modernizada de forma incremental.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="stack">
+    <div class="wrap">
+      <div class="block-title">
+        <h2>Stack tecnológica</h2>
+        <p>Ferramentas que uso no dia a dia.</p>
+      </div>
+      <div>
+        <div class="stack-group">
+          <h3>Linguagens e frameworks</h3>
+          <ul class="chips">
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>React Native</li>
+            <li>Expo</li>
+            <li>NativeWind</li>
+            <li>Tailwind CSS</li>
+            <li>Python</li>
+            <li>Bash</li>
+            <li>Delphi FMX</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <h3>Dados, infraestrutura e ferramentas</h3>
+          <ul class="chips">
+            <li>Firebird SQL</li>
+            <li>Linux</li>
+            <li>Windows</li>
+            <li>Android (AOSP e LineageOS)</li>
+            <li>Git</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <h3>Práticas</h3>
+          <ul class="chips">
+            <li>APIs multi-tenant</li>
+            <li>Refatoração de legado</li>
+            <li>Automação de processos</li>
+            <li>Fluxos de trabalho com IA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="experiencia">
+    <div class="wrap">
+      <div class="block-title">
+        <h2>Experiência profissional</h2>
+        <p>Da infraestrutura ao desenvolvimento full stack.</p>
+      </div>
+      <ol class="timeline">
+        <li class="job now">
+          <div class="logo"><span>PR</span><img src="./assets/proansi.jpg" alt="Logo da PROANSI" loading="lazy" onerror="this.remove()" /></div>
+          <div>
+            <h3>Desenvolvedor Full Stack<span class="tag">Atual</span></h3>
+            <p class="org">PROANSI</p>
+            <p class="when">jul. 2023 a presente · 3 anos e 5 meses · São José do Rio Preto, SP</p>
+          </div>
+        </li>
+        <li class="job">
+          <div class="logo"><span>HE</span><img src="./assets/hepta.jpg" alt="Logo da Hepta" loading="lazy" onerror="this.remove()" /></div>
+          <div>
+            <h3>Analista de Suporte N2</h3>
+            <p class="org">Hepta Tecnologia e Informática</p>
+            <p class="when">out. 2022 a jun. 2023 · 9 meses · São José do Rio Preto, SP</p>
+          </div>
+        </li>
+        <li class="job">
+          <div class="logo"><span>TM</span><img src="./assets/tesla.jpg" alt="Logo da Tesla Marcações Industriais" loading="lazy" onerror="this.remove()" /></div>
+          <div>
+            <h3>Gestor de TI</h3>
+            <p class="org">Tesla Marcações Industriais</p>
+            <p class="when">jun. 2022 a set. 2022 · 4 meses · São José do Rio Preto, SP</p>
+          </div>
+        </li>
+        <li class="job">
+          <div class="logo"><span>CV</span><img src="./assets/casavacinas.jpg" alt="Logo da Casa das Vacinas" loading="lazy" onerror="this.remove()" /></div>
+          <div>
+            <h3>Casa das Vacinas</h3>
+            <p class="when">jan. 2017 a jun. 2022 · 5 anos e 6 meses</p>
+            <ul class="roles">
+              <li><strong>Desenvolvedor</strong><span>jan. 2020 a jun. 2022 · 2 anos e 6 meses</span></li>
+              <li><strong>Assistente de TI</strong><span>jan. 2017 a jan. 2020 · 3 anos e 1 mês</span></li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="formacao">
+    <div class="wrap">
+      <div class="block-title">
+        <h2>Formação acadêmica</h2>
+        <p>Base técnica em tecnologia da informação.</p>
+      </div>
+      <ol class="timeline">
+        <li class="job">
+          <div class="logo"><span>ET</span><img src="./assets/etec.jpg" alt="Logo da Etec" loading="lazy" onerror="this.remove()" /></div>
+          <div>
+            <h3>Etec Philadelpho Gouvêa Netto</h3>
+            <p class="org">Curso Técnico Integrado em Tecnologia da Informação</p>
+            <p class="when">2014 a 2016</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="wrap">
+      <h2>Vamos conversar sobre o seu próximo projeto.</h2>
+      <p>Aberto a projetos, parcerias e novas oportunidades profissionais. O caminho mais rápido é uma mensagem no LinkedIn.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://www.linkedin.com/in/andrey-ramos-6302722a3" target="_blank" rel="noopener noreferrer">Abrir o LinkedIn</a>
+        <a class="btn" href="https://github.com/dreyranos" target="_blank" rel="noopener noreferrer">Ver o GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Andrey Ramos</span>
+    <span>São José do Rio Preto, SP · Brasil</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById("theme");
+  var saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  if (saved === "dark" || saved === "light") { root.setAttribute("data-theme", saved); }
+  function system() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  function current() { return root.getAttribute("data-theme") || system(); }
+  function paint() {
+    var dark = current() === "dark";
+    btn.setAttribute("aria-pressed", String(dark));
+    btn.firstElementChild.textContent = dark ? "Modo claro" : "Modo escuro";
+  }
+  btn.addEventListener("click", function () {
+    var next = current() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    paint();
+  });
+  paint();
+})();
+</script>
+</body>
+</html>
