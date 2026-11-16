@@ -17,6 +17,12 @@
 <a href="https://dreyranos.github.io">
   <img src="https://img.shields.io/badge/🌐_PORTF%C3%93LIO_INTERATIVO-27272a?style=for-the-badge&labelColor=000000" alt="Portfólio Interativo" />
 </a>
+<a href="https://wa.me/5517992083142">
+  <img src="https://img.shields.io/badge/WhatsApp-18181b?style=for-the-badge&logo=whatsapp&logoColor=25D366" alt="WhatsApp" />
+</a>
+<a href="mailto:andreyranos@gmail.com">
+  <img src="https://img.shields.io/badge/E--mail-18181b?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="E-mail" />
+</a>
 <a href="https://www.linkedin.com/in/andrey-ramos-6302722a3">
   <img src="https://img.shields.io/badge/LinkedIn-18181b?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
@@ -25,6 +31,8 @@
 
 <img src="https://komarev.com/ghpvc/?username=dreyranos&style=flat-square&color=27272a&labelColor=09090b&label=VISUALIZA%C3%87%C3%95ES" alt="Visualizações" />
 <img src="https://img.shields.io/github/followers/dreyranos?label=SEGUIDORES&style=flat-square&color=27272a&labelColor=09090b&logo=github&logoColor=white" alt="Seguidores" />
+<img src="https://img.shields.io/badge/React_19_+_TypeScript-09090b?style=flat-square&logo=react&logoColor=61dafb" alt="React 19 e TypeScript" />
+<img src="https://img.shields.io/badge/Deploy-Vercel-09090b?style=flat-square&logo=vercel&logoColor=white" alt="Deploy na Vercel" />
 
 <br/><br/>
 
@@ -34,6 +42,7 @@
 <a href="#-stack-tecnológica"><kbd>Stack</kbd></a> ·
 <a href="#-experiência-profissional"><kbd>Experiência</kbd></a> ·
 <a href="#-formação-acadêmica"><kbd>Formação</kbd></a> ·
+<a href="#-desenvolvimento--deploy-na-vercel"><kbd>Vercel</kbd></a> ·
 <a href="#-contato--oportunidades"><kbd>Oportunidades</kbd></a>
 
 </div>
@@ -41,7 +50,7 @@
 <br/>
 
 > [!TIP]
-> **Porta de Entrada para Novas Oportunidades:** Confira meu portfólio em estética Noir Glass com diagrama interativo e filtros de stack em **[dreyranos.github.io](https://dreyranos.github.io)** ou conecte-se pelo **[LinkedIn](https://www.linkedin.com/in/andrey-ramos-6302722a3)**.
+> **Porta de Entrada para Novas Oportunidades:** Confira meu portfólio interativo em React 19, TypeScript, Tailwind CSS v4, D3.js e Motion em **[dreyranos.github.io](https://dreyranos.github.io)** (pronto para deploy contínuo na **Vercel**) ou fale diretamente pelo **[WhatsApp](https://wa.me/5517992083142)**, **[E-mail](mailto:andreyranos@gmail.com)** e **[LinkedIn](https://www.linkedin.com/in/andrey-ramos-6302722a3)**.
 
 <br/>
 
@@ -50,7 +59,7 @@
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
 <p>
-  <img align="right" src="./assets/profile.jpg" width="190" alt="Andrey Ramos" />
+  <img align="right" src="https://github.com/dreyranos.png" width="190" alt="Andrey Ramos" />
   Desenvolvedor full stack com <b>mais de nove anos de atuação em tecnologia</b>, construindo e sustentando sistemas que operam em produção. Minha experiência combina <b>arquitetura de APIs multi-tenant</b>, <b>modernização de sistemas legados</b> e <b>desenvolvimento de aplicações web, mobile e desktop</b>, sempre com foco em qualidade de código, desempenho, escalabilidade e valor entregue ao negócio.
   <br/><br/>
   <b>Princípios de engenharia:</b> código legível, decisões documentadas, mudanças incrementais e automação de tudo que for repetitivo.
@@ -180,7 +189,7 @@ flowchart LR
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
 <p>
-  <img align="left" src="./assets/proansi.jpg" width="52" height="52" alt="PROANSI" />
+  <img align="left" src="https://raw.githubusercontent.com/dreyranos/dreyranos/main/assets/proansi.jpg" width="52" height="52" alt="PROANSI" />
   <b>Desenvolvedor Full Stack</b> &nbsp;<img src="https://img.shields.io/badge/ATUAL-e4e4e7?style=flat-square" alt="Atual" /><br/>
   <code>PROANSI</code> · <sub>jul. 2023 – presente · 3 anos 5 meses · São José do Rio Preto, SP</sub>
 </p>
@@ -188,7 +197,7 @@ flowchart LR
 <br clear="left" />
 
 <p>
-  <img align="left" src="./assets/hepta.jpg" width="52" height="52" alt="Hepta" />
+  <img align="left" src="https://raw.githubusercontent.com/dreyranos/dreyranos/main/assets/hepta.jpg" width="52" height="52" alt="Hepta" />
   <b>Analista de Suporte N2</b><br/>
   <code>Hepta Tecnologia e Informática</code> · <sub>out. 2022 – jun. 2023 · 9 meses · São José do Rio Preto, SP</sub>
 </p>
@@ -196,7 +205,7 @@ flowchart LR
 <br clear="left" />
 
 <p>
-  <img align="left" src="./assets/tesla.jpg" width="52" height="52" alt="Tesla" />
+  <img align="left" src="https://raw.githubusercontent.com/dreyranos/dreyranos/main/assets/tesla.jpg" width="52" height="52" alt="Tesla" />
   <b>Gestor de TI</b><br/>
   <code>Tesla Marcações Industriais</code> · <sub>jun. 2022 – set. 2022 · 4 meses · São José do Rio Preto, SP</sub>
 </p>
@@ -204,7 +213,7 @@ flowchart LR
 <br clear="left" />
 
 <p>
-  <img align="left" src="./assets/casavacinas.jpg" width="52" height="52" alt="Casa das Vacinas" />
+  <img align="left" src="https://raw.githubusercontent.com/dreyranos/dreyranos/main/assets/casavacinas.jpg" width="52" height="52" alt="Casa das Vacinas" />
   <b>Casa das Vacinas</b> &nbsp;<img src="https://img.shields.io/badge/5_anos_e_6_meses-27272a?style=flat-square" alt="Tempo total" /><br/>
   ↳ <b>Desenvolvedor</b> · <sub>jan. 2020 – jun. 2022 · 2 anos 6 meses</sub><br/>
   ↳ <b>Assistente de TI</b> · <sub>jan. 2017 – jan. 2020 · 3 anos 1 mês</sub>
@@ -237,7 +246,7 @@ timeline
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
 <p>
-  <img align="left" src="./assets/etec.jpg" width="52" height="52" alt="Etec" />
+  <img align="left" src="https://raw.githubusercontent.com/dreyranos/dreyranos/main/assets/etec.jpg" width="52" height="52" alt="Etec" />
   <b>Etec Philadelpho Gouvêa Netto</b><br/>
   <code>Curso Técnico Integrado em Tecnologia da Informação</code> · <sub>2014 – 2016</sub>
 </p>
@@ -270,12 +279,52 @@ timeline
 
 <br/>
 
+## 🚀 Desenvolvimento & Deploy na Vercel
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
+
+Este repositório contém o código-fonte do portfólio web em **React 19 + TypeScript + Vite + Tailwind CSS v4**, com:
+- Gráficos **D3.js** de frequência de commits e mapa anual de contribuições (`GitHubCommitChart` + `ContributionGraph`)
+- Busca e filtro por tags em **Projetos**, tempo estimado de leitura e hover cards animados com **Motion**
+- **SEO & Open Graph** via `@dr.pogodin/react-helmet`, rota **404** integrada, exportação para **PDF (`@media print`)**, **Newsletter** no rodapé e alternador bilíngue (**PT / EN**) + tema **Claro / Escuro**
+- Monitoramento de **Core Web Vitals**, **NeuralCanvas** reativo ao cursor/toque e controle opcional de som ambiente
+
+<details>
+<summary><b>⚙️ Comandos locais e publicação na Vercel</b></summary>
+
+```bash
+# Instalar dependências
+npm install
+
+# Executar em desenvolvimento (http://localhost:3000)
+npm run dev
+
+# Verificar tipagem TypeScript
+npm run lint
+
+# Gerar build de produção (dist/)
+npm run build
+```
+
+**Deploy na Vercel (`vercel.json` já configurado):**
+1. Envie o repositório para o GitHub (`git push -u origin main`).
+2. Importe o projeto em **[vercel.com/new](https://vercel.com/new)** (preset **Vite**, build `npm run build`, saída `dist`).
+3. *(Opcional)* Defina `VITE_NEWSLETTER_ENDPOINT` se desejar apontar o formulário do rodapé para o Formspree em vez do FormSubmit padrão (`andreyranos@gmail.com`).
+4. Ou publique direto pelo terminal com `npx vercel --prod`.
+
+</details>
+
+<br/>
+
 ## 📬 Contato & Oportunidades
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:09090b,50:71717a,100:09090b&height=2" width="100%" alt="" />
 
 > [!IMPORTANT]
 > **Vamos construir algo em produção?** Aberto a **novas oportunidades profissionais**, **projetos sob demanda**, **parcerias técnicas** e **consultoria em modernização de sistemas legados**.
+>
+> - **WhatsApp:** [(17) 99208-3142](https://wa.me/5517992083142)
+> - **E-mail:** [andreyranos@gmail.com](mailto:andreyranos@gmail.com)
 
 <div align="center">
 
@@ -283,6 +332,12 @@ timeline
 
 <a href="https://dreyranos.github.io">
   <img src="https://img.shields.io/badge/🌐_Portf%C3%B3lio_Web-27272a?style=for-the-badge&labelColor=000000" alt="Portfólio Web" />
+</a>
+<a href="https://wa.me/5517992083142">
+  <img src="https://img.shields.io/badge/WhatsApp-18181b?style=for-the-badge&logo=whatsapp&logoColor=25D366" alt="WhatsApp" />
+</a>
+<a href="mailto:andreyranos@gmail.com">
+  <img src="https://img.shields.io/badge/E--mail-18181b?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="E-mail" />
 </a>
 <a href="https://www.linkedin.com/in/andrey-ramos-6302722a3">
   <img src="https://img.shields.io/badge/LinkedIn-18181b?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
